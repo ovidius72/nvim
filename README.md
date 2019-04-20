@@ -1,6 +1,6 @@
-*Mac OS installation.
+# Mac OS installation.
 
-****Requirement:
+### Requirement:
 
 - Nodejs
 - yarn
