@@ -52,6 +52,7 @@ nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
+
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -65,6 +66,7 @@ nmap <Leader>hh :History<CR>
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
 nmap <Leader>p :GFiles<CR>
+nmap <Leader>r :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
 
 nmap <Leader>o :Files<CR>
 nmap <Leader>l :BLines<CR>
@@ -73,4 +75,5 @@ nmap <Leader>aa :Ag<CR>
 nmap <Leader>bb :Buffers<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
-nmap <Leader>bd :bd<CR>
+" nmap <Leader>bd :bd<CR>
+nmap <Leader>bd :bp<CR>:bd#<CR>

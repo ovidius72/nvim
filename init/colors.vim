@@ -1,18 +1,19 @@
 "Space vim dark colorscheme
-colorscheme space-vim-dark
-set background=dark
+" colorscheme space-vim-dark
+" set background=dark
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
-let g:airline_theme = 'base16_spacemacs'
-let g:space_vim_dark_background = 235
-color space-vim-dark
+" let g:airline_theme = 'base16_spacemacs'
+" let g:space_vim_dark_background = 234
+" color space-vim-dark
 
 "PaperColor
-" colorscheme PaperColor
-" set background=light
+colorscheme PaperColor
+set background=dark
 " let g:airline_theme = 'papercolor'
+let g:airline_theme = 'one'
 
  " One
 " colorscheme one
@@ -33,7 +34,7 @@ color space-vim-dark
 "
 "
 " Gruvbox
-colorscheme gruvbox
+" colorscheme gruvbox
 " set background=dark
-set bg=dark
-let g:airline_theme = 'gruvbox'
+" set bg=dark
+" let g:airline_theme = 'gruvbox'
