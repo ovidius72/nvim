@@ -6,6 +6,7 @@ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
 set title
 " set cursorline
 set cmdheight=1
+set ignorecase
 set shortmess=aFc
 set termguicolors
 syntax on
@@ -60,6 +61,7 @@ augroup vimrc-incsearch-highlight
  autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
 
+noremap <leader>sh :set hlsearch<CR>
 " Tab navigation
 nnoremap <silent> <leader>[ :tabprevious<cr>
 nnoremap <silent> <leader>] :tabnext<cr>
@@ -67,6 +69,17 @@ nnoremap <silent> <leader>= :tabnew<cr>
 nnoremap <silent> <leader>- :tabclose<cr>
 " nnoremap <silent> <leader><bs> :exec 'set showtabline='.string(!&showtabline)<cr>
 
+" zoom
+" noremap zm <c-w>_<c-w>\|
+" noremap zi <c-w>_ \| <c-w>\|
+" noremap zo <c-w>=
+
+
+" inoremap zm <c-w>_\|<c-w>\|
+" voremap zm <c-w>_\|<c-w>\|
+" nnoremap zo <c-w>=
+" inoremap zo <c-w>=
+" vnoremap zo <c-w>=
 " nerdtree
 map <leader>nt :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFocus<CR>
