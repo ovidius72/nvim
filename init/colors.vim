@@ -12,8 +12,8 @@
 "PaperColor
 colorscheme PaperColor
 set background=dark
-let g:airline_theme = 'one'
 " let g:airline_theme = 'papercolor'
+let g:airline_theme = 'one'
 
  " One
 " colorscheme one
