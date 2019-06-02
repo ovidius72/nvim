@@ -5,6 +5,7 @@
   "tsserver.orgnizeImportOnSave": true,
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
+  "diagnostic.messageTarget": "float",
   "languageserver": {
     "phplang": {
       "command": "php",

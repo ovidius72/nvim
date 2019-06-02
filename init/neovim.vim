@@ -3,10 +3,14 @@ if !has('nvim')
 endif
 
 call plug#begin()
+Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'swalladge/paper.vim'
+Plug 'flrnprz/candid.vim'
 Plug 'dracula/vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'jacoborus/tender.vim'

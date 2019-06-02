@@ -2,7 +2,7 @@
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=900
+set updatetime=2000
 
 " always show signcolumns
 set signcolumn=yes
@@ -27,10 +27,13 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+inoremap <c-w>p cj coc#util#float_jump() 
+nnoremap <c-w>p cj coc#util#float_jump() 
 " save all in various modes
 nnoremap <c-s> :wa<CR>
 inoremap <c-s> <Esc>:wa<CR>a
 vnoremap <c-s> <Esc>:wa<CR>gv
+
 
 "yank and move the curson to the last yanked line
 vnoremap gy y']
@@ -47,6 +50,7 @@ nmap <c-l><c-l> yiwogll<Esc>p
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> [i <Plug>(coc-diagnostic-diagnosicInfo)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -61,7 +65,7 @@ function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
@@ -78,7 +82,7 @@ nmap <leader>fs  <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  autocmd FileType typescript,json setl formatexpr=CocActionAsync('formatSelected')
   " Update signature help on jump placeholder
  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
@@ -97,10 +101,10 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Use `:Format` for format current buffer
-command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Format :call CocActionAsync('format')
 
 " Use `:Fold` for fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 
 nmap <F8> :TagbarToggle<CR>
 

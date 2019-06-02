@@ -4,7 +4,8 @@ set relativenumber
 set number
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
 set title
-" set cursorline
+" set mouse=a
+set cursorline
 set cmdheight=1
 set ignorecase
 set shortmess=aFc
@@ -84,6 +85,19 @@ nnoremap <silent> <leader>- :tabclose<cr>
 map <leader>nt :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFocus<CR>
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
 " INCSEARCH
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -130,6 +144,8 @@ let g:user_emmet_settings = {
     \  },
   \}
 
+" Highlight the word under cursor
+" autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Javascript
 let g:vim_jsx_pretty_colorful_config = 1
@@ -139,7 +155,7 @@ let g:jsx_ext_required = 0
 " Indentline
 let g:indentLine_color_gui = '#555555' 
 "363949'
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_concealcursor = 1
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
