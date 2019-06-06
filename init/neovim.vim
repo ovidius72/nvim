@@ -8,7 +8,12 @@ Plug 'chriskempson/base16-vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'swalladge/paper.vim'
-Plug 'flrnprz/candid.vim'
+" Plug 'flrnprz/candid.vim'
+Plug 'flrnprz/plastic.vim'
+
+Plug 'nightsense/cosmic_latte'
+Plug 'ajmwagar/vim-deus'
+
 Plug 'dracula/vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'

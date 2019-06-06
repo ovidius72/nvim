@@ -2,7 +2,7 @@
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=2000
+set updatetime=1000
 
 " always show signcolumns
 set signcolumn=yes

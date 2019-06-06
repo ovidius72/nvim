@@ -16,14 +16,12 @@ color space-vim-dark
 " let g:airline_theme = 'one'
 
 " Paper
+" set background=light
+" set bg=light
 " colorscheme paper
 " set background=dark
 " let g:airline_theme = 'papercolor'
 
-" Candid
-" colorscheme candid
-" set background=dark
-" let g:airline_theme = 'papercolor'
 
  " One
 " colorscheme one
@@ -53,3 +51,33 @@ color space-vim-dark
 " set background=dark
 " " let g:airline_theme = 'papercolor'
 " let g:airline_theme = 'one'
+
+" Horizon
+" colorscheme horizon
+" set background=dark
+" set bg=dark
+" let g:airline_theme = 'night_owl'
+
+
+" set background=light
+" colorscheme ayu
+" let ayucolor="mirage"
+" let g:airline_theme = 'ayu_mirage'
+
+" deus
+" colorscheme deus
+" let g:dues_termcolors=256
+" let g:airline_theme = 'deus'
+
+" cosmic-latte
+" set background=dark
+" colorscheme cosmic_latte
+" let g:airline_theme = 'cosmic_latte_dark'
+
+" let &t_SI = "\<Esc>[6 q"
+" let &t_SR = "\<Esc>[4 q"
+" let &t_EI = "\<Esc>[2 q"
+" let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+" let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+" let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+

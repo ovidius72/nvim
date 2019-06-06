@@ -12,14 +12,20 @@ let g:ale_sign_warning = '⚠'
 let g:ale_sign_info = ''
 let g:ale_sign_style_error = ''
 let g:ale_sign_style_warning = ''
+
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
 let g:ale_linters = {
 \ 'typescript': ['tslint', 'tssserver', 'typecheck'],
 \ 'javascript': ['eslint'],
 \ 'typescript.tsx': ['tslint', 'tssserver', 'typecheck'],
 \ 'typescriptreact': ['tslint', 'tssserver', 'typecheck'],
+\ 'c': ['gcc'],
+\ 'cpp': ['gcc'],
+\ 'python': ['flake8', 'pylint']
 \}
+
 " let g:ale_linters_aliases = {'js': 'ts', 'js', 'tsx'}
 let g:ale_typescript_tslint_executable = 'tslint'
 let g:ale_typescript_tslint_use_global = 0
