@@ -23,20 +23,20 @@ let g:ale_linters = {
 \ 'typescriptreact': ['tslint', 'tssserver', 'typecheck'],
 \ 'c': ['gcc'],
 \ 'cpp': ['gcc'],
-\ 'python': ['flake8', 'pylint']
 \}
+" \ 'python': ['flake8', 'pylint']
 
 " let g:ale_linters_aliases = {'js': 'ts', 'js', 'tsx'}
-let g:ale_typescript_tslint_executable = 'tslint'
-let g:ale_typescript_tslint_use_global = 0
-let g:ale_typescript_tslint_config_path = ''
-
+" let g:ale_typescript_tslint_executable = 'tslint'
+" let g:ale_typescript_tslint_use_global = 1
+" let g:ale_typescript_tslint_config_path = ''
+let g:ale_list_window_size = 1
 
 let g:ale_fixers = {
-\   'typescript': ['tslint'], 
-\   'typescript.tsx': ['tslint'], 
-\   '.tsx': ['tslint'], 
-\   'javascript': ['prettier', 'tslint'],
+\   'typescript': ['eslint'], 
+\   'typescript.tsx': ['eslint'], 
+\   '.tsx': ['eslint'], 
+\   'javascript': ['prettier', 'eslint'],
 \   'javascript.jsx': ['prettier', 'eslint'],
 \   '.js': ['prettier', 'eslint'],
 \   '.jsx': ['prettier', 'eslint'],

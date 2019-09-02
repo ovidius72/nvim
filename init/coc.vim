@@ -2,7 +2,7 @@
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=1000
+set updatetime=400
 
 " always show signcolumns
 set signcolumn=yes
@@ -43,9 +43,9 @@ vnoremap gy y']
 
 imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
 " Console log from visual mode on next line, puts visual selection inside parentheses
-vmap <c-l><c-l> yogll<Esc>p
+vmap <c-c><c-l> yogll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap <c-l><c-l> yiwogll<Esc>p 
+nmap <c-c><c-l> yiwogll<Esc>p 
 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -57,6 +57,14 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Multiple cursors.
+"
+" hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
+" nmap <silent> <C-y> <Plug>(coc-cursors-position)
+" nmap <silent> <C-t> <Plug>(coc-cursors-word)
+" xmap <silent> <C-t> <Plug>(coc-cursors-range)
+" nmap <Leader>x  <Plug>(coc-cursors-operator)
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -87,13 +95,14 @@ augroup mygroup
  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-
-
-
-
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 vmap <leader>as  <Plug>(coc-codeaction-selected)
 nmap <leader>as  <Plug>(coc-codeaction-selected)
+
+" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -101,12 +110,13 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Use `:Format` for format current buffer
-command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=0 FM :call CocActionAsync('format')
 
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 
-nmap <F8> :TagbarToggle<CR>
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 " let g:lightline = {

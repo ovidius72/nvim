@@ -6,8 +6,15 @@ hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
 let g:airline_theme = 'base16_spacemacs'
-let g:space_vim_dark_background = 235
+let g:space_vim_dark_background = 234
 color space-vim-dark
+
+" Challenge Deep
+" colorscheme challenger_deep
+" let g:airline_theme = 'challenger_deep'
+
+" Fault
+" colorscheme fault
 
 "PaperColor
 " colorscheme PaperColor
@@ -46,6 +53,17 @@ color space-vim-dark
 " set background=dark
 " set bg=dark
 " let g:airline_theme = 'gruvbox'
+
+" Iceberg
+" colorscheme iceberg
+" let g:airline_theme = 'iceberg'
+
+"Oceanic-next
+" colorscheme OceanicNext
+" let g:airline_theme = 'oceanicnext'
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+
 "
 " colorscheme night-owl
 " set background=dark
@@ -73,6 +91,7 @@ color space-vim-dark
 " set background=dark
 " colorscheme cosmic_latte
 " let g:airline_theme = 'cosmic_latte_dark'
+
 
 " let &t_SI = "\<Esc>[6 q"
 " let &t_SR = "\<Esc>[4 q"

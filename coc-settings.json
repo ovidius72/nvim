@@ -2,10 +2,8 @@
   "tsserver.formatOnType": true,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
-  "tsserver.orgnizeImportOnSave": true,
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
-  "diagnostic.messageTarget": "float",
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -25,8 +23,8 @@
       "filetypes": ["php"]
     },
     "reason": {
-      "command": "/Users/antonio/reason-language-server/reason-language-server.exe",
-      "filetypes": ["reason"]
+      "command": "/Users/antonio/reason-language-server/reason-language-server",
+      "filetypes": ["reason", "re"]
     },
     "ocaml": {
       "command": "ocaml-language-server",

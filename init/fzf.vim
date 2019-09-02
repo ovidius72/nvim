@@ -72,11 +72,10 @@ nmap <Leader>o :Files<CR>
 nmap <Leader>l :BLines<CR>
 
 nmap <Leader>aa :Ag<CR>
-nmap <Leader>bb :Buffers<CR>
+nmap <Leader>bh :Buffers<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
 
-nmap <Leader>;; :b#<CR>
 
 " nmap <Leader>bd :bd<CR>
 nmap <Leader>bd :bp<CR>:bd#<CR>
