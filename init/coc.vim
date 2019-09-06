@@ -27,6 +27,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+"coc-yank
+nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 inoremap <c-w>p cj coc#util#float_jump() 
 nnoremap <c-w>p cj coc#util#float_jump() 
 " save all in various modes
