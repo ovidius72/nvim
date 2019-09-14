@@ -1,4 +1,3 @@
-"****************** COC *******************"
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
@@ -7,6 +6,8 @@ set updatetime=400
 " always show signcolumns
 set signcolumn=yes
 
+let g:coc_status_error_sign = '•'
+let g:coc_status_warning_sign = '•'
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -22,6 +23,24 @@ endfunction
 
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" coc-expolorer
+nmap ge :CocCommand explorer
+      \ --toggle
+      \ --source=buffer+,file+
+      \ --file-columns=icon,git,selection,clip,indent,readonly,filename,size .<CR>
+
+nmap gt :CocCommand explorer 
+      \ --reveal
+      \ --source=buffer+,file+
+      \ --file-columns=git,selection,icon,clip,indent,filename,size .<CR>
+
+"coc-bookmark
+nmap <Leader>bl :CocList bookmark<CR>
+nmap <Leader>bj <Plug>(coc-bookmark-next)
+nmap <Leader>bk <Plug>(coc-bookmark-prev)
+nmap <Leader>bt <Plug>(coc-bookmark-toggle)
+nmap <Leader>ba <Plug>(coc-bookmark-annotate)
 
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -120,18 +139,6 @@ command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add diagnostic info for https://github.com/itchyny/lightline.vim
-" let g:lightline = {
-"       \ 'colorscheme': 'space-vim-dark',
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'cocstatus': 'coc#status'
-"       \ },
-"       \ }
-
 
 " Using CocList
 " Show all diagnostics
@@ -150,7 +157,3 @@ nnoremap <silent> <space>cj  :<C-u>CocNext<CR>
 nnoremap <silent> <space>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>cp  :<C-u>CocListResume<CR>
-
-"****************** <<< COC *******************"
-
-
