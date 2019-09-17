@@ -5,6 +5,7 @@ endif
 call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
+Plug 'atelierbram/Base2Tone-vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'swalladge/paper.vim'
@@ -14,6 +15,8 @@ Plug 'swalladge/paper.vim'
 " Plug 'flrnprz/plastic.vim'
 " Plug 'dunstontc/vim-vscode-theme'
 Plug 'shapeoflambda/dark-purple.vim'
+Plug 'gerardbm/vim-atomic'
+Plug 'AlessandroYorba/Alduin'
 Plug 'nightsense/snow'
 
 " Plug 'yous/vim-open-color'

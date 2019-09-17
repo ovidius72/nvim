@@ -29,14 +29,15 @@
 "       \}
 "     \}
 " " let g:airline_theme = 'one'
-" colorscheme PaperColor
+colorscheme PaperColor
 " " set t_Co=256
-" set background=light
-" " let g:airline_theme = 'papercolor'
-" let g:indentLine_color_gui = '#DFE0DF'
-" let g:lightline.colorscheme = 'PaperColor_light'
+set background=light
+" let g:airline_theme = 'papercolor'
+let g:indentLine_color_gui = '#DFE0DF'
+let g:lightline.colorscheme = 'PaperColor_light'
 
-
+nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>
+vnoremap <S-F9> :<C-u>call CycleModes()<CR>:colorscheme atomic<CR>gv
 
 " Paper
 " set background=light
@@ -88,11 +89,11 @@
 
 "
 " Gruvbox
-set background=light
-let g:lightline.colorscheme = "hypsteria_alter"
+" set background=light
+" let g:lightline.colorscheme = "hypsteria_alter"
 " let g:gruvbox_italic=1
 " let g:gruvbox_contrast_ligth = "soft"
-colorscheme gruvbox8_soft
+" colorscheme gruvbox8_soft
 " set bg=dark
 " let g:airline_theme = 'gruvbox'
 
