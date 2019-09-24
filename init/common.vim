@@ -80,7 +80,7 @@ nnoremap <silent> <leader>- :tabclose<cr>
 
 
 " put right side of the cursor to new line
-nnoremap <Leader>j i<cr><Esc>
+" nnoremap <Leader>j i<cr><Esc>
 
 " inoremap zm <c-w>_\|<c-w>\|
 " voremap zm <c-w>_\|<c-w>\|
@@ -167,7 +167,7 @@ let g:jsx_ext_required = 0
 " let g:indentLine_color_gui = '#DFE0DF'
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 1
-" let g:indentLine_char = '┆'
+let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 let g:neoterm_size = 9
 let g:neoterm_autoinsert = 0

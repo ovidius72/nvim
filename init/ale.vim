@@ -16,8 +16,11 @@ let g:ale_sign_style_warning = ''
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
+nmap <silent> <Leader><Leader>p <Plug>(ale_previous_wrap)
+nmap <silent> <Leader><Leader>n <Plug>(ale_next_wrap)
+
 let g:ale_linters = {
-\ 'typescript': ['tslint', 'tssserver', 'typecheck'],
+\ 'typescript': ['eslint', 'tslint', 'tssserver', 'typecheck'],
 \ 'javascript': ['eslint'],
 \ 'typescript.tsx': ['tslint', 'tssserver', 'typecheck'],
 \ 'typescriptreact': ['tslint', 'tssserver', 'typecheck'],
@@ -30,7 +33,7 @@ let g:ale_linters = {
 " let g:ale_typescript_tslint_executable = 'tslint'
 " let g:ale_typescript_tslint_use_global = 1
 " let g:ale_typescript_tslint_config_path = ''
-let g:ale_list_window_size = 1
+let g:ale_list_window_size = 2
 
 let g:ale_fixers = {
 \   'typescript': ['eslint'], 

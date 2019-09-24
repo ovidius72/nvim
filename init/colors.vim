@@ -29,15 +29,15 @@
 "       \}
 "     \}
 " " let g:airline_theme = 'one'
-colorscheme PaperColor
+" colorscheme PaperColor
 " " set t_Co=256
-set background=light
+" set background=light
 " let g:airline_theme = 'papercolor'
-let g:indentLine_color_gui = '#DFE0DF'
-let g:lightline.colorscheme = 'PaperColor_light'
+" let g:indentLine_color_gui = '#DFE0DF'
+" let g:lightline.colorscheme = 'PaperColor_light'
 
-nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>
-vnoremap <S-F9> :<C-u>call CycleModes()<CR>:colorscheme atomic<CR>gv
+" nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>
+" vnoremap <S-F9> :<C-u>call CycleModes()<CR>:colorscheme atomic<CR>gv
 
 " Paper
 " set background=light
@@ -75,12 +75,14 @@ vnoremap <S-F9> :<C-u>call CycleModes()<CR>:colorscheme atomic<CR>gv
 " set background=light
 " let g:lightline.colorscheme = 'solarized'
 " let g:indentLine_color_gui = '#DFE0DF'
-" let g:airline_theme = 'solarized'
+" " let g:airline_theme = 'solarized'
 
-" colorscheme space_vim_theme
-" set background=light
-" let g:lightline.colorscheme = 'space_vim_light'
+colorscheme space_vim_theme
+set background=light
+let g:lightline.colorscheme = 'space_vim_light'
 " let g:indentLine_color_gui = '#FDF7E7'
+let g:space_vim_italic = 1
+let g:space_vim_italicize_strings = 1
 
 " WWDC17
 " colorscheme wwdc17

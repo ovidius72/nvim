@@ -4,6 +4,10 @@
   "typescript.suggest.enabled": true,
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
+  "diagnostic.enable": true,
+  "codeLens.enable": true,
+  "explorer.buffer.showHiddenBuffers": true,
+  "explorer.icon.enableNerdfont": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",

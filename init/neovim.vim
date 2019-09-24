@@ -9,6 +9,7 @@ Plug 'atelierbram/Base2Tone-vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'swalladge/paper.vim'
+Plug 'lifepillar/vim-colortemplate'
 " Plug 'flrnprz/candid.vim'
 " Plug 'tomasr/molokai'
 " Plug 'zxqfl/tabnine-vim'
@@ -53,7 +54,7 @@ Plug '3N4N/vim-fault'
 Plug 'cocopon/iceberg.vim'
 Plug 'ayu-theme/ayu-vim'
 " Plug 'ntk148v/vim-horizon'
-Plug 'liuchengxu/space-vim-dark'
+" Plug 'liuchengxu/space-vim-dark'
 Plug 'liuchengxu/space-vim-theme'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -97,12 +98,12 @@ Plug 'matze/vim-move'
 call plug#end()
 
 source ~/.config/nvim/init/common.vim
-source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/coc.vim
-source ~/.config/nvim/init/ale.vim
-" source ~/.config/nvim/init/airline.vim
-source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/init/vista.vim
+source ~/.config/nvim/init/ale.vim
+source ~/.config/nvim/init/fzf.vim
+source ~/.config/nvim/init/lightline.vim
+source ~/.config/nvim/init/colors.vim
+" source ~/.config/nvim/init/airline.vim
 " source ~/.config/nvim/init/spaceline.vim
 " source ~/.config/nvim/init/eleline.vim
-source ~/.config/nvim/init/colors.vim

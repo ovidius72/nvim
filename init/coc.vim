@@ -1,3 +1,27 @@
+let g:coc_global_extensions = [
+      " \ 'coc-bookmark',
+      \ 'coc-json',
+      \ 'coc-prettier',
+      \ 'coc-tslint',
+      \ 'coc-styled-components',
+      " \ 'coc-terminal',
+      " \ 'coc-tslint-plugin',
+      \ 'coc-yank',
+      \ 'coc-explorer',
+      \ 'coc-import-cost',
+      \ 'coc-highlight',
+      \ 'coc-eslint',
+      \ 'coc-emmet',
+      \ 'coc-marketplace',
+      \ 'coc-tsserver',
+      \ 'coc-css',
+      \ 'coc-lists',
+      \ 'coc-yaml',
+      \ 'coc-python',
+      \ 'coc-html',
+      \ 'coc-ccls',
+      \ ]
+
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
@@ -8,6 +32,15 @@ set signcolumn=yes
 
 let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
+
+autocmd ColorScheme *
+      \ hi CocErrorHighlight guibg=#d75f87
+      \ | hi CocWarningHighlight guibg=#dc752f
+      \ | hi CocInfoHighlight guibg=#92c797
+      \ | hi CocHintHighlight guibg=#b7b7ff
+
+au FocusGained,BufEnter,CursorHold * nested checktime %
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -25,15 +58,23 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc-expolorer
-nmap ge :CocCommand explorer
-      \ --toggle
-      \ --source=buffer+,file+
-      \ --file-columns=icon,git,selection,clip,indent,readonly,filename,size .<CR>
+" nmap ge :CocCommand explorer
+"       \ --toggle
+"       \ --source=buffer+,file+
+"       \ --buffers-columns=selection,name,buffname,modified,bufnr
+"       \ --file-columns=icon,git,selection,clip,diagnosticError,diagnosticWarning,created,modified,accessed,indent,readonly,filename,size .<CR>
 
-nmap gt :CocCommand explorer 
-      \ --reveal
-      \ --source=buffer+,file+
-      \ --file-columns=git,selection,icon,clip,indent,filename,size .<CR>
+" nmap gt :CocCommand explorer 
+"       \ --reveal
+"       \ --no-toggle
+"       \ --source=buffer+,file+
+"       \ --file-columns=git,selection,icon,clip,indent,filename,size<CR>
+
+" coc-explorer
+noremap <silent> <leader>x :execute 'CocCommand explorer' .
+      \ ' --toggle' .
+      \ ' --sources=buffer+,file+' .
+      \ ' --file-columns=git,selection,icon,clip,indent,filename,size --reveal ' . expand('%:p')<CR>
 
 "coc-bookmark
 nmap <Leader>bl :CocList bookmark<CR>
