@@ -1,11 +1,8 @@
 let g:coc_global_extensions = [
-      " \ 'coc-bookmark',
       \ 'coc-json',
       \ 'coc-prettier',
       \ 'coc-tslint',
       \ 'coc-styled-components',
-      " \ 'coc-terminal',
-      " \ 'coc-tslint-plugin',
       \ 'coc-yank',
       \ 'coc-explorer',
       \ 'coc-import-cost',

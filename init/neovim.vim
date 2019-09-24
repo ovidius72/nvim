@@ -5,11 +5,13 @@ endif
 call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
-Plug 'atelierbram/Base2Tone-vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'swalladge/paper.vim'
 Plug 'lifepillar/vim-colortemplate'
+Plug 'meain/vim-package-info', { 'do': 'npm install' }
+Plug 'Lenovsky/nuake'
+
 " Plug 'flrnprz/candid.vim'
 " Plug 'tomasr/molokai'
 " Plug 'zxqfl/tabnine-vim'
@@ -17,11 +19,10 @@ Plug 'lifepillar/vim-colortemplate'
 " Plug 'dunstontc/vim-vscode-theme'
 Plug 'shapeoflambda/dark-purple.vim'
 Plug 'gerardbm/vim-atomic'
-Plug 'AlessandroYorba/Alduin'
 Plug 'nightsense/snow'
 
 " Plug 'yous/vim-open-color'
-Plug 'lifepillar/vim-wwdc17-theme'
+" Plug 'lifepillar/vim-wwdc17-theme'
 " Plug 'lifepillar/vim-wwdc16-theme'
 
 
@@ -32,21 +33,21 @@ Plug 'liuchengxu/vista.vim'
 " Plug 'mhinz/vim-startify'
 Plug 'ton/vim-bufsurf'
 
-Plug 'dracula/vim'
-Plug 'haishanh/night-owl.vim'
+" Plug 'dracula/vim'
+" Plug 'haishanh/night-owl.vim'
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-Plug 'jacoborus/tender.vim'
+" Plug 'jacoborus/tender.vim'
 Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
-Plug 'severij/vadelma'
-Plug 'rakr/vim-two-firewatch'
+" Plug 'severij/vadelma'
+" Plug 'rakr/vim-two-firewatch'
 " Plug 'tjammer/blayu.vim'
 
 Plug 'lifepillar/vim-solarized8'
 " Plug 'jaredgorski/SpaceCamp'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'aonemd/kuroi.vim'
 Plug 'reedes/vim-colors-pencil'
 Plug '3N4N/vim-fault'

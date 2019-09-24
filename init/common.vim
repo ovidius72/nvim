@@ -24,6 +24,11 @@ augroup END
 
 runtime macros/match.vim
 
+" Nuake
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+
 " *********** vim-gitgutter
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_removed = ''
