@@ -36,9 +36,9 @@ let g:ale_linters = {
 let g:ale_list_window_size = 2
 
 let g:ale_fixers = {
-\   'typescript': ['eslint'], 
-\   'typescript.tsx': ['eslint'], 
-\   '.tsx': ['eslint'], 
+\   'typescript': ['eslint', 'tslint'], 
+\   'typescript.tsx': ['eslint', 'tslint'], 
+\   '.tsx': ['eslint', 'tslint'], 
 \   'javascript': ['prettier', 'eslint'],
 \   'javascript.jsx': ['prettier', 'eslint'],
 \   '.js': ['prettier', 'eslint'],

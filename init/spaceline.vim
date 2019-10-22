@@ -1,5 +1,5 @@
-let g:spaceline_colorscheme = 'solarized_dark'
-let g:spaceline_seperate_style= 'none'
+let g:spaceline_colorscheme = 'space'
+let g:spaceline_seperate_style= 'curve'
 let g:spaceline_line_symbol = 0
 let laststatus=2
 

@@ -10,6 +10,8 @@ set cmdheight=1
 set ignorecase
 set shortmess=aFc
 set termguicolors
+" set timeout
+setlocal cursorcolumn
 syntax on
 filetype plugin indent on
 set hidden
@@ -18,8 +20,10 @@ let mapleader=" "
 
 augroup FiletypeGroup
     autocmd!
+    au BufNewFile,BufRead *.js set filetype=javascript
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
     au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    " au BufNewFile,BufRead *.* setlocal cursorcolumn
 augroup END
 
 runtime macros/match.vim
@@ -28,6 +32,47 @@ runtime macros/match.vim
 nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
+
+" *********** vim-which-key
+" nnoremap <silent> <Leader> :<c-u>WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :WhichKey 'g'<CR>
+" set timeoutlen=300
+
+" let g:which_key_map['w'] = {
+"     \ 'name' : '+windows' ,
+"     \ 'w' : ['<C-W>w'     , 'other-window']          ,
+"     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
+"     \ '-' : ['<C-W>s'     , 'split-window-below']    ,
+"     \ '|' : ['<C-W>v'     , 'split-window-right']    ,
+"     \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
+"     \ 'h' : ['<C-W>h'     , 'window-left']           ,
+"     \ 'j' : ['<C-W>j'     , 'window-below']          ,
+"     \ 'l' : ['<C-W>l'     , 'window-right']          ,
+"     \ 'k' : ['<C-W>k'     , 'window-up']             ,
+"     \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
+"     \ 'J' : ['resize +5'  , 'expand-window-below']   ,
+"     \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
+"     \ 'K' : ['resize -5'  , 'expand-window-up']      ,
+"     \ '=' : ['<C-W>='     , 'balance-window']        ,
+"     \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+"     \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+"     \ '?' : ['Windows'    , 'fzf-window']            ,
+"     \ }
+
+" *********** vim-clap
+nmap <Leader><Leader>c :Clap<CR>
+nmap <Leader>kb :Clap buffers<CR>
+nmap <Leader>kc :Clap colors<CR>
+nmap <Leader>kl :Clap blines<CR>
+nmap <Leader>kf :Clap gfiles<CR>
+nmap <Leader>kg :Clap grep<CR>
+nmap <Leader>kh :Clap hist:<CR>
+nmap <Leader>kw :Clap windows<CR>
+nmap <Leader>kj :Clap jumps<CR>
+nmap <Leader>km :Clap marks<CR>
+nmap <Leader>kr :Clap registers<CR>
+nmap <Leader>kt :Clap tags<CR>
+
 
 " *********** vim-gitgutter
 let g:gitgutter_sign_added = ''
@@ -69,6 +114,25 @@ augroup vimrc-incsearch-highlight
  autocmd CmdlineEnter /,\? :set hlsearch
  autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
+
+" incserach-easymotion
+map z/ <Plug>(incsearch-easymotion-/)
+map z? <Plug>(incsearch-easymotion-?)
+map zg/ <Plug>(incsearch-easymotion-stay)
+
+" " incsearch.vim x fuzzy x vim-easymotion
+" function! s:config_easyfuzzymotion(...) abort
+"   return extend(copy({
+"   \   'converters': [incsearch#config#fuzzy#converter()],
+"   \   'modules': [incsearch#config#easymotion#module()],
+"   \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+"   \   'is_expr': 0,
+"   \   'is_stay': 1
+"   \ }), get(a:, 1, {}))
+" endfunction
+
+" noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
 
 noremap <leader>fh :set hlsearch<CR>
 " Tab navigation
@@ -170,12 +234,12 @@ let g:jsx_ext_required = 0
 " Indentline
 " let g:indentLine_color_gui = '#333333'
 " let g:indentLine_color_gui = '#DFE0DF'
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 1
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
-let g:neoterm_size = 9
-let g:neoterm_autoinsert = 0
-let g:neoterm_autoscroll = 1
+let g:indentLine_enabled = 0
+" let g:indentLine_concealcursor = 1
+" let g:indentLine_char = '┆'
+" let g:indentLine_faster = 1
+" let g:neoterm_size = 9
+" let g:neoterm_autoinsert = 0
+" let g:neoterm_autoscroll = 1
 "endif
 

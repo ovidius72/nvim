@@ -5,21 +5,32 @@ endif
 call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
-Plug 'dhruvasagar/vim-zoom'
+" Plug 'dhruvasagar/vim-zoom'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'swalladge/paper.vim'
-Plug 'lifepillar/vim-colortemplate'
-Plug 'meain/vim-package-info', { 'do': 'npm install' }
+" Plug 'lifepillar/vim-colortemplate'
+" Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'Lenovsky/nuake'
+Plug 'junegunn/seoul256.vim'
+" Plug 'JarrodCTaylor/spartan'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'liuchengxu/vim-clap'
+" Plug 'liuchengxu/vim-which-key'
+" Plug 'hecal3/vim-leader-guide'
+" Plug 'aserebryakov/vim-todo-lists'
 
 " Plug 'flrnprz/candid.vim'
 " Plug 'tomasr/molokai'
 " Plug 'zxqfl/tabnine-vim'
 " Plug 'flrnprz/plastic.vim'
 " Plug 'dunstontc/vim-vscode-theme'
-Plug 'shapeoflambda/dark-purple.vim'
-Plug 'gerardbm/vim-atomic'
-Plug 'nightsense/snow'
+" Plug 'w0ng/vim-hybrid'
+" Plug 'shapeoflambda/dark-purple.vim'
+Plug 'tomasiser/vim-code-dark'
+" Plug 'gerardbm/vim-atomic'
+" Plug 'yasukotelin/shirotelin'
+" " Plug 'xero/sourcerer.vim'
+Plug 'AlessandroYorba/Alduin'
 
 " Plug 'yous/vim-open-color'
 " Plug 'lifepillar/vim-wwdc17-theme'
@@ -27,34 +38,34 @@ Plug 'nightsense/snow'
 
 
 Plug 'nightsense/cosmic_latte'
-" Plug 'ajmwagar/vim-deus'
+Plug 'ajmwagar/vim-deus'
 Plug 'liuchengxu/vista.vim'
 " Plug 'jlanzarotta/bufexplorer'
 " Plug 'mhinz/vim-startify'
 Plug 'ton/vim-bufsurf'
 
 " Plug 'dracula/vim'
-" Plug 'haishanh/night-owl.vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'lifepillar/vim-gruvbox8'
-" Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-" Plug 'jacoborus/tender.vim'
+Plug 'jacoborus/tender.vim'
 Plug 'rakr/vim-one'
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
 " Plug 'severij/vadelma'
 " Plug 'rakr/vim-two-firewatch'
 " Plug 'tjammer/blayu.vim'
 
 Plug 'lifepillar/vim-solarized8'
 " Plug 'jaredgorski/SpaceCamp'
-" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'aonemd/kuroi.vim'
-Plug 'reedes/vim-colors-pencil'
-Plug '3N4N/vim-fault'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'aonemd/kuroi.vim'
+" Plug 'reedes/vim-colors-pencil'
+" Plug '3N4N/vim-fault'
 
-Plug 'cocopon/iceberg.vim'
+" Plug 'cocopon/iceberg.vim'
 Plug 'ayu-theme/ayu-vim'
-" Plug 'ntk148v/vim-horizon'
+Plug 'ntk148v/vim-horizon'
 " Plug 'liuchengxu/space-vim-dark'
 Plug 'liuchengxu/space-vim-theme'
 " Plug 'vim-airline/vim-airline'
@@ -72,13 +83,14 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'reasonml-editor/vim-reason-plus'
 " Plug 'jez/vim-better-sml'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'airblade/vim-gitgutter'
 " Plug 'mattn/emmet-vim'
@@ -87,11 +99,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'terryma/vim-expand-region'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 " Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
@@ -103,8 +116,8 @@ source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/ale.vim
 source ~/.config/nvim/init/fzf.vim
+" source ~/.config/nvim/init/spaceline.vim
 source ~/.config/nvim/init/lightline.vim
+" source ~/.config/nvim/init/eleline.vim
 source ~/.config/nvim/init/colors.vim
 " source ~/.config/nvim/init/airline.vim
-" source ~/.config/nvim/init/spaceline.vim
-" source ~/.config/nvim/init/eleline.vim

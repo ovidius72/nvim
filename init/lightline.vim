@@ -43,12 +43,12 @@ let g:lightline = {
     \ }
   \ }
 
-let g:lightline.separator = {
-	\   'left': '', 'right': ''
-  \}
-let g:lightline.subseparator = {
-	\   'left': '', 'right': '' 
-  \}
+" let g:lightline.separator = {
+" 	\   'left': '', 'right': ''
+"   \}
+" let g:lightline.subseparator = {
+" 	\   'left': '', 'right': '' 
+"   \}
 
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#enable_devicons = 1

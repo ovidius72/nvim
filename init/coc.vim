@@ -30,13 +30,33 @@ set signcolumn=yes
 let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 
+" // Dark ColorScheme
 autocmd ColorScheme *
-      \ hi CocErrorHighlight guibg=#d75f87
-      \ | hi CocWarningHighlight guibg=#dc752f
-      \ | hi CocInfoHighlight guibg=#92c797
-      \ | hi CocHintHighlight guibg=#b7b7ff
-
+      \ hi CocUnderline gui=underline term=underline
+      " \ | hi CocErrorHighlight guifg=#d75f87
+      " \ | hi CocWarningHighlight guibg=#dc752f
+      " \ | hi CocInfoHighlight guibg=#92c797
 au FocusGained,BufEnter,CursorHold * nested checktime %
+
+" // Light ColorScheme
+" autocmd ColorScheme *
+"       \ hi CocErrorHighlight guibg=#d75f87
+"       \ | hi CocWarningHighlight guibg=#dc752f
+"       \ | hi CocInfoHighlight guibg=#92c797
+" au FocusGained,BufEnter,CursorHold * nested checktime %
+
+" coc-smartf
+" press <esc> to cancel.
+" nmap f <Plug>(coc-smartf-forward)
+" nmap F <Plug>(coc-smartf-backward)
+" nmap ; <Plug>(coc-smartf-repeat)
+" nmap , <Plug>(coc-smartf-repeat-opposite)
+
+" augroup Smartf
+"   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
+"   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
+" augroup end
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.

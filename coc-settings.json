@@ -1,5 +1,5 @@
 {
-  "tsserver.formatOnType": true,
+  "tsserver.formatOnType": false,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
   "javascript.suggest.autoImports": true,
