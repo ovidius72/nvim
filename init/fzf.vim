@@ -7,7 +7,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_layout = { 'down': '~40%' }
 
 " In Neovim, you can set up fzf window using a Vim command
 let g:fzf_layout = { 'window': 'enew' }
@@ -79,3 +79,33 @@ nmap <Leader>bp :bp<CR>
 
 " nmap <Leader>bd :bd<CR>
 nmap <Leader>bd :bp<CR>:bd#<CR>
+
+autocmd! FileType fzf
+autocmd  FileType fzf set noshowmode noruler nonu
+
+if has('nvim') && exists('&winblend') && &termguicolors
+  set winblend=10
+
+  hi NormalFloat guibg=None
+  if exists('g:fzf_colors.bg')
+    call remove(g:fzf_colors, 'bg')
+  endif
+
+  if stridx($FZF_DEFAULT_OPTS, '--border') == -1
+    let $FZF_DEFAULT_OPTS .= ' --border'
+  endif
+
+  function! FloatingFZF()
+    let width = float2nr(&columns * 0.8)
+    let height = float2nr(&lines * 0.6)
+    let opts = { 'relative': 'editor',
+               \ 'row': (&lines - height) / 2,
+               \ 'col': (&columns - width) / 2,
+               \ 'width': width,
+               \ 'height': height }
+
+    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+  endfunction
+
+  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+endif

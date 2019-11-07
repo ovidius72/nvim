@@ -1,5 +1,5 @@
 set nocompatible
-set encoding=utf-8
+set encoding=UTF-8
 set relativenumber
 set number
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
@@ -10,13 +10,23 @@ set cmdheight=1
 set ignorecase
 set shortmess=aFc
 set termguicolors
-" set timeout
-setlocal cursorcolumn
+set timeout
+" setlocal cursorcolumn
 syntax on
 filetype plugin indent on
 set hidden
 imap jj <Esc>
 let mapleader=" "
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+" highlight jsxAttrib cterm=italic
+" highlight jsxTag cterm=italic
+" highlight tsxTag cterm=italic
+" highlight jsxElement cterm=italic
+" highlight tsxElement cterm=italic
+" highlight typescriptBlock cterm=italic
+" highlight typescriptParenExp cterm=italic
+
 
 augroup FiletypeGroup
     autocmd!
@@ -28,6 +38,14 @@ augroup END
 
 runtime macros/match.vim
 
+" Highlight words that match the one under the cursor.
+nnoremap <F2> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
+
+" Replace word under the cursor.
+nnoremap <Leader><Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+
+
 " Nuake
 nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
@@ -38,7 +56,8 @@ tnoremap <F4> <C-\><C-n>:Nuake<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
 " set timeoutlen=300
 
-" let g:which_key_map['w'] = {
+" let g:which_key_map = {}
+" let g:which_key_map['v'] = {
 "     \ 'name' : '+windows' ,
 "     \ 'w' : ['<C-W>w'     , 'other-window']          ,
 "     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
@@ -72,6 +91,7 @@ nmap <Leader>kj :Clap jumps<CR>
 nmap <Leader>km :Clap marks<CR>
 nmap <Leader>kr :Clap registers<CR>
 nmap <Leader>kt :Clap tags<CR>
+nmap <Leader>ky :Clap yanks<CR>
 
 
 " *********** vim-gitgutter
@@ -134,7 +154,7 @@ map zg/ <Plug>(incsearch-easymotion-stay)
 " noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 
-noremap <leader>fh :set hlsearch<CR>
+noremap <leader>fh :set hlsearch!<CR>
 " Tab navigation
 nnoremap <silent> <leader>[ :tabprevious<cr>
 nnoremap <silent> <leader>] :tabnext<cr>
@@ -143,9 +163,9 @@ nnoremap <silent> <leader>- :tabclose<cr>
 " nnoremap <silent> <leader><bs> :exec 'set showtabline='.string(!&showtabline)<cr>
 
 " zoom
-" noremap zm <c-w>_<c-w>\|
-" noremap zi <c-w>_ \| <c-w>\|
-" noremap zo <c-w>=
+noremap zm <c-w>_<c-w>\|
+noremap zi <c-w>_ \| <c-w>\|
+noremap zo <c-w>=
 
 
 " put right side of the cursor to new line
@@ -227,7 +247,10 @@ let g:user_emmet_settings = {
 " autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Javascript
+" let g:polyglot_disabled = ['jsx', 'tsx']
 let g:vim_jsx_pretty_colorful_config = 1
+let g:vim_jsx_pretty_disable_tsx = 0
+let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
@@ -243,3 +266,83 @@ let g:indentLine_enabled = 0
 " let g:neoterm_autoscroll = 1
 "endif
 
+" Floating Term
+let s:float_term_border_win = 0
+let s:float_term_win = 0
+function! FloatTerm(...)
+  " Configuration
+  let height = float2nr((&lines - 2) * 0.6)
+  let row = float2nr((&lines - height) / 2)
+  let width = float2nr(&columns * 0.6)
+  let col = float2nr((&columns - width) / 2)
+  " Border Window
+  let border_opts = {
+        \ 'relative': 'editor',
+        \ 'row': row - 1,
+        \ 'col': col - 2,
+        \ 'width': width + 4,
+        \ 'height': height + 2,
+        \ 'style': 'minimal'
+        \ }
+  " Terminal Window
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': row,
+        \ 'col': col,
+        \ 'width': width,
+        \ 'height': height,
+        \ 'style': 'minimal'
+        \ }
+  let top = "╭" . repeat("─", width + 2) . "╮"
+  let mid = "│" . repeat(" ", width + 2) . "│"
+  let bot = "╰" . repeat("─", width + 2) . "╯"
+  let lines = [top] + repeat([mid], height) + [bot]
+  let bbuf = nvim_create_buf(v:false, v:true)
+  call nvim_buf_set_lines(bbuf, 0, -1, v:true, lines)
+  let s:float_term_border_win = nvim_open_win(bbuf, v:true, border_opts)
+  let buf = nvim_create_buf(v:false, v:true)
+  let s:float_term_win = nvim_open_win(buf, v:true, opts)
+  " Styling
+  call setwinvar(s:float_term_border_win, '&winhl', 'Normal:Normal')
+  call setwinvar(s:float_term_win, '&winhl', 'Normal:Normal')
+  if a:0 == 0
+    terminal
+  else
+    call termopen(a:1)
+  endif
+  startinsert
+  " Close border window when terminal window close
+  autocmd TermClose * ++once :bd! | call nvim_win_close(s:float_term_border_win, v:true)
+endfunction
+
+" Open terminal
+nnoremap <Leader>at :call FloatTerm()<CR>
+" Open node REPL
+nnoremap <Leader>an :call FloatTerm('"node"')<CR>
+" Open tig, yes TIG, A FLOATING TIGGGG!!!!!!
+nnoremap <Leader>ag :call FloatTerm('"tig"')<CR>
+
+" Show the style name of thing under the cursor
+" Shamelessly taken from https://github.com/tpope/vim-scriptease
+function! FaceNames(...) abort
+  if a:0
+    let [line, col] = [a:1, a:2]
+  else
+    let [line, col] = [line('.'), col('.')]
+  endif
+  return reverse(map(synstack(line, col), 'synIDattr(v:val,"name")'))
+endfunction
+
+function! DescribeFace(count) abort
+  if a:count
+    let name = get(FaceNames(), a:count-1, '')
+    if name !=# ''
+      return 'syntax list '.name
+    endif
+  else
+    echo join(FaceNames(), ' ')
+  endif
+  return ''
+endfunction
+
+nnoremap zs :<C-U>exe DescribeFace(v:count)<CR>

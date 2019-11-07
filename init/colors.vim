@@ -9,9 +9,11 @@
 " let g:space_vim_dark_background = 234
 " color space-vim-dark
 
+
 " Challenge Deep
-" colorscheme challenger_deep
-" let g:airline_theme = 'challenger_deep'
+colorscheme challenger_deep
+let g:lightline.colorscheme = 'challenger_deep'
+let g:challenger_deep_terminal_italics = 1
 
 " Fault
 " colorscheme fault
@@ -48,11 +50,11 @@
 
 
  " One
-colorscheme base16-onedark
-set background=dark
-let g:lightline.colorscheme = 'one'
-let g:one_allow_italics = 1
-let g:airline_theme = 'one'
+" colorscheme base16-onedark
+" set background=dark
+" let g:lightline.colorscheme = 'one'
+" let g:one_allow_italics = 1
+" let g:airline_theme = 'one'
 
 " highlight Normal guibg=#21242a
 " highlight MatchParen guifg=#C678DD guibg=#504066
@@ -244,3 +246,8 @@ let g:airline_theme = 'one'
 " augroup END
 
 " setlocal cursorcolumn
+
+hi tsxAttrib guifg=#f8bd7f gui=italic cterm=italic
+hi typescriptVariableDeclaration guifg=#f8bd7f gui=italic cterm=italic
+hi typescriptMember guifg=#f8bd7f gui=italic cterm=italic
+highlight Comment cterm=italic

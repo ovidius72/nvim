@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
       \ 'coc-tslint',
       \ 'coc-styled-components',
       \ 'coc-yank',
+      \ 'coc-git',
       \ 'coc-explorer',
       \ 'coc-import-cost',
       \ 'coc-highlight',
@@ -22,7 +23,10 @@ let g:coc_global_extensions = [
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=400
+set updatetime=300
+set shortmess+=c
+set nowritebackup
+set nobackup
 
 " always show signcolumns
 set signcolumn=yes
@@ -36,7 +40,7 @@ autocmd ColorScheme *
       " \ | hi CocErrorHighlight guifg=#d75f87
       " \ | hi CocWarningHighlight guibg=#dc752f
       " \ | hi CocInfoHighlight guibg=#92c797
-au FocusGained,BufEnter,CursorHold * nested checktime %
+" au FocusGained,BufEnter,CursorHold * nested checktime %
 
 " // Light ColorScheme
 " autocmd ColorScheme *
@@ -45,6 +49,20 @@ au FocusGained,BufEnter,CursorHold * nested checktime %
 "       \ | hi CocInfoHighlight guibg=#92c797
 " au FocusGained,BufEnter,CursorHold * nested checktime %
 
+" coc-git
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+" show commit contains current position
+nmap gk <Plug>(coc-git-commit)
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+
 " coc-smartf
 " press <esc> to cancel.
 " nmap f <Plug>(coc-smartf-forward)
@@ -52,10 +70,10 @@ au FocusGained,BufEnter,CursorHold * nested checktime %
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
-" augroup Smartf
-"   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
-"   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
-" augroup end
+augroup Smartf
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
+augroup end
 
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -91,8 +109,10 @@ inoremap <silent><expr> <c-space> coc#refresh()
 noremap <silent> <leader>x :execute 'CocCommand explorer' .
       \ ' --toggle' .
       \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git,selection,icon,clip,indent,filename,size --reveal ' . expand('%:p')<CR>
+      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
 
+"coc-marks
+nmap <Leader><Leader>m :CocList marks<CR>
 "coc-bookmark
 nmap <Leader>bl :CocList bookmark<CR>
 nmap <Leader>bj <Plug>(coc-bookmark-next)
@@ -133,9 +153,21 @@ nmap <silent> [i <Plug>(coc-diagnostic-diagnosicInfo)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gsd :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+" nmap <silent> <C-d> <Plug>(coc-range-select)
+" xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Multiple cursors.
 "
@@ -199,6 +231,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 
 " Using CocList
+nnoremap <silent><space>cl :CocList<cr>
 " Show all diagnostics
 nnoremap <silent> <space>cd  :<C-u>CocList diagnostics<cr>
 " Manage extensions

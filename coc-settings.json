@@ -6,8 +6,23 @@
   "python.jediEnabled": false,
   "diagnostic.enable": true,
   "codeLens.enable": true,
-  "explorer.buffer.showHiddenBuffers": true,
+  "git.addedSign.hlGroup": "GitGutter",
+  "git.changedSign.hlGroup": "GitGutterChange",
+  "git.removedSign.hlGroup": "GitGutterDelete",
+  "git.topRemovedSign.hlGroup": "GitGutterDelete",
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+  "explorer.buffer.showHiddenBuffers": false,
   "explorer.icon.enableNerdfont": true,
+  "explorer.openAction.select.filterFloatWindows": false,
+  "smartf.timeout": 2200,
+  "explorer.file.column.git.icon.added": "✚",
+  "explorer.file.column.git.icon.untracked": "✭",
+  "explorer.file.column.git.icon.modified": "",
+  "explorer.file.column.git.icon.deleted": "✖",
+  "explorer.file.column.git.icon.mixed": "≈",
+  "explorer.file.column.git.icon.copied": "➜",
+  "explorer.file.column.git.icon.renamed": "➜",
+  "explorer.file.column.git.icon.unmerged": "═",
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -35,5 +50,6 @@
       "args": ["--stdio"],
       "filetypes": ["ocaml", "reason"]
     }
-  }
+  },
+  "git.enableGutters": true
 }

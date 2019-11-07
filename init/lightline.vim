@@ -10,12 +10,32 @@ function! LightLineCoc()
     return trim(coc#status())
 endfunction
 
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
+
+" let s:function_icon = s:font ? 'Ⓕ  ' : ''
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc 
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
 " \ 'colorscheme': 'solarized',
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'gitbranch', 'gitgutter', 'filename', 'modified', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ], ['cocstatus'] ],
-      \   'right': [ [ 'lineinfo' ], [ 'currentfunction' ], ['percent'], ['fileformat', 'fileencoding', 'filetype' ] ]
+      \   'right': [ [ 'lineinfo' ], [ 'currentfunction' ], ['percent'], ['method', 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_expand': {
       \  'buffers'          : 'lightline#bufferline#buffers',
@@ -26,12 +46,14 @@ let g:lightline = {
       \  'coc_fix'          : 'LightlineCocFixes'
       \ },
       \ 'component_function': {
+      \   'method': 'NearestMethodOrFunction',
       \   'cocstatus': 'LightLineCoc',
       \   'gitbranch': 'LightlineFugitive',
       \   'currentfunction': 'CocCurrentFunction',
       \   'filetype': 'MyFiletype',
       \   'gitgutter': 'LightLineGitGutter',
-      \   'fileformat': 'MyFileformat'
+      \   'fileformat': 'MyFileformat',
+      \   'blame': 'LightLineGitBlame'
       \ },
       \ 'component_type':  {
       \   'buffers': 'tabsel',
@@ -137,9 +159,9 @@ endfunction
 function! LightlineCocHints() abort
   return s:lightline_coc_diagnostic('hints', 'hint')
 endfunction
-\ }
+" \ }
 
-autocmd User CocDiagnosticChange call lightline#update()
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
