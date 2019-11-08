@@ -5,6 +5,8 @@
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
   "diagnostic.enable": true,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.displayByAle": false,
   "codeLens.enable": true,
   "git.addedSign.hlGroup": "GitGutter",
   "git.changedSign.hlGroup": "GitGutterChange",
