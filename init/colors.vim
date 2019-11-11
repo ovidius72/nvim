@@ -11,14 +11,14 @@
 
 
 " Challenge Deep
-colorscheme challenger_deep
-let g:lightline.colorscheme = 'challenger_deep'
-let g:challenger_deep_terminal_italics = 1
+" colorscheme challenger_deep
+" let g:lightline.colorscheme = 'challenger_deep'
+" let g:challenger_deep_terminal_italics = 1
 
 " Challenge Deep
-" colorscheme mychallenger_deep
-" let g:lightline.colorscheme = 'challenger_deep'
-" let g:mychallenger_deep_terminal_italics = 1
+colorscheme mychallenger_deep
+let g:lightline.colorscheme = 'challenger_deep'
+let g:mychallenger_deep_terminal_italics = 1
 
 " Fault
 " colorscheme fault
@@ -255,9 +255,13 @@ let g:challenger_deep_terminal_italics = 1
 " setlocal cursorcolumn
 
 hi tsxAttrib guifg=#f8bd7f gui=italic cterm=italic
+" highlight tsxAttrib gui=italic cterm=italic
 hi jsxAttrib guifg=#f8bd7f gui=italic cterm=italic
+" highlight jsxAttrib gui=italic cterm=italic
 hi typescriptVariableDeclaration guifg=#f8bd7f gui=italic cterm=italic
+" highlight typescriptVariableDeclaration gui=italic cterm=italic
 hi typescriptMember guifg=#f8bd7f gui=italic cterm=italic
+" highlight typescriptMember gui=italic cterm=italic
 " hi link typescriptIdentifierName TypescriptSpecial
 " hi link typescriptObjectLiteral TypescriptSpecial
 " hi link typescriptFuncCallArg TypescriptSpecial
