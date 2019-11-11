@@ -6,12 +6,17 @@ let g:ale_completion_enabled = 0
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
-let g:ale_open_list = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_info = ''
-let g:ale_sign_style_error = ''
-let g:ale_sign_style_warning = ''
+let g:ale_open_list = 2
+" let g:ale_sign_error = '✘'
+let g:ale_sign_error = '🐞'
+" let g:ale_sign_warning = '⚠'
+let g:ale_sign_warning = '⚡'
+" let g:ale_sign_info = ''
+let g:ale_sign_info = 'ℹ️'
+" let g:ale_sign_style_error = ''
+" let g:ale_sign_style_error = '🐞'
+" let g:ale_sign_style_warning = ''
+" let g:ale_sign_style_warning = '⚡'
 
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
