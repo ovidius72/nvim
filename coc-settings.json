@@ -13,14 +13,12 @@
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
   "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-  "explorer.buffer.showHiddenBuffers": false,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.openAction.select.filterFloatWindows": false,
   "diagnostic.level": "hint",
   "diagnostic.hintSign": "🚀",
-  "diagnostic.infoSign": " ℹ️",
+  "diagnostic.infoSign": "ℹ️",
   "diagnostic.errorSign":"🐞",
   "diagnostic.warningSign": "️️⚡",
+  "git.enableGlobalStatus": false,
   "explorer.file.column.git.icon.added": "✚",
   "explorer.file.column.git.icon.untracked": "✭",
   "explorer.file.column.git.icon.modified": "",
@@ -29,6 +27,15 @@
   "explorer.file.column.git.icon.copied": "➜",
   "explorer.file.column.git.icon.renamed": "➜",
   "explorer.file.column.git.icon.unmerged": "═",
+  "explorer.openAction.select.filterFloatWindows": false,
+  "explorer.buffer.showHiddenBuffers": false,
+  "explorer.icon.enableNerdfont": true,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -43,18 +50,9 @@
     "phplang": {
       "command": "php",
       "args": [
-        "/Users/antonio/php-language-server/vendor/felixfbecker/language-server/bin/php-language-server.php"
+        "/usr/bin/php-language-server"
       ],
       "filetypes": ["php"]
-    },
-    "reason": {
-      "command": "/Users/antonio/reason-language-server/reason-language-server",
-      "filetypes": ["reason", "re"]
-    },
-    "ocaml": {
-      "command": "ocaml-language-server",
-      "args": ["--stdio"],
-      "filetypes": ["ocaml", "reason"]
     }
   },
   "git.enableGutters": true

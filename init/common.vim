@@ -33,7 +33,7 @@ augroup FiletypeGroup
     au BufNewFile,BufRead *.js set filetype=javascript
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
     au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-    au BufNewFile,BufRead *.ts set filetype=typescript.ts
+    " au BufNewFile,BufRead *.ts set filetype=typescript.ts
     " au BufNewFile,BufRead *.* setlocal cursorcolumn
 augroup END
 
@@ -182,6 +182,8 @@ map <leader>nt :NERDTreeToggle<CR>
 map <leader>no :NERDTreeFocus<CR>
 map <leader>nf :NERDTreeFind<CR>
 
+let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -193,6 +195,22 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
+    \ }
+
+" let g:NERDTreeColorMapCustom = {
+"     \ "Modified"  : "#528AB3",  
+"     \ "Staged"    : "#538B54",  
+"     \ "Untracked" : "#BE5849",  
+"     \ "Dirty"     : "#299999",  
+"     \ "Clean"     : "#87939A"   
+"     \ }
+
+let g:NERDTreeColorMapCustom = {
+    \ "Modified"  : ["#528AB3", "NONE", "NONE", "NONE"],  
+    \ "Staged"    : ["#538B54", "NONE", "NONE", "NONE"],  
+    \ "Untracked" : ["#BE5849", "NONE", "NONE", "NONE"],  
+    \ "Dirty"     : ["#299999", "NONE", "NONE", "NONE"],  
+    \ "Clean"     : ["#87939A", "NONE", "NONE", "NONE"]   
     \ }
 
 " INCSEARCH

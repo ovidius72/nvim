@@ -260,11 +260,11 @@ hi jsxAttrib guifg=#f8bd7f gui=italic cterm=italic
 " highlight jsxAttrib gui=italic cterm=italic
 hi typescriptVariableDeclaration guifg=#f8bd7f gui=italic cterm=italic
 " highlight typescriptVariableDeclaration gui=italic cterm=italic
-hi typescriptMember guifg=#f8bd7f gui=italic cterm=italic
+hi link typescriptMember Label
 " highlight typescriptMember gui=italic cterm=italic
-" hi link typescriptIdentifierName TypescriptSpecial
-" hi link typescriptObjectLiteral TypescriptSpecial
-" hi link typescriptFuncCallArg TypescriptSpecial
+hi link typescriptIdentifierName TypescriptSpecial
+hi link typescriptObjectLiteral TypescriptSpecial
+hi link typescriptFuncCallArg TypescriptSpecial
 highlight Comment cterm=italic
 " hi link jsxCloseString Label
 " hi link jsxOpenPunct jsxPunct
