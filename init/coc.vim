@@ -172,8 +172,8 @@ nmap <silent> [i <Plug>(coc-diagnostic-diagnosicInfo)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gsd :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<cr>
+nmap <silent> gsh :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent> gsv :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
