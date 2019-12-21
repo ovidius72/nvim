@@ -3,6 +3,8 @@ let g:coc_global_extensions = [
       \ 'coc-prettier',
       \ 'coc-tslint',
       \ 'coc-styled-components',
+      \ 'coc-diagnostic',
+      \ 'coc-snippets',
       \ 'coc-yank',
       \ 'coc-git',
       \ 'coc-explorer',
