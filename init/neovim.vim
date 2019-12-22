@@ -14,6 +14,9 @@ Plug 'Lenovsky/nuake'
 " Plug 'JarrodCTaylor/spartan'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'liuchengxu/vim-clap'
+" Plug 'wellle/targets.vim'
+" Plug 'wellle/context.vim'
+
 " Plug 'liuchengxu/vim-which-key'
 " Plug 'hecal3/vim-leader-guide'
 " Plug 'aserebryakov/vim-todo-lists'
@@ -46,16 +49,16 @@ Plug 'ton/vim-bufsurf'
 " Plug 'dracula/vim'
 " Plug 'haishanh/night-owl.vim'
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'joshdick/onedark.vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-Plug 'jacoborus/tender.vim'
-Plug 'rakr/vim-one'
+" Plug 'joshdick/onedark.vim'
+" Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+" Plug 'jacoborus/tender.vim'
+" Plug 'rakr/vim-one'
 " Plug 'mhartington/oceanic-next'
 " Plug 'severij/vadelma'
 " Plug 'rakr/vim-two-firewatch'
 " Plug 'tjammer/blayu.vim'
 
-Plug 'lifepillar/vim-solarized8'
+" Plug 'lifepillar/vim-solarized8'
 " Plug 'jaredgorski/SpaceCamp'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'aonemd/kuroi.vim'
@@ -64,7 +67,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 " Plug 'cocopon/iceberg.vim'
 " Plug 'ayu-theme/ayu-vim'
-Plug 'ntk148v/vim-horizon'
+" Plug 'ntk148v/vim-horizon'
 " Plug 'liuchengxu/space-vim-dark'
 Plug 'liuchengxu/space-vim-theme'
 " Plug 'vim-airline/vim-airline'
@@ -97,10 +100,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'sheerun/vim-polyglot'
-Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'peitalin/vim-jsx-typescript'
-" Plug 'justinmk/vim-syntax-extra'
+Plug 'justinmk/vim-syntax-extra'
 " Plug 'terryma/vim-expand-region'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'mxw/vim-jsx'
@@ -108,6 +111,8 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
+" Plug 'wsdjeg/FlyGrep.vim'
+" Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 source ~/.config/nvim/init/common.vim

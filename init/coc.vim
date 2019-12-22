@@ -6,7 +6,6 @@ let g:coc_global_extensions = [
       \ 'coc-yank',
       \ 'coc-git',
       \ 'coc-explorer',
-      \ 'coc-import-cost',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-emmet',
@@ -18,6 +17,7 @@ let g:coc_global_extensions = [
       \ 'coc-python',
       \ 'coc-html',
       \ 'coc-ccls',
+      \ 'coc-snippets',
       \ ]
 
 set cmdheight=2
@@ -54,14 +54,15 @@ autocmd ColorScheme *
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
-nmap gs <Plug>(coc-git-chunkinfo)
+nmap gsi <Plug>(coc-git-chunkinfo)
 " show commit contains current position
-nmap gk <Plug>(coc-git-commit)
+" nmap gk <Plug>(coc-git-commit)
 " create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
+
 
 " coc-smartf
 " press <esc> to cancel.
@@ -70,10 +71,61 @@ xmap ag <Plug>(coc-git-chunk-outer)
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
-augroup Smartf
-  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
-  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
-augroup end
+" augroup Smartf
+"   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
+"   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
+" augroup end
+
+" autocmd User CocDiagnosticChange
+" \ call CocActionAsync('quickfixes', function('CocUpdateQuickFixes'))
+
+" function! CocUpdateQuickFixes(error, actions) abort
+"   let coc_quickfixes = {}
+"   try
+"     for action in a:actions
+"       if action.kind == 'quickfix'
+"         for change in action.edit.documentChanges
+"           for edit in change.edits
+"             let start_line = edit.range.start.line + 1
+"             let end_line = edit.range.end.line + 1
+"             let coc_quickfixes[start_line] = get(coc_quickfixes, start_line, 0) + 1
+"             if start_line != end_line
+"               let coc_quickfixes[end_line] = get(coc_quickfixes, end_line, 0) + 1
+"             endif
+"           endfor
+"         endfor
+"       endif
+"     endfor
+"   catch
+"   endtry
+"   if coc_quickfixes != get(b:, 'coc_quickfixes', {})
+"     let b:coc_quickfixes = coc_quickfixes
+"     call lightline#update()
+"   endif
+" endfunction
+
+" autocmd! User CocDiagnosticChange
+" autocmd  User CocDiagnosticChange
+  " \  call CocActionAsync('quickfixes', function('CocUpdateQuickFixes'))
+
+" {{ coc snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" }} coc-snippets
+
 
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -92,22 +144,14 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" coc-expolorer
-" nmap ge :CocCommand explorer
-"       \ --toggle
-"       \ --source=buffer+,file+
-"       \ --buffers-columns=selection,name,buffname,modified,bufnr
-"       \ --file-columns=icon,git,selection,clip,diagnosticError,diagnosticWarning,created,modified,accessed,indent,readonly,filename,size .<CR>
-
-" nmap gt :CocCommand explorer 
-"       \ --reveal
-"       \ --no-toggle
-"       \ --source=buffer+,file+
-"       \ --file-columns=git,selection,icon,clip,indent,filename,size<CR>
-
 " coc-explorer
+noremap <silent> <leader><leader>x :execute 'CocCommand explorer' .
+      \ ' --no-toggle' .
+      \ ' --sources=buffer+,file+' .
+      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
+
 noremap <silent> <leader>x :execute 'CocCommand explorer' .
-      \ ' --toggle' .
+      \ ' --toggle' 
       \ ' --sources=buffer+,file+' .
       \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
 
@@ -125,21 +169,37 @@ nmap <Leader>ba <Plug>(coc-bookmark-annotate)
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "coc-yank
-nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent> <space>y :<C-u>CocList -A yank<cr>
+" nnoremap <silent> <space>u :<C-u>CocList -A --normal yank<cr>
+
+" jump in the floating window.
 inoremap <c-w>p cj coc#util#float_jump() 
 nnoremap <c-w>p cj coc#util#float_jump() 
+"
 " save all in various modes
 nnoremap <c-s> :wa<CR>
 inoremap <c-s> <Esc>:wa<CR>a
 vnoremap <c-s> <Esc>:wa<CR>gv
 
+" grep word under cursor
+command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
+nnoremap <silent> <space><space>g  :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+nmap <Leader>q <Plug>(coc-translator-p)
+
+function! s:GrepArgs(...)
+  let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
+        \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
+  return join(list, "\n")
+endfunction
+
+" Keymapping for grep word under cursor with interactive mode
+nnoremap <silent> <Leader><Leader>h :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 
 "yank and move the curson to the last yanked line
 vnoremap gy y']
 
 " console.log wrapper
 " Console log from insert mode; Puts focus inside parentheses
-
 imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap <c-c><c-l> yogll<Esc>p
@@ -153,8 +213,8 @@ nmap <silent> [i <Plug>(coc-diagnostic-diagnosicInfo)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gsd :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<cr>
+nmap <silent> gsh :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent> gsv :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -195,8 +255,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-vmap <leader>fs  <Plug>(coc-format-selected)
-nmap <leader>fs  <Plug>(coc-format-selected)
+vmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -212,8 +272,8 @@ nmap <leader>as  <Plug>(coc-codeaction-selected)
 
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 " nmap <silent> <TAB> <Plug>(coc-range-select)
-" xmap <silent> <TAB> <Plug>(coc-range-select)
-" xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -227,7 +287,7 @@ command! -nargs=0 FM :call CocActionAsync('format')
 command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 
 " Using CocList

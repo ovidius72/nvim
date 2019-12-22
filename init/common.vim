@@ -19,6 +19,8 @@ imap jj <Esc>
 let mapleader=" "
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+" set list
 " highlight jsxAttrib cterm=italic
 " highlight jsxTag cterm=italic
 " highlight tsxTag cterm=italic
@@ -28,16 +30,43 @@ let &t_ZR="\e[23m"
 " highlight typescriptParenExp cterm=italic
 
 
+" autocmd FileType cpp set makeprg=clang++\ -std=c++2a\ -o\ '%<'\ '%'
+
+" function! CreateCenteredFloatingWindow()
+"     let width = min([&columns - 4, max([80, &columns - 20])])
+"     let height = min([&lines - 4, max([20, &lines - 10])])
+"     let top = ((&lines - height) / 2) - 1
+"     let left = (&columns - width) / 2
+"     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+
+"     let top = "╭" . repeat("─", width - 2) . "╮"
+"     let mid = "│" . repeat(" ", width - 2) . "│"
+"     let bot = "╰" . repeat("─", width - 2) . "╯"
+"     let lines = [top] + repeat([mid], height - 2) + [bot]
+"     let s:buf = nvim_create_buf(v:false, v:true)
+"     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+"     call nvim_open_win(s:buf, v:true, opts)
+"     set winhl=Normal:Floating
+"     let opts.row += 1
+"     let opts.height -= 2
+"     let opts.col += 2
+"     let opts.width -= 4
+"     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+"     au BufWipeout <buffer> exe 'bw '.s:buf
+" endfunction
+
+" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+
 augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.js set filetype=javascript
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
     au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-    au BufNewFile,BufRead *.ts set filetype=typescript.ts
+    " au BufNewFile,BufRead *.ts set filetype=typescript.ts
     " au BufNewFile,BufRead *.* setlocal cursorcolumn
 augroup END
 
-runtime macros/match.vim
+" runtime macros/match.vim
 
 " Highlight words that match the one under the cursor.
 nnoremap <F2> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
@@ -96,11 +125,11 @@ nmap <Leader>ky :Clap yanks<CR>
 
 
 " *********** vim-gitgutter
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_removed = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_modified_removed = ''
-let g:gitgutter_override_sign_column_highlight = 0
+" let g:gitgutter_sign_added = ''
+" let g:gitgutter_sign_removed = ''
+" let g:gitgutter_sign_modified = ''
+" let g:gitgutter_sign_modified_removed = ''
+" let g:gitgutter_override_sign_column_highlight = 0
 nmap <Leader>gh :GitGutterPreviewHunk<CR>
 nmap <Leader>gn :GitGutterNextHunk<CR>
 nmap <Leader>gp :GitGutterPrevHunk<CR>
@@ -325,6 +354,18 @@ nnoremap <Leader>at :call FloatTerm()<CR>
 nnoremap <Leader>an :call FloatTerm('"node"')<CR>
 " Open tig, yes TIG, A FLOATING TIGGGG!!!!!!
 nnoremap <Leader>ag :call FloatTerm('"tig"')<CR>
+
+" {{{ Aerojump
+" nmap <Leader>js  <Plug>(AerojumpSpace)
+" nmap <Leader>jb  <Plug>(AerojumpBolt)
+" nmap <Leader>ja  <Plug>(AerojumpFromCursonBolt)
+" nmap <Leader>jd  <Plug>(AerojumpDefault)
+" }}} Aerojump
+
+" {{{ FlyGrep
+" nnoremap <Leader>s/ :FlyGrep<cr>
+" }}} FlyGrep
+
 
 " Show the style name of thing under the cursor
 " Shamelessly taken from https://github.com/tpope/vim-scriptease

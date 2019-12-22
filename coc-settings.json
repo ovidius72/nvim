@@ -6,17 +6,21 @@
   "python.jediEnabled": false,
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.displayByAle": false,
-  "codeLens.enable": true,
+  "git.enableGlobalStatus": false,
   "git.addedSign.hlGroup": "GitGutter",
   "git.changedSign.hlGroup": "GitGutterChange",
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
   "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+  "smartf.timeout": 2200,
+  "translator.toLang": "it",
+  "translator.engines": [
+    "bing",
+    "google"
+  ],
   "explorer.buffer.showHiddenBuffers": false,
   "explorer.icon.enableNerdfont": true,
   "explorer.openAction.select.filterFloatWindows": false,
-  "smartf.timeout": 2200,
   "explorer.file.column.git.icon.added": "✚",
   "explorer.file.column.git.icon.untracked": "✭",
   "explorer.file.column.git.icon.modified": "",
@@ -31,10 +35,19 @@
       "filetypes": ["c", "cpp", "objc", "objcpp"],
       "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
-         "cache": {
-           "directory": "/tmp/ccls"
-         }
-       }
+        "cache": {
+          "directory": "/tmp/ccls"
+        },
+        "clang": {
+          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0",
+          "extraArgs": [
+            "-isystem",
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
+            "-I",
+            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"        
+          ]
+        }
+      }
     },
     "phplang": {
       "command": "php",

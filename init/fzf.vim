@@ -15,20 +15,20 @@ let g:fzf_layout = { 'window': '-tabnew' }
 let g:fzf_layout = { 'window': '10split enew' }
 
 " Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+" let g:fzf_colors =
+" \ { 'fg':      ['fg', 'Normal'],
+"   \ 'bg':      ['bg', 'Normal'],
+"   \ 'hl':      ['fg', 'Comment'],
+"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"   \ 'hl+':     ['fg', 'Statement'],
+"   \ 'info':    ['fg', 'PreProc'],
+"   \ 'border':  ['fg', 'Ignore'],
+"   \ 'prompt':  ['fg', 'Conditional'],
+"   \ 'pointer': ['fg', 'Exception'],
+"   \ 'marker':  ['fg', 'Keyword'],
+"   \ 'spinner': ['fg', 'Label'],
+"   \ 'header':  ['fg', 'Comment'] }
   
 
 " Enable per-command history.
@@ -73,8 +73,8 @@ nmap <Leader>l :BLines<CR>
 
 nmap <Leader>aa :Ag<CR>
 nmap <Leader>bh :Buffers<CR>
-nmap <Leader>bn :bn<CR>
-nmap <Leader>bp :bp<CR>
+" nmap <Leader>bn :bn<CR>
+" nmap <Leader>bp :bp<CR>
 
 
 " nmap <Leader>bd :bd<CR>
@@ -84,12 +84,12 @@ autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
 
 if has('nvim') && exists('&winblend') && &termguicolors
-  set winblend=10
+  set winblend=3
 
-  hi NormalFloat guibg=None
-  if exists('g:fzf_colors.bg')
-    call remove(g:fzf_colors, 'bg')
-  endif
+  " hi NormalFloat guibg=None
+  " if exists('g:fzf_colors.bg')
+  "   call remove(g:fzf_colors, 'bg')
+  " endif
 
   if stridx($FZF_DEFAULT_OPTS, '--border') == -1
     let $FZF_DEFAULT_OPTS .= ' --border'
@@ -109,3 +109,64 @@ if has('nvim') && exists('&winblend') && &termguicolors
 
   let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 endif
+
+" let $FZF_DEFAULT_OPTS='--layout=reverse'
+" if has('nvim') && exists('&winblend') && &termguicolors
+"   set winblend=5
+
+"   " hi NormalFloat guibg=None
+"   " if exists('g:fzf_colors.bg')
+"   "   call remove(g:fzf_colors, 'bg')
+"   " endif
+
+"   " if stridx($FZF_DEFAULT_OPTS, '--border') == -1
+"   "   let $FZF_DEFAULT_OPTS .= ' --border'
+"   " endif
+
+"   function! FloatingFZF()
+"     let width = float2nr(&columns * 0.8)
+"     let height = float2nr(&lines * 0.6)
+"     let row = float2nr((&lines - height) / 2)
+"     let col = float2nr((&columns - width) / 2)
+
+
+
+"      " Border Window
+"     let border_opts = {
+"         \ 'relative': 'editor',
+"         \ 'row': row - 1,
+"         \ 'col': col - 2,
+"         \ 'width': width + 4,
+"         \ 'height': height + 2,
+"         \ 'style': 'minimal'
+"         \ }
+
+"      let opts = { 'relative': 'editor',
+"                \ 'row': (&lines - height) / 2,
+"                \ 'col': (&columns - width) / 2,
+"                \ 'width': width,
+"                \ 'height': height }
+
+"      let top = "╭" . repeat("─", width + 2) . "╮"
+"      let mid = "│" . repeat(" ", width + 2) . "│"
+"      let bot = "╰" . repeat("─", width + 2) . "╯"
+"      let lines = [top] + repeat([mid], height) + [bot]
+"      let bbuf = nvim_create_buf(v:false, v:true)
+"      call nvim_buf_set_lines(bbuf, 0, -1, v:true, lines)
+"      let s:float_term_border_win = nvim_open_win(bbuf, v:true, border_opts)
+"      let buf = nvim_create_buf(v:false, v:true)
+"      let s:float_term_win = nvim_open_win(buf, v:true, opts)
+"      " Styling
+"     call setwinvar(s:float_term_border_win, '&winhl', 'Normal:Normal')
+"     call setwinvar(s:float_term_win, '&winhl', 'Normal:Normal')
+
+
+
+"     " call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+"     call nvim_open_win(buf, v:true, opts)
+"       " Close border window when terminal window close
+"     autocmd TermClose * ++once :bd! | call nvim_win_close(s:float_term_border_win, v:true)
+"   endfunction
+
+"   let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+" endif
