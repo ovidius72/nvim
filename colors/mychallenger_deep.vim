@@ -37,6 +37,7 @@ let s:subtle_black  = { "gui": "#303030", "cterm": "236", "cterm16" : "236" }
 let s:light_gray    = { "gui": "#B2B2B2", "cterm": "249", "cterm16" : "249" }
 let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
 
+
 " flat colors:
 let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "0"}
@@ -325,7 +326,8 @@ let g:terminal_color_3 = s:yellow.gui
 let g:terminal_color_4 = s:blue.gui
 let g:terminal_color_5 = s:purple.gui
 let g:terminal_color_6 = s:cyan.gui
-let g:terminal_color_7 = s:clouds.gui
+" let g:terminal_color_7 = s:clouds.gui
+let g:terminal_color_7 = s:bg_dark.gui
 let g:terminal_color_8 = s:bg_subtle.gui
 let g:terminal_color_9 = s:dark_red.gui
 let g:terminal_color_10 = s:dark_green.gui
