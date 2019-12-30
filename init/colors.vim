@@ -16,14 +16,14 @@
 " let g:challenger_deep_terminal_italics = 1
 
 " Challenge Deep
-" colorscheme mychallenger_deep
-" let g:lightline.colorscheme = 'challenger_deep'
-" let g:mychallenger_deep_terminal_italics = 1
+colorscheme mychallenger_deep
+let g:lightline.colorscheme = 'challenger_deep'
+let g:mychallenger_deep_terminal_italics = 1
 
 " Sweet 
-colorscheme sweet
-let g:lightline.colorscheme = 'challenger_deep'
-let g:sweet_terminal_italics = 1
+" colorscheme sweet
+" let g:lightline.colorscheme = 'challenger_deep'
+" let g:sweet_terminal_italics = 1
 
 " Fault
 " colorscheme fault
