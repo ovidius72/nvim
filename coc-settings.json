@@ -37,6 +37,10 @@
     "typescript": ["javascript"]
   },
   "languageserver": {
+    "reason": {
+      "command": "reason-language-server",
+      "filetypes": ["reason"]
+    },
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "objc", "objcpp"],
