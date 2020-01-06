@@ -44,9 +44,9 @@ let g:ale_linters = {
 \ 'typescript.tsx': ['tslint', 'tsserver', 'typecheck'],
 \ 'typescriptreact': ['tslint', 'tsserver', 'typecheck'],
 \ 'cpp': ['gcc'],
-\ 'c': ['gcc'],
-\ 'python': ['flake8', 'pylint']
 \}
+" \ 'c': ['gcc'],
+" \ 'python': ['flake8', 'pylint']
 
 " let g:ale_linters_aliases = {'js': 'ts', 'js', 'tsx'}
 " let g:ale_typescript_tslint_executable = 'tslint'

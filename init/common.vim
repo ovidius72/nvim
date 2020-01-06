@@ -96,11 +96,28 @@ nmap <Leader>ky :Clap yanks<CR>
 
 
 " *********** vim-gitgutter
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_removed = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_modified_removed = ''
+" autocmd! BufWritePost * GitGutter
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_async = 1
+let g:gitgutter_diff_args = '--ignore-all-space'
+let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='◢'
+let g:gitgutter_sign_removed_first_line='◥'
+let g:gitgutter_sign_modified_removed='◢'
+
+" let g:gitgutter_sign_added = ''
+" let g:gitgutter_sign_removed = ''
+" let g:gitgutter_sign_modified = ''
+" let g:gitgutter_sign_modified_removed = ''
+" let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_linenrs = 1
+highlight link GitGutterAddLineNr DiffAdd
+highlight link GitGutterChangeLineNr DiffChange
+highlight link GitGutterDeleteLineNr DiffDelete
+highlight link GitGutterChangeDeleteLineNr SignColumn
+
 nmap <Leader>gh :GitGutterPreviewHunk<CR>
 nmap <Leader>gn :GitGutterNextHunk<CR>
 nmap <Leader>gp :GitGutterPrevHunk<CR>

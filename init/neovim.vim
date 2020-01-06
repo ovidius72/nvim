@@ -89,7 +89,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'airblade/vim-gitgutter'
 " Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
@@ -108,6 +107,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 source ~/.config/nvim/init/common.vim
@@ -118,5 +118,6 @@ source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/init/colors.vim
+source ~/.config/nvim/init/common.vim
 " source ~/.config/nvim/init/eleline.vim
 " source ~/.config/nvim/init/airline.vim

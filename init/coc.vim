@@ -6,7 +6,6 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-snippets',
       \ 'coc-yank',
-      \ 'coc-git',
       \ 'coc-explorer',
       \ 'coc-import-cost',
       \ 'coc-highlight',
