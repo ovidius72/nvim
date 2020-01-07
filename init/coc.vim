@@ -71,10 +71,10 @@ xmap ag <Plug>(coc-git-chunk-outer)
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
-augroup Smartf
-  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
-  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
-augroup end
+" augroup Smartf
+"   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
+"   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
+" augroup end
 
 " {{ coc snippets
 " Use <C-l> for trigger snippet expand.
@@ -112,6 +112,16 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" coc-explorer
+noremap <silent> <leader>x :execute 'CocCommand explorer' .
+      \ ' --no-toggle' .
+      \ ' --sources=buffer+,file+' .
+      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
+
+noremap <silent> <leader><leader>x :execute 'CocCommand explorer' .
+      \ ' --toggle' 
+      \ ' --sources=buffer+,file+' .
+      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
 " coc-expolorer
 " nmap ge :CocCommand explorer
 "       \ --toggle
@@ -126,10 +136,11 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "       \ --file-columns=git,selection,icon,clip,indent,filename,size<CR>
 
 " coc-explorer
-noremap <silent> <leader>x :execute 'CocCommand explorer' .
-      \ ' --toggle' .
-      \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
+" noremap <silent> <leader>x :execute 'CocCommand explorer' .
+" nmap ge :execute 'CocCommand explorer' .
+"       \ ' --toggle' .
+"       \ ' --sources=buffer+,file+' .
+"       \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
 
 "coc-marks
 nmap <Leader><Leader>m :CocList marks<CR>

@@ -19,6 +19,7 @@ imap jj <Esc>
 let mapleader=" "
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+autocmd FileType qf setlocal wrap
 " highlight jsxAttrib cterm=italic
 " highlight jsxTag cterm=italic
 " highlight tsxTag cterm=italic
@@ -54,10 +55,10 @@ tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
 " *********** vim-which-key
 " nnoremap <silent> <Leader> :<c-u>WhichKey '<Space>'<CR>
-" nnoremap <silent> <localleader> :WhichKey 'g'<CR>
-" set timeoutlen=300
+" " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
+" set timeoutlen=500
 
-" let g:which_key_map = {}
+" " let g:which_key_map = {}
 " let g:which_key_map['v'] = {
 "     \ 'name' : '+windows' ,
 "     \ 'w' : ['<C-W>w'     , 'other-window']          ,

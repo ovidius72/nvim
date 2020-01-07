@@ -1,5 +1,4 @@
 " ALE"
-autocmd FileType qf setlocal wrap
 let g:ale_set_signs = 1
 let g:ale_set_highlights = 1
 let g:ale_completion_enabled = 0
