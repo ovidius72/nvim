@@ -75,7 +75,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 " Plug 'liuchengxu/eleline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 " Plug 'neomake/neomake'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
@@ -113,7 +113,7 @@ call plug#end()
 
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vista.vim
-" source ~/.config/nvim/init/ale.vim
+source ~/.config/nvim/init/ale.vim
 " source ~/.config/nvim/init/neomake.vim
 source ~/.config/nvim/init/fzf.vim
 " source ~/.config/nvim/init/spaceline.vim
