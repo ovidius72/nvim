@@ -13,7 +13,8 @@ set termguicolors
 set timeout
 " setlocal cursorcolumn
 syntax on
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 set hidden
 imap jj <Esc>
 let mapleader=" "
@@ -38,7 +39,7 @@ augroup FiletypeGroup
     " au BufNewFile,BufRead *.* setlocal cursorcolumn
 augroup END
 
-runtime macros/match.vim
+" runtime macros/match.vim
 
 " Highlight words that match the one under the cursor.
 nnoremap <F2> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
@@ -297,10 +298,10 @@ let g:vim_jsx_pretty_disable_ts = 1
 " Indentline
 " let g:indentLine_color_gui = '#333333'
 " let g:indentLine_color_gui = '#DFE0DF'
-let g:indentLine_enabled = 0
+let g:indentLine_enabled = 1
 " let g:indentLine_concealcursor = 1
-" let g:indentLine_char = '┆'
-" let g:indentLine_faster = 1
+let g:indentLine_char = '┆'
+let g:indentLine_faster = 1
 " let g:neoterm_size = 9
 " let g:neoterm_autoinsert = 0
 " let g:neoterm_autoscroll = 1

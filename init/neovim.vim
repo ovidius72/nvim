@@ -27,7 +27,7 @@ Plug 'liuchengxu/vim-clap'
 " Plug 'tomasiser/vim-code-dark'
 " Plug 'gerardbm/vim-atomic'
 " Plug 'yasukotelin/shirotelin'
-" " Plug 'xero/sourcerer.vim'
+" Plug 'xero/sourcerer.vim'
 " Plug 'AlessandroYorba/Alduin'
 
 " Plug 'yous/vim-open-color'
@@ -90,15 +90,15 @@ Plug 'tpope/vim-unimpaired'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 " Plug 'mattn/emmet-vim'
-Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'dstein64/vim-win'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'sheerun/vim-polyglot'
 Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'peitalin/vim-jsx-typescript'
 " Plug 'justinmk/vim-syntax-extra'
 " Plug 'terryma/vim-expand-region'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -109,6 +109,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'airblade/vim-gitgutter'
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey'] }
+Plug 'Yggdroot/indentLine'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
 
 source ~/.config/nvim/init/common.vim
@@ -120,6 +122,7 @@ source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/init/colors.vim
+source ~/.config/nvim/init/vim-win.vim
 " source ~/.config/nvim/init/common.vim
 " source ~/.config/nvim/init/eleline.vim
 " source ~/.config/nvim/init/airline.vim
