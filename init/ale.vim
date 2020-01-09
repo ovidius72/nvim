@@ -10,7 +10,6 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 
-<<<<<<< HEAD
 " let g:ale_open_list = 2
 let g:ale_sign_error = '✘'
 " let g:ale_sign_error = '🐞'
