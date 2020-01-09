@@ -18,27 +18,7 @@ Plug 'liuchengxu/vim-clap'
 " Plug 'wellle/context.vim'
 
 " Plug 'liuchengxu/vim-which-key'
-" Plug 'hecal3/vim-leader-guide'
-" Plug 'aserebryakov/vim-todo-lists'
-
-" Plug 'flrnprz/candid.vim'
-" Plug 'tomasr/molokai'
-" Plug 'zxqfl/tabnine-vim'
-" Plug 'flrnprz/plastic.vim'
-" Plug 'dunstontc/vim-vscode-theme'
-" Plug 'w0ng/vim-hybrid'
-" Plug 'shapeoflambda/dark-purple.vim'
-" Plug 'tomasiser/vim-code-dark'
-" Plug 'gerardbm/vim-atomic'
-" Plug 'yasukotelin/shirotelin'
-" " Plug 'xero/sourcerer.vim'
 Plug 'AlessandroYorba/Alduin'
-
-" Plug 'yous/vim-open-color'
-" Plug 'lifepillar/vim-wwdc17-theme'
-" Plug 'lifepillar/vim-wwdc16-theme'
-
-
 Plug 'nightsense/cosmic_latte'
 Plug 'ajmwagar/vim-deus'
 Plug 'liuchengxu/vista.vim'
@@ -46,32 +26,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-startify'
 Plug 'ton/vim-bufsurf'
 
-" Plug 'dracula/vim'
-" Plug 'haishanh/night-owl.vim'
-Plug 'lifepillar/vim-gruvbox8'
-" Plug 'joshdick/onedark.vim'
-" Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-" Plug 'jacoborus/tender.vim'
-" Plug 'rakr/vim-one'
-" Plug 'mhartington/oceanic-next'
-" Plug 'severij/vadelma'
-" Plug 'rakr/vim-two-firewatch'
-" Plug 'tjammer/blayu.vim'
-
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'jaredgorski/SpaceCamp'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'aonemd/kuroi.vim'
-" Plug 'reedes/vim-colors-pencil'
-" Plug '3N4N/vim-fault'
-
-" Plug 'cocopon/iceberg.vim'
-" Plug 'ayu-theme/ayu-vim'
-" Plug 'ntk148v/vim-horizon'
-" Plug 'liuchengxu/space-vim-dark'
 Plug 'liuchengxu/space-vim-theme'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/lightline_foobar.vim'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -80,7 +36,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'reasonml-editor/vim-reason-plus'
 " Plug 'jez/vim-better-sml'
@@ -111,7 +66,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
-" Plug 'wsdjeg/FlyGrep.vim'
 " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
