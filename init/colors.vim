@@ -1,3 +1,23 @@
+" Edge
+set termguicolors
+hi CocFloating guibg=#292c3f ctermbg=60
+
+" set background=dark
+" let g:edge_style = 'neon'
+" colorscheme edge
+" let g:lightline.colorscheme = 'edge'
+
+" Dogrun"
+
+" colorscheme dogrun
+" set bg=dark
+" let g:lightline.colorscheme = 'dogrun'
+
+" XCodeDark
+ " colorscheme xcodedark
+ " set bg=dark
+ " let g:lightline.colorscheme = 'xcodedark'
+
 "Space vim dark colorscheme
 " colorscheme space-vim-dark
 " set background=dark
@@ -18,6 +38,7 @@
 " Challenge Deep
 colorscheme mychallenger_deep
 let g:lightline.colorscheme = 'challenger_deep'
+" let g:airline_theme = 'challenger_deep'
 let g:mychallenger_deep_terminal_italics = 1
 
 " Sweet 
@@ -264,7 +285,7 @@ hi tsxAttrib guifg=#f8bd7f gui=italic cterm=italic
 hi jsxAttrib guifg=#f8bd7f gui=italic cterm=italic
 " highlight jsxAttrib gui=italic cterm=italic
 hi typescriptVariableDeclaration guifg=#f8bd7f gui=italic cterm=italic
-" highlight typescriptVariableDeclaration gui=italic cterm=italic
+hi typescriptIdentifierName guifg=#f8bd7f gui=italic cterm=italic
 hi link typescriptMember Label
 " highlight typescriptMember gui=italic cterm=italic
 hi link typescriptIdentifierName TypescriptSpecial

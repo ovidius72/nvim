@@ -24,6 +24,149 @@ if ! exists("g:mychallenger_deep_terminal_italics")
   let g:mychallenger_deep_terminal_italics = 0
 endif
 
+
+" if (has('termguicolors') && &termguicolors) || has('gui_running')  " guifg guibg gui cterm guisp
+"   function! s:HL(group, fg, bg, ...)
+"     let hl_string = [
+"           \ 'highlight', a:group,
+"           \ 'guifg=' . a:fg[0],
+"           \ 'guibg=' . a:bg[0],
+"           \ ]
+"     if a:0 >= 1
+"       if a:1 ==# 'undercurl'
+"         call add(hl_string, 'gui=undercurl')
+"         call add(hl_string, 'cterm=underline')
+"       else
+"         call add(hl_string, 'gui=' . a:1)
+"         call add(hl_string, 'cterm=' . a:1)
+"       endif
+"     else
+"       call add(hl_string, 'gui=NONE')
+"       call add(hl_string, 'cterm=NONE')
+"     endif
+"     if a:0 >= 2
+"       call add(hl_string, 'guisp=' . a:2[0])
+"     endif
+"     execute join(hl_string, ' ')
+"   endfunction
+" elseif s:t_Co >= 256  " ctermfg ctermbg cterm
+"   function! s:HL(group, fg, bg, ...)
+"     let hl_string = [
+"           \ 'highlight', a:group,
+"           \ 'ctermfg=' . a:fg[1],
+"           \ 'ctermbg=' . a:bg[1],
+"           \ ]
+"     if a:0 >= 1
+"       if a:1 ==# 'undercurl'
+"         call add(hl_string, 'cterm=underline')
+"       else
+"         call add(hl_string, 'cterm=' . a:1)
+"       endif
+"     else
+"       call add(hl_string, 'cterm=NONE')
+"     endif
+"     execute join(hl_string, ' ')
+"   endfunction
+" else  " ctermfg ctermbg cterm
+  " function! s:HL(group, fg, bg, ...)
+  "   let hl_string = [
+  "         \ 'highlight', a:group,
+  "         \ 'ctermfg=' . a:fg[2],
+  "         \ 'ctermbg=' . a:bg[2],
+  "         \ ]
+  "   if a:0 >= 1
+  "     if a:1 ==# 'undercurl'
+  "       call add(hl_string, 'cterm=underline')
+  "     else
+  "       call add(hl_string, 'cterm=' . a:1)
+  "     endif
+  "   else
+  "     call add(hl_string, 'cterm=NONE')
+  "   endif
+  "   execute join(hl_string, ' ')
+  " endfunction
+" endif
+" }}}
+
+" if &background ==# 'dark'
+"   let s:palette = {
+"         \ 'bg0':        ['#262729',   '235',  'Black'],
+"         \ 'bg1':        ['#292b30',   '236',  'DarkGrey'],
+"         \ 'bg2':        ['#2c2e34',   '236',  'DarkGrey'],
+"         \ 'bg3':        ['#34363f',   '237',  'DarkGrey'],
+"         \ 'bg4':        ['#363944',   '237',  'Grey'],
+"         \ 'bg5':        ['#3b3e48',   '238',  'Grey'],
+"         \ 'bg_grey':    ['#828a98',   '246',  'LightGrey'],
+"         \ 'bg_red':     ['#f07e7e',   '203',  'Red'],
+"         \ 'bg_red1':    ['#473536',   '52',   'DarkRed'],
+"         \ 'bg_red2':    ['#573c3d',   '52',   'DarkRed'],
+"         \ 'bg_green':   ['#a2be8a',   '107',  'Green'],
+"         \ 'bg_green1':  ['#384034',   '22',   'DarkGreen'],
+"         \ 'bg_green2':  ['#424c3b',   '22',   'DarkGreen'],
+"         \ 'bg_blue':    ['#72b1e5',   '110',  'Blue'],
+"         \ 'bg_blue1':   ['#323e47',   '17',   'DarkBlue'],
+"         \ 'bg_blue2':   ['#394957',   '17',   'DarkBlue'],
+"         \ 'bg_purple':  ['#d898eb',   '176',  'Magenta'],
+"         \ 'bg_purple1': ['#433948',   '54',   'DarkMagenta'],
+"         \ 'bg_purple2': ['#514359',   '54',   'DarkMagenta'],
+"         \ 'fg':         ['#bcc4d1',   '250',  'White'],
+"         \ 'red':        ['#f07e7e',   '203',  'Red'],
+"         \ 'yellow':     ['#d1b277',   '179',  'Yellow'],
+"         \ 'green':      ['#a3bc8d',   '107',  'Green'],
+"         \ 'cyan':       ['#78b7b1',   '72',   'Cyan'],
+"         \ 'blue':       ['#7ab3e1',   '110',  'Blue'],
+"         \ 'purple':     ['#d898eb',   '176',  'Magenta'],
+"         \ 'grey':       ['#88909f',   '246',  'LightGrey'],
+"         \ 'none':       ['NONE',      'NONE', 'NONE']
+"         \ }
+" else
+  " let s:palette = {
+  "       \ 'bg0':        ['#fafafa',   '231',  'White'],
+  "       \ 'bg1':        ['#f1f4f6',   '255',  'LightGrey'],
+  "       \ 'bg2':        ['#eef1f4',   '255',  'LightGrey'],
+  "       \ 'bg3':        ['#e8ebf0',   '254',  'LightGrey'],
+  "       \ 'bg4':        ['#e8ebf0',   '253',  'Grey'],
+  "       \ 'bg5':        ['#dde2e7',   '253',  'Grey'],
+  "       \ 'bg_grey':    ['#bcc5cf',   '246',  'DarkGrey'],
+  "       \ 'bg_red':     ['#e17373',   '167',  'Red'],
+  "       \ 'bg_red1':    ['#f6e4e4',   '217',  'LightRed'],
+  "       \ 'bg_red2':    ['#f4dada',   '217',  'LightRed'],
+  "       \ 'bg_green':   ['#76af6f',   '107',  'Green'],
+  "       \ 'bg_green1':  ['#e5eee4',   '150',  'LightGreen'],
+  "       \ 'bg_green2':  ['#dae9d8',   '150',  'LightGreen'],
+  "       \ 'bg_blue':    ['#6996e0',   '68',   'Blue'],
+  "       \ 'bg_blue1':   ['#e3eaf6',   '153',  'LightBlue'],
+  "       \ 'bg_blue2':   ['#d6e1f4',   '153',  'LightBlue'],
+  "       \ 'bg_purple':  ['#bf75d6',   '134',  'Magenta'],
+  "       \ 'bg_purple1': ['#f1e5f5',   '183',  'LightMagenta'],
+  "       \ 'bg_purple2': ['#eddaf2',   '183',  'LightMagenta'],
+  "       \ 'fg':         ['#4b505b',   '240',  'Black'],
+  "       \ 'red':        ['#d15f5f',   '167',  'Red'],
+  "       \ 'yellow':     ['#be7e05',   '172',  'Yellow'],
+  "       \ 'green':      ['#608e32',   '107',  'Green'],
+  "       \ 'cyan':       ['#3a8b84',   '73',   'Cyan'],
+  "       \ 'blue':       ['#5079be',   '68',   'Blue'],
+  "       \ 'purple':     ['#b05ccc',   '134',  'Magenta'],
+  "       \ 'grey':       ['#949ba5',   '245',  'Grey'],
+  "       \ 'none':       ['NONE',      'NONE', 'NONE']
+  "       \ }
+" endif
+
+
+" call s:HL('Pmenu', s:palette.fg, s:palette.bg3)
+" call s:HL('PmenuSbar', s:palette.none, s:palette.bg3)
+" if s:configuration.popup_menu_selection_background ==# 'blue'
+"   call s:HL('PmenuSel', s:palette.bg0, s:palette.bg_blue)
+"   call s:HL('WildMenu', s:palette.bg0, s:palette.bg_blue)
+" elseif s:configuration.popup_menu_selection_background ==# 'green'
+"   call s:HL('PmenuSel', s:palette.bg0, s:palette.bg_green)
+"   call s:HL('WildMenu', s:palette.bg0, s:palette.bg_green)
+" elseif s:configuration.popup_menu_selection_background ==# 'purple'
+"   call s:HL('PmenuSel', s:palette.bg0, s:palette.bg_purple)
+"   call s:HL('WildMenu', s:palette.bg0, s:palette.bg_purple)
+" endif
+" call s:HL('PmenuThumb', s:palette.none, s:palette.bg_grey)
+
 " Colors
 let s:black           = { "gui": "#212121", "cterm": "0", "cterm16" : "8" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243", "cterm16" : "243" }
@@ -62,6 +205,12 @@ let s:dark_cyan = { "gui": "#63f2f1", "cterm": "121", "cterm16": "14"}
 
 let s:clouds = { "gui": "#cbe3e7", "cterm": "253", "cterm16": "7"}
 let s:dark_clouds = { "gui": "#a6b3cc", "cterm": "252", "cterm16": "15"}
+
+hi Pmenu guifg=#9ea3c0 ctermfg=146 guibg=#32364c ctermbg=237
+hi PmenuSel guifg=#9ea3c0 ctermfg=146 guibg=#424865 ctermbg=60
+hi PmenuSbar guibg=#292c3f ctermbg=236
+hi PmenuThumb guibg=#464f7f ctermbg=60
+hi CocFloating guibg=#292c3f ctermbg=60
 
 let s:bg              = s:asphalt
 let s:bg_subtle       = s:asphalt_subtle

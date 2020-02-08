@@ -14,6 +14,12 @@ let g:fzf_layout = { 'window': 'enew' }
 let g:fzf_layout = { 'window': '-tabnew' }
 let g:fzf_layout = { 'window': '10split enew' }
 
+" Centered floating window with rounded borders.
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'rounded': v:true } }
+" bottom aligned floating not pushing screen. 
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
+
+
 " Customize fzf colors to match your color scheme
 " let g:fzf_colors =
 "       \ { 'fg':      ['fg', 'Normal'],
@@ -63,16 +69,21 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 nmap <Leader>hh :History<CR>
+nmap <Leader>hw :Windows<CR>
+nmap <Leader>hcc :Commits<CR>
+nmap <Leader>hcb :Commits<CR>
+nmap <Leader>hg :GFiles?<CR>
+nmap <Leader>hf :Files<CR>
+nmap <Leader>hm :Marks<CR>
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
 nmap <Leader>p :GFiles<CR>
-nmap <Leader>r :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
-
+nmap <Leader>rr :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
 nmap <Leader>o :Files<CR>
 nmap <Leader>l :BLines<CR>
 
 nmap <Leader>aa :Ag<CR>
-nmap <Leader>bh :Buffers<CR>
+nmap <Leader>bb :Buffers<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
 
@@ -82,30 +93,80 @@ nmap <Leader>bd :bp<CR>:bd#<CR>
 
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-if has('nvim') && exists('&winblend') && &termguicolors
-  set winblend=5
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
-  hi NormalFloat guibg=None
-  if exists('g:fzf_colors.bg')
-    call remove(g:fzf_colors, 'bg')
-  endif
 
-  if stridx($FZF_DEFAULT_OPTS, '--border') == -1
-    let $FZF_DEFAULT_OPTS .= ' --border'
-  endif
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
-  function! FloatingFZF()
-    let width = float2nr(&columns * 0.8)
-    let height = float2nr(&lines * 0.6)
-    let opts = { 'relative': 'editor',
-               \ 'row': (&lines - height) / 2,
-               \ 'col': (&columns - width) / 2,
-               \ 'width': width,
-               \ 'height': height }
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
 
-    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-  endfunction
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-endif
+nnoremap <silent> <Leader>hc :call fzf#run({
+\   'source':
+\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+\   'sink':    'colo',
+\   'options': '+m',
+\   'left':    30
+\ })<CR>
+
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
+
+" if has('nvim') && exists('&winblend') && &termguicolors
+"   set winblend=0
+
+"   hi NormalFloat guibg=None
+"   if exists('g:fzf_colors.bg')
+"     call remove(g:fzf_colors, 'bg')
+"   endif
+
+"   if stridx($FZF_DEFAULT_OPTS, '--border') == -1
+"     let $FZF_DEFAULT_OPTS .= ' --border'
+"   endif
+
+"   function! FloatingFZF()
+"     let width = float2nr(&columns * 0.8)
+"     let height = float2nr(&lines * 0.6)
+"     let opts = { 'relative': 'editor',
+"                \ 'row': (&lines - height) / 2,
+"                \ 'col': (&columns - width) / 2,
+"                \ 'width': width,
+"                \ 'height': height }
+
+"     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+"   endfunction
+
+"   let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+" endif

@@ -1,6 +1,7 @@
 
 function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
+    let fun = get(b:, 'coc_current_function', '')
+    return fun
 endfunction
 
 function! LightLineCoc() 
@@ -22,7 +23,7 @@ function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
-set statusline+=%{NearestMethodOrFunction()}
+" set statusline+=%{NearestMethodOrFunction()}
 
 " By default vista.vim never run if you don't call it explicitly.
 "
@@ -33,9 +34,9 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 " \ 'colorscheme': 'solarized',
 let g:lightline = {
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'gitbranch', 'gitgutter', 'filename', 'modified', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ], ['cocstatus'] ],
-      \   'right': [ [ 'lineinfo' ], [ 'currentfunction' ], ['percent'], ['method', 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'left': [ 
+      \     [ 'mode', 'paste' ], ['filename', 'modified', 'readonly', 'gitbranch', 'gitgutter'], ['coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'coc_fix', 'cocstatus'], [ 'method' ] ],
+      \  'right': [ [ 'lineinfo' ], ['currentfunction'],  [ 'percent' ], [ 'filetype' ] ]
       \ },
       \ 'component_expand': {
       \  'buffers'          : 'lightline#bufferline#buffers',
@@ -56,13 +57,26 @@ let g:lightline = {
       \   'blame': 'LightLineGitBlame'
       \ },
       \ 'component_type':  {
-      \   'buffers': 'tabsel',
+      \   'buffers'          : 'tabsel',
       \   'coc_error'        : 'error',
       \   'coc_warning'      : 'warning',
-      \   'coc_info'         : 'tabsel',
-      \   'coc_hint'         : 'middle',
-      \   'coc_fix'          : 'middle',
-    \ }
+      \   'coc_info'         : 'warning',
+      \   'coc_hint'         : 'warning',
+      \   'coc_fix'          : 'warning',
+    \ },
+      \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ }
   \ }
 
 " let g:lightline.separator = {
@@ -107,9 +121,9 @@ let g:lightline.tabline = {'left': [['buffers']], 'right': [['close']] }
 "   \ }
 
 function! LightlineFugitive()
-  if exists('*fugitive#head')
-    let branch = fugitive#head()
-    return branch !=# '' ? ' '.branch : ''
+  if exists('*FugitiveHead')
+    let branch = FugitiveHead()
+    return branch !=# '' ? ' '. branch : ''
   endif
   return ''
 endfunction
@@ -131,6 +145,10 @@ function! LightLineGitGutter()
   if ! exists('*GitGutterGetHunkSummary')
         \ || ! get(g:, 'gitgutter_enabled', 0)
         \ || winwidth('.') <= 90
+    " let stat = get(b:, 'coc_git_status')
+    " let projStat = get(g:, 'coc_git_status')
+    " let symbols = ['+','~','-']
+    " return projStat . ' ' . stat 
     return ''
   endif
   let symbols = ['+','~','-']
@@ -149,22 +167,22 @@ function! LightlineCocErrors() abort
 endfunction
 
 function! LightlineCocWarnings() abort
-  return s:lightline_coc_diagnostic('warning', 'warning')
+  return s:lightline_coc_diagnostic('warning', "warning")
 endfunction
 
 function! LightlineCocInfos() abort
-  return s:lightline_coc_diagnostic('information', 'info')
+  return s:lightline_coc_diagnostic('information', "info")
 endfunction
 
 function! LightlineCocHints() abort
-  return s:lightline_coc_diagnostic('hints', 'hint')
+  return s:lightline_coc_diagnostic('hints', "hint")
 endfunction
 " \ }
 
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+autocmd User CocStatusChange,CocDiagnosticChange,CocCurrentFunction call lightline#update()
 
 function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
 endfunction
 
 function! MyFileformat()

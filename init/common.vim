@@ -11,6 +11,9 @@ set ignorecase
 set shortmess=aFc
 set termguicolors
 set timeout
+set foldmethod=manual
+set foldcolumn=1
+
 " setlocal cursorcolumn
 setlocal nowrap
 syntax on
@@ -21,7 +24,15 @@ imap jj <Esc>
 let mapleader=" "
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+let &t_ut=''
 autocmd FileType qf setlocal wrap
+
+
+" in insert mode delteting with ctrl-u or ctrl-w can be recovered.
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
+
 " highlight jsxAttrib cterm=italic
 " highlight jsxTag cterm=italic
 " highlight tsxTag cterm=italic
@@ -29,6 +40,28 @@ autocmd FileType qf setlocal wrap
 " highlight tsxElement cterm=italic
 " highlight typescriptBlock cterm=italic
 " highlight typescriptParenExp cterm=italic
+
+command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
+" remap s to Nop for vim-sandwitch
+" extends surround keybings for sandwich
+" use cl to replace s
+" nmap s <Nop>
+" xmap s <Nop>
+" nmap ss cl
+
+" vim-qick-scope
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+augroup END
+let g:qs_lazy_highlight = 1
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
+
+
+
+
 
 
 augroup FiletypeGroup
@@ -51,16 +84,16 @@ nnoremap <Leader><Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 
 " Nuake
-nnoremap <F4> :Nuake<CR>
-inoremap <F4> <C-\><C-n>:Nuake<CR>
-tnoremap <F4> <C-\><C-n>:Nuake<CR>
+nnoremap <F7> :Nuake<CR>
+inoremap <F7> <C-\><C-n>:Nuake<CR>
+tnoremap <F7> <C-\><C-n>:Nuake<CR>
 
 " *********** vim-which-key
-" nnoremap <silent> <Leader> :<c-u>WhichKey '<Space>'<CR>
-" " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
-" set timeoutlen=500
+nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :WhichKey 'g'<CR>
+set timeoutlen=500
 
-" " let g:which_key_map = {}
+" let g:which_key_map = {}
 " let g:which_key_map['v'] = {
 "     \ 'name' : '+windows' ,
 "     \ 'w' : ['<C-W>w'     , 'other-window']          ,
@@ -82,21 +115,17 @@ tnoremap <F4> <C-\><C-n>:Nuake<CR>
 "     \ '?' : ['Windows'    , 'fzf-window']            ,
 "     \ }
 
-" *********** vim-clap
-nmap <Leader><Leader>c :Clap<CR>
-nmap <Leader>kb :Clap buffers<CR>
-nmap <Leader>kc :Clap colors<CR>
-nmap <Leader>kl :Clap blines<CR>
-nmap <Leader>kf :Clap gfiles<CR>
-nmap <Leader>kg :Clap grep<CR>
-nmap <Leader>kh :Clap hist:<CR>
-nmap <Leader>kw :Clap windows<CR>
-nmap <Leader>kj :Clap jumps<CR>
-nmap <Leader>km :Clap marks<CR>
-nmap <Leader>kr :Clap registers<CR>
-nmap <Leader>kt :Clap tags<CR>
-nmap <Leader>ky :Clap yanks<CR>
 
+" let g:tmux_navigator_no_mappings = 1
+" nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+" nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
+" nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
+" nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
+" nnoremap <silent> <c-w><c-w> :TmuxNavigatePrevious<cr>
+" nnoremap <silent> <c-a><c-h> :TmuxNavigateLeft<cr>
+" nnoremap <silent> <c-a><c-j> :TmuxNavigateDown<cr>
+" nnoremap <silent> <c-a><c-k> :TmuxNavigateUp<cr>
+" nnoremap <silent> <c-a><c-l> :TmuxNavigateRight<cr>
 
 " *********** vim-gitgutter
 " autocmd! BufWritePost * GitGutter
@@ -104,49 +133,53 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_async = 1
 let g:gitgutter_diff_args = '--ignore-all-space'
 let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
-let g:gitgutter_sign_added='┃'
-let g:gitgutter_sign_modified='┃'
-let g:gitgutter_sign_removed='◢'
-let g:gitgutter_sign_removed_first_line='◥'
-let g:gitgutter_sign_modified_removed='◢'
+" let g:gitgutter_sign_added='┃'
+" let g:gitgutter_sign_modified='┃'
+" let g:gitgutter_sign_removed='◢'
+" let g:gitgutter_sign_removed_first_line='◥'
+" let g:gitgutter_sign_modified_removed='◢'
 
 " let g:gitgutter_sign_added = ''
 " let g:gitgutter_sign_removed = ''
 " let g:gitgutter_sign_modified = ''
 " let g:gitgutter_sign_modified_removed = ''
 " let g:gitgutter_highlight_lines = 1
-let g:gitgutter_highlight_linenrs = 1
-highlight link GitGutterAddLineNr DiffAdd
-highlight link GitGutterChangeLineNr DiffChange
-highlight link GitGutterDeleteLineNr DiffDelete
-highlight link GitGutterChangeDeleteLineNr SignColumn
+" let g:gitgutter_highlight_linenrs = 1
+" highlight link GitGutterAddLineNr DiffAdd
+" highlight link GitGutterChangeLineNr DiffChange
+" highlight link GitGutterDeleteLineNr DiffDelete
+" highlight link GitGutterChangeDeleteLineNr SignColumn
 
-nmap <Leader>gh :GitGutterPreviewHunk<CR>
-nmap <Leader>gn :GitGutterNextHunk<CR>
-nmap <Leader>gp :GitGutterPrevHunk<CR>
-nmap <Leader>gc :pclose<CR>
+" nmap <Leader>gh :GitGutterPreviewHunk<CR>
+" nmap <Leader>gn :GitGutterNextHunk<CR>
+" nmap <Leader>gp :GitGutterPrevHunk<CR>
+" nmap <Leader>gc :pclose<CR>
 
 "bufsurf
-nmap <F9> :BufSurfBack<CR>
-nmap <F10> :BufSurfForward<CR>
+" nmap <F9> :BufSurfBack<CR>
+" nmap <F10> :BufSurfForward<CR>
 " vim-move mofifier key (default Alt)
 let g:move_key_modifier = 'C'
 
-"******** vim-motion"
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+" save all in various modes
+nnoremap <c-s> :wa<CR><CR>
+inoremap <c-s> <Esc>:wa<CR>a
+vnoremap <c-s> <Esc>:wa<CR>gv
 
-" s{char}{char} to move to {char}{char}
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
+"yank and move the curson to the last yanked line
+vnoremap gy y']
 
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+" console.log wrapper
+" Console log from insert mode; Puts focus inside parentheses
+
+imap cll console.log();<Esc>==f(a
+imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
+" Console log from visual mode on next line, puts visual selection inside parentheses
+vmap <silent><c-c><c-l> yogll<Esc>pviw
+" Console log from normal mode, inserted on next line with word your on inside parentheses
+nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
+
 
 
 " *************** inc serach
@@ -363,6 +396,8 @@ nnoremap <Leader>at :call FloatTerm()<CR>
 nnoremap <Leader>an :call FloatTerm('"node"')<CR>
 " Open tig, yes TIG, A FLOATING TIGGGG!!!!!!
 nnoremap <Leader>ag :call FloatTerm('"tig"')<CR>
+
+nnoremap <Leader><Leader>q :call vimspector#AddWatch("<C-r><C-w>")<CR>
 
 " Show the style name of thing under the cursor
 " Shamelessly taken from https://github.com/tpope/vim-scriptease
