@@ -116,12 +116,12 @@ inoremap <silent><expr> <c-space> coc#refresh()
 noremap <silent> <leader>x :execute 'CocCommand explorer' .
       \ ' --no-toggle' .
       \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
+      \ ' --file-columns=git:selection:icon:clip:diagnosticError:diagnosticWarning:indent:filename --reveal ' . expand('%:p')<CR>
 
 noremap <silent> <leader><leader>x :execute 'CocCommand explorer' .
       \ ' --toggle' 
       \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
+      \ ' --file-columns=git:selection:icon:clip:diagnosticError:diagnosticWarning:diagnosicInfo:indent:filename --reveal ' . expand('%:p')<CR>
 " coc-expolorer
 " nmap ge :CocCommand explorer
 "       \ --toggle

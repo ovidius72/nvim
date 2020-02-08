@@ -110,7 +110,7 @@ Plug 'matze/vim-move'
 Plug 'airblade/vim-gitgutter'
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey'] }
 " Plug 'Yggdroot/indentLine'
-Plug 'Chiel92/vim-autoformat'
+" Plug 'Chiel92/vim-autoformat'
 call plug#end()
 
 source ~/.config/nvim/init/common.vim
