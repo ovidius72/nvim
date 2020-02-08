@@ -31,9 +31,15 @@ set nobackup
 
 " always show signcolumns
 set signcolumn=yes
+" set signcolumn=auto:2
 
 let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
+let g:coc_status_info_sign = '•'
+
+" hi! CocErrorHighlight guibg=#d62829 guifg=#fafafa gui=undercurl 
+" hi! CocWarningHighlight guibg=#dc6c14 guifg=#fafafa gui=undercurl
+" hi! CocInfoHighlight guibg=#92c79a guifg=#fafafa gui=undercurl
 
 " // Dark ColorScheme
 autocmd ColorScheme *
@@ -55,9 +61,14 @@ autocmd ColorScheme *
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
-nmap gs <Plug>(coc-git-chunkinfo)
 " show commit contains current position
-" nmap gk <Plug>(coc-git-commit)
+nmap <Leader>gc <Plug>(coc-git-commit)
+nmap <Leader>gi <Plug>(coc-git-chunkinfo)
+nmap <Leader>gu :CocCommand git.chunkUndo<cr>
+nmap <Leader>gf :CocCommand git.foldUnchanged<cr>
+nmap <Leader>gd :CocCommand git.diffCached<cr>
+nmap <Leader>gs :CocCommand git.showCommit<cr>
+nmap <Leader>gt :CocCommand git.toggleGutters<cr>
 " create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
@@ -112,16 +123,22 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
+
 " coc-explorer
+" noremap ge :CocCommand explorer
+"     \ --toggle
+"     \ --sources=buffer+,file+
+"     \ --fi <CR>
+
 noremap <silent> <leader>x :execute 'CocCommand explorer' .
       \ ' --no-toggle' .
       \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git:selection:icon:clip:diagnosticError:diagnosticWarning:indent:filename --reveal ' . expand('%:p')<CR>
+      \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
 
 noremap <silent> <leader><leader>x :execute 'CocCommand explorer' .
       \ ' --toggle' 
       \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git:selection:icon:clip:diagnosticError:diagnosticWarning:diagnosicInfo:indent:filename --reveal ' . expand('%:p')<CR>
+      \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
 " coc-expolorer
 " nmap ge :CocCommand explorer
 "       \ --toggle
@@ -159,36 +176,18 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 inoremap <c-w>p cj coc#util#float_jump() 
 nnoremap <c-w>p cj coc#util#float_jump() 
-" save all in various modes
-nnoremap <c-s> :wa<CR>
-inoremap <c-s> <Esc>:wa<CR>a
-vnoremap <c-s> <Esc>:wa<CR>gv
-
-
-"yank and move the curson to the last yanked line
-vnoremap gy y']
-
-" console.log wrapper
-" Console log from insert mode; Puts focus inside parentheses
-
-imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
-" Console log from visual mode on next line, puts visual selection inside parentheses
-vmap <c-c><c-l> yogll<Esc>p
-" Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap <c-c><c-l> yiwogll<Esc>p 
-
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> [i <Plug>(coc-diagnostic-diagnosicInfo)
 
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gsh :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent> gsv :call CocAction('jumpDefinition', 'vsplit')<cr>
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent><Leader>dd <Plug>(coc-definition)
+nmap <silent><Leader>ds :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent><Leader>dv :call CocAction('jumpDefinition', 'vsplit')<cr>
+nmap <silent><Leader>dt <Plug>(coc-type-definition)
+nmap <silent><Leader>di <Plug>(coc-implementation)
+nmap <silent><Leader>dr <Plug>(coc-references)
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
@@ -221,6 +220,8 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync("getCurrentFunctionSymbol")
+
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -260,11 +261,13 @@ command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-
+" nnoremap <space>cf <Plug>(coc-codelens-action)
 " Using CocList
 nnoremap <silent><space>cl :CocList<cr>
 " Show all diagnostics
 nnoremap <silent> <space>cd  :<C-u>CocList diagnostics<cr>
+" show coc actions
+nnoremap <silent> <space>ca  :<C-u>CocList actions<cr>
 " Manage extensions
 nnoremap <silent> <space>ce  :<C-u>CocList extensions<cr>
 " Show commands

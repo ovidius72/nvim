@@ -29,7 +29,10 @@ export FZF_DEFAULT_OPTS='
 - brew install the_silver_searcher
 - gem install neovim-ruby-host neovim
 - brew install fzf
-
+- brew install bat
+- brew install highlight
+- brew install ranger
+- brew install rg
 
 ##### Arch/Manjaro
 - sudo pacman -S mlton rlwrap smlnj

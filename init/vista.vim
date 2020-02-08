@@ -1,5 +1,4 @@
 """" VISTA
-nmap <F8> :Vista!!<CR>
 
 " function! NearestMethodOrFunction() abort
 "   return get(b:, 'vista_nearest_method_or_function', '')
@@ -34,9 +33,9 @@ let g:vista_sidebar_width = 60
 " Declare the command including the executable and options used to generate ctags output
 " for some certain filetypes.The file path will be appened to your custom command.
 " For example:
-let g:vista_ctags_cmd = {
-      \ 'haskell': 'hasktags -x -o - -c',
-      \ }
+" let g:vista_ctags_cmd = {
+"       \ 'haskell': 'hasktags -x -o - -c',
+"       \ }
 
 " To enable fzf's preview window set g:vista_fzf_preview.
 " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
@@ -52,3 +51,4 @@ let g:vista#renderer#enable_icon = 1
 " \  }
 
 noremap <Leader>vf :Vista finder<cr>
+nmap <Leader>vo :Vista!!<CR>
