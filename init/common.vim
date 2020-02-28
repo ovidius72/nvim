@@ -162,7 +162,7 @@ let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
 let g:move_key_modifier = 'C'
 
 " save all in various modes
-nnoremap <c-s> :wa<CR><CR>
+nnoremap <c-s> :wa<CR>
 inoremap <c-s> <Esc>:wa<CR>a
 vnoremap <c-s> <Esc>:wa<CR>gv
 
@@ -178,8 +178,8 @@ imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap <silent><c-c><c-l> yogll<Esc>pviw
 " Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
-
+" nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
+nmap <Leader><Leader>l yiwogll<Esc>pviw<Esc>
 
 
 " *************** inc serach

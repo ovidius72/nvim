@@ -11,6 +11,7 @@
   "diagnostic.checkCurrentLine": true,
   "git.signOffset": 1,
   "git.enableGlobalStatus": true,
+  "yaml.completion": false,
   "diagnostic.displayByAle": false,
   "diagnostic.level": "hint",
   "diagnostic.locationlist": true,

@@ -14,4 +14,5 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-let g:smart_case = 1;
+let g:smart_case = 1
+let g:EasyMotion_smart_case=1

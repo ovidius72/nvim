@@ -58,11 +58,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dstein64/vim-win'
 Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'pangloss/vim-javascript'
-Plug 'sheerun/vim-polyglot'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'justinmk/vim-syntax-extra'
 " Plug 'terryma/vim-expand-region'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -100,4 +100,5 @@ source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
+source ~/.config/nvim/init/easymotion.vim
 runtime macros/sandwich/keymap/surround.vim
