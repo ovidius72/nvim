@@ -22,6 +22,7 @@ let g:which_key_map.e = {
 let g:which_key_map.s = { 
       \'name': '+search',
       \'s': 'lines',
+      \'r': 'RipReg-word',
       \'t': 'buffer tags',
       \'w': 'windows', 
       \}

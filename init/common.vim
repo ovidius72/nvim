@@ -33,6 +33,13 @@ inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
 
+" save all in various modes
+nnoremap <c-s> :wa<CR>
+inoremap <c-s> <Esc>:wa<CR>a
+vnoremap <c-s> <Esc>:wa<CR>gv
+
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+" set list
 " highlight jsxAttrib cterm=italic
 " highlight jsxTag cterm=italic
 " highlight tsxTag cterm=italic
@@ -59,6 +66,33 @@ let g:qs_lazy_highlight = 1
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
 
+
+" autocmd FileType cpp set makeprg=clang++\ -std=c++2a\ -o\ '%<'\ '%'
+
+" function! CreateCenteredFloatingWindow()
+"     let width = min([&columns - 4, max([80, &columns - 20])])
+"     let height = min([&lines - 4, max([20, &lines - 10])])
+"     let top = ((&lines - height) / 2) - 1
+"     let left = (&columns - width) / 2
+"     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+
+"     let top = "╭" . repeat("─", width - 2) . "╮"
+"     let mid = "│" . repeat(" ", width - 2) . "│"
+"     let bot = "╰" . repeat("─", width - 2) . "╯"
+"     let lines = [top] + repeat([mid], height - 2) + [bot]
+"     let s:buf = nvim_create_buf(v:false, v:true)
+"     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+"     call nvim_open_win(s:buf, v:true, opts)
+"     set winhl=Normal:Floating
+"     let opts.row += 1
+"     let opts.height -= 2
+"     let opts.col += 2
+"     let opts.width -= 4
+"     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+"     au BufWipeout <buffer> exe 'bw '.s:buf
+" endfunction
+
+" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 augroup FiletypeGroup
     autocmd!
@@ -119,6 +153,7 @@ let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
 " highlight link GitGutterDeleteLineNr DiffDelete
 " highlight link GitGutterChangeDeleteLineNr SignColumn
 
+" let g:gitgutter_override_sign_column_highlight = 0
 nmap <Leader>gh :GitGutterPreviewHunk<CR>
 nmap <Leader>gn :GitGutterNextHunk<CR>
 nmap <Leader>gp :GitGutterPrevHunk<CR>
@@ -367,7 +402,6 @@ nnoremap <Leader>af :call FloatTerm()<CR>
 nnoremap <Leader>ae :call FloatTerm('"node"')<CR>
 " Open tig, yes TIG, A FLOATING TIGGGG!!!!!!
 nnoremap <Leader>ag :call FloatTerm('"tig"')<CR>
-
 
 " Show the style name of thing under the cursor
 " Shamelessly taken from https://github.com/tpope/vim-scriptease

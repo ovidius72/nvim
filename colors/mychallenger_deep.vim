@@ -183,6 +183,7 @@ let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
 " flat colors:
 let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "0"}
+" let s:asphalt_subtle= { "gui": "#444444", "cterm": "232", "cterm16": "0"}
 let s:dark_asphalt = { "gui": "#565575", "cterm": "236", "cterm16": "8"}
 
 let s:red = { "gui": "#ff8080", "cterm": "204", "cterm16": "1"}
@@ -214,7 +215,7 @@ hi CocFloating guibg=#292c3f ctermbg=60
 
 let s:bg              = s:asphalt
 let s:bg_subtle       = s:asphalt_subtle
-let s:bg_dark         = s:dark_asphalt
+let s:bg_dark         = s:subtle_black
 let s:norm            = s:clouds
 let s:norm_subtle     = s:dark_clouds
 let s:visual          = s:bg_dark

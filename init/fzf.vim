@@ -21,20 +21,21 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'borde
 
 
 " Customize fzf colors to match your color scheme
+
 " let g:fzf_colors =
-"       \ { 'fg':      ['fg', 'Normal'],
-"       \ 'bg':      ['bg', 'Normal'],
-"       \ 'hl':      ['fg', 'Comment'],
-"       \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"       \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-"       \ 'hl+':     ['fg', 'Statement'],
-"       \ 'info':    ['fg', 'PreProc'],
-"       \ 'border':  ['fg', 'Normal'],
-"       \ 'prompt':  ['fg', 'Conditional'],
-"       \ 'pointer': ['fg', 'Exception'],
-"       \ 'marker':  ['fg', 'Keyword'],
-"       \ 'spinner': ['fg', 'Label'],
-"       \ 'header':  ['fg', 'Comment'] }
+" \ { 'fg':      ['fg', 'Normal'],
+"   \ 'bg':      ['bg', 'Normal'],
+"   \ 'hl':      ['fg', 'Comment'],
+"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"   \ 'hl+':     ['fg', 'Statement'],
+"   \ 'info':    ['fg', 'PreProc'],
+"   \ 'border':  ['fg', 'Ignore'],
+"   \ 'prompt':  ['fg', 'Conditional'],
+"   \ 'pointer': ['fg', 'Exception'],
+"   \ 'marker':  ['fg', 'Keyword'],
+"   \ 'spinner': ['fg', 'Label'],
+"   \ 'header':  ['fg', 'Comment'] }
   
 
 " Enable per-command history.
@@ -68,11 +69,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" nmap <Leader>ph :History<CR>
-" nmap <Leader>hw :Windows<CR>
-" nmap <Leader>hcb :Commits<CR>
-" nmap <Leader>hf :Files<CR>
-
 " Marks keybinding
 nmap <Leader>mm :Marks<CR>
 
@@ -105,9 +101,17 @@ nmap <Leader>sw :Windows<CR>
 nmap <Leader>st :BTags<CR>
 
 
-
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
+
+if has('nvim') && exists('&winblend') && &termguicolors
+  set winblend=3
+
+  " hi NormalFloat guibg=None
+  " if exists('g:fzf_colors.bg')
+  "   call remove(g:fzf_colors, 'bg')
+  " endif
+
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
@@ -131,15 +135,16 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+map <leader>sr :RG;
 
-nnoremap <silent> <Leader>hc :call fzf#run({
-\   'source':
-\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
-\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-\   'sink':    'colo',
-\   'options': '+m',
-\   'left':    30
-\ })<CR>
+" nnoremap <silent> <Leader>hc :call fzf#run({
+" \   'source':
+" \     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+" \         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+" \   'sink':    'colo',
+" \   'options': '+m',
+" \   'left':    30
+" \ })<CR>
 
 function! s:buflist()
   redir => ls
@@ -159,29 +164,9 @@ nnoremap <silent> <Leader>br :call fzf#run({
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
 
-" if has('nvim') && exists('&winblend') && &termguicolors
-"   set winblend=0
+    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+  endfunction
 
-"   hi NormalFloat guibg=None
-"   if exists('g:fzf_colors.bg')
-"     call remove(g:fzf_colors, 'bg')
-"   endif
+  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+endif
 
-"   if stridx($FZF_DEFAULT_OPTS, '--border') == -1
-"     let $FZF_DEFAULT_OPTS .= ' --border'
-"   endif
-
-"   function! FloatingFZF()
-"     let width = float2nr(&columns * 0.8)
-"     let height = float2nr(&lines * 0.6)
-"     let opts = { 'relative': 'editor',
-"                \ 'row': (&lines - height) / 2,
-"                \ 'col': (&columns - width) / 2,
-"                \ 'width': width,
-"                \ 'height': height }
-
-"     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-"   endfunction
-
-"   let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-" endif
