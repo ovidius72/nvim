@@ -94,11 +94,12 @@ let g:which_key_map.g = {
       \ 'c': 'Git Commits',
       \ 'f': 'Git Files',
       \ 'F': 'Git Files Preview',
-      \ 's': 'Status',
-      \ 'S': 'Fzf Status',
       \ 'h': 'Preview Hunk',
       \ 'n': 'Next Hunk',
       \ 'p': 'Prev Hunk',
+      \ 'P': 'Git Push',
+      \ 's': 'Status',
+      \ 'S': 'Fzf Status',
       \}
 
 
