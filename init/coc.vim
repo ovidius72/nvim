@@ -2,6 +2,7 @@ let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-prettier',
       \ 'coc-tslint',
+      \ 'coc-actions',
       \ 'coc-styled-components',
       \ 'coc-diagnostic',
       \ 'coc-snippets',
@@ -21,6 +22,7 @@ let g:coc_global_extensions = [
       \ 'coc-yaml',
       \ 'coc-python',
       \ 'coc-html',
+      \ 'coc-git',
       \ 'coc-ccls',
       \ ]
 

@@ -96,6 +96,7 @@ let g:which_key_map.c = {
         \'t': 'toggle',
         \'a': 'annotate',
         \},
+      \ 'c' : [':CocConfig','Coc Config'],
       \ 'd':{ 
         \'name': '+coc-diagnostic',
         \'i': 'diagnostic info',
@@ -112,6 +113,7 @@ let g:which_key_map.c = {
         \ 's' : 'show commit',
         \ 't' : 'toggle gutters',
         \},
+      \ 'h' : [':CocInfo','CocInfo'],
       \ 'i' : 'Actions Menu',
       \ 'l': {
           \'name': '+coc-list',
