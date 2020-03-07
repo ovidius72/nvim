@@ -95,6 +95,7 @@ let g:which_key_map.g = {
       \ 'f': 'Git Files',
       \ 'F': 'Git Files Preview',
       \ 's': 'Status',
+      \ 'S': 'Fzf Status',
       \ 'h': 'Preview Hunk',
       \ 'n': 'Next Hunk',
       \ 'p': 'Prev Hunk',
