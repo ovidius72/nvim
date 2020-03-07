@@ -1,0 +1,6 @@
+let g:ranger_map_keys = 0
+
+map <leader>arr :Ranger<CR>
+map <leader>ard :RangerWorkingDirectory<CR>
+map <leader>arc :RangerCurrentDirectory<CR>
+map <leader>arf :RangerCurrentFile<CR>

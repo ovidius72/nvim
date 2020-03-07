@@ -1,10 +1,47 @@
 {
-  "tsserver.formatOnType": true,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
+  "tsserver.formatOnType": true,
+  "typescript.showUnused": true,
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
+  "diagnostic.enable": true,
+  "signature.enable": true,
+  "signature.target":"echo",
+  "diagnostic.checkCurrentLine": true,
+  "git.signOffset": 1,
+  "git.enableGlobalStatus": true,
+  "yaml.completion": false,
+  "diagnostic.displayByAle": false,
+  "diagnostic.level": "hint",
+  "diagnostic.locationlist": true,
+  "diagnostic.enableMessage": "always",
+  "diagnostic.refreshOnInsertMode": false,
+  "yank.enableCompletion": false,
+  "explorer.file.column.git.icon.added": "✚",
+  "explorer.file.column.git.icon.untracked": "◎",
+  "explorer.file.column.git.icon.modified": "✐",
+  "explorer.file.column.git.icon.deleted": "🗷", 
+  "explorer.file.column.git.icon.mixed": "⁉",
+  "explorer.file.column.git.icon.copied": "➜",
+  "explorer.file.column.git.icon.renamed": "®",
+  "explorer.file.column.git.icon.unmerged": "🗈",
+  "explorer.openAction.select.filterFloatWindows": false,
+  "explorer.buffer.showHiddenBuffers": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "python": ["py", "html"],
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
   "languageserver": {
+    "reason": {
+      "command": "reason-language-server",
+      "filetypes": ["reason"]
+    },
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "objc", "objcpp"],
@@ -18,18 +55,10 @@
     "phplang": {
       "command": "php",
       "args": [
-        "/Users/antonio/php-language-server/vendor/felixfbecker/language-server/bin/php-language-server.php"
+        "/usr/bin/php-language-server"
       ],
       "filetypes": ["php"]
-    },
-    "reason": {
-      "command": "/Users/antonio/reason-language-server/reason-language-server",
-      "filetypes": ["reason", "re"]
-    },
-    "ocaml": {
-      "command": "ocaml-language-server",
-      "args": ["--stdio"],
-      "filetypes": ["ocaml", "reason"]
     }
-  }
+  },
+  "git.enableGutters": true
 }
