@@ -54,9 +54,9 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nmap <leader>Hm <plug>(fzf-maps-n)
+xmap <leader>Hm <plug>(fzf-maps-x)
+omap <leader>Hm <plug>(fzf-maps-o)
 
 
 " Insert mode completion
@@ -68,28 +68,41 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-nmap <Leader>hh :History<CR>
-nmap <Leader>hw :Windows<CR>
-nmap <Leader>hcc :Commits<CR>
-nmap <Leader>hcb :Commits<CR>
-nmap <Leader>hg :GFiles?<CR>
-nmap <Leader>hf :Files<CR>
-nmap <Leader>hm :Marks<CR>
-nmap <Leader>t :BTags<CR>
-nmap <Leader>T :Tags<CR>
-nmap <Leader>p :GFiles<CR>
-nmap <Leader>rr :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
-nmap <Leader>o :Files<CR>
-nmap <Leader>l :BLines<CR>
+" nmap <Leader>ph :History<CR>
+" nmap <Leader>hw :Windows<CR>
+" nmap <Leader>hcb :Commits<CR>
+" nmap <Leader>hf :Files<CR>
 
-nmap <Leader>aa :Ag<CR>
+" Marks keybinding
+nmap <Leader>mm :Marks<CR>
+
+" Files keybinding
+map <Leader>ff :Files<cr>
+map <Leader>fr :History<cr>
+
+" Git keybinding
+nmap <Leader>gs :GFiles?<CR>
+nmap <Leader>gc :Commits<CR>
+nmap <Leader>gf :GFiles<CR>
+nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
+
+" Project keybinding
+nmap <Leader>po :Files<CR>
+nmap <Leader>pt :Tags<CR>
+nmap <Leader>pa :Ag<CR>
+"
+" Buffers keybinding
 nmap <Leader>bb :Buffers<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
-
-
-" nmap <Leader>bd :bd<CR>
 nmap <Leader>bd :bp<CR>:bd#<CR>
+
+" Search keybinding
+nmap <Leader>ss :BLines<CR>
+nmap <Leader>sw :Windows<CR>
+nmap <Leader>st :BTags<CR>
+
+
 
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
@@ -137,7 +150,7 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
-nnoremap <silent> <Leader><Enter> :call fzf#run({
+nnoremap <silent> <Leader>br :call fzf#run({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
 \   'options': '+m',

@@ -60,10 +60,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
 
 
-
-
-
-
 augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.js set filetype=javascript
@@ -76,44 +72,17 @@ augroup END
 " runtime macros/match.vim
 
 " Highlight words that match the one under the cursor.
-nnoremap <F2> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
+nnoremap <leader>hh :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
 
 " Replace word under the cursor.
-nnoremap <Leader><Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <Leader>xr :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 
 
 " Nuake
-nnoremap <F7> :Nuake<CR>
+nnoremap <leader>an :Nuake<CR>
 inoremap <F7> <C-\><C-n>:Nuake<CR>
 tnoremap <F7> <C-\><C-n>:Nuake<CR>
-
-" *********** vim-which-key
-nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
-" nnoremap <silent> <localleader> :WhichKey 'g'<CR>
-set timeoutlen=500
-
-" let g:which_key_map = {}
-" let g:which_key_map['v'] = {
-"     \ 'name' : '+windows' ,
-"     \ 'w' : ['<C-W>w'     , 'other-window']          ,
-"     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
-"     \ '-' : ['<C-W>s'     , 'split-window-below']    ,
-"     \ '|' : ['<C-W>v'     , 'split-window-right']    ,
-"     \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
-"     \ 'h' : ['<C-W>h'     , 'window-left']           ,
-"     \ 'j' : ['<C-W>j'     , 'window-below']          ,
-"     \ 'l' : ['<C-W>l'     , 'window-right']          ,
-"     \ 'k' : ['<C-W>k'     , 'window-up']             ,
-"     \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
-"     \ 'J' : ['resize +5'  , 'expand-window-below']   ,
-"     \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
-"     \ 'K' : ['resize -5'  , 'expand-window-up']      ,
-"     \ '=' : ['<C-W>='     , 'balance-window']        ,
-"     \ 's' : ['<C-W>s'     , 'split-window-below']    ,
-"     \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
-"     \ '?' : ['Windows'    , 'fzf-window']            ,
-"     \ }
 
 
 " let g:tmux_navigator_no_mappings = 1
@@ -150,10 +119,10 @@ let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
 " highlight link GitGutterDeleteLineNr DiffDelete
 " highlight link GitGutterChangeDeleteLineNr SignColumn
 
-" nmap <Leader>gh :GitGutterPreviewHunk<CR>
-" nmap <Leader>gn :GitGutterNextHunk<CR>
-" nmap <Leader>gp :GitGutterPrevHunk<CR>
-" nmap <Leader>gc :pclose<CR>
+nmap <Leader>gh :GitGutterPreviewHunk<CR>
+nmap <Leader>gn :GitGutterNextHunk<CR>
+nmap <Leader>gp :GitGutterPrevHunk<CR>
+nmap <Leader>' :pclose<CR>
 
 "bufsurf
 " nmap <F9> :BufSurfBack<CR>
@@ -165,6 +134,8 @@ let g:move_key_modifier = 'C'
 nnoremap <c-s> :wa<CR>
 inoremap <c-s> <Esc>:wa<CR>a
 vnoremap <c-s> <Esc>:wa<CR>gv
+nmap <leader>qq :qa<cr>
+nmap <leader>qw :waq<cr>
 
 
 "yank and move the curson to the last yanked line
@@ -179,7 +150,7 @@ imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
 vmap <silent><c-c><c-l> yogll<Esc>pviw
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 " nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
-nmap <Leader><Leader>l yiwogll<Esc>pviw<Esc>
+nmap <Leader>ol yiwogll<Esc>pviw<Esc>
 
 
 " *************** inc serach
@@ -208,18 +179,18 @@ map zg/ <Plug>(incsearch-easymotion-stay)
 " noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 
-noremap <leader>fh :set hlsearch!<CR>
+noremap <leader>hs :set hlsearch!<CR>
 " Tab navigation
-nnoremap <silent> <leader>[ :tabprevious<cr>
-nnoremap <silent> <leader>] :tabnext<cr>
-nnoremap <silent> <leader>= :tabnew<cr>
-nnoremap <silent> <leader>- :tabclose<cr>
+nnoremap <silent> <leader>Tp :tabprevious<cr>
+nnoremap <silent> <leader>Tn :tabnext<cr>
+nnoremap <silent> <leader>TN :tabnew<cr>
+nnoremap <silent> <leader>Tc :tabclose<cr>
 " nnoremap <silent> <leader><bs> :exec 'set showtabline='.string(!&showtabline)<cr>
 
 " zoom
-noremap zm <c-w>_<c-w>\|
-noremap zi <c-w>_ \| <c-w>\|
-noremap zo <c-w>=
+noremap <leader>wmm <c-w>_<c-w>\|
+noremap <leader>wmi <c-w>_ \| <c-w>\|
+noremap <leader>wmo <c-w>=
 
 
 " put right side of the cursor to new line
@@ -231,9 +202,9 @@ noremap zo <c-w>=
 " inoremap zo <c-w>=
 " vnoremap zo <c-w>=
 " nerdtree
-map <leader>nt :NERDTreeToggle<CR>
-map <leader>no :NERDTreeFocus<CR>
-map <leader>nf :NERDTreeFind<CR>
+map <leader>pt :NERDTreeToggle<CR>
+map <leader>pf :NERDTreeFocus<CR>
+map <leader>pn :NERDTreeFind<CR>
 
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 1
@@ -393,11 +364,10 @@ endfunction
 " Open terminal
 nnoremap <Leader>at :call FloatTerm()<CR>
 " Open node REPL
-nnoremap <Leader>an :call FloatTerm('"node"')<CR>
+nnoremap <Leader>ae :call FloatTerm('"node"')<CR>
 " Open tig, yes TIG, A FLOATING TIGGGG!!!!!!
 nnoremap <Leader>ag :call FloatTerm('"tig"')<CR>
 
-nnoremap <Leader><Leader>q :call vimspector#AddWatch("<C-r><C-w>")<CR>
 
 " Show the style name of thing under the cursor
 " Shamelessly taken from https://github.com/tpope/vim-scriptease
@@ -422,4 +392,4 @@ function! DescribeFace(count) abort
   return ''
 endfunction
 
-nnoremap zs :<C-U>exe DescribeFace(v:count)<CR>
+nnoremap <leader>Hz :<C-U>exe DescribeFace(v:count)<CR>

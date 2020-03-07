@@ -1,6 +1,6 @@
 let g:ranger_map_keys = 0
 
-map <leader>mm :Ranger<CR>
-map <leader>mw :RangerWorkingDirectory<CR>
-map <leader>md :RangerCurrentDirectory<CR>
-map <leader>mf :RangerCurrentFile<CR>
+map <leader>arr :Ranger<CR>
+map <leader>ard :RangerWorkingDirectory<CR>
+map <leader>arc :RangerCurrentDirectory<CR>
+map <leader>arf :RangerCurrentFile<CR>

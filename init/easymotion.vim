@@ -1,18 +1,55 @@
 "******** vim-motion"
 " <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+map  <Leader>jf <Plug>(easymotion-bd-f)
+nmap <Leader>jf <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
+nmap <Leader>js <Plug>(easymotion-overwin-f2)
+
+nmap <Leader>ja <Plug>(easymotion-s2)
+nmap <Leader>jt <Plug>(easymotion-t2)
+
+nmap <Leader>jm <Plug>(easymotion-sn)
+omap <Leader>jm <Plug>(easymotion-tn)
 
 " Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
+map  <Leader>jb <Plug>(easymotion-bd-jk)
+nmap <Leader>jb <Plug>(easymotion-overwin-line)
+
+nmap <Leader>jk <Plug>(easymotion-k)
+nmap <Leader>jj <Plug>(easymotion-j)
+nmap <Leader>jl <Plug>(easymotion-lineforward)
+nmap <Leader>jh <Plug>(easymotion-linebackward)
+
+
+" repeat last motion
+nmap <Leader>j. <Plug>(easymotion-repeat)
+nmap <Leader>jn <Plug>(easymotion-next)
+nmap <Leader>jp <Plug>(easymotion-prev)
 
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader>jw <Plug>(easymotion-bd-w)
+nmap <Leader>jw <Plug>(easymotion-overwin-w)
 
 let g:smart_case = 1
 let g:EasyMotion_smart_case=1
+" let g:which_key_map['j'] = {
+"     \ 'name' : '+easymotion' ,
+"     \ 'f' : ['<Plug(easymotion-bd-f>'     , 'easymotion F']          ,
+"     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
+"     \ '-' : ['<C-W>s'     , 'split-window-below']    ,
+"     \ '|' : ['<C-W>v'     , 'split-window-right']    ,
+"     \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
+"     \ 'h' : ['<C-W>h'     , 'window-left']           ,
+"     \ 'j' : ['<C-W>j'     , 'window-below']          ,
+"     \ 'l' : ['<C-W>l'     , 'window-right']          ,
+"     \ 'k' : ['<C-W>k'     , 'window-up']             ,
+"     \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
+"     \ 'J' : ['resize +5'  , 'expand-window-below']   ,
+"     \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
+"     \ 'K' : ['resize -5'  , 'expand-window-up']      ,
+"     \ '=' : ['<C-W>='     , 'balance-window']        ,
+"     \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+"     \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+"     \ '?' : ['Windows'    , 'fzf-window']            ,
+"     \ }

@@ -1,22 +1,22 @@
 
 " *********** vim-clap
-nmap <Leader>kb :Clap buffers<CR>
-nmap <Leader>kc :Clap colors<CR>
-nmap <Leader>kl :Clap blines<CR>
-nmap <Leader>kf :Clap gfiles<CR>
-nmap <Leader>ko :Clap files<CR>
-nmap <Leader>kg :Clap grep<CR>
-nmap <Leader>ks :Clap history<CR>
-nmap <Leader>kw :Clap windows<CR>
-nmap <Leader>kj :Clap jumps<CR>
-nmap <Leader>km :Clap marks<CR>
-nmap <Leader>kr :Clap registers<CR>
-nmap <Leader>kt :Clap tags<CR>
-nmap <Leader>ky :Clap yanks<CR>
-nmap <Leader>kh :Clap hist:<CR>
-nmap <Leader>kx :Clap filer<CR>
-nmap <Leader>kk :Clap<CR>
-nmap <Leader>ki :Clap grep ++query=<cword><CR>
+nmap <Leader>akb :Clap buffers<CR>
+nmap <Leader>akc :Clap colors<CR>
+nmap <Leader>akl :Clap blines<CR>
+nmap <Leader>akf :Clap gfiles<CR>
+nmap <Leader>ako :Clap files<CR>
+nmap <Leader>akg :Clap grep<CR>
+nmap <Leader>aks :Clap history<CR>
+nmap <Leader>akw :Clap windows<CR>
+nmap <Leader>akj :Clap jumps<CR>
+nmap <Leader>akm :Clap marks<CR>
+nmap <Leader>akr :Clap registers<CR>
+nmap <Leader>akt :Clap tags<CR>
+nmap <Leader>aky :Clap yanks<CR>
+nmap <Leader>akh :Clap hist:<CR>
+nmap <Leader>akx :Clap filer<CR>
+nmap <Leader>akk :Clap<CR>
+nmap <Leader>aki :Clap grep ++query=<cword><CR>
 
 
 

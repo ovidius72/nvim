@@ -1,5 +1,5 @@
 " map <leader>v <plug>WinWin
-map , <plug>WinWin
+map <leader>w. <plug>WinWin
 command! Win :call win#Win()
 let g:win_resize_height = 3
 let g:win_resize_width = 4

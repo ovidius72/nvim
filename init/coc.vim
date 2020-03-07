@@ -58,17 +58,17 @@ autocmd ColorScheme *
 
 " coc-git
 " navigate chunks of current buffer
-nmap [g <Plug>(coc-git-prevchunk)
-nmap ]g <Plug>(coc-git-nextchunk)
+nmap [h <Plug>(coc-git-prevchunk)
+nmap ]h <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
 " show commit contains current position
-nmap <Leader>gc <Plug>(coc-git-commit)
-nmap <Leader>gi <Plug>(coc-git-chunkinfo)
-nmap <Leader>gu :CocCommand git.chunkUndo<cr>
-nmap <Leader>gf :CocCommand git.foldUnchanged<cr>
-nmap <Leader>gd :CocCommand git.diffCached<cr>
-nmap <Leader>gs :CocCommand git.showCommit<cr>
-nmap <Leader>gt :CocCommand git.toggleGutters<cr>
+nmap <Leader>cgc <Plug>(coc-git-commit)
+nmap <Leader>cgi <Plug>(coc-git-chunkinfo)
+nmap <Leader>cgu :CocCommand git.chunkUndo<cr>
+nmap <Leader>cgf :CocCommand git.foldUnchanged<cr>
+nmap <Leader>cgd :CocCommand git.diffCached<cr>
+nmap <Leader>cgs :CocCommand git.showCommit<cr>
+nmap <Leader>cgt :CocCommand git.toggleGutters<cr>
 " create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
@@ -130,12 +130,12 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "     \ --sources=buffer+,file+
 "     \ --fi <CR>
 
-noremap <silent> <leader>x :execute 'CocCommand explorer' .
+noremap <silent> <leader>cx :execute 'CocCommand explorer' .
       \ ' --no-toggle' .
       \ ' --sources=buffer+,file+' .
       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
 
-noremap <silent> <leader><leader>x :execute 'CocCommand explorer' .
+noremap <silent> <leader>ct :execute 'CocCommand explorer' .
       \ ' --toggle' 
       \ ' --sources=buffer+,file+' .
       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
@@ -160,34 +160,39 @@ noremap <silent> <leader><leader>x :execute 'CocCommand explorer' .
 "       \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
 
 "coc-marks
-nmap <Leader><Leader>m :CocList marks<CR>
+nmap <Leader>cbb :CocList marks<CR>
 "coc-bookmark
-nmap <Leader>bl :CocList bookmark<CR>
-nmap <Leader>bj <Plug>(coc-bookmark-next)
-nmap <Leader>bk <Plug>(coc-bookmark-prev)
-nmap <Leader>bt <Plug>(coc-bookmark-toggle)
-nmap <Leader>ba <Plug>(coc-bookmark-annotate)
+nmap <Leader>cbl :CocList bookmark<CR>
+nmap <Leader>cbj <Plug>(coc-bookmark-next)
+nmap <Leader>cbk <Plug>(coc-bookmark-prev)
+nmap <Leader>cbt <Plug>(coc-bookmark-toggle)
+nmap <Leader>cba <Plug>(coc-bookmark-annotate)
 
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "coc-yank
-nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent><leader>cy :<C-u>CocList -A --normal yank<cr>
 inoremap <c-w>p cj coc#util#float_jump() 
 nnoremap <c-w>p cj coc#util#float_jump() 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
-nmap <silent> [i <Plug>(coc-diagnostic-diagnosicInfo)
+nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
+" nmap <silent><leader>cdi <Plug>(coc-diagnostic-diagnosicInfo)
+" nmap <silent><leader>el <Plug>(coc-diagnostic-info)
+nmap <silent><leader>el <Plug>(coc-diagnostic-info)
+nmap <silent><leader>cdi <Plug>(coc-diagnostic-info)
 
 " Remap keys for gotos
-nmap <silent><Leader>dd <Plug>(coc-definition)
-nmap <silent><Leader>ds :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent><Leader>dv :call CocAction('jumpDefinition', 'vsplit')<cr>
-nmap <silent><Leader>dt <Plug>(coc-type-definition)
-nmap <silent><Leader>di <Plug>(coc-implementation)
-nmap <silent><Leader>dr <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gs :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent>gv :call CocAction('jumpDefinition', 'vsplit')<cr>
+nmap <silent>gt <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gr <Plug>(coc-references)
+nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
@@ -224,11 +229,11 @@ autocmd CursorHold * silent call CocActionAsync("getCurrentFunctionSymbol")
 
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>cr <Plug>(coc-rename)
 
 " Remap for format selected region
-vmap <leader>fs  <Plug>(coc-format-selected)
-nmap <leader>fs  <Plug>(coc-format-selected)
+vmap <leader>cF  <Plug>(coc-format-selected)
+nmap <leader>cF  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -239,8 +244,8 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-vmap <leader>as  <Plug>(coc-codeaction-selected)
-nmap <leader>as  <Plug>(coc-codeaction-selected)
+vmap <leader>cs  <Plug>(coc-codeaction-selected)
+nmap <leader>cs  <Plug>(coc-codeaction-selected)
 
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 " nmap <silent> <TAB> <Plug>(coc-range-select)
@@ -248,9 +253,9 @@ nmap <leader>as  <Plug>(coc-codeaction-selected)
 " xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>ca <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>cf <Plug>(coc-fix-current)
 
 " Use `:Format` for format current buffer
 command! -nargs=0 FM :call CocActionAsync('format')
@@ -263,22 +268,22 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " nnoremap <space>cf <Plug>(coc-codelens-action)
 " Using CocList
-nnoremap <silent><space>cl :CocList<cr>
+nnoremap <silent><space>cll :CocList<cr>
 " Show all diagnostics
-nnoremap <silent> <space>cd  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>cld  :<C-u>CocList diagnostics<cr>
 " show coc actions
-nnoremap <silent> <space>ca  :<C-u>CocList actions<cr>
+nnoremap <silent> <space>cla  :<C-u>CocList actions<cr>
 " Manage extensions
-nnoremap <silent> <space>ce  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>cle  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent> <space>cc  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>clc  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <space>co  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>clo  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>cs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>cls  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>cj  :<C-u>CocNext<CR>
+nnoremap <silent> <space>cln  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>ck  :<C-u>CocPrev<CR>
+nnoremap <silent> <space>clp  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>cp  :<C-u>CocListResume<CR>
+nnoremap <silent> <space>clr  :<C-u>CocListResume<CR>

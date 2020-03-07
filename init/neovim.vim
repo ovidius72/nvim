@@ -4,12 +4,14 @@ endif
 
 call plug#begin()
 " Plug 'Shougo/echodoc'
-Plug 'wadackel/vim-dogrun'
-Plug 'eemed/sitruuna.vim'
-Plug 'sainnhe/edge'
-Plug 'arzg/vim-colors-xcode'
-Plug 'bluz71/vim-moonfly-colors'
-Plug 'bluz71/vim-nightfly-guicolors'
+" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'liuchengxu/vim-which-key'
+" Plug 'wadackel/vim-dogrun'
+" Plug 'eemed/sitruuna.vim'
+" Plug 'sainnhe/edge'
+" Plug 'arzg/vim-colors-xcode'
+" Plug 'bluz71/vim-moonfly-colors'
+" Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
 Plug 'francoiscabrol/ranger.vim'
@@ -73,7 +75,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'airblade/vim-gitgutter'
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey'] }
 " Plug 'Yggdroot/indentLine'
 " Plug 'Chiel92/vim-autoformat'
 call plug#end()
@@ -101,4 +102,5 @@ source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/easymotion.vim
+source ~/.config/nvim/init/whichKey.vim
 runtime macros/sandwich/keymap/surround.vim
