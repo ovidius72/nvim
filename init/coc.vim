@@ -7,6 +7,10 @@ let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-yank',
       \ 'coc-explorer',
+      \ 'coc-import-cost',
+      \ 'coc-webpack',
+      \ 'coc-docker',
+      \ 'coc-sql',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-emmet',
@@ -18,7 +22,6 @@ let g:coc_global_extensions = [
       \ 'coc-python',
       \ 'coc-html',
       \ 'coc-ccls',
-      \ 'coc-snippets',
       \ ]
 
 set cmdheight=2
@@ -60,7 +63,7 @@ autocmd ColorScheme *
 " navigate chunks of current buffer
 nmap [h <Plug>(coc-git-prevchunk)
 nmap ]h <Plug>(coc-git-nextchunk)
-"
+" show chunk diff at current position
 " show commit contains current position
 nmap <Leader>cgc <Plug>(coc-git-commit)
 nmap <Leader>cgi <Plug>(coc-git-chunkinfo)
@@ -69,15 +72,11 @@ nmap <Leader>cgf :CocCommand git.foldUnchanged<cr>
 nmap <Leader>cgd :CocCommand git.diffCached<cr>
 nmap <Leader>cgs :CocCommand git.showCommit<cr>
 nmap <Leader>cgt :CocCommand git.toggleGutters<cr>
-" show commit contains current position
-" nmap gk <Plug>(coc-git-commit)
-"
 " create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
-
 
 " coc-smartf
 " press <esc> to cancel.
@@ -90,38 +89,6 @@ xmap ag <Plug>(coc-git-chunk-outer)
 "   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
 "   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
 " augroup end
-
-" autocmd User CocDiagnosticChange
-" \ call CocActionAsync('quickfixes', function('CocUpdateQuickFixes'))
-
-" function! CocUpdateQuickFixes(error, actions) abort
-"   let coc_quickfixes = {}
-"   try
-"     for action in a:actions
-"       if action.kind == 'quickfix'
-"         for change in action.edit.documentChanges
-"           for edit in change.edits
-"             let start_line = edit.range.start.line + 1
-"             let end_line = edit.range.end.line + 1
-"             let coc_quickfixes[start_line] = get(coc_quickfixes, start_line, 0) + 1
-"             if start_line != end_line
-"               let coc_quickfixes[end_line] = get(coc_quickfixes, end_line, 0) + 1
-"             endif
-"           endfor
-"         endfor
-"       endif
-"     endfor
-"   catch
-"   endtry
-"   if coc_quickfixes != get(b:, 'coc_quickfixes', {})
-"     let b:coc_quickfixes = coc_quickfixes
-"     call lightline#update()
-"   endif
-" endfunction
-
-" autocmd! User CocDiagnosticChange
-" autocmd  User CocDiagnosticChange
-  " \  call CocActionAsync('quickfixes', function('CocUpdateQuickFixes'))
 
 " {{ coc snippets
 " Use <C-l> for trigger snippet expand.
@@ -159,6 +126,13 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
+
+" coc-explorer
+" noremap ge :CocCommand explorer
+"     \ --toggle
+"     \ --sources=buffer+,file+
+"     \ --fi <CR>
+
 noremap <silent> <leader>cx :execute 'CocCommand explorer' .
       \ ' --no-toggle' .
       \ ' --sources=buffer+,file+' .
@@ -168,6 +142,25 @@ noremap <silent> <leader>ct :execute 'CocCommand explorer' .
       \ ' --toggle' 
       \ ' --sources=buffer+,file+' .
       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
+" coc-expolorer
+" nmap ge :CocCommand explorer
+"       \ --toggle
+"       \ --source=buffer+,file+
+"       \ --buffers-columns=selection,name,buffname,modified,bufnr
+"       \ --file-columns=icon,git,selection,clip,diagnosticError,diagnosticWarning,created,modified,accessed,indent,readonly,filename,size .<CR>
+
+" nmap gt :CocCommand explorer 
+"       \ --reveal
+"       \ --no-toggle
+"       \ --source=buffer+,file+
+"       \ --file-columns=git,selection,icon,clip,indent,filename,size<CR>
+
+" coc-explorer
+" noremap <silent> <leader>x :execute 'CocCommand explorer' .
+" nmap ge :execute 'CocCommand explorer' .
+"       \ ' --toggle' .
+"       \ ' --sources=buffer+,file+' .
+"       \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
 
 "coc-marks
 nmap <Leader>cbb :CocList marks<CR>
@@ -181,51 +174,22 @@ nmap <Leader>cba <Plug>(coc-bookmark-annotate)
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 "coc-yank
 nnoremap <silent><leader>cy :<C-u>CocList -A --normal yank<cr>
-
-" jump in the floating window.
 inoremap <c-w>p cj coc#util#float_jump() 
 nnoremap <c-w>p cj coc#util#float_jump() 
-
-" grep word under cursor
-command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
-nnoremap <silent> <space><space>g  :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
-nmap <Leader>q <Plug>(coc-translator-p)
-
-function! s:GrepArgs(...)
-  let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
-        \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
-  return join(list, "\n")
-endfunction
-
-" Keymapping for grep word under cursor with interactive mode
-nnoremap <silent> <Leader><Leader>h :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
-
-"yank and move the curson to the last yanked line
-vnoremap gy y']
-
-" console.log wrapper
-" Console log from insert mode; Puts focus inside parentheses
-imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
-" Console log from visual mode on next line, puts visual selection inside parentheses
-vmap <c-c><c-l> yogll<Esc>p
-" Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap <c-c><c-l> yiwogll<Esc>p 
-
->>>>>>> da5acdaaecb595a7614d6777a0e334e719d10203
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>cdi <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>el <Plug>(coc-diagnostic-info)
-nmap <silent><leader>el <Plug>(coc-diagnostic-info)
+" nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
 nmap <silent><leader>cdi <Plug>(coc-diagnostic-info)
-
+nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 " Remap keys for gotos
-<<<<<<< HEAD
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gs :call CocAction('jumpDefinition', 'split')<cr>
 nmap <silent>gv :call CocAction('jumpDefinition', 'vsplit')<cr>
@@ -233,15 +197,10 @@ nmap <silent>gt <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
-=======
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gsh :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent> gsv :call CocAction('jumpDefinition', 'vsplit')<cr>
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
->>>>>>> da5acdaaecb595a7614d6777a0e334e719d10203
 
+
+" Coc-actions extension
+map <silent><leader>ci :CocCommand actions.open<CR>
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -280,13 +239,8 @@ autocmd CursorHold * silent call CocActionAsync("getCurrentFunctionSymbol")
 nmap <leader>cr <Plug>(coc-rename)
 
 " Remap for format selected region
-<<<<<<< HEAD
 vmap <leader>cF  <Plug>(coc-format-selected)
 nmap <leader>cF  <Plug>(coc-format-selected)
-=======
-vmap <leader>cf  <Plug>(coc-format-selected)
-nmap <leader>cf  <Plug>(coc-format-selected)
->>>>>>> da5acdaaecb595a7614d6777a0e334e719d10203
 
 augroup mygroup
   autocmd!
@@ -297,13 +251,22 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-vmap <leader>cs  <Plug>(coc-codeaction-selected)
-nmap <leader>cs  <Plug>(coc-codeaction-selected)
+vmap <leader>cv  <Plug>(coc-codeaction-selected)
+nmap <leader>cv  <Plug>(coc-codeaction-selected)
+
+nmap <leader>cz :CocRestart<CR>
+nmap <leader>cu :CocUpdate<CR>
+" sessions
+command! -nargs=0 SESSLOAD   :call     CocAction('runCommand', 'session.load')
+command! -nargs=0 SESSSAVE   :call     CocAction('runCommand', 'session.save')
+nmap <leader>css :SESSSAVE<CR>
+nmap <leader>csl :SESSLOAD<CR>
+nmap <leader>pp :SESSLOAD<CR>
 
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 " nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Remap for do codeAction of current line
 nmap <leader>ca <Plug>(coc-codeaction)
@@ -312,12 +275,15 @@ nmap <leader>cf <Plug>(coc-fix-current)
 
 " Use `:Format` for format current buffer
 command! -nargs=0 FM :call CocActionAsync('format')
+nmap <leader>of :FM<cr>
 
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
+nmap <leader>oF :Fold<cr>
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+nmap <leader>oo :OR<cr>
 
 " nnoremap <space>cf <Plug>(coc-codelens-action)
 " Using CocList

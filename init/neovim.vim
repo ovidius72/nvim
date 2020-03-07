@@ -6,6 +6,13 @@ call plug#begin()
 " Plug 'Shougo/echodoc'
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'liuchengxu/vim-which-key'
+" Plug 'wadackel/vim-dogrun'
+" Plug 'eemed/sitruuna.vim'
+" Plug 'sainnhe/edge'
+" Plug 'arzg/vim-colors-xcode'
+" Plug 'bluz71/vim-moonfly-colors'
+" Plug 'bluz71/vim-nightfly-guicolors'
+" Plug 'christoomey/vim-tmux-navigator'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
@@ -16,13 +23,9 @@ Plug 'tsandall/vim-rego'
 Plug 'unblevable/quick-scope'
 " Plug 'dhruvasagar/vim-zoom'
 Plug 'Lenovsky/nuake'
-" Plug 'meain/vim-package-info', { 'do': 'npm install' }
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'liuchengxu/vim-clap'
-" Plug 'wellle/context.vim'
+Plug 'liuchengxu/vim-clap' 
 Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
-Plug 'jaredgorski/SpaceCamp'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'liuchengxu/space-vim-theme'
@@ -49,6 +52,10 @@ Plug 'tpope/vim-commentary'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+
 " Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -67,14 +74,11 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'haya14busa/incsearch.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'airblade/vim-gitgutter'
 " Plug 'Yggdroot/indentLine'
 " Plug 'Chiel92/vim-autoformat'
-" Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim

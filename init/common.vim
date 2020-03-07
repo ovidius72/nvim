@@ -27,6 +27,9 @@ let &t_ZR="\e[23m"
 let &t_ut=''
 autocmd FileType qf setlocal wrap
 
+" vim commentary for rego files.
+autocmd FileType rego setlocal commentstring=#\ %s
+
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
 inoremap <c-u> <c-g>u<c-u>
@@ -38,6 +41,10 @@ nnoremap <c-s> :wa<CR>
 inoremap <c-s> <Esc>:wa<CR>a
 vnoremap <c-s> <Esc>:wa<CR>gv
 
+command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
+map <leader>feU :PU<cr>
+map <leader>feI :PlugInstall<cr>
+
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 " set list
 " highlight jsxAttrib cterm=italic
@@ -48,7 +55,6 @@ vnoremap <c-s> <Esc>:wa<CR>gv
 " highlight typescriptBlock cterm=italic
 " highlight typescriptParenExp cterm=italic
 
-command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
 " remap s to Nop for vim-sandwitch
 " extends surround keybings for sandwich
 " use cl to replace s
@@ -59,9 +65,10 @@ command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins
 " vim-qick-scope
 augroup qs_colors
   autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff6f' gui=underline ctermfg=155 cterm=underline
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 augroup END
+
 let g:qs_lazy_highlight = 1
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
@@ -154,9 +161,15 @@ let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
 " highlight link GitGutterChangeDeleteLineNr SignColumn
 
 " let g:gitgutter_override_sign_column_highlight = 0
-nmap <Leader>gh :GitGutterPreviewHunk<CR>
-nmap <Leader>gn :GitGutterNextHunk<CR>
-nmap <Leader>gp :GitGutterPrevHunk<CR>
+omap igh <Plug>(GitGutterTextObjectInnerPending)
+omap agh <Plug>(GitGutterTextObjectOuterPending)
+xmap igh <Plug>(GitGutterTextObjectInnerVisual)
+xmap agh <Plug>(GitGutterTextObjectOuterVisual)
+nmap <Leader>ggh <Plug>(GitGutterPreviewHunk)
+nmap <Leader>ggn <Plug>(GitGutterNextHunk)
+nmap <Leader>ggp <Plug>(GitGutterPrevHunk)
+nmap <Leader>ggs <Plug>(GitGutterStageHunk)
+nmap <Leader>ggu <Plug>(GitGutterUndoHunk)
 nmap <Leader>' :pclose<CR>
 
 "bufsurf
@@ -200,6 +213,25 @@ map z/ <Plug>(incsearch-easymotion-/)
 map z? <Plug>(incsearch-easymotion-?)
 map zg/ <Plug>(incsearch-easymotion-stay)
 
+function! s:noregexp(pattern) abort
+  return '\V' . escape(a:pattern, '\')
+endfunction
+
+function! s:config() abort
+  return {'converters': [function('s:noregexp')]}
+endfunction
+
+noremap <silent><expr> zz/ incsearch#go(<SID>config())
+map zf/ <Plug>(incsearch-fuzzy-/)
+map zf? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+map <leader>z/ <Plug>(incsearch-fuzzy-/)
+map <leader>z? <Plug>(incsearch-fuzzy-?)
+map <leader>zg <Plug>(incsearch-fuzzy-stay)
+
+map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
+map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
+map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
 " " incsearch.vim x fuzzy x vim-easymotion
 " function! s:config_easyfuzzymotion(...) abort
 "   return extend(copy({
@@ -213,6 +245,9 @@ map zg/ <Plug>(incsearch-easymotion-stay)
 
 " noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
+
+nmap <leader>xj :SplitjoinJoin<CR>
+nmap <leader>xs :SplitjoinSplit<CR>
 
 noremap <leader>hs :set hlsearch!<CR>
 " Tab navigation

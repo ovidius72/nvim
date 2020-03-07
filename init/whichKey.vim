@@ -5,153 +5,27 @@ vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 set timeoutlen=500
 
 nnoremap <silent><leader>fs :wa<CR>
+nnoremap <silent><leader>bs :w<CR>
+" nnoremap <silent><leader>w. :call win#Win(1)<cr>
 nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
-
-
+nnoremap <silent><leader>atq :QuickScopeToggle<CR>
 
 
 let g:which_key_map = {}
-let g:which_key_map.e = { 
-      \ 'name': '+diagnostic',
-      \ 'l': 'diagnostic',
-      \ 'n': 'ale-next',
-      \ 'p': 'ale-pre',
-      \}
 
-let g:which_key_map.s = { 
-      \'name': '+search',
-      \'s': 'lines',
-      \'r': 'RipReg-word',
-      \'t': 'buffer tags',
-      \'w': 'windows', 
-      \}
+let g:which_key_map["'"] = 'close preview'
+let g:which_key_map.1 = 'Buffer 1'
+let g:which_key_map.2 = 'Buffer 2'
+let g:which_key_map.3 = 'Buffer 3'
+let g:which_key_map.4 = 'Buffer 4'
+let g:which_key_map.5 = 'Buffer 5'
+let g:which_key_map.6 = 'Buffer 6'
+let g:which_key_map.7 = 'Buffer 7'
+let g:which_key_map.8 = 'Buffer 8'
+let g:which_key_map.9 = 'Buffer 9'
 
-let g:which_key_map.o = { 
-      \'name': '+custom',
-      \'l': 'JS-console.log',
-      \}
-
-let g:which_key_map.b = { 
-      \'name': '+buffers',
-      \'b': 'buffers',
-      \'d': 'kill buffer',
-      \'n': 'next-buffers',
-      \'p': 'prev-buffers',
-      \}
-
-let g:which_key_map.f = { 
-      \ 'name': '+file',
-      \ 'e'   : {
-        \ 'name': '+Config',
-        \ 'r' : 'Source nvim',
-        \ 'd' : 'Edit config',
-        \ },
-      \ 'f'   : 'Git Files',
-      \ 'r'   : 'File History',
-      \ 's'   : 'Save Buffers',
-      \ 't'   : 'Git Files',
-      \ }
-
-let g:which_key_map.t = { 
-      \ 'name': '+tags',
-      \'f': 'Vista Finder',
-      \'v': 'Vista Toggle',
-      \}
-
-let g:which_key_map.T = { 
-      \'name': '+tabs',
-      \'c': 'close',
-      \'n': 'next',
-      \'N': 'new',
-      \'p': 'previous',
-      \}
-
-let g:which_key_map.h = { 
-      \'name': '+highlight',
-      \'s': 'toggle-hls(highlight)',
-      \'h': 'toggle-under-cursor',
-      \}
-
-let g:which_key_map.x = { 
-      \'name': '+text',
-      \'r': 'replace-word',
-      \}
-
-let g:which_key_map.q = { 
-      \ 'name': '+quit',
-      \'q': 'quit',
-      \'w': 'save-quit',
-      \}
-
-let g:which_key_map.m = { 
-      \'name': '+marks',
-      \'m': 'marks',
-      \}
-
-
-let g:which_key_map.g = { 
-      \ 'name': '+git',
-      \ 'c': 'Git Commits',
-      \ 'f': 'Git Files',
-      \ 'F': 'Git Files Preview',
-      \ 'h': 'Preview Hunk',
-      \ 'n': 'Next Hunk',
-      \ 'p': 'Prev Hunk',
-      \ 'P': 'Git Push',
-      \ 's': 'Status',
-      \ 'S': 'Fzf Status',
-      \}
-
-
-let g:which_key_map.c = { 
-      \ 'name': '+coc',
-      \ 'a': 'code-action',
-      \ 'b':{ 
-        \'name': '+coc-bookmarks',
-        \'l': 'list',
-        \'j': 'next',
-        \'k': 'prev',
-        \'t': 'toggle',
-        \'a': 'annotate',
-        \},
-      \ 'd':{ 
-        \'name': '+coc-diagnostic',
-        \'i': 'diagnostic info',
-      \},
-      \ 'f': 'fix',
-      \ 'F': 'fix-selected',
-      \ 'g': {
-        \ 'name': '+coc-git',
-        \ 'c' : 'commits',
-        \ 'i' : 'hunk info',
-        \ 'u' : 'hunk undo',
-        \ 'f' : 'fold unchanged',
-        \ 'd' : 'diff cached',
-        \ 's' : 'show commit',
-        \ 't' : 'toggle gutters',
-        \},
-      \ 'l': {
-        \'name': '+coc-list',
-        \'l': '+Lists',
-        \'c': '+Commands',
-        \'e': '+Extensions',
-        \'a': 'actions',
-        \'d': 'diagnostic',
-        \'o': 'outline',
-        \'n': 'next',
-        \'p': 'previous',
-        \'s': 'symbols',
-        \'r': 'resume',
-        \},
-      \ 'r': 'code-rename',
-      \ 's': 'code-action-selected',
-      \ 't': 'Toggle Explorer',
-      \ 'x': 'Toggle Explorer',
-      \ 'y': 'yanks',
-      \ 'w': 'grep-word',
-      \}
-
+"" =============================== A ==========================
 let g:which_key_map.a = { 
       \'name': '+apps',
       \'d': {
@@ -191,52 +65,159 @@ let g:which_key_map.a = {
         \ 'c': 'ranger-current-dir',
         \ 'f': 'ranger-current-file',
         \},
+      \'t': {
+        \'name': '+toggle',
+        \'q': 'quickscope',
+        \},
       \}
 
+"" =============================== B ==========================
+let g:which_key_map.b = { 
+      \'name': '+buffers',
+      \'b': 'buffers',
+      \'d': 'kill buffer',
+      \'K': 'kill buffer discard changed',
+      \'n': 'next-buffers',
+      \'p': 'prev-buffers',
+      \'r': 'list-reverse',
+      \'s': 'save buffer',
+      \}
+
+
+"" =============================== C ==========================
+let g:which_key_map.c = { 
+      \ 'name': '+coc',
+      \ 'a': 'code-action',
+      \ 'b':{ 
+        \'name': '+coc-bookmarks',
+        \'l': 'list',
+        \'j': 'next',
+        \'k': 'prev',
+        \'t': 'toggle',
+        \'a': 'annotate',
+        \},
+      \ 'd':{ 
+        \'name': '+coc-diagnostic',
+        \'i': 'diagnostic info',
+      \},
+      \ 'f': 'fix',
+      \ 'F': 'fix-selected',
+      \ 'g': {
+        \ 'name': '+coc-git',
+        \ 'c' : 'commits',
+        \ 'i' : 'hunk info',
+        \ 'u' : 'hunk undo',
+        \ 'f' : 'fold unchanged',
+        \ 'd' : 'diff cached',
+        \ 's' : 'show commit',
+        \ 't' : 'toggle gutters',
+        \},
+      \ 'i' : 'Actions Menu',
+      \ 'l': {
+          \'name': '+coc-list',
+          \'l': '+Lists',
+          \'c': '+Commands',
+          \'e': '+Extensions',
+          \'a': 'actions',
+          \'d': 'diagnostic',
+          \'o': 'outline',
+          \'n': 'next',
+          \'p': 'previous',
+          \'s': 'symbols',
+          \'r': 'resume',
+        \},
+        \ 'r': 'code-rename',
+        \ 's': {
+          \'name': '+session',
+          \'s': 'save',
+          \'l': 'load',
+        \},
+      \ 't': 'Toggle Explorer',
+      \ 'u': 'Coc Update',
+      \ 'v': 'code-action-selected',
+      \ 'x': 'Toggle Explorer',
+      \ 'y': 'yanks',
+      \ 'w': 'grep-word',
+      \ 'z': 'Coc Restart',
+      \}
+
+"" =============================== D ==========================
+
+
+"" =============================== E ==========================
+let g:which_key_map.e = { 
+      \ 'name': '+diagnostic',
+      \ 'l': 'coc diagnostic',
+      \ 'a': {
+        \'name': '+ale',
+        \'p': [':ALEPrev', 'prev'],
+        \'n': [':ALENext', 'next'],
+        \'t': [':ALEToggle', 'toggle'],
+        \'b': [':ALEToggleBuffer', 'toggle buffer'],
+      \},
+      \ 'n': 'ale-next',
+      \ 'p': 'ale-pre',
+      \}
+
+
+"" =============================== F ==========================
+let g:which_key_map.f = { 
+      \ 'name': '+file',
+      \ 'e'   : {
+        \ 'name': '+Config',
+        \ 'r' : 'source nvim',
+        \ 'd' : 'edit config',
+        \ 'U' : 'update',
+        \ 'I' : 'install',
+        \ },
+      \ 'f'   : 'git files',
+      \ 'r'   : 'file history',
+      \ 's'   : 'save buffers',
+      \ 'o'   : 'all files',
+      \ 'g'   : 'git files status',
+      \ }
+
+
+"" =============================== G ==========================
+let g:which_key_map.g = { 
+      \ 'name': '+git',
+      \ 'c': 'fzf git commits',
+      \ 'f': 'fzf git Files',
+      \ 'g': {
+        \ 'name': '+gitgutter',
+        \ 'h': 'preview hunk',
+        \ 'n': 'next hunk',
+        \ 'p': 'prev hunk',
+        \ 's': 'stage hunk',
+        \ 'u': 'undo hunk',
+        \},
+      \ 'F': 'fzf git files preview',
+      \ 'p': 'push',
+      \ 's': 'status',
+      \ 'S': 'fzf status',
+      \}
+
+
+"" =============================== H ==========================
+let g:which_key_map.h = { 
+      \'name': '+highlight',
+      \'s': 'toggle-hls(highlight)',
+      \'h': 'toggle-under-cursor',
+      \}
 let g:which_key_map.H = { 
       \'name': '+help',
-      \'f': 'describe-face',
-      \'m': 'mappings'
+      \'m': 'mappings',
+      \'C': 'fzf colors left',
+      \'c': 'fzf colors',
+      \'z': 'describe-face',
       \}
 
-let g:which_key_map.p = { 
-      \ 'name': '+project',
-      \ 'a': 'Ag',
-      \ 'f': 'NerdTree-focus',
-      \ 'n': 'NerdTree-find',
-      \ 't': 'NerdTree-toggle',
-      \}
-  
-" let g:which_key_map.f.s = 'save-file'
+
+"" =============================== I ==========================
 
 
 
-  
-
-let g:which_key_map.0 = 'Buffer 10'
-let g:which_key_map.1 = 'Buffer 1'
-let g:which_key_map.2 = 'Buffer 2'
-let g:which_key_map.3 = 'Buffer 3'
-let g:which_key_map.4 = 'Buffer 4'
-let g:which_key_map.5 = 'Buffer 5'
-let g:which_key_map.6 = 'Buffer 6'
-let g:which_key_map.7 = 'Buffer 7'
-let g:which_key_map.8 = 'Buffer 8'
-let g:which_key_map.9 = 'Buffer 9'
-  
-let g:which_key_map.v = {
-      \'name': '+visual',
-      \'a': {
-        \'name': '+sandwich',
-        \'a': 'add',
-        \'b': 'add',
-        \'d': 'delete',
-        \'r': 'replace',
-        \'v': 'auto replace',
-        \'u': 'auto delete',
-        \}
-      \}
-
+"" =============================== J ==========================
 let g:which_key_map.j = {
       \'name': '+jump',
       \'.': 'repeat last search',
@@ -254,10 +235,114 @@ let g:which_key_map.j = {
       \'t': '2-char-motion',
       \'w': 'word',
       \}
+"" <-- j/J
 
+"" =============================== K ==========================
+
+
+"" =============================== L ==========================
+let g:which_key_map.l = { 
+      \'name': '+lsp',
+      \}
+
+
+"" ============================= M ============================
+let g:which_key_map.m = { 
+      \'name': '+marks',
+      \'m': 'marks',
+      \}
+
+
+"" ============================== N ===========================
+
+
+
+"" ============================== O ==========================
+let g:which_key_map.o = { 
+      \'name': '+custom',
+      \'l': 'js-console.log',
+      \'o': 'organize import',
+      \'f': 'format',
+      \'F': 'fold',
+      \}
+
+"" ============================== P ===========================
+let g:which_key_map.p = { 
+      \ 'name': '+project',
+      \ 'a': 'Ag',
+      \ 'p': 'Project Sessions',
+      \ 'f': 'NerdTree-focus',
+      \ 'n': 'NerdTree-find',
+      \ 't': 'NerdTree-toggle',
+      \ 'z': 'project tags',
+      \}
+
+"" =============================== Q ==========================
+let g:which_key_map.q = { 
+      \ 'name': '+quit',
+      \'q': 'quit',
+      \'w': 'save-quit',
+      \}
+
+"" ============================== R ===========================
+
+
+
+"" =============================== S ==========================
+let g:which_key_map.s = { 
+      \'name': '+search',
+      \'h': 'search history',
+      \'c': 'command history',
+      \'g': 'git grep',
+      \'s': 'current buffer lines',
+      \'a': 'loaded buffer lines',
+      \'r': 'rg preview',
+      \'R': 'rg query',
+      \'t': 'buffer tags',
+      \'w': 'windows', 
+      \}
+
+"" =============================== T ==========================
+let g:which_key_map.t = { 
+      \ 'name': '+tags',
+      \'f': 'vista finder',
+      \'v': 'vista toggle',
+      \'b': 'fzf buffer tags',
+      \'t': 'fzf project tags',
+      \}
+let g:which_key_map.T = { 
+      \'name': '+tabs',
+      \'c': 'close',
+      \'n': 'next',
+      \'N': 'new',
+      \'p': 'previous',
+      \}
+
+"" =============================== U ==========================
+
+
+"" =============================== V ==========================
+let g:which_key_map.v = {
+      \'name': '+visual',
+      \'s': {
+        \'name': '+sandwich',
+        \'a': 'add',
+        \'d': 'delete',
+        \'r': 'replace',
+        \'rb': 'auto replace',
+        \'db': 'auto delete',
+        \}
+      \}
+
+
+
+
+"" =============================== W ==========================
 let g:which_key_map.w = {
     \ 'name' : '+windows' ,
-    \ '.' : 'Win',
+    \ '.' : 'ace window',
+    \ ' ' : 'ace window',
+    \ ';' : 'Win',
     \ 'w' : ['<C-W>w'     , 'other-window']          ,
     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
     \ '-' : ['<C-W>s'     , 'split-window-below']    ,
@@ -282,4 +367,33 @@ let g:which_key_map.w = {
       \ 'o' : 'zoom-out'            ,
       \}
     \ }
+
+  
+"" =============================== X ==========================
+let g:which_key_map.x = { 
+      \'name': '+text',
+      \'r': 'replace-word',
+      \'j': 'join multilines',
+      \'s': 'split into multiline',
+      \}
+
+
+"" =============================== Y ==========================
+
+"" =============================== Z ==========================
+
+let g:which_key_map.z = { 
+      \'name': '+fuzzy',
+      \'/': 'incsearch-f',
+      \'?': 'incsearch-?',
+      \'g': 'incsearch-stay',
+      \'i': [':set noignorecase!', 'toggle ignorecase'],
+      \'s': {
+        \'name': '+spell',
+        \'/': 'spell-/',
+        \'?': 'spell-?',
+        \'s': 'spell-stay',
+      \},
+    \}
+
 
