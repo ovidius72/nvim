@@ -92,8 +92,9 @@ nmap <Leader>gP :Gpush<CR>
 nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
 
 " Project keybinding
-nmap <Leader>po :Files<CR>
+nmap <Leader>ph :Files<CR>
 nmap <Leader>tt :Tags<CR>
+nmap <Leader>pg :GFiles<CR>
 nmap <Leader>pz :Tags<CR>
 nmap <Leader>pa :Ag<CR>
 "

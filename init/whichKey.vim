@@ -172,10 +172,10 @@ let g:which_key_map.f = {
         \ 'U' : 'update',
         \ 'I' : 'install',
         \ },
-      \ 'f'   : 'git files',
+      \ 'f'   : 'all files',
+      \ 'o'   : 'git files',
       \ 'r'   : 'file history',
       \ 's'   : 'save buffers',
-      \ 'o'   : 'all files',
       \ 'g'   : 'git files status',
       \ }
 
@@ -275,6 +275,8 @@ let g:which_key_map.p = {
       \ 'p': 'Project Sessions',
       \ 'f': 'NerdTree-focus',
       \ 'n': 'NerdTree-find',
+      \ 'g': 'Git Files',
+      \ 'h': 'Files',
       \ 't': 'NerdTree-toggle',
       \ 'z': 'project tags',
       \}

@@ -7,6 +7,7 @@ set title
 set mouse=a
 set cursorline
 set cmdheight=1
+set noshowmode
 set ignorecase
 set shortmess=aFc
 set termguicolors
@@ -37,9 +38,9 @@ inoremap <c-w> <c-g>u<c-w>
 
 
 " save all in various modes
-nnoremap <c-s> :wa<CR>
-inoremap <c-s> <Esc>:wa<CR>a
-vnoremap <c-s> <Esc>:wa<CR>gv
+" nnoremap <c-s> :wa<CR>
+" inoremap <c-s> <Esc>:wa<CR>a
+" vnoremap <c-s> <Esc>:wa<CR>gv
 
 command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
 map <leader>feU :PU<cr>
@@ -179,9 +180,6 @@ nmap <Leader>' :pclose<CR>
 let g:move_key_modifier = 'C'
 
 " save all in various modes
-nnoremap <c-s> :wa<CR>
-inoremap <c-s> <Esc>:wa<CR>a
-vnoremap <c-s> <Esc>:wa<CR>gv
 nmap <leader>qq :qa<cr>
 nmap <leader>qw :waq<cr>
 

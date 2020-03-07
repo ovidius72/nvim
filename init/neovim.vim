@@ -3,20 +3,16 @@ if !has('nvim')
 endif
 
 call plug#begin()
-" Plug 'Shougo/echodoc'
-" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'Shougo/echodoc'
 Plug 'liuchengxu/vim-which-key'
-" Plug 'wadackel/vim-dogrun'
-" Plug 'eemed/sitruuna.vim'
-" Plug 'sainnhe/edge'
 " Plug 'arzg/vim-colors-xcode'
 " Plug 'bluz71/vim-moonfly-colors'
 " Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
+Plug 'puremourning/vimspector'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
-Plug 'puremourning/vimspector'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
 Plug 'tsandall/vim-rego'
@@ -104,5 +100,7 @@ source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/easymotion.vim
+source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/whichKey.vim
+" source ~/.config/nvim/init/dotoo.vim
 runtime macros/sandwich/keymap/surround.vim
