@@ -362,7 +362,7 @@ function! FloatTerm(...)
 endfunction
 
 " Open terminal
-nnoremap <Leader>at :call FloatTerm()<CR>
+nnoremap <Leader>af :call FloatTerm()<CR>
 " Open node REPL
 nnoremap <Leader>ae :call FloatTerm('"node"')<CR>
 " Open tig, yes TIG, A FLOATING TIGGGG!!!!!!
