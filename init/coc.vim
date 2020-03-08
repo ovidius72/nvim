@@ -135,15 +135,31 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "     \ --sources=buffer+,file+
 "     \ --fi <CR>
 
-noremap <silent> <leader>cx :execute 'CocCommand explorer' .
-      \ ' --no-toggle' .
-      \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
+noremap <leader>[ :CocCommand explorer
+      \ --toggle
+      \ --sources=buffers+,file+<cr>
 
-noremap <silent> <leader>ct :execute 'CocCommand explorer' .
-      \ ' --toggle' 
-      \ ' --sources=buffer+,file+' .
-      \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
+noremap <leader>po :CocCommand explorer
+      \ --toggle
+      \ --sources=buffers+,file+<cr>
+
+noremap <leader>ct :CocCommand explorer
+      \ --toggle
+      \ --sources=buffers+,file+<cr>
+
+noremap <leader>cx :CocCommand explorer
+      \ --no-toggle
+      \ --sources=buffers+,file+<cr>
+
+" noremap <silent> <leader>cx :execute 'CocCommand explorer' .
+"       \ ' --no-toggle' .
+"       \ ' --sources=buffer+,file+' .
+"       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
+
+" noremap <silent> <leader>ct :execute 'CocCommand explorer' .
+"       \ ' --toggle' 
+"       \ ' --sources=buffer+,file+' .
+"       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
 " coc-expolorer
 " nmap ge :CocCommand explorer
 "       \ --toggle

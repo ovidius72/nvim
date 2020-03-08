@@ -15,6 +15,7 @@ nnoremap <silent><leader>atq :QuickScopeToggle<CR>
 let g:which_key_map = {}
 
 let g:which_key_map["'"] = 'close preview'
+let g:which_key_map["["] = 'Toggle explorer'
 let g:which_key_map.1 = 'Buffer 1'
 let g:which_key_map.2 = 'Buffer 2'
 let g:which_key_map.3 = 'Buffer 3'
@@ -137,7 +138,7 @@ let g:which_key_map.c = {
       \ 't': 'Toggle Explorer',
       \ 'u': 'Coc Update',
       \ 'v': 'code-action-selected',
-      \ 'x': 'Toggle Explorer',
+      \ 'x': 'Open Explorer',
       \ 'y': 'yanks',
       \ 'w': 'grep-word',
       \ 'z': 'Coc Restart',
@@ -275,6 +276,7 @@ let g:which_key_map.p = {
       \ 'p': 'Project Sessions',
       \ 'f': 'NerdTree-focus',
       \ 'n': 'NerdTree-find',
+      \ 'o': 'toggle explorer',
       \ 'g': 'Git Files',
       \ 'h': 'Files',
       \ 't': 'NerdTree-toggle',
