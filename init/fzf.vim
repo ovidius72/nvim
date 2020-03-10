@@ -54,9 +54,9 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " Mapping selecting mappings
-nmap <leader>Hm <plug>(fzf-maps-n)
-xmap <leader>Hm <plug>(fzf-maps-x)
-omap <leader>Hm <plug>(fzf-maps-o)
+" nmap <leader>Hm <plug>(fzf-maps-n)
+" xmap <leader>Hm <plug>(fzf-maps-x)
+" omap <leader>Hm <plug>(fzf-maps-o)
 
 
 " Insert mode completion
@@ -72,8 +72,12 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " nmap <Leader>hw :Windows<CR>
 " nmap <Leader>hcb :Commits<CR>
 " nmap <Leader>hf :Files<CR>
-
 nmap <Leader>Hc :Colors<CR>
+nmap <Leader>Ht :Helptags<CR>
+nmap <Leader>Hf :Filetypes<CR>
+nmap <leader>Hm :Maps<CR>
+nmap <Leader>th :Helptags<CR>
+
 " Marks keybinding
 nmap <Leader>mm :Marks<CR>
 
@@ -112,7 +116,7 @@ nmap <Leader>bt :BTags<CR>
 " current buffer lines
 nmap <Leader>ss :BLines<CR>
 " loaded buffers lines
-nmap <Leader>sa :Lines<CR>
+nmap <Leader>sl :Lines<CR>
 " Windows
 nmap <Leader>sw :Windows<CR>
 " Buffer Tags
@@ -120,20 +124,30 @@ nmap <Leader>st :BTags<CR>
 " Rg Preview
 nmap <Leader>sr :Rg<CR>
 " Rg select
-nmap <Leader>sR :RG<CR>
+nmap <Leader>sR :Rg!<CR>
+
+" RG Fuzzy
+nmap <Leader>sf :RG<CR>
+nmap <Leader>sF :RG!<CR>
 " git grep
 nmap <Leader>sg :GGrep<CR> 
 " search history
 nmap <Leader>sh :History/<CR>
 " command history
 nmap <Leader>sc :History:<CR>
+nmap <Leader>sa :Ag<CR>
+nmap <Leader>sA :Ag!<CR>
 
 
+" neovim config
+command! -bang NeovimConfigFiles call fzf#vim#files('~/.config/nvim', <bang>0)
+nmap <Leader>fef :NeovimConfigFiles<CR>
 
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
+
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
 
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
@@ -155,6 +169,22 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+command! -nargs=* Ag2 call fzf#run({
+\ 'source':  printf('ag --nogroup --column --color "%s"',
+\                   escape(empty(<q-args>) ? '^(?=.)' : <q-args>, '"\')),
+\ 'sink*':    function('<sid>ag_handler'),
+\ 'options': '--ansi --expect=ctrl-t,ctrl-v,ctrl-x --delimiter : --nth 4.. '.
+\            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all '.
+\            '--color hl:68,hl+:110',
+\ 'down':    '50%'
+\ })
+
+command! -bang -nargs=* AGP
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
 
 nnoremap <silent> <Leader>HC :call fzf#run({
 \   'source':

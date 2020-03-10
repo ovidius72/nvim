@@ -10,7 +10,8 @@ Plug 'liuchengxu/vim-which-key'
 " Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
-Plug 'puremourning/vimspector'
+Plug 'vim-vdebug/vdebug'
+" Plug 'puremourning/vimspector'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -44,7 +45,6 @@ Plug 'michaeljsmith/vim-indent-object'
 " Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
-Plug 'tpope/vim-commentary'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -61,7 +61,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'justinmk/vim-syntax-extra'
 " Plug 'terryma/vim-expand-region'
@@ -75,6 +75,7 @@ Plug 'matze/vim-move'
 Plug 'airblade/vim-gitgutter'
 " Plug 'Yggdroot/indentLine'
 " Plug 'Chiel92/vim-autoformat'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
@@ -95,7 +96,6 @@ source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/ranger.vim
-source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
@@ -104,3 +104,4 @@ source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/dotoo.vim
 runtime macros/sandwich/keymap/surround.vim
+source ~/.config/nvim/init/vimspector.vim

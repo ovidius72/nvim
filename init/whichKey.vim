@@ -4,17 +4,23 @@ vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
 set timeoutlen=500
 
+"binds both escape and Ctrl-g to quit which-key.
+let g:which_key_exit = [27, 7] 
+
 nnoremap <silent><leader>fs :wa<CR>
 nnoremap <silent><leader>bs :w<CR>
 " nnoremap <silent><leader>w. :call win#Win(1)<cr>
 nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
 nnoremap <silent><leader>atq :QuickScopeToggle<CR>
+nnoremap <leader><TAB> <C-^>
 
 
 let g:which_key_map = {}
 
+let g:which_key_map["<Tab>"] = 'Last Buffer'
 let g:which_key_map["'"] = 'close preview'
+let g:which_key_map[" "] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
 let g:which_key_map.1 = 'Buffer 1'
 let g:which_key_map.2 = 'Buffer 2'
@@ -25,6 +31,7 @@ let g:which_key_map.6 = 'Buffer 6'
 let g:which_key_map.7 = 'Buffer 7'
 let g:which_key_map.8 = 'Buffer 8'
 let g:which_key_map.9 = 'Buffer 9'
+let g:which_key_map.0 = 'Buffer 10'
 
 "" =============================== A ==========================
 let g:which_key_map.a = { 
@@ -169,6 +176,7 @@ let g:which_key_map.f = {
       \ 'e'   : {
         \ 'name': '+Config',
         \ 'r' : 'source nvim',
+        \ 'f' : 'config files',
         \ 'd' : 'edit config',
         \ 'U' : 'update',
         \ 'I' : 'install',
@@ -207,11 +215,14 @@ let g:which_key_map.h = {
       \'s': 'toggle-hls(highlight)',
       \'h': 'toggle-under-cursor',
       \}
+
 let g:which_key_map.H = { 
       \'name': '+help',
+      \'f': 'file types',
       \'m': 'mappings',
       \'C': 'fzf colors left',
       \'c': 'fzf colors',
+      \'t': 'help tags',
       \'z': 'describe-face',
       \}
 
@@ -297,13 +308,17 @@ let g:which_key_map.q = {
 "" =============================== S ==========================
 let g:which_key_map.s = { 
       \'name': '+search',
+      \'a': 'Ag',
+      \'A': 'Ag full-screen',
+      \'f': 'Rg Fuzzy',
+      \'F': 'Rg Fuzzy full-scree ',
+      \'l': 'loaded buffer lines',
       \'h': 'search history',
       \'c': 'command history',
       \'g': 'git grep',
       \'s': 'current buffer lines',
-      \'a': 'loaded buffer lines',
-      \'r': 'rg preview',
-      \'R': 'rg query',
+      \'r': 'Rg preview',
+      \'R': 'Rg full-screen',
       \'t': 'buffer tags',
       \'w': 'windows', 
       \}
@@ -311,11 +326,13 @@ let g:which_key_map.s = {
 "" =============================== T ==========================
 let g:which_key_map.t = { 
       \ 'name': '+tags',
-      \'f': 'vista finder',
-      \'v': 'vista toggle',
       \'b': 'fzf buffer tags',
+      \'f': 'vista finder',
+      \'h': 'help',
       \'t': 'fzf project tags',
+      \'v': 'vista toggle',
       \}
+
 let g:which_key_map.T = { 
       \'name': '+tabs',
       \'c': 'close',
@@ -392,8 +409,20 @@ let g:which_key_map.z = {
       \'name': '+fuzzy',
       \'/': 'incsearch-f',
       \'?': 'incsearch-?',
-      \'g': 'incsearch-stay',
+      \'z': 'incsearch-stay',
+      \'f': {
+        \'name': '+fuzzy',
+        \'/': 'incsearch-fuzzy-/',
+        \'?': 'incsearch-fuzzy-?',
+        \'f': 'incsearch-fuzzy-stay',
+      \},
       \'i': [':set noignorecase!', 'toggle ignorecase'],
+      \'m': {
+        \'name': '+motion',
+        \'/': 'incsearch-easymotion-/',
+        \'?': 'incsearch-easymotion-?',
+        \'m': 'incsearch-easymotion-stay',
+      \},
       \'s': {
         \'name': '+spell',
         \'/': 'spell-/',

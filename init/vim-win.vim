@@ -1,6 +1,11 @@
+" autocmd! FileType which_key
+" autocmd  FileType which_key set laststatus=0 noshowmode noruler
+"   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 " map <leader>w. <plug>WinWin(1)
 command! Win :call win#Win()
 map <leader>w. :call win#Win(1)<cr>
+map <leader><leader> :call win#Win(1)<cr>
 map <leader>w<space> :call win#Win(1)<cr>
 map <leader>w; :Win<cr>
 map <leader>w; <plug>WinWin

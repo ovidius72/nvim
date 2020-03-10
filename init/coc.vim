@@ -9,9 +9,9 @@ let g:coc_global_extensions = [
       \ 'coc-yank',
       \ 'coc-explorer',
       \ 'coc-import-cost',
-      \ 'coc-webpack',
       \ 'coc-docker',
       \ 'coc-sql',
+      \ 'coc-rls',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-emmet',
@@ -23,7 +23,6 @@ let g:coc_global_extensions = [
       \ 'coc-python',
       \ 'coc-html',
       \ 'coc-git',
-      \ 'coc-ccls',
       \ ]
 
 set cmdheight=2
@@ -45,6 +44,7 @@ let g:coc_status_info_sign = '•'
 " hi! CocErrorHighlight guibg=#d62829 guifg=#fafafa gui=undercurl 
 " hi! CocWarningHighlight guibg=#dc6c14 guifg=#fafafa gui=undercurl
 " hi! CocInfoHighlight guibg=#92c79a guifg=#fafafa gui=undercurl
+
 
 " // Dark ColorScheme
 autocmd ColorScheme *

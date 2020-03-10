@@ -72,7 +72,7 @@ augroup END
 
 let g:qs_lazy_highlight = 1
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
+" let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
 
 
 " autocmd FileType cpp set makeprg=clang++\ -std=c++2a\ -o\ '%<'\ '%'
@@ -198,6 +198,7 @@ vmap <silent><c-c><c-l> yogll<Esc>pviw
 " nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
 nmap <Leader>ol yiwogll<Esc>pviw<Esc>
 
+nmap gcy Ygccp
 
 " *************** inc serach
 augroup vimrc-incsearch-highlight
@@ -220,16 +221,22 @@ function! s:config() abort
 endfunction
 
 noremap <silent><expr> zz/ incsearch#go(<SID>config())
-map zf/ <Plug>(incsearch-fuzzy-/)
-map zf? <Plug>(incsearch-fuzzy-?)
-map zg/ <Plug>(incsearch-fuzzy-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zz <Plug>(incsearch-fuzzy-stay)
+
 map <leader>z/ <Plug>(incsearch-fuzzy-/)
 map <leader>z? <Plug>(incsearch-fuzzy-?)
-map <leader>zg <Plug>(incsearch-fuzzy-stay)
+map <leader>zz <Plug>(incsearch-fuzzy-stay)
 
 map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
 map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
 map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
+
+map <leader>zm/ <Plug>(incsearch-easymotion-/)
+map <leader>zm? <Plug>(incsearch-easymotion-?)
+map <leader>zmm <Plug>(incsearch-easymotion-stay)
+
 " " incsearch.vim x fuzzy x vim-easymotion
 " function! s:config_easyfuzzymotion(...) abort
 "   return extend(copy({

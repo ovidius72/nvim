@@ -3,7 +3,6 @@
   "typescript.suggest.enabled": true,
   "tsserver.formatOnType": true,
   "tsserver.enable": true,
-  "tsserver.trace.server": "verbose",
   "typescript.showUnused": true,
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
@@ -46,6 +45,16 @@
     "typescript": ["javascript"]
   },
   "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
@@ -60,7 +69,7 @@
     "intelephense": {
       "command": "intelephense",
       "args": ["--stdio"],
-      "filetypes": ["php"],
+      "filetypes": ["php", "*.module", "*.install"],
       "initializationOptions": {
         "storagePath": "/tmp/intelephense"
       }
