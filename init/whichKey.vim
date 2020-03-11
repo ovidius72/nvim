@@ -255,9 +255,9 @@ let g:which_key_map.j = {
 
 
 "" =============================== L ==========================
-let g:which_key_map.l = { 
-      \'name': '+lsp',
-      \}
+" let g:which_key_map.l = { 
+"       \'name': '+lsp',
+"       \}
 
 
 "" ============================= M ============================
@@ -394,10 +394,15 @@ let g:which_key_map.w = {
   
 "" =============================== X ==========================
 let g:which_key_map.x = { 
-      \'name': '+text',
+      \'name': '+code',
       \'r': 'replace-word',
       \'j': 'join multilines',
       \'s': 'split into multiline',
+      \'c': {
+        \'name': 'comment',
+        \'c': 'Comment+motion',
+        \'y': 'Comment and yank',
+        \},
       \}
 
 

@@ -36,6 +36,8 @@ autocmd FileType rego setlocal commentstring=#\ %s
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+"use jj to escaper from term 
+tnoremap jj <C-\><C-n> 
 
 " save all in various modes
 " nnoremap <c-s> :wa<CR>
@@ -199,6 +201,8 @@ vmap <silent><c-c><c-l> yogll<Esc>pviw
 nmap <Leader>ol yiwogll<Esc>pviw<Esc>
 
 nmap gcy Ygccp
+nmap <leader>xcc gc
+nmap <leader>xcy gcy
 
 " *************** inc serach
 augroup vimrc-incsearch-highlight
