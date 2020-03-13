@@ -2,7 +2,7 @@ call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
-set timeoutlen=500
+set timeoutlen=800
 
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 

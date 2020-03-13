@@ -5,13 +5,15 @@ endif
 call plug#begin()
 Plug 'Shougo/echodoc'
 Plug 'liuchengxu/vim-which-key'
-" Plug 'arzg/vim-colors-xcode'
+Plug 'arzg/vim-colors-xcode'
 " Plug 'bluz71/vim-moonfly-colors'
-" Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'AlessandroYorba/Alduin'
+Plug 'haishanh/night-owl.vim'
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
 Plug 'vim-vdebug/vdebug'
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -24,8 +26,8 @@ Plug 'liuchengxu/vim-clap'
 Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'liuchengxu/space-vim-dark'
-" Plug 'liuchengxu/space-vim-theme'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'liuchengxu/space-vim-theme'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
@@ -93,7 +95,6 @@ source ~/.config/nvim/init/lightline.vim
 " source ~/.config/nvim/init/eleline.vim
 source ~/.config/nvim/init/bufsurf.vim
 source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/common.vim
@@ -103,5 +104,6 @@ source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/dotoo.vim
+source ~/.config/nvim/init/vim-win.vim
 runtime macros/sandwich/keymap/surround.vim
 source ~/.config/nvim/init/vimspector.vim

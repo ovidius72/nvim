@@ -36,6 +36,11 @@ autocmd FileType rego setlocal commentstring=#\ %s
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+" move among windows
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
 tnoremap jj <C-\><C-n> 
 
@@ -179,7 +184,7 @@ nmap <Leader>' :pclose<CR>
 " nmap <F9> :BufSurfBack<CR>
 " nmap <F10> :BufSurfForward<CR>
 " vim-move mofifier key (default Alt)
-let g:move_key_modifier = 'C'
+" let g:move_key_modifier = 'C'
 
 " save all in various modes
 nmap <leader>qq :qa<cr>

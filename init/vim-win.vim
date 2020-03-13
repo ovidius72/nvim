@@ -5,8 +5,8 @@
 " map <leader>w. <plug>WinWin(1)
 command! Win :call win#Win()
 map <leader>w. :call win#Win(1)<cr>
-map <leader><leader> :call win#Win(1)<cr>
 map <leader>w<space> :call win#Win(1)<cr>
+map <leader><leader> :call win#Win(1)<cr>
 map <leader>w; :Win<cr>
 map <leader>w; <plug>WinWin
 
