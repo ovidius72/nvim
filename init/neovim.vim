@@ -20,6 +20,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
 Plug 'tsandall/vim-rego'
 Plug 'unblevable/quick-scope'
+Plug 'pechorin/any-jump.vim'
 " Plug 'dhruvasagar/vim-zoom'
 Plug 'Lenovsky/nuake'
 Plug 'liuchengxu/vim-clap' 
@@ -102,6 +103,7 @@ source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
+source ~/.config/nvim/init/anyjump.vim
 source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/dotoo.vim
 source ~/.config/nvim/init/vim-win.vim

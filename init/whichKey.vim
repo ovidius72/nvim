@@ -15,6 +15,7 @@ nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
 nnoremap <silent><leader>atq :QuickScopeToggle<CR>
 nnoremap <leader><TAB> <C-^>
 
+"in questo esempio "
 
 let g:which_key_map = {}
 
@@ -84,6 +85,7 @@ let g:which_key_map.b = {
       \'name': '+buffers',
       \'b': 'buffers',
       \'d': 'kill buffer',
+      \'e': 'source buffer',
       \'K': 'kill buffer discard changed',
       \'n': 'next-buffers',
       \'p': 'prev-buffers',
@@ -212,8 +214,11 @@ let g:which_key_map.g = {
 "" =============================== H ==========================
 let g:which_key_map.h = { 
       \'name': '+highlight',
-      \'s': 'toggle-hls(highlight)',
       \'h': 'toggle-under-cursor',
+      \'l': 'toggle-list-chars',
+      \'s': 'toggle-hls(highlight)',
+      \'t': 'toggle spaces/tabs',
+      \'z': 'toggle spell check',
       \}
 
 let g:which_key_map.H = { 
@@ -245,6 +250,12 @@ let g:which_key_map.j = {
       \'m': 'n-chars-motion',
       \'n': 'next',
       \'p': 'prev',
+      \'r': {
+        \'name': 'AnyJump',
+        \'j': 'any jump',
+        \'b': 'any jump back',
+        \'l': 'any jump last',
+      \},
       \'s': '2-char',
       \'t': '2-char-motion',
       \'w': 'word',

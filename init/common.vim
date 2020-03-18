@@ -14,6 +14,8 @@ set termguicolors
 set timeout
 set foldmethod=manual
 set foldcolumn=1
+set spell
+set spell spelllang=en_us,it
 
 " setlocal cursorcolumn
 setlocal nowrap
@@ -34,15 +36,15 @@ autocmd FileType rego setlocal commentstring=#\ %s
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
 inoremap <c-u> <c-g>u<c-u>
-inoremap <c-w> <c-g>u<c-w>
+    inoremap <c-w> <c-g>u<c-w>
 
 " move among windows
-nnoremap <C-j> <C-w>j
+    nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
-tnoremap jj <C-\><C-n> 
+    tnoremap jj <C-\><C-n> 
 
 " save all in various modes
 " nnoremap <c-s> :wa<CR>
@@ -53,8 +55,29 @@ command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins
 map <leader>feU :PU<cr>
 map <leader>feI :PlugInstall<cr>
 
-" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
-" set list
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+map <leader>hl :set list!<cr>
+" allow toggling between local and default mode
+" set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
+function TabToggle()
+  if &expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=0
+    set noexpandtab
+    echo 'Tab set'
+  else
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+    set smarttab
+    set autoindent
+    set expandtab
+    echo 'Space set'
+  endif
+endfunction
+map <Leader>ht mz:execute TabToggle()<Cr>'z
+map <Leader>hr :%retab!<CR>
 " highlight jsxAttrib cterm=italic
 " highlight jsxTag cterm=italic
 " highlight tsxTag cterm=italic
@@ -191,9 +214,11 @@ nmap <leader>qq :qa<cr>
 nmap <leader>qw :waq<cr>
 
 
+" buffer
+map <Leader>be :source %<cr>
+map <Leader>hz :set spell!<cr>
 "yank and move the curson to the last yanked line
 vnoremap gy y']
-
 " console.log wrapper
 " Console log from insert mode; Puts focus inside parentheses
 
