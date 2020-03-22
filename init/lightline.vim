@@ -33,9 +33,13 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 " \ 'colorscheme': 'solarized',
 let g:lightline = {
+      \ 'inactive': { 
+      \ 'left': [['winnr', 'mode', 'filename'], ['modified']], 
+      \ 'right': [['lineinfo'],['percent']]
+      \ },
       \ 'active': {
       \   'left': [ 
-      \     [ 'mode', 'paste' ], ['filename', 'modified', 'readonly', 'gitbranch', 'gitgutter'], ['coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'coc_fix', 'cocstatus'], [ 'method' ] ],
+      \     [ 'winnr', 'mode', 'paste' ], ['filename', 'modified', 'readonly', 'gitbranch', 'gitgutter'], ['coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'coc_fix', 'cocstatus'], [ 'method' ] ],
       \  'right': [ [ 'lineinfo' ], ['currentfunction'],  [ 'percent' ], [ 'filetype' ] ]
       \ },
       \ 'component_expand': {
@@ -54,7 +58,8 @@ let g:lightline = {
       \   'filetype': 'MyFiletype',
       \   'gitgutter': 'LightLineGitGutter',
       \   'fileformat': 'MyFileformat',
-      \   'blame': 'LightLineGitBlame'
+      \   'blame': 'LightLineGitBlame',
+      \   'winnr': 'winnr',
       \ },
       \ 'component_type':  {
       \   'buffers'          : 'tabsel',

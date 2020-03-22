@@ -17,8 +17,20 @@ let g:fzf_layout = { 'window': '10split enew' }
 " Centered floating window with rounded borders.
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'rounded': v:true } }
 " bottom aligned floating not pushing screen. 
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
+let g:fzf_layout = {
+      \'window': {
+        \ 'width': 1, 
+        \ 'height': 0.4,
+        \ 'yoffset': 1,
+        \ 'border': 'horizontal' 
+      \}
+    \}
 
+" let g:animate#duration = 200.0
+" let g:animate#easing_func = 'animate#ease_linear'
+" let g:fzf_layout = {
+"  \ 'window': 'new | wincmd J | resize 1 | call animate#window_percent_height(0.5)'
+" \ }
 
 " Customize fzf colors to match your color scheme
 " let g:fzf_colors =
@@ -76,6 +88,7 @@ nmap <Leader>Hc :Colors<CR>
 nmap <Leader>Ht :Helptags<CR>
 nmap <Leader>Hf :Filetypes<CR>
 nmap <leader>Hm :Maps<CR>
+nmap <leader>Hk :Commands<CR>
 nmap <Leader>th :Helptags<CR>
 
 " Marks keybinding

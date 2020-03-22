@@ -1,8 +1,13 @@
-call which_key#register('<Space>', "g:which_key_map")
+call which_key#register('<space>', "g:which_key_map")
+nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
 set timeoutlen=500
+" autocmd! FileType which_key
+" autocmd  FileType which_key set laststatus=0 noshowmode noruler
+"   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 
@@ -14,14 +19,19 @@ nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
 nnoremap <silent><leader>atq :QuickScopeToggle<CR>
 nnoremap <leader><TAB> <C-^>
-
-"in questo esempio "
+noremap <leader>w1 :1wincmd w<cr>
+noremap <leader>w2 :2wincmd w<cr>
+noremap <leader>w3 :3wincmd w<cr>
+noremap <leader>w4 :4wincmd w<cr>
+noremap <leader>w5 :5wincmd w<cr>
+noremap <leader>w6 :6wincmd w<cr>
+noremap <leader>w7 :7wincmd w<cr>
 
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
 let g:which_key_map["'"] = 'close preview'
-let g:which_key_map[" "] = 'Ace windows'
+" let g:which_key_map[" "] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
 let g:which_key_map.1 = 'Buffer 1'
 let g:which_key_map.2 = 'Buffer 2'
@@ -198,7 +208,6 @@ let g:which_key_map.g = {
       \ 'f': 'fzf git Files',
       \ 'g': {
         \ 'name': '+gitgutter',
-        \ 'h': 'preview hunk',
         \ 'n': 'next hunk',
         \ 'p': 'prev hunk',
         \ 's': 'stage hunk',
@@ -224,6 +233,7 @@ let g:which_key_map.h = {
 let g:which_key_map.H = { 
       \'name': '+help',
       \'f': 'file types',
+      \'k': 'commands',
       \'m': 'mappings',
       \'C': 'fzf colors left',
       \'c': 'fzf colors',
@@ -372,16 +382,23 @@ let g:which_key_map.v = {
 
 
 "" =============================== W ==========================
+" \ '.' : 'ace window',
+" \ ' ' : 'ace window',
+
 let g:which_key_map.w = {
     \ 'name' : '+windows' ,
-    \ '.' : 'ace window',
-    \ ' ' : 'ace window',
-    \ ';' : 'Win',
+    \ ';' : 'VimWin',
+    \ '1' : 'Window 1',
+    \ '2' : 'Window 2' ,
+    \ '3' : 'Window 3' ,
+    \ '4' : 'Window 4' ,
+    \ '5' : 'Window 5' ,
+    \ '6' : 'Window 6' ,
+    \ '7' : 'Window 7' ,
     \ 'w' : ['<C-W>w'     , 'other-window']          ,
     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
     \ '-' : ['<C-W>s'     , 'split-window-below']    ,
     \ '|' : ['<C-W>v'     , 'split-window-right']    ,
-    \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
     \ 'h' : ['<C-W>h'     , 'window-left']           ,
     \ 'j' : ['<C-W>j'     , 'window-below']          ,
     \ 'l' : ['<C-W>l'     , 'window-right']          ,

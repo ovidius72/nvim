@@ -4,12 +4,24 @@ endif
 
 call plug#begin()
 Plug 'Shougo/echodoc'
+" Plug 'camspiers/animate.vim'
+" Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'arzg/vim-colors-xcode'
 " Plug 'bluz71/vim-moonfly-colors'
 Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'franbach/miramare'
+Plug 'chase/focuspoint-vim'
+Plug 'jacoborus/tender.vim'
+Plug 'axvr/photon.vim'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'gkeep/iceberg-dark'
+Plug 'cocopon/iceberg.vim'
 Plug 'AlessandroYorba/Alduin'
-Plug 'haishanh/night-owl.vim'
+Plug 'ntk148v/vim-horizon'
+Plug 'ayu-theme/ayu-vim'
+Plug 'davidosomething/vim-colors-meh'
+
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
 Plug 'vim-vdebug/vdebug'
@@ -79,11 +91,14 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'Yggdroot/indentLine'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'tpope/vim-commentary'
+" Plug 'IMOKURI/line-number-interval.nvim'
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
 
 source ~/.config/nvim/init/common.vim
+source ~/.config/nvim/colors/autoload/lightline/miramare_lightline.vim
+" source ~/.config/nvim/init/lens.vim
 source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/ale.vim
 " source ~/.config/nvim/init/neomake.vim
@@ -95,7 +110,6 @@ source ~/.config/nvim/init/lightline.vim
 " source ~/.config/nvim/init/airline.vim
 " source ~/.config/nvim/init/eleline.vim
 source ~/.config/nvim/init/bufsurf.vim
-source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/common.vim
@@ -109,3 +123,5 @@ source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/vim-win.vim
 runtime macros/sandwich/keymap/surround.vim
 source ~/.config/nvim/init/vimspector.vim
+source ~/.config/nvim/init/colors.vim
+" source ~/.config/nvim/init/line-number-interval.vim

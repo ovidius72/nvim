@@ -21,7 +21,7 @@ let s:slc.light_cyan = ['aaffe4', 122]
 let s:slc.green = ['62d196', 119]
 let s:slc.light_green = ['95ffa4', 120]
 
-let s:slc.black = ['100e23', 237]
+let s:slc.black = ['1e1c31', 237]
 let s:slc.black2 = ['212121', 0]
 
 

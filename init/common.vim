@@ -14,8 +14,8 @@ set termguicolors
 set timeout
 set foldmethod=manual
 set foldcolumn=1
-set spell
-set spell spelllang=en_us,it
+set spell!
+set spelllang=en_us,it
 
 " setlocal cursorcolumn
 setlocal nowrap
@@ -36,15 +36,15 @@ autocmd FileType rego setlocal commentstring=#\ %s
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
 inoremap <c-u> <c-g>u<c-u>
-    inoremap <c-w> <c-g>u<c-w>
+inoremap <c-w> <c-g>u<c-w>
 
 " move among windows
-    nnoremap <C-j> <C-w>j
+nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
-    tnoremap jj <C-\><C-n> 
+tnoremap jj <C-\><C-n> 
 
 " save all in various modes
 " nnoremap <c-s> :wa<CR>
@@ -196,7 +196,7 @@ omap igh <Plug>(GitGutterTextObjectInnerPending)
 omap agh <Plug>(GitGutterTextObjectOuterPending)
 xmap igh <Plug>(GitGutterTextObjectInnerVisual)
 xmap agh <Plug>(GitGutterTextObjectOuterVisual)
-nmap <Leader>ggh <Plug>(GitGutterPreviewHunk)
+nmap gh <Plug>(GitGutterPreviewHunk)
 nmap <Leader>ggn <Plug>(GitGutterNextHunk)
 nmap <Leader>ggp <Plug>(GitGutterPrevHunk)
 nmap <Leader>ggs <Plug>(GitGutterStageHunk)

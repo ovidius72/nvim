@@ -1,6 +1,6 @@
-" Edge
-set termguicolors
-hi CocFloating guibg=#292c3f ctermbg=60
+" set t_Co=256
+" Alduin
+" colorscheme alduin
 
 " set background=dark
 " let g:edge_style = 'neon'
@@ -8,7 +8,6 @@ hi CocFloating guibg=#292c3f ctermbg=60
 " let g:lightline.colorscheme = 'edge'
 
 " Dogrun"
-
 " colorscheme dogrun
 " set bg=dark
 " let g:lightline.colorscheme = 'dogrun'
@@ -40,7 +39,37 @@ colorscheme mychallenger_deep
 let g:lightline.colorscheme = 'challenger_deep'
 " let g:airline_theme = 'challenger_deep'
 let g:mychallenger_deep_terminal_italics = 1
+hi CocFloating guibg=#292c3f ctermbg=60
 
+" Photon
+" colorscheme photon
+" let g:lightline.colorscheme = 'icebergDark'
+
+" MyPhoton
+" colorscheme myphoton
+
+" Miramare
+" the configuration options should be placed before `colorscheme miramare`
+" let g:miramare_enable_italic = 1
+" let g:miramare_disable_italic_comment = 1
+
+" colorscheme miramare
+" let g:lightline.colorscheme = 'miramare_lightline'
+
+" focuspoint
+" colorscheme focuspoint
+" let g:lightline.colorscheme = 'focuspoint'
+
+" Jellybeans
+" colorscheme jellybeans
+" let g:jellybeans_use_term_italics = 1
+" let g:lightline.colorscheme = 'jellybeans'
+
+
+" SpaceCamp
+" colorscheme spacecamp
+
+"
 " Sweet 
 " colorscheme sweet
 " let g:lightline.colorscheme = 'challenger_deep'
@@ -63,7 +92,6 @@ let g:mychallenger_deep_terminal_italics = 1
 "     \}
 " " let g:airline_theme = 'one'
 " colorscheme PaperColor
-" " set t_Co=256
 " set background=light
 " let g:airline_theme = 'papercolor'
 " let g:indentLine_color_gui = '#DFE0DF'
@@ -99,7 +127,7 @@ let g:mychallenger_deep_terminal_italics = 1
 " hi Comment cterm=italic guifg=#4a5158
 " hi String guifg=#98C379 guibg=#2a2e34
 
-" """ browns
+"" browns
 " " function params: numbers and constants
 " hi Statement guifg=#907161
 " hi Conditional guifg=#907161
@@ -121,7 +149,7 @@ let g:mychallenger_deep_terminal_italics = 1
 
 
 
-" """""" vim-jsx ONLY
+" "vim-jsx ONLY
 " hi Identifier cterm=italic
 
 " Blues
@@ -239,8 +267,9 @@ let g:mychallenger_deep_terminal_italics = 1
 
 " set background=light
 " colorscheme ayu
-" let ayucolor="light"
+" let ayucolor="dark"
 " let g:airline_theme = 'ayu_light'
+" let lightline.colorscheme = 'ayu'
 
 
 " deus
@@ -271,6 +300,8 @@ let g:mychallenger_deep_terminal_italics = 1
 " let g:nord_italic = 1
 " let g:nord_italic_comments = 1
 " let g:nord_underline = 1
+" MEH
+" colorscheme meh
 
 " augroup nord-theme-overrides
 "   autocmd!
@@ -280,17 +311,17 @@ let g:mychallenger_deep_terminal_italics = 1
 
 " setlocal cursorcolumn
 
-hi tsxAttrib guifg=#f8bd7f gui=italic cterm=italic
-" highlight tsxAttrib gui=italic cterm=italic
-hi jsxAttrib guifg=#f8bd7f gui=italic cterm=italic
-" highlight jsxAttrib gui=italic cterm=italic
-hi typescriptVariableDeclaration guifg=#f8bd7f gui=italic cterm=italic
-hi typescriptIdentifierName guifg=#f8bd7f gui=italic cterm=italic
-hi link typescriptMember Label
-" highlight typescriptMember gui=italic cterm=italic
-hi link typescriptIdentifierName TypescriptSpecial
-hi link typescriptObjectLiteral TypescriptSpecial
-hi link typescriptFuncCallArg TypescriptSpecial
-highlight Comment cterm=italic
+" hi tsxAttrib guifg=#f8bd7f gui=italic cterm=italic
+" " highlight tsxAttrib gui=italic cterm=italic
+" hi jsxAttrib guifg=#f8bd7f gui=italic cterm=italic
+" " highlight jsxAttrib gui=italic cterm=italic
+" hi typescriptVariableDeclaration guifg=#f8bd7f gui=italic cterm=italic
+" hi typescriptIdentifierName guifg=#f8bd7f gui=italic cterm=italic
+" hi link typescriptMember Label
+" " highlight typescriptMember gui=italic cterm=italic
+" hi link typescriptIdentifierName TypescriptSpecial
+" hi link typescriptObjectLiteral TypescriptSpecial
+" hi link typescriptFuncCallArg TypescriptSpecial
+" highlight Comment cterm=italic
 " hi link jsxCloseString Label
 " hi link jsxOpenPunct jsxPunct

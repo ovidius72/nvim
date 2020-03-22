@@ -34,8 +34,8 @@ set nowritebackup
 set nobackup
 
 " always show signcolumns
-set signcolumn=yes
-" set signcolumn=auto:2
+" set signcolumn=yes
+set signcolumn=auto:2
 
 let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'

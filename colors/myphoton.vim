@@ -1,5 +1,5 @@
 " Vim Color File
-" Name:       mychallenger_deep.vim
+" Name:       myphoton.vim
 " Version:    2.0
 " Maintainer: github.com/MaxSt
 " License:    The MIT License (MIT)
@@ -11,28 +11,27 @@ if exists('syntax on')
     syntax reset
 endif
 
-let g:colors_name='mychallenger_deep'
+let g:colors_name='myphoton'
 set background=dark
 
 
-if ! exists("g:mychallenger_deep_termcolors")
-  let g:mychallenger_deep_termcolors = 256
+if ! exists("g:myphoton_termcolors")
+  let g:myphoton_termcolors = 256
 endif
 
 " not all terminals support italics properly.  If yours does, opt-in.
-if ! exists("g:mychallenger_deep_terminal_italics")
-  let g:mychallenger_deep_terminal_italics = 0
+if ! exists("g:myphoton_terminal_italics")
+  let g:myphoton_terminal_italics = 0
 endif
 
 
-
 " Colors
-let s:black           = { "gui": "#212121", "cterm": "0", "cterm16" : "8" }
-let s:medium_gray     = { "gui": "#767676", "cterm": "243", "cterm16" : "243" }
-let s:white           = { "gui": "#F3F3F3", "cterm": "15", "cterm16" : "15" }
-let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231", "cterm16" : "231" }
-let s:light_black     = { "gui": "#424242", "cterm": "8", "cterm16" : "0" }
-let s:lighter_black   = { "gui": "#545454", "cterm": "240", "cterm16" : "240" }
+let s:black           = { "gui": "#262626", "cterm": "235", "cterm16" : "8" }
+let s:medium_gray     = { "gui": "#262626", "cterm": "235", "cterm16" : "8" }
+let s:white           = { "gui": "#c6c6c6", "cterm": "251", "cterm16" : "15" }
+let s:actual_white    = { "gui": "#c6c6c6", "cterm": "231", "cterm16" : "231" }
+let s:light_black     = { "gui": "#626262", "cterm": "8", "cterm16" : "0" }
+let s:lighter_black   = { "gui": "#767676", "cterm": "240", "cterm16" : "240" }
 
 " lighter shadows and darker grays
 let s:subtle_black  = { "gui": "#303030", "cterm": "236", "cterm16" : "236" }
@@ -40,26 +39,25 @@ let s:light_gray    = { "gui": "#B2B2B2", "cterm": "249", "cterm16" : "249" }
 let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
 
 " flat colors:
-let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
-let s:asphalt_medium = { "gui": "#141228", "cterm": "233", "cterm16": "NONE"}
-let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "0"}
-" let s:asphalt_subtle= { "gui": "#444444", "cterm": "232", "cterm16": "0"}
+let s:asphalt = { "gui": "#262626", "cterm": "233", "cterm16": "NONE"}
+" let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "0"}
+let s:asphalt_subtle= { "gui": "#444444", "cterm": "232", "cterm16": "0"}
 let s:dark_asphalt = { "gui": "#565575", "cterm": "236", "cterm16": "8"}
 
-let s:red = { "gui": "#ff8080", "cterm": "204", "cterm16": "1"}
-let s:dark_red = { "gui": "#ff5458", "cterm": "203", "cterm16": "9"}
+let s:red = { "gui": "#af5f87", "cterm": "204", "cterm16": "1"}
+let s:dark_red = { "gui": "#d75f5f", "cterm": "203", "cterm16": "9"}
 
-let s:green = { "gui": "#95ffa4", "cterm": "120", "cterm16": "2"}
-let s:dark_green = { "gui": "#62d196", "cterm": "119", "cterm16": "10"}
+let s:green = { "gui": "#87af87", "cterm": "120", "cterm16": "2"}
+let s:dark_green = { "gui": "#87af87", "cterm": "119", "cterm16": "10"}
 
-let s:yellow = { "gui": "#ffe9aa", "cterm": "228", "cterm16": "3"}
-let s:dark_yellow = { "gui": "#ffb378", "cterm": "215", "cterm16": "11"}
+let s:yellow = { "gui": "#af8700", "cterm": "228", "cterm16": "3"}
+let s:dark_yellow = { "gui": "#af8700", "cterm": "215", "cterm16": "11"}
 
-let s:blue = { "gui": "#91ddff", "cterm": "159", "cterm16": "4"}
-let s:dark_blue = { "gui": "#65b2ff", "cterm": "75", "cterm16": "12"}
+let s:blue = { "gui": "#5f87ff", "cterm": "159", "cterm16": "4"}
+let s:dark_blue = { "gui": "#5f87ff", "cterm": "75", "cterm16": "12"}
 
-let s:purple = { "gui": "#c991e1", "cterm": "141", "cterm16": "5"}
-let s:dark_purple = { "gui": "#906cff", "cterm": "135", "cterm16": "13"}
+let s:purple = { "gui": "#af87d7", "cterm": "141", "cterm16": "5"}
+let s:dark_purple = { "gui": "#af87d7", "cterm": "135", "cterm16": "13"}
 
 let s:cyan = { "gui": "#aaffe4", "cterm": "122", "cterm16": "6"}
 let s:dark_cyan = { "gui": "#63f2f1", "cterm": "121", "cterm16": "14"}
@@ -87,10 +85,10 @@ let s:head_c         = s:dark_cyan
 " shamelessly stolen from hemisu: https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
   " Not all terminals support italics properly. If yours does, opt-in.
-  if g:mychallenger_deep_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
+  if g:myphoton_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
     unlet a:style.cterm
   endif
-  if g:mychallenger_deep_termcolors == 16
+  if g:myphoton_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
     let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
   else
@@ -111,10 +109,10 @@ endfunction
 " (see `:h w18`)
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
-call s:h("Cursor",        {"bg": s:blue, "fg": s:bg_dark})
-call s:h("Comment",       {"fg": s:medium_gray, "gui": "italic", "cterm": "italic"})
+call s:h("Cursor",        {"bg": s:purple, "fg": s:white})
+call s:h("Comment",       {"fg": s:light_black, "gui": "italic", "cterm": "italic"})
 
-call s:h("Constant",      {"fg": s:yellow})
+call s:h("Constant",      {"fg": s:purple})
 hi! link String           Constant
 hi! link Character        Constant
 
@@ -139,7 +137,7 @@ hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
 
-call s:h("Keyword",       {"fg": s:red})
+call s:h("Keyword",       {"fg": s:lighter_gray})
 hi! link Statement        Keyword
 
 call s:h("Type",          {"fg": s:blue})
@@ -166,15 +164,15 @@ call s:h("SpecialKey",    {"fg": s:blue})
 call s:h("Boolean",    {"fg": s:dark_yellow})
 call s:h("Number",    {"fg": s:dark_yellow})
 call s:h("Float",    {"fg": s:dark_yellow})
-call s:h("NonText",       {"fg": s:bg_dark})
+call s:h("NonText",       {"fg": s:asphalt_subtle, "bg": s:black})
 call s:h("Directory",     {"fg": s:purple})
 call s:h("ErrorMsg",      {"fg": s:dark_red})
 call s:h("IncSearch",     {"bg": s:red, "fg": s:clouds})
 call s:h("Search",        {"bg": s:bg_dark})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "gui": "bold", "cterm": "bold"})
 hi! link ModeMsg MoreMsg
-call s:h("LineNr",        {"fg": s:dark_asphalt, "bg": s:asphalt})
-call s:h("CursorLineNr",  {"bg": s:asphalt, "fg": s:dark_cyan, "gui": "bold"})
+call s:h("LineNr",        {"fg": s:dark_asphalt, "bg": s:bg_subtle})
+call s:h("CursorLineNr",  {"bg": s:bg_subtle, "fg": s:blue, "gui": "bold"})
 call s:h("Question",      {"fg": s:red})
 call s:h("StatusLine",    {"bg": s:bg_dark})
 call s:h("Conceal",       {"fg": s:norm})
@@ -211,7 +209,7 @@ call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_dark})
 call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_dark})
 call s:h("CursorColumn",  {"bg": s:bg_subtle})
-call s:h("CursorLine",    {"bg": s:asphalt_medium})
+call s:h("CursorLine",    {"bg": s:bg_subtle})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
 " remainder of syntax highlighting
@@ -320,10 +318,10 @@ hi! link xmlTagName                 htmlTagName
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
 hi link SignifySignChange           LineNr
-call s:h("GitGutterAdd",{"fg": s:green, "bg": s:asphalt})
-call s:h("GitGutterDelete",{"fg": s:red, "bg": s:asphalt})
-call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:asphalt})
-call s:h("GitGutterChangeDelete",{"fg": s:red, "bg": s:asphalt})
+call s:h("GitGutterAdd",{"fg": s:green, "bg": s:bg_subtle})
+call s:h("GitGutterDelete",{"fg": s:red, "bg": s:bg_subtle})
+call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:bg_subtle})
+call s:h("GitGutterChangeDelete",{"fg": s:red, "bg": s:bg_subtle})
 
 
 "nvim terminal colors
