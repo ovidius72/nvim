@@ -3,6 +3,11 @@ if !has('nvim')
 endif
 
 call plug#begin()
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
@@ -48,8 +53,6 @@ Plug 'sainnhe/lightline_foobar.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 " Plug 'taigacute/spaceline.vim'
 " Plug 'liuchengxu/eleline.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 " Plug 'neomake/neomake'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -63,9 +66,6 @@ Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
@@ -97,7 +97,8 @@ call plug#end()
 runtime macros/sandwich/keymap/surround.vim
 
 source ~/.config/nvim/init/common.vim
-source ~/.config/nvim/colors/autoload/lightline/miramare_lightline.vim
+" source ~/.config/nvim/colors/autoload/lightline/miramare_lightline.vim
+source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
 " source ~/.config/nvim/init/lens.vim
 source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/ale.vim

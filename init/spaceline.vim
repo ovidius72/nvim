@@ -1,9 +1,9 @@
-let g:spaceline_colorscheme = 'challenger_deep'
-let g:spaceline_seperate_style= 'curve'
-let g:spaceline_line_symbol = 0
+" let g:spaceline_colorscheme = 'challenger_deep_spaceline'
+let g:spaceline_seperate_style= 'slant-fade'
+let g:spaceline_line_symbol = 1
 let laststatus=2
 
- " let g:spaceline_homemode_right = ''
+" let g:spaceline_homemode_right = ''
 " let g:spaceline_filename_left  = ''
 " let g:spaceline_filesize_right = ''
 " let g:spaceline_gitinfo_left   = ''

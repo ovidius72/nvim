@@ -31,16 +31,31 @@ endfunction
 " you can add the following line to your vimrc 
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
+
+
+function! GetWinNumber()
+  let nmap = [ ' ',  ' ', ' ', ' ', ' ', ' ', ' ', ' ',  ' ',  ' ']
+  let wn = winnr()
+  if wn < 9
+    let wn = nmap[wn]
+  endif
+  return wn
+endfunction
+
+
 " \ 'colorscheme': 'solarized',
 let g:lightline = {
       \ 'inactive': { 
-      \ 'left': [['winnr', 'mode', 'filename'], ['modified']], 
-      \ 'right': [['lineinfo'],['percent']]
+        \ 'left': [['winnr'], ['mode'], ['filename'], ['modified']], 
+        \ 'right': [['lineinfo'],['percent'], ['filetype'] ]
       \ },
       \ 'active': {
       \   'left': [ 
-      \     [ 'winnr', 'mode', 'paste' ], ['filename', 'modified', 'readonly', 'gitbranch', 'gitgutter'], ['coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'coc_fix', 'cocstatus'], [ 'method' ] ],
-      \  'right': [ [ 'lineinfo' ], ['currentfunction'],  [ 'percent' ], [ 'filetype' ] ]
+            \ [ 'winnr' ],
+            \ [ 'mode'], 
+            \ ['paste' ],
+            \ [ 'filename', 'modified', 'readonly', 'gitbranch', 'gitgutter', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'coc_fix', 'cocstatus'], [ 'method' ] ],
+          \  'right': [ [ 'lineinfo' ], ['currentfunction'],  [ 'percent' ], [ 'filetype' ] ]
       \ },
       \ 'component_expand': {
       \  'buffers'          : 'lightline#bufferline#buffers',
@@ -59,7 +74,7 @@ let g:lightline = {
       \   'gitgutter': 'LightLineGitGutter',
       \   'fileformat': 'MyFileformat',
       \   'blame': 'LightLineGitBlame',
-      \   'winnr': 'winnr',
+      \   'winnr': 'GetWinNumber',
       \ },
       \ 'component_type':  {
       \   'buffers'          : 'tabsel',
@@ -70,17 +85,17 @@ let g:lightline = {
       \   'coc_fix'          : 'warning',
     \ },
       \ 'mode_map': {
-        \ 'n' : 'N',
-        \ 'i' : 'I',
-        \ 'R' : 'R',
-        \ 'v' : 'V',
-        \ 'V' : 'VL',
-        \ "\<C-v>": 'VB',
-        \ 'c' : 'C',
-        \ 's' : 'S',
-        \ 'S' : 'SL',
-        \ "\<C-s>": 'SB',
-        \ 't': 'T',
+        \ 'n' : '',
+        \ 'i' : '',
+        \ 'R' : '',
+        \ 'v' : '',
+        \ 'V' : '',
+        \ "\<C-v>": '',
+        \ 'c' : '',
+        \ 's' : '',
+        \ 'S' : '',
+        \ "\<C-s>": '',
+        \ 't': '',
         \ }
   \ }
 
@@ -185,6 +200,10 @@ endfunction
 " \ }
 
 autocmd User CocStatusChange,CocDiagnosticChange,CocCurrentFunction call lightline#update()
+
+function! FileName()
+  return ' ' . expand('%:t')
+endfunction
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''

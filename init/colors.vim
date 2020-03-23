@@ -36,7 +36,7 @@
 
 " Challenge Deep
 colorscheme mychallenger_deep
-let g:lightline.colorscheme = 'challenger_deep'
+let g:lightline.colorscheme = 'mychallenger_deep'
 " let g:airline_theme = 'challenger_deep'
 let g:mychallenger_deep_terminal_italics = 1
 hi CocFloating guibg=#292c3f ctermbg=60
@@ -322,6 +322,6 @@ hi CocFloating guibg=#292c3f ctermbg=60
 " hi link typescriptIdentifierName TypescriptSpecial
 " hi link typescriptObjectLiteral TypescriptSpecial
 " hi link typescriptFuncCallArg TypescriptSpecial
-" highlight Comment cterm=italic
+highlight Comment cterm=italic
 " hi link jsxCloseString Label
 " hi link jsxOpenPunct jsxPunct
