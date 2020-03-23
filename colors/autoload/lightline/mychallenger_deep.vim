@@ -21,6 +21,7 @@ let s:red = { "gui": "#ff8080", "cterm": "204", "cterm16": "1"}
 let s:dark_red = { "gui": "#ff5458", "cterm": "203", "cterm16": "9"}
 
 let s:green = { "gui": "#95ffa4", "cterm": "120", "cterm16": "2"}
+let s:light_green = { "gui": " #62d196", "cterm": "119", "cterm16": "10"}
 let s:dark_green = { "gui": "#62d196", "cterm": "119", "cterm16": "10"}
 
 let s:yellow = { "gui": "#ffe9aa", "cterm": "228", "cterm16": "3"}
@@ -88,58 +89,93 @@ let s:p.tabline.left    = [ [ s:lfc.white, s:lfc.asphalt ] ]
 let s:p.tabline.tabsel  = [ [ s:lfc.asphalt, s:lfc.blue ] ]
 let s:p.tabline.middle  = [ [ s:lfc.white, s:lfc.asphalt ] ]
 let s:p.tabline.right   = [ [ s:lfc.asphalt, s:lfc.dark_purple ] ]
-
+  
 " Normal mode
 let s:p.normal.left     = [ 
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
-      \ [ s:lfc.asphalt2, s:lfc.dark_cyan ],
-      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ] ]
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ ]
 
-let s:p.normal.middle   = [ [ s:lfc.white, s:lfc.asphalt2 ] ]
-let s:p.normal.right    = [ 
-      \ [ s:lfc.bg_subtle, s:lfc.dark_purple ],
-      \ [ s:lfc.asphalt, s:lfc.purple ],
+let s:p.normal.middle   = [ 
       \ [ s:lfc.white, s:lfc.asphalt2 ],
-      \ [ s:lfc.asphalt, s:lfc.purple ]]
+      \ ]
+ 
+let s:p.normal.right    = [ 
+      \ [ s:lfc.green, s:lfc.asphalt2, "bold" ],
+      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.white, s:lfc.asphalt2 ],
+      \ [ s:lfc.asphalt, s:lfc.purple ],
+      \ ]
 
 let s:p.normal.error    = [ [ s:lfc.red, s:lfc.asphalt2 ] ]
-let s:p.normal.warning  = [ [ s:lfc.asphalt2, s:lfc.dark_red ] ]
+let s:p.normal.warning  = [ [ s:lfc.yellow, s:lfc.asphalt2 ] ]
+let s:p.normal.info  = [ [ s:lfc.yellow, s:lfc.asphalt2 ] ]
+let s:p.normal.hint  = [ [ s:lfc.yellow, s:lfc.asphalt2 ] ]
 
 " Visual mode
 let s:p.visual.left     = [
       \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
-      \ [ s:lfc.yellow, s:lfc.asphalt2 ],
-      \ [ s:lfc.asphalt2, s:lfc.dark_yellow ],
+      \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
       \ ]
-let s:p.visual.right    = [ [ s:lfc.bg_subtle, s:lfc.yellow ],  [ s:lfc.bg_subtle, s:lfc.dark_yellow ] ]
 
+let s:p.visual.right    = [
+      \ [ s:lfc.green, s:lfc.asphalt2, "bold" ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_yellow ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_yellow ],
+      \ [ s:lfc.white, s:lfc.asphalt2 ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_yellow ]
+      \ ]
+  
 " Replace mode
 let s:p.replace.left    = [ 
       \ [ s:lfc.dark_green, s:lfc.asphalt2 ],
-      \ [ s:lfc.green, s:lfc.asphalt2 ],
-      \ [ s:lfc.asphalt2, s:lfc.dark_green ],
-      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ]
-      \ ]
-let s:p.replace.right   = [ 
-      \ [ s:lfc.bg_subtle, s:lfc.green ],
-      \ [ s:lfc.bg_subtle, s:lfc.dark_green ]
+      \ [ s:lfc.dark_green, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_green, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
       \ ]
 
-" Insert mode
-let s:p.insert.left     = [ 
-      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
-      \ [ s:lfc.red, s:lfc.asphalt2 ],
-      \ [ s:lfc.asphalt2, s:lfc.dark_cyan ],
-      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ]
+let s:p.replace.right   = [ 
+      \ [ s:lfc.green, s:lfc.asphalt2, "bold" ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_green ],
+      \ [ s:lfc.asphalt, s:lfc.green ],
+      \ [ s:lfc.white, s:lfc.asphalt2 ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_green ]
       \ ]
-let s:p.insert.right    = [ [ s:lfc.bg_subtle, s:lfc.red ],  [ s:lfc.bg_subtle, s:lfc.dark_purple ] ]
+ 
+" Insert mode
+let s:p.insert.left  = [ 
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.asphalt2, s:lfc.dark_red ],
+      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ]
+      \ ]
+
+
+let s:p.insert.right    = [
+      \ [ s:lfc.green, s:lfc.asphalt2, "bold" ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_red ],
+      \ [ s:lfc.bg_subtle, s:lfc.dark_purple ]
+      \ ]
 
 " Inactive split
 let s:p.inactive.left   = [ 
       \ [ s:lfc.lighter_gray,  s:lfc.asphalt2 ],
       \ [ s:lfc.lighter_black, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_asphalt, s:lfc.asphalt2 ]
       \ ]
 let s:p.inactive.middle = [ 

@@ -1,14 +1,16 @@
 
 function! CocCurrentFunction()
     let fun = get(b:, 'coc_current_function', '')
-    return fun
+    return strlen(fun) ? ' ' . fun : ''
 endfunction
 
 function! LightLineCoc() 
-    if empty(get(g:, 'coc_status', '')) && empty(get(b:, 'coc_diagnostic_info', {})) 
+    " if empty(get(g:, 'coc_status', '')) && empty(get(b:, 'coc_diagnostic_info', {})) 
+    if empty(get(g:, 'coc_status', '')) 
         return ''
     endif 
-    return trim(coc#status())
+    " return trim(coc#status())
+    return trim(g:coc_status)
 endfunction
 
 function! LightlineGitBlame() abort
@@ -20,7 +22,8 @@ endfunction
 " let s:function_icon = s:font ? 'Ⓕ  ' : ''
 
 function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
+  let fun = get(b:, 'vista_nearest_method_or_function', '')
+  return strlen(fun) ? 'Nearest:  ' . fun : 'noNearest'
 endfunction
 
 " set statusline+=%{NearestMethodOrFunction()}
@@ -30,6 +33,42 @@ endfunction
 " If you want to show the nearest function in your statusline automatically,
 " you can add the following line to your vimrc 
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+
+function! GetModified()
+  if &mod 
+    return " "
+  else
+    return ""
+  endif
+endfunction
+
+function! FileName()
+  return IconFiletype() . expand('%:t')
+  " return ' ' . expand('%:t')
+endfunction
+
+function! IconFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : ' ') : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+ 
+function! GetFileReadOnly() abort
+  if &readonly
+    return " "
+  endif
+  return ""
+endfunction
+" 
+" 
+" 
 
 
 
@@ -46,16 +85,33 @@ endfunction
 " \ 'colorscheme': 'solarized',
 let g:lightline = {
       \ 'inactive': { 
-        \ 'left': [['winnr'], ['mode'], ['filename'], ['modified']], 
-        \ 'right': [['lineinfo'],['percent'], ['filetype'] ]
+        \ 'left': [
+          \ ['winnr'],
+          \ ['mode'],
+          \ ['modified'],
+          \ ['fileReadMode'],
+          \ ['filename'],
+          \ ], 
+        \ 'right': [
+          \ ['lineinfo', 'fileformat'],
+          \ ['percent'],
+          \ ]
       \ },
       \ 'active': {
-      \   'left': [ 
+        \ 'left': [ 
             \ [ 'winnr' ],
             \ [ 'mode'], 
-            \ ['paste' ],
-            \ [ 'filename', 'modified', 'readonly', 'gitbranch', 'gitgutter', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'coc_fix', 'cocstatus'], [ 'method' ] ],
-          \  'right': [ [ 'lineinfo' ], ['currentfunction'],  [ 'percent' ], [ 'filetype' ] ]
+            \ [ 'modified' ],
+            \ [ 'fileReadMode'], 
+            \ [ 'filename', 'paste'],
+            \ [ 'gitgutter', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'cocstatus'],
+           \ ],
+         \ 'right': [
+           \ [ 'gitbranch'],
+           \ [ 'lineinfo', 'fileformat'],
+           \ [],
+           \ [ 'percent' ]
+         \ ]
       \ },
       \ 'component_expand': {
       \  'buffers'          : 'lightline#bufferline#buffers',
@@ -70,11 +126,14 @@ let g:lightline = {
       \   'cocstatus': 'LightLineCoc',
       \   'gitbranch': 'LightlineFugitive',
       \   'currentfunction': 'CocCurrentFunction',
-      \   'filetype': 'MyFiletype',
+      \   'filetype': 'IconFiletype',
       \   'gitgutter': 'LightLineGitGutter',
       \   'fileformat': 'MyFileformat',
       \   'blame': 'LightLineGitBlame',
       \   'winnr': 'GetWinNumber',
+      \   'fileReadMode': 'GetFileReadOnly',
+      \   'modified': 'GetModified',
+      \   'filename': 'FileName'
       \ },
       \ 'component_type':  {
       \   'buffers'          : 'tabsel',
@@ -85,17 +144,17 @@ let g:lightline = {
       \   'coc_fix'          : 'warning',
     \ },
       \ 'mode_map': {
-        \ 'n' : '',
-        \ 'i' : '',
-        \ 'R' : '',
-        \ 'v' : '',
-        \ 'V' : '',
-        \ "\<C-v>": '',
-        \ 'c' : '',
-        \ 's' : '',
-        \ 'S' : '',
-        \ "\<C-s>": '',
-        \ 't': '',
+        \ 'n' : ' ',
+        \ 'i' : ' ',
+        \ 'R' : ' ',
+        \ 'v' : ' ',
+        \ 'V' : ' ',
+        \ "\<C-v>": ' ',
+        \ 'c' : ' ',
+        \ 's' : ' ',
+        \ 'S' : ' ',
+        \ "\<C-s>": ' ',
+        \ 't': ' ',
         \ }
   \ }
 
@@ -122,28 +181,11 @@ nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 let g:lightline.tabline = {'left': [['buffers']], 'right': [['close']] }
-" let g:lightline.component_expand = {
-"     \  'buffers'          : 'lightline#bufferline#buffers',
-"     \  'coc_error'        : 'LightlineCocErrors',
-"     \  'coc_warning'      : 'LightlineCocWarnings',
-"     \  'coc_info'         : 'LightlineCocInfos',
-"     \  'coc_hint'         : 'LightlineCocHints',
-"     \  'coc_fix'          : 'LightlineCocFixes'
-"   \ }
-
-" let g:lightline.component_type = {
-"       \   'buffers': 'tabsel',
-"       \   'coc_error'        : 'error',
-"       \   'coc_warning'      : 'warning',
-"       \   'coc_info'         : 'tabsel',
-"       \   'coc_hint'         : 'middle',
-"       \   'coc_fix'          : 'middle',
-"   \ }
 
 function! LightlineFugitive()
   if exists('*FugitiveHead')
     let branch = FugitiveHead()
-    return branch !=# '' ? ' '. branch : ''
+    return branch !=# '' ? '  '. branch : ''
   endif
   return ''
 endfunction
@@ -158,6 +200,7 @@ function! s:lightline_coc_diagnostic(kind, sign) abort
   catch
     let s = ''
   endtry
+  echo s
   return printf('%s %d', s, info[a:kind])
 endfunction
 
@@ -179,35 +222,64 @@ function! LightLineGitGutter()
       call add(ret, symbols[i] . hunks[i])
     endif
   endfor
-  return join(ret, ' ')
+  return  empty(ret) ? '' : ' ' . join(ret, ' ')
 endfunction
 
 function! LightlineCocErrors() abort
-  return s:lightline_coc_diagnostic('error', 'error')
+  let s = s:lightline_coc_diagnostic('error', 'error')
+  return empty(s) ? '' : ' ' . s 
 endfunction
 
 function! LightlineCocWarnings() abort
-  return s:lightline_coc_diagnostic('warning', "warning")
+  let s = s:lightline_coc_diagnostic('warning', "warning")
+  return empty(s) ? '' : ' ' . s
 endfunction
 
 function! LightlineCocInfos() abort
-  return s:lightline_coc_diagnostic('information', "info")
+  let s = s:lightline_coc_diagnostic('information', "info")
+  return empty(s) ? '' : ' ' . s
 endfunction
 
 function! LightlineCocHints() abort
-  return s:lightline_coc_diagnostic('hints', "hint")
+  let s = s:lightline_coc_diagnostic('hints', "hint")
+  return empty(s) ? '' : ' ' . s
 endfunction
-" \ }
+
+function! LightlineCocFixes() abort
+  let b:coc_line_fixes = get(get(b:, 'coc_quickfixes', {}), line('.'), 0)
+  return b:coc_line_fixes > 0 ? printf('%d ', b:coc_line_fixes) : ''
+endfunction
 
 autocmd User CocStatusChange,CocDiagnosticChange,CocCurrentFunction call lightline#update()
+" " Diagnostic's feedback {{{
+" function! CocUpdateQuickFixes(error, actions) abort
+"   let coc_quickfixes = {}
+"   try
+"     for action in a:actions
+"       if action.kind ==? 'quickfix'
+"         for change in action.edit.documentChanges
+"           for edit in change.edits
+"             let start_line = edit.range.start.line + 1
+"             let end_line = edit.range.end.line + 1
+"             let coc_quickfixes[start_line] = get(coc_quickfixes, start_line, 0) + 1
+"             if start_line != end_line
+"               let coc_quickfixes[end_line] = get(coc_quickfixes, end_line, 0) + 1
+"             endif
+"           endfor
+"         endfor
+"       endif
+"     endfor
+"   catch
+"   endtry
+"   if coc_quickfixes != get(b:, 'coc_quickfixes', {})
+"     let b:coc_quickfixes = coc_quickfixes
+"     call lightline#update()
+"   endif
+" endfunction
 
-function! FileName()
-  return ' ' . expand('%:t')
-endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
-endfunction
+" autocmd  MyAutoCmd User CocDiagnosticChange
+" \   call lightline#update()
+" \|  call CocActionAsync('quickfixes', function('CocUpdateQuickFixes'))
 
 function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
