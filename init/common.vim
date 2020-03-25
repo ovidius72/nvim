@@ -94,13 +94,12 @@ map <Leader>hr :%retab!<CR>
 " nmap ss cl
 
 " vim-qick-scope
+let g:qs_lazy_highlight = 1
 augroup qs_colors
   autocmd!
   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff6f' gui=underline ctermfg=155 cterm=underline
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 augroup END
-
-let g:qs_lazy_highlight = 1
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
 
@@ -174,11 +173,11 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_async = 1
 let g:gitgutter_diff_args = '--ignore-all-space'
 let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
-" let g:gitgutter_sign_added='┃'
-" let g:gitgutter_sign_modified='┃'
-" let g:gitgutter_sign_removed='◢'
-" let g:gitgutter_sign_removed_first_line='◥'
-" let g:gitgutter_sign_modified_removed='◢'
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='◢'
+let g:gitgutter_sign_removed_first_line='◥'
+let g:gitgutter_sign_modified_removed='◢'
 
 " let g:gitgutter_sign_added = ''
 " let g:gitgutter_sign_removed = ''
@@ -222,14 +221,15 @@ vnoremap gy y']
 " console.log wrapper
 " Console log from insert mode; Puts focus inside parentheses
 
-imap cll console.log();<Esc>==f(a
-imap gll console.log();<Esc>==f(a"<Esc>pa", <Esc>a
+imap _cll console.log();<Esc>==F(a
+imap _gll console.log();<Esc>==F(a"<Esc>pa", <Esc>a
 " Console log from visual mode on next line, puts visual selection inside parentheses
-vmap <silent><c-c><c-l> yogll<Esc>pviw
+" vmap <silent><c-c><c-l> yogll<Esc>pviw
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 " nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
-nmap <Leader>ol yiwogll<Esc>pviw<Esc>
+nmap <Leader>ol yiwo_gll<Esc>pviw<Esc>
 
+" comment and yank to the next line
 nmap gcy Ygccp
 nmap <leader>xcc gc
 nmap <leader>xcy gcy

@@ -8,7 +8,11 @@
   "python.jediEnabled": false,
   "diagnostic.enable": true,
   "signature.enable": true,
-  "signature.target":"echo",
+  "signature.target": "echo",
+  "diagnostic.infoSign": "",
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.hintSign": "",
   "diagnostic.checkCurrentLine": true,
   "git.signOffset": 1,
   "git.enableGlobalStatus": true,
@@ -26,13 +30,11 @@
   "diagnostic.level": "hint",
   "diagnostic.locationlist": true,
   "diagnostic.enableMessage": "always",
-  "diagnostic.refreshOnInsertMode": true,
-  "diagnostic.refreshAfterSave": true,
   "yank.enableCompletion": false,
   "explorer.file.column.git.icon.added": "✚",
   "explorer.file.column.git.icon.untracked": "◎",
   "explorer.file.column.git.icon.modified": "✐",
-  "explorer.file.column.git.icon.deleted": "🗷", 
+  "explorer.file.column.git.icon.deleted": "🗷",
   "explorer.file.column.git.icon.mixed": "⁉",
   "explorer.file.column.git.icon.copied": "➜",
   "explorer.file.column.git.icon.renamed": "®",
@@ -49,7 +51,13 @@
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls"

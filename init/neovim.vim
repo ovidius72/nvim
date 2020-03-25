@@ -28,6 +28,7 @@ Plug 'liuchengxu/vim-which-key'
 " Plug 'davidosomething/vim-colors-meh'
 
 " Plug 'christoomey/vim-tmux-navigator'
+" Plug 'urbainvaes/vim-tmux-pilot'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
 Plug 'vim-vdebug/vdebug'
 Plug 'puremourning/vimspector'
@@ -97,14 +98,13 @@ call plug#end()
 runtime macros/sandwich/keymap/surround.vim
 
 source ~/.config/nvim/init/common.vim
-" source ~/.config/nvim/colors/autoload/lightline/miramare_lightline.vim
 source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
+" source ~/.config/nvim/colors/autoload/lightline/miramare_lightline.vim
 " source ~/.config/nvim/init/lens.vim
 source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/ale.vim
 " source ~/.config/nvim/init/neomake.vim
 source ~/.config/nvim/init/fzf.vim
-source ~/.config/nvim/init/coc.vim
 " source ~/.config/nvim/colors/challenger_deep_spaceline.vim
 " source ~/.config/nvim/init/spaceline.vim
 source ~/.config/nvim/init/lightline.vim
@@ -122,7 +122,8 @@ source ~/.config/nvim/init/anyjump.vim
 source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/dotoo.vim
 source ~/.config/nvim/init/vim-win.vim
-runtime macros/sandwich/keymap/surround.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/colors.vim
+source ~/.config/nvim/init/coc.vim
+runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim

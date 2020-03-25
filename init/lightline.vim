@@ -121,6 +121,9 @@ let g:lightline = {
       \  'coc_hint'         : 'LightlineCocHints',
       \  'coc_fix'          : 'LightlineCocFixes'
       \ },
+      \ "component_raw": {
+        \ 'buffers': 1 
+      \},
       \ 'component_function': {
       \   'method': 'NearestMethodOrFunction',
       \   'cocstatus': 'LightLineCoc',
@@ -160,14 +163,29 @@ let g:lightline = {
 
 " let g:lightline.separator = {
 " 	\   'left': '', 'right': ''
-"   \}
+"  \}
 " let g:lightline.subseparator = {
 " 	\   'left': '', 'right': '' 
 "   \}
 
+
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline#bufferline#unicode_symbols = 1
+let g:lightline#bufferline#clickable = 1
+" let g:lightline#bufferline#modified = ' M'
+" let g:lightline#bufferline#read_only = ' '
+" let g:lightline#bufferline#composed_number_map = {
+" \ 1: ' ',
+" \ 2: ' ',
+" \ 3: ' ',
+" \ 4: ' ',
+" \ 5: ' ',
+" \ 6: ' ',
+" \ 7: ' ',
+" \ 8: ' ',
+" \ 9: ' '
+" \ }
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -180,7 +198,8 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
-let g:lightline.tabline = {'left': [['buffers']], 'right': [['close']] }
+
+let g:lightline.tabline = {'left': [['buffers']], 'right': [] }
 
 function! LightlineFugitive()
   if exists('*FugitiveHead')

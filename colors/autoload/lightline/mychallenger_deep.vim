@@ -16,6 +16,7 @@ let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt2 = { "gui": "#1b192c", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "8"}
 let s:dark_asphalt = { "gui": "#565575", "cterm": "236", "cterm16": "0"}
+let s:light_asphalt = { "gui": "#777777", "cterm": "236", "cterm16": "0"}
 
 let s:red = { "gui": "#ff8080", "cterm": "204", "cterm16": "1"}
 let s:dark_red = { "gui": "#ff5458", "cterm": "203", "cterm16": "9"}
@@ -61,6 +62,7 @@ let s:lfc = {
       \'asphalt2': [s:asphalt2.gui, s:asphalt2.cterm16],
       \'asphalt_subtle': [s:asphalt_subtle.gui, s:asphalt_subtle.cterm16],
       \'dark_asphalt' : [s:dark_asphalt.gui, s:dark_asphalt.cterm16],
+      \'light_asphalt' : [s:light_asphalt.gui, s:light_asphalt.cterm16],
       \'red' : [s:red.gui, s:red.cterm16],
       \'dark_red' : [s:dark_red.gui, s:dark_red.cterm16],
       \'green' : [s:green.gui, s:green.cterm16],
@@ -85,8 +87,8 @@ let s:lfc = {
 let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
 
 " Tabline
-let s:p.tabline.left    = [ [ s:lfc.white, s:lfc.asphalt ] ]
-let s:p.tabline.tabsel  = [ [ s:lfc.asphalt, s:lfc.blue ] ]
+let s:p.tabline.left    = [ [ s:lfc.purple, s:lfc.asphalt ] ]
+let s:p.tabline.tabsel  = [ [ s:lfc.asphalt, s:lfc.dark_purple ] ]
 let s:p.tabline.middle  = [ [ s:lfc.white, s:lfc.asphalt ] ]
 let s:p.tabline.right   = [ [ s:lfc.asphalt, s:lfc.dark_purple ] ]
   

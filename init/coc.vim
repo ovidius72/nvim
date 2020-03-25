@@ -41,14 +41,22 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 let g:coc_status_info_sign = '•'
 
-" hi! CocErrorHighlight guibg=#d62829 guifg=#fafafa gui=undercurl 
-" hi! CocWarningHighlight guibg=#dc6c14 guifg=#fafafa gui=undercurl
-" hi! CocInfoHighlight guibg=#92c79a guifg=#fafafa gui=undercurl
+hi! CocErrorHighlight guibg=bg guifg=fg gui=undercurl guisp=#ff5458 
+hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffb378
+hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
+
+" to be used in coc config.
+"diagnostic.infoSign": " ",
+"diagnostic.errorSign": " ",
+"diagnostic.warningSign": " ",
+"diagnostic.hintSign": " ",
+"diagnostic.refreshOnInsertMode": true,
+"diagnostic.refreshAfterSave": true,
 
 " // Dark ColorScheme
-autocmd ColorScheme *
-      \ hi CocUnderline gui=underline term=underline
+" autocmd ColorScheme *
+"       \ hi CocUnderline gui=underline term=underline
       " \ | hi CocErrorHighlight guifg=#d75f87
       " \ | hi CocWarningHighlight guibg=#dc752f
       " \ | hi CocInfoHighlight guibg=#92c797
@@ -280,7 +288,7 @@ command! -nargs=0 SESSSAVE   :call     CocAction('runCommand', 'session.save')
 nmap <leader>css :SESSSAVE<CR>
 nmap <leader>csl :SESSLOAD<CR>
 nmap <leader>pp :SESSLOAD<CR>
-
+nmap <silent><leader>pA :SESSSAVE<CR>
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 " nmap <silent> <TAB> <Plug>(coc-range-select)
 " xmap <silent> <TAB> <Plug>(coc-range-select)

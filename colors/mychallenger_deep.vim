@@ -24,6 +24,10 @@ if ! exists("g:mychallenger_deep_terminal_italics")
   let g:mychallenger_deep_terminal_italics = 0
 endif
 
+if ! exists("g:mychallenger_deep_underlined_cursor_line")
+  let g:mychallenger_deep_underlined_cursor_line = 0
+endif
+
 
 
 " Colors
@@ -213,6 +217,11 @@ call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_dark})
 call s:h("CursorColumn",  {"bg": s:bg_subtle})
 call s:h("CursorLine",    {"bg": s:asphalt_medium})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
+
+if g:mychallenger_deep_underlined_cursor_line == 1
+  hi clear CursorLine
+  hi CursorLine gui=underline cterm=underline guisp=#906cff ctermfg=None ctermbg=None
+endif
 
 " remainder of syntax highlighting
 call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:purple, "gui": "bold", "cterm": "bold"})

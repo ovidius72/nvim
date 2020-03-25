@@ -12,8 +12,8 @@ set timeoutlen=500
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 
 
-nnoremap <silent><leader>fs :wa<CR>
-nnoremap <silent><leader>bs :w<CR>
+nnoremap <silent><leader>fs :silent wa<CR>
+nnoremap <silent><leader>bs :silent w<CR>
 " nnoremap <silent><leader>w. :call win#Win(1)<cr>
 nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
@@ -305,6 +305,7 @@ let g:which_key_map.o = {
 let g:which_key_map.p = { 
       \ 'name': '+project',
       \ 'a': 'Ag',
+      \ 'A': 'Add Project Session',
       \ 'p': 'Project Sessions',
       \ 'f': 'NerdTree-focus',
       \ 'n': 'NerdTree-find',
