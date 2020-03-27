@@ -11,6 +11,14 @@ set timeoutlen=500
 
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 
+let g:which_key_disable_default_offset=1
+let g:which_key_use_floating_win=1
+
+hi WhichKey           guibg=#1b192c guifg=#95ffa4
+hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
+hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
+hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
+hi WhichKeyFloating   guibg=#1b192c
 
 nnoremap <silent><leader>fs :silent wa<CR>
 nnoremap <silent><leader>bs :silent w<CR>
@@ -31,7 +39,7 @@ let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
 let g:which_key_map["'"] = 'close preview'
-let g:which_key_map["<space>"] = 'Ace windows'
+" let g:which_key_map["SPC"] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
 let g:which_key_map.1 = 'Buffer 1'
 let g:which_key_map.2 = 'Buffer 2'
@@ -387,8 +395,8 @@ let g:which_key_map.v = {
 " \ ' ' : 'ace window',
 
 let g:which_key_map.w = {
-    \ 'name' : '+windows' ,
-    \ '.' : 'Ace Windows',
+    \ 'name' : '+windows',
+    \ '.' : 'VimWinOnce',
     \ ';' : 'VimWin',
     \ '1' : 'Window 1',
     \ '2' : 'Window 2' ,

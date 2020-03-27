@@ -119,11 +119,11 @@ source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/anyjump.vim
-source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/dotoo.vim
 source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/colors.vim
+source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/coc.vim
 runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim
