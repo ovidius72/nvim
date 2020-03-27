@@ -41,6 +41,7 @@ let g:which_key_map["<Tab>"] = 'Last Buffer'
 let g:which_key_map["'"] = 'close preview'
 " let g:which_key_map["SPC"] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
+let g:which_key_map["."] = 'VimWinOnce'
 let g:which_key_map.1 = 'Buffer 1'
 let g:which_key_map.2 = 'Buffer 2'
 let g:which_key_map.3 = 'Buffer 3'
@@ -396,7 +397,6 @@ let g:which_key_map.v = {
 
 let g:which_key_map.w = {
     \ 'name' : '+windows',
-    \ '.' : 'VimWinOnce',
     \ ';' : 'VimWin',
     \ '1' : 'Window 1',
     \ '2' : 'Window 2' ,
