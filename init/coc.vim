@@ -217,8 +217,8 @@ nmap <silent><leader>cdi <Plug>(coc-diagnostic-info)
 nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 " Remap keys for gotos
 nmap <silent>gd <Plug>(coc-definition)
-nmap <silent>gs :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent>gv :call CocAction('jumpDefinition', 'vsplit')<cr>
+nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent>gt <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)

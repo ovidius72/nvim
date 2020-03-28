@@ -214,6 +214,8 @@ let g:which_key_map.f = {
 let g:which_key_map.g = { 
       \ 'name': '+git',
       \ 'c': 'fzf git commits',
+      \ 'D': 'git VDiff',
+      \ 'd': 'git HDiff',
       \ 'f': 'fzf git Files',
       \ 'g': {
         \ 'name': '+gitgutter',
@@ -222,6 +224,7 @@ let g:which_key_map.g = {
         \ 's': 'stage hunk',
         \ 'u': 'undo hunk',
         \},
+      \ 'l': 'git log',
       \ 'F': 'fzf git files preview',
       \ 'p': 'push',
       \ 's': 'status',
