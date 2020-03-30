@@ -147,6 +147,10 @@ noremap <leader>[ :CocCommand explorer
       \ --toggle
       \ --sources=buffers+,file+<cr>
 
+noremap <leader>] :CocCommand explorer
+      \ --no-toggle
+      \ --sources=buffers+,file+<cr>
+
 noremap <leader>po :CocCommand explorer
       \ --toggle
       \ --sources=buffers+,file+<cr>
