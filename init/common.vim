@@ -44,7 +44,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
-tnoremap jj <C-\><C-n> 
+" tnoremap jj <C-\><C-n> 
 
 " save all in various modes
 " nnoremap <c-s> :wa<CR>
@@ -307,48 +307,14 @@ noremap <leader>wmo <c-w>=
 
 
 " put right side of the cursor to new line
-" nnoremap <Leader>j i<cr><Esc>
+nnoremap <Leader>xo i<cr><Esc>
+
 
 " inoremap zm <c-w>_\|<c-w>\|
 " voremap zm <c-w>_\|<c-w>\|
 " nnoremap zo <c-w>=
 " inoremap zo <c-w>=
 " vnoremap zo <c-w>=
-" nerdtree
-map <leader>pt :NERDTreeToggle<CR>
-map <leader>pf :NERDTreeFocus<CR>
-map <leader>pn :NERDTreeFind<CR>
-
-let g:NERDTreeGitStatusNodeColorization = 1
-let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-
-" let g:NERDTreeColorMapCustom = {
-"     \ "Modified"  : "#528AB3",  
-"     \ "Staged"    : "#538B54",  
-"     \ "Untracked" : "#BE5849",  
-"     \ "Dirty"     : "#299999",  
-"     \ "Clean"     : "#87939A"   
-"     \ }
-
-let g:NERDTreeColorMapCustom = {
-    \ "Modified"  : ["#528AB3", "NONE", "NONE", "NONE"],  
-    \ "Staged"    : ["#538B54", "NONE", "NONE", "NONE"],  
-    \ "Untracked" : ["#BE5849", "NONE", "NONE", "NONE"],  
-    \ "Dirty"     : ["#299999", "NONE", "NONE", "NONE"],  
-    \ "Clean"     : ["#87939A", "NONE", "NONE", "NONE"]   
-    \ }
 
 " INCSEARCH
 map /  <Plug>(incsearch-forward)

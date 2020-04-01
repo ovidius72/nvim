@@ -41,6 +41,11 @@ let g:lightline.colorscheme = 'mychallenger_deep'
 let g:mychallenger_deep_terminal_italics = 1
 let g:mychallenger_deep_underlined_cursor_line =1 
 hi CocFloating guibg=#292c3f ctermbg=60
+hi WhichKey           guibg=#1b192c guifg=#95ffa4
+hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
+hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
+hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
+hi WhichKeyFloating   guibg=#1b192c
 
 " Photon
 " colorscheme photon

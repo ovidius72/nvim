@@ -1,5 +1,6 @@
 call which_key#register('<space>', "g:which_key_map")
 nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
+" let maplocalleader=","
 nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
@@ -22,7 +23,7 @@ hi WhichKeyFloating   guibg=#1b192c
 
 nnoremap <silent><leader>fs :silent wa<CR>
 nnoremap <silent><leader>bs :silent w<CR>
-" nnoremap <silent><leader>w. :call win#Win(1)<cr>
+" noremap <silent><leader><leader> :call win#Win(1)<cr>
 nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
 nnoremap <silent><leader>atq :QuickScopeToggle<CR>
@@ -34,7 +35,15 @@ noremap <leader>w4 :4wincmd w<cr>
 noremap <leader>w5 :5wincmd w<cr>
 noremap <leader>w6 :6wincmd w<cr>
 noremap <leader>w7 :7wincmd w<cr>
+noremap <leader>ps :Startify<cr>
 
+" noremap ,1 :1wincmd w<cr>
+" noremap ,2 :2wincmd w<cr>
+" noremap ,3 :3wincmd w<cr>
+" noremap ,4 :4wincmd w<cr>
+" noremap ,5 :5wincmd w<cr>
+" noremap ,6 :6wincmd w<cr>
+" noremap ,7 :7wincmd w<cr>
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
@@ -315,25 +324,26 @@ let g:which_key_map.o = {
       \}
 
 "" ============================== P ===========================
+" \ 'f': 'NerdTree-focus',
+" \ 'n': 'NerdTree-find',
+" \ 't': 'NerdTree-toggle',
 let g:which_key_map.p = { 
       \ 'name': '+project',
       \ 'a': 'Ag',
       \ 'A': 'Add Project Session',
       \ 'p': 'Project Sessions',
-      \ 'f': 'NerdTree-focus',
-      \ 'n': 'NerdTree-find',
       \ 'o': 'toggle explorer',
       \ 'g': 'Git Files',
       \ 'h': 'Files',
-      \ 't': 'NerdTree-toggle',
+      \ 's': 'Start',
       \ 'z': 'project tags',
       \}
 
 "" =============================== Q ==========================
 let g:which_key_map.q = { 
       \ 'name': '+quit',
-      \'q': 'quit',
-      \'w': 'save-quit',
+      \ 'q': 'quit',
+      \ 'w': 'save-quit',
       \}
 
 "" ============================== R ===========================
@@ -438,8 +448,9 @@ let g:which_key_map.w = {
 let g:which_key_map.x = { 
       \'name': '+code',
       \'r': 'replace-word',
-      \'j': 'join multilines',
+      \'o': 'Split at cursor',
       \'s': 'split into multiline',
+      \'j': 'join multilines',
       \'c': {
         \'name': 'comment',
         \'c': 'Comment+motion',

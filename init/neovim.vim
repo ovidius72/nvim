@@ -9,6 +9,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
+Plug 'mhinz/vim-startify'
+
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'
@@ -32,7 +34,6 @@ Plug 'liuchengxu/vim-which-key'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
 Plug 'vim-vdebug/vdebug'
 Plug 'puremourning/vimspector'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
@@ -69,8 +70,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 
 " Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dstein64/vim-win'
 Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'pangloss/vim-javascript'
@@ -93,13 +94,14 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'tpope/vim-commentary'
 " Plug 'IMOKURI/line-number-interval.nvim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
 
 source ~/.config/nvim/init/common.vim
+source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
-" source ~/.config/nvim/colors/autoload/lightline/miramare_lightline.vim
 " source ~/.config/nvim/init/lens.vim
 source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/ale.vim
@@ -113,6 +115,7 @@ source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/init/bufsurf.vim
 source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/ranger.vim
+" source ~/.config/nvim/init/nerdtree.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
@@ -123,7 +126,6 @@ source ~/.config/nvim/init/anyjump.vim
 source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/coc.vim
 runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim

@@ -84,7 +84,7 @@ let s:lfc = {
       \'norm_subtle': [s:norm_subtle.gui, s:norm_subtle.cterm16],
       \}
 
-let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
+let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}, 'terminal': {} }
 
 " Tabline
 let s:p.tabline.left    = [ [ s:lfc.purple, s:lfc.asphalt ] ]
@@ -119,6 +119,23 @@ let s:p.normal.error    = [ [ s:lfc.red, s:lfc.asphalt2 ] ]
 let s:p.normal.warning  = [ [ s:lfc.yellow, s:lfc.asphalt2 ] ]
 let s:p.normal.info  = [ [ s:lfc.yellow, s:lfc.asphalt2 ] ]
 let s:p.normal.hint  = [ [ s:lfc.yellow, s:lfc.asphalt2 ] ]
+
+let s:p.terminal.left = [
+      \ [ s:lfc.clouds, s:lfc.asphalt2 ],
+      \ [ s:lfc.clouds, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.clouds, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
+      \]
+
+let s:p.terminal.right    = [
+      \ [ s:lfc.green, s:lfc.asphalt2, "bold" ],
+      \ [ s:lfc.bg_subtle, s:lfc.clouds ],
+      \ [ s:lfc.bg_subtle, s:lfc.clouds ],
+      \ [ s:lfc.white, s:lfc.asphalt2 ],
+      \ [ s:lfc.bg_subtle, s:lfc.clouds ]
+      \ ]
 
 " Visual mode
 let s:p.visual.left     = [
