@@ -247,6 +247,7 @@ let g:which_key_map.h = {
       \'name': '+highlight',
       \'h': 'toggle-under-cursor',
       \'l': 'toggle-list-chars',
+      \'r': 'convert spaces to tabs',
       \'s': 'toggle-hls(highlight)',
       \'t': 'toggle spaces/tabs',
       \'z': 'toggle spell check',

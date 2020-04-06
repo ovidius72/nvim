@@ -1,4 +1,5 @@
-set guifont="JetBrainsMono Nerd Font:14"
+" set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h18:style=Regular
+" set guifont=JetBrainsMono\ Nerd\ Font:size=14
 " set guicursor += a:blinkon333
 
 " if has("gui_running")
