@@ -15,6 +15,7 @@
   "diagnostic.hintSign": "",
   "diagnostic.checkCurrentLine": true,
   "diagnostic.enableHighlightLineNumber": true,
+  "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
   "rust-analyzer.callInfo.full": true,
   "rust-analyzer.cargo.allFeatures": true,
   "rust-analyzer.diagnostics.enable": true,
