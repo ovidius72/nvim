@@ -11,13 +11,13 @@ let g:coc_global_extensions = [
       \ 'coc-import-cost',
       \ 'coc-docker',
       \ 'coc-sql',
-      \ 'coc-rls',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-emmet',
       \ 'coc-marketplace',
       \ 'coc-tsserver',
       \ 'coc-css',
+      \ 'coc-rust-analyzer',
       \ 'coc-lists',
       \ 'coc-yaml',
       \ 'coc-python',
@@ -25,6 +25,18 @@ let g:coc_global_extensions = [
       \ 'coc-git',
       \ ]
 
+      " \ 'coc-rls',
+  "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
+  "rust-analyzer.callInfo.full": true,
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.cargo.noDefaultFeatures": false,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.completion.postfix.enable": true,
+  "rust-analyzer.notifications.workspaceLoaded": true,
+  "rust-analyzer.notifications.cargoTomlNotFound": true,
+  "rust-analyzer.completion.addCallParenthesis": true,
+  "rust-analyzer.completion.addCallArgumentSnippets": true,
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI

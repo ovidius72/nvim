@@ -10,7 +10,7 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'mhinz/vim-startify'
-
+" Plug 'andreypopp/vim-colors-plain'
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'

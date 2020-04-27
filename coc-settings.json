@@ -14,6 +14,17 @@
   "diagnostic.warningSign": "",
   "diagnostic.hintSign": "",
   "diagnostic.checkCurrentLine": true,
+  "diagnostic.enableHighlightLineNumber": true,
+  "rust-analyzer.callInfo.full": true,
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.cargo.noDefaultFeatures": false,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.completion.postfix.enable": true,
+  "rust-analyzer.notifications.workspaceLoaded": true,
+  "rust-analyzer.notifications.cargoTomlNotFound": true,
+  "rust-analyzer.completion.addCallParenthesis": true,
+  "rust-analyzer.completion.addCallArgumentSnippets": true,
   "git.signOffset": 1,
   "git.enableGlobalStatus": true,
   "yaml.completion": false,
@@ -85,3 +96,4 @@
     }
   }
 }
+

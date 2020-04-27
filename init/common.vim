@@ -32,6 +32,8 @@ autocmd FileType qf setlocal wrap
 
 " vim commentary for rego files.
 autocmd FileType rego setlocal commentstring=#\ %s
+autocmd BufEnter * :set nu relativenumber 
+autocmd BufLeave * :set nu norelativenumber
 
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
