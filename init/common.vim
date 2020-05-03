@@ -291,6 +291,8 @@ map <leader>zmm <Plug>(incsearch-easymotion-stay)
 " noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 
+let g:splitjoin_split_mapping ='<space>xs'
+let g:splitjoin_join_mapping ='<space>xj'
 nmap <leader>xj :SplitjoinJoin<CR>
 nmap <leader>xs :SplitjoinSplit<CR>
 

@@ -148,7 +148,6 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-
 " coc-explorer
 " noremap ge :CocCommand explorer
 "     \ --toggle
@@ -231,6 +230,7 @@ nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
 nmap <silent><leader>cdi <Plug>(coc-diagnostic-info)
 nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
+
 " Remap keys for gotos
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>

@@ -7,6 +7,13 @@
     "typescriptreact"
   ],
   "tsserver.enable": true,
+  "coc.source.file.priority": 0,
+  "coc.source.around.priority": 1,
+  "emmet.priority": 3,
+  "yank.priority": 0,
+  "snippets.priority": 8,
+  "coc.source.buffer.priority": 0,
+  "suggest.languageSourcePriority": 99,
   "codeLens.enable": true,
   "typescript.showUnused": true,
   "javascript.suggest.autoImports": true,

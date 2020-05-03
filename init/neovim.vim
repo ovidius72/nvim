@@ -58,6 +58,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'w0rp/ale'
 " Plug 'neomake/neomake'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'reasonml-editor/vim-reason-plus'
 " Plug 'jez/vim-better-sml'
@@ -73,7 +74,6 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dstein64/vim-win'
-Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'peitalin/vim-jsx-typescript'
@@ -95,6 +95,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 " Plug 'IMOKURI/line-number-interval.nvim'
 Plug 'francoiscabrol/ranger.vim'
+" Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
@@ -127,5 +128,6 @@ source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
+" source ~/.config/nvim/init/hexokinase.vim
 runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim
