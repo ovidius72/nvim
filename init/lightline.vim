@@ -103,7 +103,7 @@ let g:lightline = {
             \ [ 'mode'], 
             \ [ 'modified' ],
             \ [ 'fileReadMode'], 
-            \ [ 'filename', 'paste'],
+            \ [ 'filetype', 'filename', 'paste'],
             \ [ 'gitgutter', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'cocstatus'],
            \ ],
          \ 'right': [
@@ -129,7 +129,7 @@ let g:lightline = {
       \   'cocstatus': 'LightLineCoc',
       \   'gitbranch': 'LightlineFugitive',
       \   'currentfunction': 'CocCurrentFunction',
-      \   'filetype': 'IconFiletype',
+      \   'Myfiletype': 'IconFiletype',
       \   'gitgutter': 'LightLineGitGutter',
       \   'fileformat': 'MyFileformat',
       \   'blame': 'LightLineGitBlame',
