@@ -1,21 +1,17 @@
-" let g:vimspector_enable_mappings = 'HUMAN'
-
-" nmap <leader>add :call vimspector#Launch()<CR>
-" nmap <leader>adr :call vimspector#Reset()<CR>
-" nnoremap <Leader>adw :call vimspector#AddWatch("<C-r><C-w>")<CR>
-
-" sign define vimspectorBP text=🔴 texthl=DiffDelete linehl=DiffDelete numhl=DiffDelete
-" " sign define vimspectorBPDisabled text=🔵 texthl=DiffDelete
-" sign define vimspectorBPDisabled text=🔵 texthl=DiffChange
-" sign define vimspectorPC text=🔶 texthl=SpellBad
-
-
 " VDEBUG
+hi default DbgBreakptLine guifg=None guibg=None
+hi default DbgBreakptSign guibg=None guifg=None
+hi default DbgCurrentLine guibg=#555500 guifg=None
+hi default DbgCurrentSign guibg=None guifg=#555500
 
-hi default DbgBreakptLine guifg=#121212 guibg=#92c797
-hi default DbgBreakptSign guibg=None guifg=#92c797
-hi default DbgCurrentLine guibg=#d75f87 guifg=#100e23
-hi default DbgCurrentSign guibg=None guifg=#d75f87
+let g:vimspector_enable_mappings = 'HUMAN'
+
+nmap <leader>dd :call vimspector#Launch()<CR>
+nmap <leader>dr :call vimspector#Reset()<CR>
+nnoremap <Leader>dw :VimspectorWatch <C-r><C-w><CR>
+nnoremap <Leader>de :VimspectorEval <C-r><C-w><CR>
+nnoremap <Leader>dc :call vimspector#ClearBreakpoints()<CR>
+
 
 let g:vdebug_options = {
 \    'port' : 9000,
@@ -41,3 +37,8 @@ let g:vdebug_options = {
 \    'simplified_status': 1,
 \    'layout': 'vertical',
 \}
+
+sign define vimspectorBP text=🔴 texthl=DiffDelete linehl=DbgBreakptLine numhl=DiffDelete
+" sign define vimspectorBPDisabled text=🔵 texthl=DiffDelete
+sign define vimspectorBPDisabled text=🔵 texthl=DiffChange linehl=
+sign define vimspectorPC text=🔶 texthl=SpellBad linehl=DbgCurrentLine

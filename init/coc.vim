@@ -156,23 +156,23 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 noremap <leader>[ :CocCommand explorer
       \ --toggle
-      \ --sources=buffers+,file+<cr>
+      \ --sources=buffer+,file+<cr>
 
 noremap <leader>] :CocCommand explorer
       \ --no-toggle
-      \ --sources=buffers+,file+<cr>
+      \ --sources=buffer+,file+<cr>
 
 noremap <leader>po :CocCommand explorer
       \ --toggle
-      \ --sources=buffers+,file+<cr>
+      \ --sources=buffer+,file+<cr>
 
 noremap <leader>ct :CocCommand explorer
       \ --toggle
-      \ --sources=buffers+,file+<cr>
+      \ --sources=buffer+,file+<cr>
 
 noremap <leader>cx :CocCommand explorer
       \ --no-toggle
-      \ --sources=buffers+,file+<cr>
+      \ --sources=buffer+,file+<cr>
 
 " noremap <silent> <leader>cx :execute 'CocCommand explorer' .
 "       \ ' --no-toggle' .

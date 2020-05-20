@@ -57,7 +57,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 " Plug 'liuchengxu/eleline.vim'
 Plug 'w0rp/ale'
 " Plug 'neomake/neomake'
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'reasonml-editor/vim-reason-plus'
@@ -125,8 +124,8 @@ source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/anyjump.vim
 " source ~/.config/nvim/init/dotoo.vim
 source ~/.config/nvim/init/vim-win.vim
-source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/colors.vim
+source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/coc.vim
 " source ~/.config/nvim/init/hexokinase.vim
 runtime macros/sandwich/keymap/surround.vim
