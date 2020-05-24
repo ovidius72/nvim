@@ -42,7 +42,7 @@ Plug 'unblevable/quick-scope'
 Plug 'pechorin/any-jump.vim'
 " Plug 'dhruvasagar/vim-zoom'
 Plug 'Lenovsky/nuake'
-Plug 'liuchengxu/vim-clap' 
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } 
 Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }

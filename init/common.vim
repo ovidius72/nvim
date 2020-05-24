@@ -35,6 +35,10 @@ autocmd FileType rego setlocal commentstring=#\ %s
 " autocmd BufEnter * :set nu relativenumber 
 " autocmd BufLeave * :set nu norelativenumber
 
+augroup PHP
+  autocmd!
+  autocmd FileType php setlocal iskeyword+=$
+augroup END
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
 inoremap <c-u> <c-g>u<c-u>

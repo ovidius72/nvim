@@ -312,6 +312,7 @@ nmap <silent><leader>pA :SESSSAVE<CR>
 
 " Remap for do codeAction of current line
 nmap <leader>ca <Plug>(coc-codeaction)
+xmap <leader>ca <Plug>(coc-codeaction-selected)
 " Fix autofix problem of current line
 nmap <leader>cf <Plug>(coc-fix-current)
 
