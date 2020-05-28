@@ -6,7 +6,7 @@
 command! Win :call win#Win()
 " map <silent><leader>w. :call win#Win(1)<cr>
 " map <silent><leader>w<space> :call win#Win(1)<cr>
-map <silent><leader><leader> :call win#Win(1)<cr>
+" map <silent><leader><leader> :call win#Win(1)<cr>
 map <silent><leader>; :Win<cr>
 map <silent><leader>. :call win#Win(1)<cr>
 map <leader>w; <plug>WinWin

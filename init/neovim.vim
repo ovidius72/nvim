@@ -1,3 +1,13 @@
+"""""""""""""""""""""""""""""""""
+"  _   _                 _           
+" | \ | | ___  _____   _(_)_ __ ___  
+" |  \| |/ _ \/ _ \ \ / / | '_ ` _ \ 
+" | |\  |  __/ (_) \ V /| | | | | | |
+" |_| \_|\___|\___/ \_/ |_|_| |_| |_|
+"
+"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
+
 if !has('nvim')
   finish
 endif
@@ -5,6 +15,7 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -83,9 +94,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'terryma/vim-expand-region'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'mxw/vim-jsx'
-Plug 'ianks/vim-tsx'
+" Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
-Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'airblade/vim-gitgutter'

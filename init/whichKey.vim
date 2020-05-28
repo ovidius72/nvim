@@ -36,6 +36,9 @@ noremap <leader>w5 :5wincmd w<cr>
 noremap <leader>w6 :6wincmd w<cr>
 noremap <leader>w7 :7wincmd w<cr>
 noremap <leader>ps :Startify<cr>
+map <silent><leader>l :Clap buffers<cr>
+map <silent><leader>i :Clap files<cr>
+
 
 " noremap ,1 :1wincmd w<cr>
 " noremap ,2 :2wincmd w<cr>
@@ -47,6 +50,7 @@ noremap <leader>ps :Startify<cr>
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
+" let g:which_key_map["<space>"] = 'List Buffers'
 let g:which_key_map["'"] = 'close preview'
 " let g:which_key_map["SPC"] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
@@ -62,6 +66,8 @@ let g:which_key_map.7 = 'Buffer 7'
 let g:which_key_map.8 = 'Buffer 8'
 let g:which_key_map.9 = 'Buffer 9'
 let g:which_key_map.0 = 'Buffer 10'
+let g:which_key_map.i = 'open file'
+let g:which_key_map.l = 'buffers'
 
 "" =============================== A ==========================
 let g:which_key_map.a = { 
@@ -184,6 +190,15 @@ let g:which_key_map.c = {
 
 "" =============================== D ==========================
 
+let g:which_key_map.d = { 
+      \'name': '+debug',
+      \'d': 'Launch',
+      \'c': 'clear breakpoints',
+      \'e': 'eval',
+      \'r': 'reset',
+      \'w': 'watch add',
+      \}
+
 
 "" =============================== E ==========================
 let g:which_key_map.e = { 
@@ -267,6 +282,9 @@ let g:which_key_map.H = {
 
 "" =============================== I ==========================
 
+" let g:which_key_map.i = { 
+"       \'i': [':Clap buffers', 'latest buffers'],
+"       \}
 
 
 "" =============================== J ==========================
@@ -296,11 +314,46 @@ let g:which_key_map.j = {
 "" <-- j/J
 
 "" =============================== K ==========================
-
+      " \'x': [],
+      " \'f': [],
+      " \'z': [],
+let g:which_key_map.k = {
+      \'name': '+clap',
+      \'a': [':Clap grep2', 'grep2 on the fly'],
+      \'b': [':Clap buffers', 'buffers'],
+      \'c': [':Clap commits', 'commits'],
+      \'C': [':Clap bcommits', 'buffer commits'],
+      \'d': [':Clap git_diff_files', 'Git diff files'],
+      \'e': [':Clap grep', 'grep'],
+      \'g': [':Clap gfiles', 'git files'],
+      \'h': [':Clap hist:', 'command history'],
+      \'i': [':Clap filer', 'ivy'],
+      \'j': [':Clap jumps', 'jumps'],
+      \'k': [':Clap files', 'files'],
+      \'K': [':Clap colors', 'colors'],
+      \'l': [':Clap history', 'latest files'],
+      \'m': [':Clap marks', 'marks'],
+      \'M': [':Clap maps', 'maps'],
+      \"n": [':Clap providers', 'providers'],
+      \'o': [':Clap loclist', 'loclist'],
+      \'p': [':Clap proj_tags', 'project tags'],
+      \'q': [':Clap quickfix', 'quickfix'],
+      \'r': [':Clap registers', 'registers'],
+      \'s': [':Clap blines', 'buffer lines'],
+      \'S': [':Clap lines', 'lines'],
+      \'t': [':Clap tags', 'tags'],
+      \'T': [':Clap filetypes', 'file types'],
+      \'u': [':Clap grep ++query=<cword>', 'query'],
+      \'v': [':Clap help_tags', 'help tags'],
+      \'w': [':Clap windows', 'windows'],
+      \'y': [':Clap yanks', 'yanks'],
+      \'/': [':Clap hist/', 'search history'],
+      \';': [':Clap command', 'command list'],
+      \}
 
 "" =============================== L ==========================
 " let g:which_key_map.l = { 
-"       \'name': '+lsp',
+"       \'l': [':Clap buffers', 'latest buffers'],
 "       \}
 
 

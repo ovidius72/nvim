@@ -18,6 +18,11 @@ nmap <Leader>akx :Clap filer<CR>
 nmap <Leader>akk :Clap<CR>
 nmap <Leader>aki :Clap grep ++query=<cword><CR>
 
+" nmap <silent><Leader>kf :Clap files<CR>
+" nmap <silent><Leader>kg :Clap gfiles<CR>
+" nmap <silent><Leader>kb :Clap buffers<CR>
+" nmap <silent><Leader>kc :Clap commits<CR>
+" nmap <silent><Leader>kC :Clap bcommits<CR>
 
 
 " function! OnEnter() abort
