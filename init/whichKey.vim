@@ -4,7 +4,7 @@ nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
-set timeoutlen=500
+set timeoutlen=600
 " autocmd! FileType which_key
 " autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
@@ -38,6 +38,7 @@ noremap <leader>w7 :7wincmd w<cr>
 noremap <leader>ps :Startify<cr>
 map <silent><leader>l :Clap buffers<cr>
 map <silent><leader>i :Clap files<cr>
+" map <silent><leader><leader> :Clap files<cr>
 
 
 " noremap ,1 :1wincmd w<cr>
@@ -50,25 +51,65 @@ map <silent><leader>i :Clap files<cr>
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
-" let g:which_key_map["<space>"] = 'List Buffers'
+" let g:which_key_map["<space>"] = 'files'
 let g:which_key_map["'"] = 'close preview'
 " let g:which_key_map["SPC"] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
 let g:which_key_map["]"] = 'Open explorer'
 let g:which_key_map["."] = 'VimWinOnce'
-let g:which_key_map.1 = 'Buffer 1'
-let g:which_key_map.2 = 'Buffer 2'
-let g:which_key_map.3 = 'Buffer 3'
-let g:which_key_map.4 = 'Buffer 4'
-let g:which_key_map.5 = 'Buffer 5'
-let g:which_key_map.6 = 'Buffer 6'
-let g:which_key_map.7 = 'Buffer 7'
-let g:which_key_map.8 = 'Buffer 8'
-let g:which_key_map.9 = 'Buffer 9'
-let g:which_key_map.0 = 'Buffer 10'
-let g:which_key_map.i = 'open file'
-let g:which_key_map.l = 'buffers'
+let g:which_key_map[";"] = 'VimWin'
+let g:which_key_map["/"] = 'which_key_ignore'
+let g:which_key_map["1"] = 'which_key_ignore'
+let g:which_key_map["2"] = 'which_key_ignore'
+let g:which_key_map["3"] = 'which_key_ignore'
+let g:which_key_map["4"] = 'which_key_ignore'
+let g:which_key_map["5"] = 'which_key_ignore'
+let g:which_key_map["6"] = 'which_key_ignore'
+let g:which_key_map["7"] = 'which_key_ignore'
+let g:which_key_map["8"] = 'which_key_ignore'
+let g:which_key_map["9"] = 'which_key_ignore'
+let g:which_key_map["0"] = 'which_key_ignore'
+let g:which_key_map["<F9>"] = 'which_key_ignore'
+let g:which_key_map["0..9"] = 'Switch Buffers'
+" let g:which_key_map.1 = 'Buffer 1'
+" let g:which_key_map.2 = 'Buffer 2'
+" let g:which_key_map.3 = 'Buffer 3'
+" let g:which_key_map.4 = 'Buffer 4'
+" let g:which_key_map.5 = 'Buffer 5'
+" let g:which_key_map.6 = 'Buffer 6'
+" let g:which_key_map.7 = 'Buffer 7'
+" let g:which_key_map.8 = 'Buffer 8'
+" let g:which_key_map.9 = 'Buffer 9'
+" let g:which_key_map.0 = 'Buffer 10'
+let g:which_key_map.i = 'open file..'
+let g:which_key_map.l = 'buffers..'
+let g:which_key_map.y = 'copy to clipboard'
+let g:which_key_map.Y = 'paste from clipboard'
 
+let g:which_key_map.j = 'Smartf'
+let g:which_key_map.J = 'Smartf repeat'
+let g:which_key_map.k = 'Smartf Back'
+let g:which_key_map.K = 'Smartf Back repeat'
+
+" \'k': {
+"   \'name': '+clap',
+"   \'b': 'buffers',
+"   \'c': 'colors',
+"   \'f': 'git-files',
+"   \'g': 'grep',
+"   \'h': 'command-history',
+"   \'i': 'grep-query',
+"   \'j': 'jumps',
+"   \'k': 'clap',
+"   \'l': 'lines',
+"   \'m': 'marks',
+"   \'o': 'files',
+"   \'r': 'registers',
+"   \'s': 'history',
+"   \'t': 'tags',
+"   \'w': 'windows',
+"   \'y': 'yanks',
+"   \'x': 'filer',
 "" =============================== A ==========================
 let g:which_key_map.a = { 
       \'name': '+apps',
@@ -81,26 +122,6 @@ let g:which_key_map.a = {
       \'e': 'node',
       \'f': 'floating-term',
       \'g': 'tig',
-      \'k': {
-        \'name': '+clap',
-        \'b': 'buffers',
-        \'c': 'colors',
-        \'f': 'git-files',
-        \'g': 'grep',
-        \'h': 'command-history',
-        \'i': 'grep-query',
-        \'j': 'jumps',
-        \'k': 'clap',
-        \'l': 'lines',
-        \'m': 'marks',
-        \'o': 'files',
-        \'r': 'registers',
-        \'s': 'history',
-        \'t': 'tags',
-        \'w': 'windows',
-        \'y': 'yanks',
-        \'x': 'filer',
-      \},
       \'n': 'Nuake',
       \'r': {
         \ 'name': '+ranger',
@@ -286,38 +307,37 @@ let g:which_key_map.H = {
 "       \'i': [':Clap buffers', 'latest buffers'],
 "       \}
 
+" \'t': '<Plug>Sneak_t',
+" \'T': '<Plug>Sneak_T',
+      " \'a': '2-char-motion',
+      " \'b': 'line-motion',
+      " \'c': '1-char',
+      " \'h': 'line-backward',
+      " \'l': 'line-forward',
+      " \'m': 'n-chars-motion',
+      " \'n': 'next',
+      " \'p': 'prev',
+      " \'s': '2-char',
+      " \'w': 'word',
+      " \'.': 'repeat last search',
+      " \'j': 'smartf forward',
+      " \'J': 'smartf repeat',
+      " \'K': 'smartf repeat opposite',
+      " \'k': 'smartf backward',
 
 "" =============================== J ==========================
-let g:which_key_map.j = {
-      \'name': '+jump',
-      \'.': 'repeat last search',
-      \'a': '2-char-motion',
-      \'b': 'line-motion',
-      \'f': '1-char',
-      \'h': 'line-backward',
-      \'j': 'j-motion(down)',
-      \'k': 'k-motion(up)',
-      \'l': 'line-forward',
-      \'m': 'n-chars-motion',
-      \'n': 'next',
-      \'p': 'prev',
-      \'r': {
-        \'name': 'AnyJump',
-        \'j': 'any jump',
-        \'b': 'any jump back',
-        \'l': 'any jump last',
-      \},
-      \'s': '2-char',
-      \'t': '2-char-motion',
-      \'w': 'word',
+let g:which_key_map.r = {
+      \'name': 'AnyJump',
+      \'r': 'any jump',
+      \'b': 'any jump back',
+      \'l': 'any jump last',
       \}
 "" <-- j/J
 
 "" =============================== K ==========================
       " \'x': [],
-      " \'f': [],
       " \'z': [],
-let g:which_key_map.k = {
+let g:which_key_map[" "] = {
       \'name': '+clap',
       \'a': [':Clap grep2', 'grep2 on the fly'],
       \'b': [':Clap buffers', 'buffers'],
@@ -325,6 +345,7 @@ let g:which_key_map.k = {
       \'C': [':Clap bcommits', 'buffer commits'],
       \'d': [':Clap git_diff_files', 'Git diff files'],
       \'e': [':Clap grep', 'grep'],
+      \'f': [':Clap filer', 'filer'],
       \'g': [':Clap gfiles', 'git files'],
       \'h': [':Clap hist:', 'command history'],
       \'i': [':Clap filer', 'ivy'],
@@ -406,7 +427,7 @@ let g:which_key_map.q = {
 
 "" =============================== S ==========================
 let g:which_key_map.s = { 
-      \'name': '+search',
+      \'name': '+grep',
       \'a': 'Ag',
       \'A': 'Ag full-screen',
       \'f': 'Rg Fuzzy',
@@ -465,14 +486,15 @@ let g:which_key_map.v = {
 
 let g:which_key_map.w = {
     \ 'name' : '+windows',
+    \ '1..7' : 'Switch Windows',
+    \ '1' : 'which_key_ignore',
+    \ '2' : 'which_key_ignore' ,
+    \ '3' : 'which_key_ignore' ,
+    \ '4' : 'which_key_ignore' ,
+    \ '5' : 'which_key_ignore' ,
+    \ '6' : 'which_key_ignore' ,
+    \ '7' : 'which_key_ignore' ,
     \ ';' : 'VimWin',
-    \ '1' : 'Window 1',
-    \ '2' : 'Window 2' ,
-    \ '3' : 'Window 3' ,
-    \ '4' : 'Window 4' ,
-    \ '5' : 'Window 5' ,
-    \ '6' : 'Window 6' ,
-    \ '7' : 'Window 7' ,
     \ 'w' : ['<C-W>w'     , 'other-window']          ,
     \ 'd' : ['<C-W>c'     , 'delete-window']         ,
     \ '-' : ['<C-W>s'     , 'split-window-below']    ,
@@ -518,7 +540,7 @@ let g:which_key_map.x = {
 "" =============================== Z ==========================
 
 let g:which_key_map.z = { 
-      \'name': '+fuzzy',
+      \'name': '+search',
       \'/': 'incsearch-f',
       \'?': 'incsearch-?',
       \'z': 'incsearch-stay',
@@ -528,7 +550,7 @@ let g:which_key_map.z = {
         \'?': 'incsearch-fuzzy-?',
         \'f': 'incsearch-fuzzy-stay',
       \},
-      \'i': [':set noignorecase!', 'toggle ignorecase'],
+      \'i': [':set noignorecase! | echo "Changed ignorecase"', 'toggle ignorecase'],
       \'m': {
         \'name': '+motion',
         \'/': 'incsearch-easymotion-/',

@@ -15,10 +15,11 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'justinmk/vim-sneak'
 Plug 'Shougo/echodoc'
 Plug 'mhinz/vim-startify'
 " Plug 'andreypopp/vim-colors-plain'
@@ -94,7 +95,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'terryma/vim-expand-region'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'mxw/vim-jsx'
-" Plug 'ianks/vim-tsx'
+Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
@@ -129,7 +130,7 @@ source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/easymotion.vim
+" source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/anyjump.vim
 " source ~/.config/nvim/init/dotoo.vim

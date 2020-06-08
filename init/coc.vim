@@ -11,6 +11,7 @@ let g:coc_global_extensions = [
       \ 'coc-import-cost',
       \ 'coc-docker',
       \ 'coc-sql',
+      \ 'coc-smartf',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-emmet',
@@ -102,15 +103,18 @@ xmap ag <Plug>(coc-git-chunk-outer)
 
 " coc-smartf
 " press <esc> to cancel.
+nmap <leader>j <Plug>(coc-smartf-forward)
 " nmap f <Plug>(coc-smartf-forward)
-" nmap F <Plug>(coc-smartf-backward)
+nmap <leader>k <Plug>(coc-smartf-backward)
+nmap <leader>J <Plug>(coc-smartf-repeat)
+nmap <leader>K <Plug>(coc-smartf-repeat-opposite)
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
-" augroup Smartf
-"   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#d75f87 guibg=#92c797
-"   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
-" augroup end
+augroup Smartf
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#ffffff guibg=#d75f87
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
+augroup end
 
 " {{ coc snippets
 " Use <C-l> for trigger snippet expand.
@@ -235,7 +239,7 @@ nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
 nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
-nmap <silent>gt <Plug>(coc-type-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>

@@ -9,6 +9,7 @@ set cursorline
 set cmdheight=1
 set noshowmode
 set ignorecase
+set smartcase
 set shortmess=aFc
 set termguicolors
 set timeout
@@ -44,6 +45,9 @@ augroup END
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+"copy to clipboard
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+p
 " move among windows
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -52,10 +56,6 @@ nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
 " tnoremap jj <C-\><C-n> 
 
-" save all in various modes
-" nnoremap <c-s> :wa<CR>
-" inoremap <c-s> <Esc>:wa<CR>a
-" vnoremap <c-s> <Esc>:wa<CR>gv
 
 command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
 map <leader>feU :PU<cr>
@@ -264,14 +264,17 @@ function! s:config() abort
   return {'converters': [function('s:noregexp')]}
 endfunction
 
-noremap <silent><expr> zz/ incsearch#go(<SID>config())
+noremap <silent><expr> <space>/ incsearch#go(<SID>config())
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
-map zz <Plug>(incsearch-fuzzy-stay)
+map z<space> <Plug>(incsearch-fuzzy-stay)
 
-map <leader>z/ <Plug>(incsearch-fuzzy-/)
-map <leader>z? <Plug>(incsearch-fuzzy-?)
-map <leader>zz <Plug>(incsearch-fuzzy-stay)
+map <leader>z/ <Plug>(incsearch-forward)
+map <leader>z? <Plug>(incsearch-backward)
+map <leader>zz <Plug>(incsearch-stay)
+map <leader>zf/ <Plug>(incsearch-fuzzy-/)
+map <leader>zf? <Plug>(incsearch-fuzzy-?)
+map <leader>zff <Plug>(incsearch-fuzzy-stay)
 
 map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
 map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
