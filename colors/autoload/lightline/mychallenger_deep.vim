@@ -92,11 +92,21 @@ let s:p.tabline.tabsel  = [ [ s:lfc.asphalt, s:lfc.dark_purple ] ]
 let s:p.tabline.middle  = [ [ s:lfc.white, s:lfc.asphalt ] ]
 let s:p.tabline.right   = [ [ s:lfc.asphalt, s:lfc.dark_purple ] ]
   
+" function! ModColor() abort
+" 	echo 'mod: ' . &mod
+" 	if &mod
+" 		return s:lfc.green
+" 	else
+" 		return s:lfc.dark_red
+" 	endif
+" endfunction
+
 " Normal mode
 let s:p.normal.left     = [ 
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.green, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
@@ -142,6 +152,7 @@ let s:p.visual.left     = [
       \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
+      \ [ s:lfc.green, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_yellow, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
@@ -161,6 +172,7 @@ let s:p.replace.left    = [
       \ [ s:lfc.dark_green, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_green, s:lfc.asphalt2 ],
+      \ [ s:lfc.dark_green, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_purple, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_cyan, s:lfc.asphalt2 ],
       \ ]
@@ -175,6 +187,7 @@ let s:p.replace.right   = [
  
 " Insert mode
 let s:p.insert.left  = [ 
+      \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_red, s:lfc.asphalt2 ],
       \ [ s:lfc.dark_red, s:lfc.asphalt2 ],

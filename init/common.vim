@@ -175,16 +175,36 @@ tnoremap <F7> <C-\><C-n>:Nuake<CR>
 
 " *********** vim-gitgutter
 " autocmd! BufWritePost * GitGutter
-let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_async = 1
-let g:gitgutter_diff_args = '--ignore-all-space'
-let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
-let g:gitgutter_sign_added='┃'
-let g:gitgutter_sign_modified='┃'
-let g:gitgutter_sign_removed='◢'
-let g:gitgutter_sign_removed_first_line='◥'
-let g:gitgutter_sign_modified_removed='◢'
+" let g:gitgutter_override_sign_column_highlight = 0
+" let g:gitgutter_async = 1
+" let g:gitgutter_diff_args = '--ignore-all-space'
+" let g:gitgutter_grep_command = executable('rg') ? 'rg' : 'grep'
+" let g:gitgutter_sign_added='┃'
+" let g:gitgutter_sign_modified='┃'
+" let g:gitgutter_sign_removed='◢'
+" let g:gitgutter_sign_removed_first_line='◥'
+" let g:gitgutter_sign_modified_removed='◢'
+" let g:gitgutter_highlight_lines = 1
+" let g:gitgutter_highlight_linenrs = 1
+" let g:gitgutter_preview_win_floating = 1
+" au CursorMoved * if gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
 
+" ****************** SIGNIFY *************
+let g:signify_disable_by_default = 0
+
+
+omap ic <Plug>(signigy-motion-inner-pending)
+xmap ic <Plug>(signigy-motion-outer-visual)
+omap ac <Plug>(signigy-motion-outer-pending)
+xmap ia <Plug>(signigy-motion-outer-visual)
+" nmap <silent>gh :SignifyHunkDiff<CR>
+" nmap <silent>gb :SignifyHunkUndo<CR>
+nmap <Leader>ggn <Plug>(signigy-next-hunk)
+nmap <Leader>ggp <Plug>(signigy-prev-hunk)
+" nmap <Leader>ggs <Plug>(GitGutterStageHunk)
+nmap <Leader>ggu :SignifyHunkUndo<CR>
+" nmap <Leader>' :pclose<CR>
+"
 nmap <leader>gl :Gclog<cr>
 nmap <leader>gd :Gdiffsplit<cr>
 nmap <leader>gD :Ghdiffsplit<cr>
@@ -201,16 +221,16 @@ nmap <leader>gD :Ghdiffsplit<cr>
 " highlight link GitGutterChangeDeleteLineNr SignColumn
 
 " let g:gitgutter_override_sign_column_highlight = 0
-omap igh <Plug>(GitGutterTextObjectInnerPending)
-omap agh <Plug>(GitGutterTextObjectOuterPending)
-xmap igh <Plug>(GitGutterTextObjectInnerVisual)
-xmap agh <Plug>(GitGutterTextObjectOuterVisual)
-nmap gh <Plug>(GitGutterPreviewHunk)
-nmap <Leader>ggn <Plug>(GitGutterNextHunk)
-nmap <Leader>ggp <Plug>(GitGutterPrevHunk)
-nmap <Leader>ggs <Plug>(GitGutterStageHunk)
-nmap <Leader>ggu <Plug>(GitGutterUndoHunk)
-nmap <Leader>' :pclose<CR>
+" omap igh <Plug>(GitGutterTextObjectInnerPending)
+" omap agh <Plug>(GitGutterTextObjectOuterPending)
+" xmap igh <Plug>(GitGutterTextObjectInnerVisual)
+" xmap agh <Plug>(GitGutterTextObjectOuterVisual)
+" nmap gh <Plug>(GitGutterPreviewHunk)
+" nmap <Leader>ggn <Plug>(GitGutterNextHunk)
+" nmap <Leader>ggp <Plug>(GitGutterPrevHunk)
+" nmap <Leader>ggs <Plug>(GitGutterStageHunk)
+" nmap <Leader>ggu <Plug>(GitGutterUndoHunk)
+" nmap <Leader>' :pclose<CR>
 
 "bufsurf
 " nmap <F9> :BufSurfBack<CR>
@@ -241,6 +261,7 @@ nmap <Leader>ol yiwo_gll<Esc>pviw<Esc>
 
 " comment and yank to the next line
 nmap gcy Ygccp
+" nmap cgc <Plug>ChangeCommentary
 nmap <leader>xcc gc
 nmap <leader>xcy gcy
 

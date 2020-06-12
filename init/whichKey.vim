@@ -257,19 +257,25 @@ let g:which_key_map.f = {
 
 
 "" =============================== G ==========================
+      " \ 'g': {
+      "   \ 'name': '+gitgutter',
+      "   \ 'n': 'next hunk',
+      "   \ 'p': 'prev hunk',
+      "   \ 's': 'stage hunk',
+      "   \ 'u': 'undo hunk',
+      "   \},
 let g:which_key_map.g = { 
       \ 'name': '+git',
       \ 'c': 'fzf git commits',
       \ 'D': 'git VDiff',
       \ 'd': 'git HDiff',
       \ 'f': 'fzf git Files',
-      \ 'g': {
-        \ 'name': '+gitgutter',
-        \ 'n': 'next hunk',
-        \ 'p': 'prev hunk',
-        \ 's': 'stage hunk',
-        \ 'u': 'undo hunk',
-        \},
+      \ 'g': { 
+      \   'name': '+actions',
+      \   'n': 'next hunk',
+      \   'p': 'prev hunk',
+      \   'u': 'undo hunk',
+      \ },
       \ 'l': 'git log',
       \ 'F': 'fzf git files preview',
       \ 'p': 'push',

@@ -35,6 +35,14 @@ endfunction
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 
+function! GetUnModified()
+  if &mod 
+    return ""
+  else
+    return " "
+  endif
+endfunction
+
 function! GetModified()
   if &mod 
     return " "
@@ -53,7 +61,8 @@ function! IconFiletype()
 endfunction
 
 function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
+  " return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : '') : ''
+  return '[' . &filetype . ']'
 endfunction
 
 function! MyFileformat()
@@ -102,9 +111,10 @@ let g:lightline = {
             \ [ 'winnr' ],
             \ [ 'mode'], 
             \ [ 'modified' ],
+            \ [ 'unmodified' ],
             \ [ 'fileReadMode'], 
-            \ [ 'filetype', 'filename', 'paste'],
-            \ [ 'gitgutter', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'cocstatus'],
+            \ [ 'filename', 'MyFiletype', 'paste'],
+            \ [ 'coc_git_status', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info', 'cocstatus'],
            \ ],
          \ 'right': [
            \ [ 'gitbranch'],
@@ -119,7 +129,8 @@ let g:lightline = {
       \  'coc_warning'      : 'LightlineCocWarnings',
       \  'coc_info'         : 'LightlineCocInfos',
       \  'coc_hint'         : 'LightlineCocHints',
-      \  'coc_fix'          : 'LightlineCocFixes'
+      \  'coc_fix'          : 'LightlineCocFixes',
+      \  'coc_git_status'   : 'CocGitStatus',
       \ },
       \ "component_raw": {
         \ 'buffers': 1 
@@ -129,13 +140,14 @@ let g:lightline = {
       \   'cocstatus': 'LightLineCoc',
       \   'gitbranch': 'LightlineFugitive',
       \   'currentfunction': 'CocCurrentFunction',
-      \   'Myfiletype': 'IconFiletype',
+      \   'MyFiletype': 'MyFiletype',
       \   'gitgutter': 'LightLineGitGutter',
       \   'fileformat': 'MyFileformat',
       \   'blame': 'LightLineGitBlame',
       \   'winnr': 'GetWinNumber',
       \   'fileReadMode': 'GetFileReadOnly',
       \   'modified': 'GetModified',
+      \   'unmodified': 'GetUnModified',
       \   'filename': 'FileName'
       \ },
       \ 'component_type':  {
@@ -164,9 +176,10 @@ let g:lightline = {
 " let g:lightline.separator = {
 " 	\   'left': '', 'right': ''
 "  \}
-" let g:lightline.subseparator = {
-" 	\   'left': '', 'right': '' 
-"   \}
+      " \   'left': ' ', 'right': '' 
+let g:lightline.subseparator = {
+	\   'left': '', 'right': '' 
+  \}
 
 
 
@@ -234,6 +247,14 @@ endfunction
 function! LightlineCocHints() abort
   let s = s:lightline_coc_diagnostic('hints', "hint")
   return empty(s) ? '' : ' ' . s
+endfunction
+
+function! CocGitStatus() abort
+  let bg = get(b:, 'coc_git_status', '')
+  let blame = get(b:, 'coc_git_blame', '') 
+  let fullStr = empty(bg) ? "" : " " . bg . ' ' . blame
+  let minStr = empty(bg) ? "" : " " . bg . ' '
+  return winwidth(0) > 120 ? fullStr : minStr
 endfunction
 
 function! LightlineCocFixes() abort
