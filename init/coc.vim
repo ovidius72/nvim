@@ -106,8 +106,8 @@ xmap ag <Plug>(coc-git-chunk-outer)
 " coc-smartf
 " press <esc> to cancel.
 nmap <leader>j <Plug>(coc-smartf-forward)
-nmap <tab> <Plug>(coc-smartf-forward)
-nmap <S-tab> <Plug>(coc-smartf-backward)
+" nmap <tab> <Plug>(coc-smartf-forward)
+" nmap <S-tab> <Plug>(coc-smartf-backward)
 " nmap f <Plug>(coc-smartf-forward)
 nmap <leader>k <Plug>(coc-smartf-backward)
 nmap <leader>J <Plug>(coc-smartf-repeat)

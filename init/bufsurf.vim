@@ -1,3 +1,7 @@
+" let g:BufSurfIgnore = 'gitgutter'
+"bufsurf
+nmap g[ :BufSurfBack<CR>
+nmap g] :BufSurfForward<CR>
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline#bufferline#unicode_symbols = 1

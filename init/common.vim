@@ -232,9 +232,6 @@ nmap <leader>gD :Ghdiffsplit<cr>
 " nmap <Leader>ggu <Plug>(GitGutterUndoHunk)
 " nmap <Leader>' :pclose<CR>
 
-"bufsurf
-" nmap <F9> :BufSurfBack<CR>
-" nmap <F10> :BufSurfForward<CR>
 " vim-move mofifier key (default Alt)
 " let g:move_key_modifier = 'C'
 
