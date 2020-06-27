@@ -17,12 +17,16 @@ let g:coc_global_extensions = [
       \ 'coc-emmet',
       \ 'coc-marketplace',
       \ 'coc-tsserver',
-      \ 'coc-css',
       \ 'coc-rls',
       \ 'coc-lists',
       \ 'coc-yaml',
       \ 'coc-python',
       \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-sh',
+      \ 'coc-gitignore',
+      \ 'coc-rainbow-fart',
+      \ 'coc-docthis',
       \ 'coc-git',
       \ ]
 
@@ -243,6 +247,10 @@ nnoremap <c-w>p cj coc#util#float_jump()
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
+nmap <silent> [j :CocCommand document.jumpToNextSymbol<CR>
+nmap <silent> ]j :CocCommand document.jumpToPrevSymbol<CR>
+nnoremap <silent><nowait> <space>cls :<C-u>CocList -I symbols<cr>
+nmap <Leader>fi :<C-u>CocList -I symbols<cr>
 " nmap <silent><leader>cdi <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>el <Plug>(coc-diagnostic-info)
 " nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
@@ -330,6 +338,7 @@ xmap <silent><C-a> <Plug>(coc-range-select-backward)
 " Remap for do codeAction of current line
 nmap <leader>ca <Plug>(coc-codeaction)
 xmap <leader>ca <Plug>(coc-codeaction-selected)
+nmap <Leader>ck :CocCommand docthis.documentThis<cr>
 " Fix autofix problem of current line
 nmap <leader>cf <Plug>(coc-fix-current)
 

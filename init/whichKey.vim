@@ -181,6 +181,7 @@ let g:which_key_map.c = {
         \},
       \ 'h' : [':CocInfo','CocInfo'],
       \ 'i' : 'Actions Menu',
+      \ 'k' : 'Generete JSDoc',
       \ 'l': {
           \'name': '+coc-list',
           \'l': '+Lists',
@@ -249,10 +250,16 @@ let g:which_key_map.f = {
         \ 'I' : 'install',
         \ },
       \ 'f'   : 'all files',
+      \ 'i'   : 'Coc Find Symbol',
       \ 'o'   : 'git files',
       \ 'r'   : 'file history',
       \ 's'   : 'save buffers',
       \ 'g'   : 'git files status',
+      \ ';'   : 'command history',
+      \ '/'   : 'search history',
+      \ 'l'   : 'open buffers',
+      \ 'm'   : 'marks',
+      \ 'w'   : 'find word',
       \ }
 
 

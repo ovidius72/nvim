@@ -109,6 +109,10 @@ map <Leader>ff :Files<cr>
 map <Leader>fo :GFiles<cr>
 map <Leader>fg :GFiles?<cr>
 map <Leader>fr :History<cr>
+map <Leader>fl :Buffers<cr>
+map <Leader>f/ :History/<cr>
+map <Leader>f; :History:<cr>
+map <Leader>fm :Marks<cr>
 
 " Git keybinding
 nmap <Leader>gs :Gstatus<CR>
@@ -160,8 +164,14 @@ nmap <Leader>sh :History/<CR>
 nmap <Leader>sc :History:<CR>
 nmap <Leader>sa :Ag<CR>
 nmap <Leader>sA :Ag!<CR>
+nmap <Leader>fw :Find<CR>
 
-
+command! -bang -nargs=* Find
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(expand('<cword>')), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 " neovim config
 command! -bang NeovimConfigFiles call fzf#vim#files('~/.config/nvim', <bang>0)
 nmap <Leader>fef :NeovimConfigFiles<CR>
