@@ -28,13 +28,13 @@ nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
 nnoremap <silent><leader>atq :QuickScopeToggle<CR>
 nnoremap <leader><TAB> <C-^>
-noremap <leader>w1 :1wincmd w<cr>
-noremap <leader>w2 :2wincmd w<cr>
-noremap <leader>w3 :3wincmd w<cr>
-noremap <leader>w4 :4wincmd w<cr>
-noremap <leader>w5 :5wincmd w<cr>
-noremap <leader>w6 :6wincmd w<cr>
-noremap <leader>w7 :7wincmd w<cr>
+noremap <leader><leader>1 :1wincmd w<cr>
+noremap <leader><leader>2 :2wincmd w<cr>
+noremap <leader><leader>3 :3wincmd w<cr>
+noremap <leader><leader>4 :4wincmd w<cr>
+noremap <leader><leader>5 :5wincmd w<cr>
+noremap <leader><leader>6 :6wincmd w<cr>
+noremap <leader><leader>7 :7wincmd w<cr>
 noremap <leader>ps :Startify<cr>
 map <silent><leader>l :Clap buffers<cr>
 map <silent><leader>i :Clap files<cr>

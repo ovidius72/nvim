@@ -36,6 +36,8 @@ autocmd FileType rego setlocal commentstring=#\ %s
 " autocmd BufEnter * :set nu relativenumber 
 " autocmd BufLeave * :set nu norelativenumber
 
+au BufNewFile,BufRead *.module set filetype=php
+
 augroup PHP
   autocmd!
   autocmd FileType php setlocal iskeyword+=$

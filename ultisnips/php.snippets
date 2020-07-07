@@ -1,0 +1,398 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet docInhetit "Inheritdoc" b
+/**
+* {@inheritdoc}
+*/
+endsnippet
+
+snippet pf "Public function statement" b
+public function $0
+endsnippet
+snippet fp "Public function" b
+public function $1($2) {
+	$0;
+}
+endsnippet
+
+snippet fpr "Protected function" b
+protected function $1($2) {
+	$0;
+}
+endsnippet
+
+snippet block_config "Drupal 8 block configuration" b
+/**
+* {@inheritdoc}
+*/
+public function defaultConfiguration()
+{
+	return [
+		'${1:enabled}' => ${2:1},
+	];
+}
+
+/**
+* {@inheritdoc}
+*/
+public function blockForm($form, \Drupal\Core\Form\FormStateInterface $form_state)
+	{
+		$config = $this->getConfiguration();
+		$form['$1'] = [
+			'#type' => '${3:textfield}',
+			'#title' => $this->t('$1'),
+				'#description' => $this->t('${4:Description}'),
+			'#default_value' => $config['$1'],
+		];
+return $form;
+}
+
+/**
+* {@inheritdoc}
+*/
+public function blockSubmit($form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+	$this->configuration['$1'] = $form_state->getValue('$1');
+}
+endsnippet
+
+snippet fps "Public static function" b
+public static function $1($2) {
+	$0;
+}
+endsnippet
+
+snippet block_class "Drupal Block Plugin class" b
+<?php
+
+namespace Drupal\\${1:namespace}\Plugin\Block;
+
+use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\\$1\\${2:service};
+
+/**
+* ${3:My Drupal} Block
+*
+* @Block(
+*  id = '${4:my_block_id}',
+*  admin_label = @Translation("$2"),
+*  )
+*/
+class ${5:ClassName} extends BlockBase implements ContainerFactoryPluginInterface
+{
+
+	/**
+	* The Injected Service.
+	*
+	* @var \Drupal\\$1\\$2
+	*/
+	protected $${6:service};
+
+	/**
+	* Constructor
+	*
+	* @param array $configuration
+	*  A configuration array containing information about the plugin instance.
+	* @param string $plugin_id
+	*  The plugin_id for the plugin instance.
+	* @ string $plugin_definition
+	*  The plugin implementation definition
+	* @param \Drupan\$1\$2 $$6
+	*  The injected service.
+	*/
+	public function __construct(array $configuration, $plugin_id, $plugin_definition, $2 $$6)
+	{
+		parent::__construct($configuration, $plugin_id, $plugin_definition);
+		$this->$6 = $$6;
+	}
+
+	/**
+	* {@inheritdoc}
+	*/
+	public static function create(\Symfony\Component\DependencyInjection\ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
+	{
+		return new static(
+			$configuration,
+			$plugin_id,
+			$plugin_definition,
+			$container->get('$7')
+		);
+	}
+
+	/**
+	* {@inheritdoc}
+	*/
+	public function build() {
+		return [
+			'#markup' => $this->$6->$0
+		];
+	}
+}
+endsnippet
+
+snippet controller_class "Drupal Controller Class" b
+<?php
+
+namespace Drupal\\${1:namespace}\Controller;
+
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\\$1\\${2:serviceClass};
+
+/**
+* Controller for hello world.
+*/
+class ${3:ClassName} extends ControllerBase
+{
+	/**
+	* @var \Drupal\\$1\\$2
+	*/
+	protected $${4:serviceName};
+
+
+	/**
+	* @param HelloWorldSalutation $salutation
+	*/
+	public function __construct($2 $$4)
+	{
+		$this->$4 = $$4;
+	}
+
+	/**
+	* {@inheritdoc}
+	*/
+	public static function create(\Symfony\Component\DependencyInjection\ContainerInterface $container)
+	{
+		return new static(
+			$container->get('${5:service_string_name}')
+		);
+	}
+
+	/**
+	* ${6:methodName}
+	*
+	* @return ${7:array}
+	*/
+	public function $6()
+	{
+		$0
+	}
+}
+endsnippet
+
+
+snippet form_configuration_class "Drupal Configuration Form" b
+<?php
+
+namespace Drupal\\${1:namespace}\Form;
+
+use Drupal\Core\Form\ConfigFormBase;
+
+/** 
+* ${2:description}
+*/
+class ${3:FormClassName} extends ConfigFormBase  {
+
+	/**
+	* {@inheritdoc}
+	*/
+	protected function getEditableConfigNames()
+	{
+		return [
+		'$1.${4:configName}',$5
+		];
+	}
+
+	/**
+	* {@inheritdoc}
+	*/
+	public function getFormId()
+	{
+		return '${6:formId}';
+	}
+
+	/**
+	* {@inheritdoc}
+	*/
+	public function buildForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state)
+	{
+		$config = $this->config('$1.$4');
+
+		$form['${7:fieldName}'] = array(
+			'#type' => '${8:fieldType}',
+			'#title' => $this->t('${9:fieldTitle}'),
+			'#description' => $this->t('${10:fieldDescription}'),
+			'#default_value' => $config->get('$7'),
+		);
+
+		return parent::buildForm($form, $form_state);
+	}
+
+	public function submitForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state)
+	{
+		$this->config('$1.$4')
+				->set('$7, $form_state->getValue('$7'))
+				->save();
+
+		parent::submitForm($form, $form_state); 
+		// just print a confirmation message
+		// $this->messenger()->addMessage("This is a custom message"); 
+		// that can be customized.
+		// $this->messenger()->addWarning('This is a warning');
+	}
+}
+endsnippet
+
+snippet event_subscriber_class "Drupal EventSubscriber" b
+<?php
+
+namespace Drupal\\${1:namespace}\EventSubscriber;
+
+use Drupal\Core\Routing\CurrentRouteMatch;
+use Drupal\Core\Routing\LocalRedirectResponse;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\Core\Url;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
+
+/**
+* Subscribe to the Kernel Request event and redirects to the home page when
+* the user has the non_grata role.
+*/
+class ${2:ClassName} implements EventSubscriberInterface {
+
+	/**
+	* @var AccountProxyInterface $currentUser
+	*/
+	protected $currentUser;
+
+	/** 
+	* @var CurrentRouteMatch $currentRouteMatch
+	*/
+	protected $currentRouteMatch;
+
+	public function	__construct(AccountProxyInterface $currentUser, CurrentRouteMatch $currentRouteMatch) {
+		$this->currentUser = $currentUser;
+		$this->currentRouteMatch = $currentRouteMatch;
+	}
+
+	/**
+	* {@inheritdoc}
+	*/
+	public static function getSubscribedEvents()
+	{
+		$events[KernelEvents::REQUEST][] = ['onRequest', 0];
+		return $events;
+	}
+
+	public function onRequest(GetResponseEvent $event) {
+		$route_name = $this->currentRouteMatch->getRouteName();
+		if($route_name !== '${3:route_name}') {
+			return;
+		}
+
+		$roles = $this->currentUser->getRoles();
+		if(in_array('non_grata', $roles)) {
+			$url = Url::fromUri('internal:/');
+			$event->setResponse(new LocalRedirectResponse($url->toString()));
+		}
+	}
+
+}
+endsnippet
+
+snippet service_class "Drupal Service Class" b
+<?php
+
+
+namespace Drupal\\${1:namespace};
+
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+
+/**
+* ${2:class_descripton}
+*/
+class ${3:ClassName} {
+
+	use StringTranslationTrait;
+
+	/**
+	* @var ConfigFactoryInterface
+	*/
+	protected $configFactory;
+
+	/** 
+	* $3 constructor.
+	*
+	* @param ConfigFactoryInterface $config_factory
+	*/
+	public function __construct(ConfigFactoryInterface $config_factory)
+	{
+		$this->configFactory = $config_factory;
+	}
+
+	/**
+	* ${4:method_description}.
+	*/
+	public function ${5:methodName}() {
+		$config = $this->configFactory->get('${6:config_key_name}');
+		$${7:serviceValue} = $config->get('${8:config_value_name}');
+
+		if($$7 != "") 
+			return $$7->$0;
+		}
+	}
+}
+endsnippet
+
+snippet route_controller  "Drupal Route Controller Entry" b
+${1:module_name}.${2:path}:
+	path: ${3:/mypath}
+	# path: '$3/{param}' # map to a $param variable passed as an argument to the controller. E.g. /$3/jack
+	# path: '$3/{node}' # using {node} - machine name of the entity type - drupal will load it without specifying the  parameters options.
+	defaults:
+		_controller: '\Drupal\hello_world\Controller\${4:controller}::${5:controller_method}' # \Drupal\{module_name} maps to module_name/src
+		_title: '${6:My Route}'
+	requirements:
+		_permission: '${7:access content}'
+	# options:
+	#   parameters:
+	#     param:
+	#       type: entity.node # transform param to something more meaningful. Autoload the entity or return 404 if it doesn't exist.
+endsnippet
+
+snippet route_form "Drupal Route Form Entry"
+${1:module_name}.${2:path}:
+	path: /admin/config/${3:menu_entry}
+	defaults: 
+		_form: '\Drupal\\$1\Form\\${5:FormClassName}'
+		_title: '${6:page_title}'
+	requirements:
+		_permission: '${7:administer site configuration}'
+endsnippet

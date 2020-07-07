@@ -18,7 +18,6 @@
   "smartf.jumpOnTrigger": false,
   "coc.source.around.priority": 1,
   "emmet.priority": 3,
-  "snippets.priority": 8,
   "coc.source.buffer.priority": 0,
   "suggest.languageSourcePriority": 99,
   "codeLens.enable": true,
@@ -56,8 +55,15 @@
   "explorer.file.column.git.icon.renamed": "®",
   "explorer.file.column.git.icon.unmerged": "🗈",
   "explorer.file.showHiddenFiles": true,
+  "snippets.priority": 8,
+  "snippets.shortcut": "S",
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/ultisnips"
+  ],
   "snippets.extends": {
     "cpp": ["c"],
+    "php": ["php", "module", "install"],
     "python": ["py", "html"],
     "javascriptreact": ["javascript"],
     "typescriptreact": ["javascript"],

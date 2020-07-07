@@ -265,6 +265,8 @@ nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
+nnoremap <silent> <Leader>fc :CocSearch <C-R>=expand('<cword>')<CR><CR>
+nnoremap <silent> <Leader>fx :CocSearch -w <C-R>=expand('<cword>')<CR><CR>
 
 
 " Coc-actions extension
