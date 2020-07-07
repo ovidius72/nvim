@@ -27,20 +27,15 @@ Plug 'mhinz/vim-startify'
 " Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'
 " Plug 'arzg/vim-colors-xcode'
-" Plug 'bluz71/vim-moonfly-colors'
-" Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'franbach/miramare'
 " Plug 'chase/focuspoint-vim'
 " Plug 'jacoborus/tender.vim'
-" Plug 'axvr/photon.vim'
-" Plug 'owickstrom/vim-colors-paramount'
-" Plug 'gkeep/iceberg-dark'
-" Plug 'cocopon/iceberg.vim'
 " Plug 'AlessandroYorba/Alduin'
 " Plug 'ntk148v/vim-horizon'
 " Plug 'ayu-theme/ayu-vim'
 " Plug 'davidosomething/vim-colors-meh'
-
+Plug 'morhetz/gruvbox'
+Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'urbainvaes/vim-tmux-pilot'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
@@ -140,6 +135,7 @@ source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/coc.vim
+source ~/.config/nvim/init/aerojump.vim
 " source ~/.config/nvim/init/hexokinase.vim
 runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim

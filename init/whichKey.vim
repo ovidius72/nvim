@@ -259,6 +259,8 @@ let g:which_key_map.f = {
       \ '/'   : 'search history',
       \ 'l'   : 'open buffers',
       \ 'm'   : 'marks',
+      \ 'c'   : 'CocSearch word',
+      \ 'x'   : 'CocSearch exact word',
       \ 'w'   : 'find word',
       \ }
 

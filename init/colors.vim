@@ -238,11 +238,11 @@ hi WhichKeyFloating   guibg=#1b192c
 
 "
 " Gruvbox
-" set background=light
+" set background=dark
 " let g:lightline.colorscheme = "hypsteria_alter"
 " let g:gruvbox_italic=1
-" let g:gruvbox_contrast_ligth = "soft"
-" colorscheme gruvbox8_soft
+" let g:gruvbox_contrast_dark = "hard"
+" colorscheme gruvbox
 " set bg=dark
 " let g:airline_theme = 'gruvbox'
 
