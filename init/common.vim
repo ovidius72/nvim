@@ -502,3 +502,25 @@ function! DescribeFace(count) abort
 endfunction
 
 nnoremap <leader>Hz :<C-U>exe DescribeFace(v:count)<CR>
+" open last closed buffer
+function! OpenLastClosed()
+    let last_buf = bufname('#')
+
+    if empty(last_buf)
+        echo "No recently closed buffer found"
+        return
+    endif
+    let result = input("Open ". last_buf . " in (n)ormal (v)split, (t)ab or (s)plit ? (n/v/t/s) : ")
+    if empty(result) || (result !=# 'v' && result !=# 't' && result !=# 's' && result !=# 'n')
+        return
+    endif
+    if result ==# 't'
+        execute 'tabnew'
+    elseif result ==# 'v'
+        execute "vsplit"
+    elseif result ==# 's'
+        execute "split"
+    endif
+    execute 'b ' . last_buf
+endfunction
+map <Leader>bu :call OpenLastClosed()<CR>

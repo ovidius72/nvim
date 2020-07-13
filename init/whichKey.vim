@@ -86,10 +86,10 @@ let g:which_key_map.l = 'buffers..'
 let g:which_key_map.y = 'copy to clipboard'
 let g:which_key_map.Y = 'paste from clipboard'
 
-let g:which_key_map.j = 'Smartf'
-let g:which_key_map.J = 'Smartf repeat'
-let g:which_key_map.k = 'Smartf Back'
-let g:which_key_map.K = 'Smartf Back repeat'
+let g:which_key_map.J = 'Smartf'
+" let g:which_key_map.J = 'Smartf repeat'
+let g:which_key_map.K = 'Smartf Back'
+" let g:which_key_map.K = 'Smartf Back repeat'
 
 " \'k': {
 "   \'name': '+clap',
@@ -147,6 +147,7 @@ let g:which_key_map.b = {
       \'p': 'prev-buffers',
       \'r': 'list-reverse',
       \'s': 'save buffer',
+      \'u': 'undo close last buffer',
       \}
 
 
@@ -341,12 +342,26 @@ let g:which_key_map.H = {
       " \'k': 'smartf backward',
 
 "" =============================== J ==========================
-let g:which_key_map.r = {
-      \'name': 'AnyJump',
-      \'r': 'any jump',
-      \'b': 'any jump back',
-      \'l': 'any jump last',
+let g:which_key_map.j = { 
+      \ 'name': '+easymotion',
+      \ 'w': 'word',
+      \ 'p': 'prev',
+      \ 'n': 'next',
+      \ '.': 'repeat',
+      \ 'o': {
+      \ 'name': '+overwin',
+      \   'c': 'f',
+      \   'l': 'line',
+      \   'w': 'word',
+      \ },
+      \ 'b': {
+      \   'name': '+bidirectional',
+      \   't': 'tl',
+      \   'w': 'word',
+      \   'k': 'jk',
+      \ },
       \}
+"
 "" <-- j/J
 
 "" =============================== K ==========================
@@ -437,7 +452,12 @@ let g:which_key_map.q = {
       \}
 
 "" ============================== R ===========================
-
+let g:which_key_map.r = {
+      \'name': 'AnyJump',
+      \'r': 'any jump',
+      \'b': 'any jump back',
+      \'l': 'any jump last',
+      \}
 
 
 "" =============================== S ==========================
@@ -539,6 +559,7 @@ let g:which_key_map.w = {
 let g:which_key_map.x = { 
       \'name': '+code',
       \'r': 'replace-word',
+      \'d': 'doge generate (DOC)',
       \'o': 'Split at cursor',
       \'s': 'split into multiline',
       \'j': 'join multilines',

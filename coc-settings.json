@@ -2,14 +2,8 @@
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
   "tsserver.formatOnType": true,
-  "emmet.excludeLanguages": [
-    "markdown",
-    "typescriptreact"
-  ],
+  "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "tsserver.enable": true,
-  "rainbow-fart.locale": [
-    "en", "it"
-  ],
   "suggest.echodocSupport": true,
   "coc.source.file.priority": 0,
   "git.addGBlameToBufferVar": true,
@@ -55,19 +49,17 @@
   "explorer.file.column.git.icon.renamed": "®",
   "explorer.file.column.git.icon.unmerged": "🗈",
   "explorer.file.showHiddenFiles": true,
-  "snippets.priority": 8,
   "snippets.shortcut": "S",
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.config/nvim/ultisnips"
-  ],
+  "snippets.ultisnips.directories": [ "~/.config/nvim/ultisnips", "UltiSnips" ],
+  "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnips",
   "snippets.extends": {
     "cpp": ["c"],
-    "php": ["php", "module", "install"],
+    "php": ["php", "module", "install", "inc"],
     "python": ["py", "html"],
+    "javascript": ["javascript"],
     "javascriptreact": ["javascript"],
-    "typescriptreact": ["javascript"],
-    "typescript": ["javascript"]
+    "typescript": ["javascript"],
+    "typescriptreact": ["typescript", "javascript"]
   },
   "languageserver": {
     "ccls": {
@@ -100,7 +92,27 @@
     "intelephense": {
       "command": "intelephense",
       "args": ["--stdio"],
-      "filetypes": ["php", "*.module", "*.install"],
+      "filetypes": ["php", ".module", ".install", ".inc", "inc", "module"],
+      "progressOnInitialization": true,
+      "settings": {
+        "intelephense": {
+          "files": {
+            "maxSize": 3000000,
+            "associations": [
+              "*.php",
+              "*.phtml",
+              "*.inc",
+              "*.module",
+              "*.install",
+              "*.theme",
+              ".engine",
+              ".profile",
+              ".info",
+              ".test"
+            ]
+          }
+        }
+      },
       "initializationOptions": {
         "storagePath": "/tmp/intelephense"
       }
@@ -118,4 +130,3 @@
     }
   }
 }
-

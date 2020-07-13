@@ -18,22 +18,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " Plug 'justinmk/vim-sneak'
 Plug 'Shougo/echodoc'
+Plug 'kkoomen/vim-doge'
+Plug 'jacks0n/Drupal-Hook-Generator.vim', { 'for': 'php' }
 Plug 'mhinz/vim-startify'
-" Plug 'andreypopp/vim-colors-plain'
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'
-" Plug 'arzg/vim-colors-xcode'
 " Plug 'franbach/miramare'
-" Plug 'chase/focuspoint-vim'
-" Plug 'jacoborus/tender.vim'
-" Plug 'AlessandroYorba/Alduin'
-" Plug 'ntk148v/vim-horizon'
-" Plug 'ayu-theme/ayu-vim'
-" Plug 'davidosomething/vim-colors-meh'
 Plug 'morhetz/gruvbox'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'christoomey/vim-tmux-navigator'
@@ -103,6 +97,7 @@ Plug 'tpope/vim-commentary'
 " Plug 'IMOKURI/line-number-interval.nvim'
 Plug 'francoiscabrol/ranger.vim'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
@@ -127,7 +122,7 @@ source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
-" source ~/.config/nvim/init/easymotion.vim
+source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/anyjump.vim
 " source ~/.config/nvim/init/dotoo.vim
@@ -136,6 +131,8 @@ source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/aerojump.vim
+source ~/.config/nvim/init/vim-doge.vim
+source ~/.config/nvim/init/nvim-colorizer.lua.vim
 " source ~/.config/nvim/init/hexokinase.vim
 runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim

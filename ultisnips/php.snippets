@@ -30,9 +30,7 @@ snippet docInhetit "Inheritdoc" b
 */
 endsnippet
 
-snippet pf "Public function statement" b
-public function $0
-endsnippet
+
 snippet fp "Public function" b
 public function $1($2) {
 	$0;
@@ -80,16 +78,10 @@ public function blockSubmit($form, \Drupal\Core\Form\FormStateInterface $form_st
 }
 endsnippet
 
-snippet fps "Public static function" b
-public static function $1($2) {
-	$0;
-}
-endsnippet
-
 snippet block_class "Drupal Block Plugin class" b
 <?php
 
-namespace Drupal\\${1:namespace}\Plugin\Block;
+namespace Drupal\\${1:my_namespace}\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -369,30 +361,4 @@ class ${3:ClassName} {
 		}
 	}
 }
-endsnippet
-
-snippet route_controller  "Drupal Route Controller Entry" b
-${1:module_name}.${2:path}:
-	path: ${3:/mypath}
-	# path: '$3/{param}' # map to a $param variable passed as an argument to the controller. E.g. /$3/jack
-	# path: '$3/{node}' # using {node} - machine name of the entity type - drupal will load it without specifying the  parameters options.
-	defaults:
-		_controller: '\Drupal\hello_world\Controller\${4:controller}::${5:controller_method}' # \Drupal\{module_name} maps to module_name/src
-		_title: '${6:My Route}'
-	requirements:
-		_permission: '${7:access content}'
-	# options:
-	#   parameters:
-	#     param:
-	#       type: entity.node # transform param to something more meaningful. Autoload the entity or return 404 if it doesn't exist.
-endsnippet
-
-snippet route_form "Drupal Route Form Entry"
-${1:module_name}.${2:path}:
-	path: /admin/config/${3:menu_entry}
-	defaults: 
-		_form: '\Drupal\\$1\Form\\${5:FormClassName}'
-		_title: '${6:page_title}'
-	requirements:
-		_permission: '${7:administer site configuration}'
 endsnippet

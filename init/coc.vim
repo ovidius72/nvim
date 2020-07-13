@@ -25,7 +25,6 @@ let g:coc_global_extensions = [
       \ 'coc-css',
       \ 'coc-sh',
       \ 'coc-gitignore',
-      \ 'coc-rainbow-fart',
       \ 'coc-docthis',
       \ 'coc-git',
       \ ]
@@ -109,13 +108,13 @@ xmap ag <Plug>(coc-git-chunk-outer)
 
 " coc-smartf
 " press <esc> to cancel.
-nmap <leader>j <Plug>(coc-smartf-forward)
+nmap <leader>U <Plug>(coc-smartf-forward)
 " nmap <tab> <Plug>(coc-smartf-forward)
 " nmap <S-tab> <Plug>(coc-smartf-backward)
 " nmap f <Plug>(coc-smartf-forward)
-nmap <leader>k <Plug>(coc-smartf-backward)
-nmap <leader>J <Plug>(coc-smartf-repeat)
-nmap <leader>K <Plug>(coc-smartf-repeat-opposite)
+nmap <leader>K <Plug>(coc-smartf-backward)
+" nmap <leader>J <Plug>(coc-smartf-repeat)
+" nmap <leader>K <Plug>(coc-smartf-repeat-opposite)
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
@@ -377,3 +376,19 @@ nnoremap <silent><nowait>  <space>cln  :<C-u>CocNext<CR>
 nnoremap <silent><nowait>  <space>clp  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait>  <space>clr  :<C-u>CocListResume<CR>
+
+let g:easymotion#is_active = 0
+function! EasyMotionCoc() abort
+  if EasyMotion#is_active()
+    let g:easymotion#is_active = 1
+    CocDisable
+    let g:quick_scope_enable = 0
+  else
+    if g:easymotion#is_active == 1
+      let g:easymotion#is_active = 0
+      CocEnable
+      let g:quick_scope_enable = 1
+    endif
+  endif
+endfunction
+autocmd TextChanged,CursorMoved * call EasyMotionCoc()
