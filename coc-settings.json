@@ -14,7 +14,7 @@
   "emmet.priority": 3,
   "coc.source.buffer.priority": 0,
   "suggest.languageSourcePriority": 99,
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "typescript.showUnused": true,
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,

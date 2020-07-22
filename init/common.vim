@@ -18,6 +18,9 @@ set foldcolumn=1
 set spell!
 set spelllang=en_us,it
 
+" disable comment on new line.
+set formatoptions-=cro
+
 " setlocal cursorcolumn
 setlocal nowrap
 syntax on
@@ -257,6 +260,8 @@ imap _gll console.log();<Esc>==F(a"<Esc>pa", <Esc>a
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 " nmap <silent><c-c><c-l> yiwogll<Esc>pviw<Esc>
 nmap <Leader>ol yiwo_gll<Esc>pviw<Esc>
+vmap <Leader>ol y<Esc>o_gll<Esc>pviw<Esc>F,vt)
+
 
 " comment and yank to the next line
 nmap gcy Ygccp

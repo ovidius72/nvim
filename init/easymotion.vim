@@ -1,40 +1,41 @@
 "******** vim-motion"
 " change default prefix 
 let g:EasyMotion_smartcase = 1
-map <Leader>gme <Plug>(easymotion-prefix)
+map ,, <Plug>(easymotion-prefix)
 " <Leader>f{char} to move to {char}
-map  <Leader>jc <Plug>(easymotion-bd-f)
-map  <Leader>jbt <Plug>(easymotion-bd-tl)
-nmap <Leader>jc <Plug>(easymotion-overwin-f)
+" map  <Leader>jc <Plug>(easymotion-bd-f)
+" map  <Leader>jbt <Plug>(easymotion-bd-tl)
+" nmap <Leader>jc <Plug>(easymotion-overwin-f)
+" nmap <Leader>je <Plug>(easymotion-bd-e)
 
-" s{char}{char} to move to {char}{char}
-nmap <Leader>js <Plug>(easymotion-overwin-f2)
+" " s{char}{char} to move to {char}{char}
+" nmap <Leader>js <Plug>(easymotion-overwin-f2)
 
-nmap <Leader>ja <Plug>(easymotion-s2)
-nmap <Leader>jt <Plug>(easymotion-t2)
+" nmap <Leader>ja <Plug>(easymotion-s2)
+" nmap <Leader>jt <Plug>(easymotion-t2)
 
-nmap <Leader>jm <Plug>(easymotion-sn)
-omap <Leader>jm <Plug>(easymotion-tn)
+" nmap <Leader>jm <Plug>(easymotion-sn)
+" omap <Leader>jm <Plug>(easymotion-tn)
 
-" Move to line
-map  <Leader>jbk <Plug>(easymotion-bd-jk)
-nmap <Leader>jol <Plug>(easymotion-overwin-line)
+" " Move to line
+" map  <Leader>jbk <Plug>(easymotion-bd-jk)
+" nmap <Leader>jol <Plug>(easymotion-overwin-line)
 
-nmap <Leader>jk <Plug>(easymotion-k) 
-nmap <Leader>jj <Plug>(easymotion-j)
-nmap <Leader>jl <Plug>(easymotion-lineforward)
-nmap <Leader>jh <Plug>(easymotion-linebackward)
+" nmap <Leader>jk <Plug>(easymotion-k) 
+" nmap <Leader>jj <Plug>(easymotion-j)
+nmap ,,l <Plug>(easymotion-lineforward)
+nmap ,,h <Plug>(easymotion-linebackward)
 
 
-" repeat last motion
-nmap <Leader>j. <Plug>(easymotion-repeat)
-nmap <Leader>jn <Plug>(easymotion-next)
-nmap <Leader>jp <Plug>(easymotion-prev)
+" " repeat last motion
+" nmap <Leader>j. <Plug>(easymotion-repeat)
+" nmap <Leader>jn <Plug>(easymotion-next)
+" nmap <Leader>jp <Plug>(easymotion-prev)
 
-" Move to word
-map  <Leader>jbw <Plug>(easymotion-bd-w)
-nmap <Leader>jow <Plug>(easymotion-overwin-w)
-nmap <Leader>jw <Plug>(easymotion-overwin-w)
+" " Move to word
+" map  <Leader>jbw <Plug>(easymotion-bd-w)
+nmap ,,w <Plug>(easymotion-overwin-w)
+" nmap <Leader>jw <Plug>(easymotion-overwin-w)
 
 " Sneak
 " highlight SneakLabel guifg=black guibg=red ctermfg=black ctermbg=red

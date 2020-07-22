@@ -21,6 +21,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'easymotion/vim-easymotion'
 " Plug 'justinmk/vim-sneak'
 Plug 'Shougo/echodoc'
+Plug 'mbbill/undotree'
 Plug 'kkoomen/vim-doge'
 Plug 'jacks0n/Drupal-Hook-Generator.vim', { 'for': 'php' }
 Plug 'mhinz/vim-startify'

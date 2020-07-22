@@ -17,7 +17,6 @@ let g:coc_global_extensions = [
       \ 'coc-emmet',
       \ 'coc-marketplace',
       \ 'coc-tsserver',
-      \ 'coc-rls',
       \ 'coc-lists',
       \ 'coc-yaml',
       \ 'coc-python',
@@ -26,10 +25,11 @@ let g:coc_global_extensions = [
       \ 'coc-sh',
       \ 'coc-gitignore',
       \ 'coc-docthis',
+      \ 'coc-rust-analyzer',
       \ 'coc-git',
       \ ]
 
-      " \ 'coc-rust-analyzer',
+      " \ 'coc-rls',
   "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
   "rust-analyzer.callInfo.full": true,
   "rust-analyzer.cargo.allFeatures": true,

@@ -23,3 +23,11 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet prt "Rust println" b
+println!("${1:text:}{${2::#?}}$3", $4);$0
+endsnippet
+
+snippet adc "allow_dead_code" b
+#[allow(dead_code)]
+endsnippet

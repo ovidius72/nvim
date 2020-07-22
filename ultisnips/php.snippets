@@ -24,12 +24,15 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet docInhetit "Inheritdoc" b
+snippet doc_inherit "Inheritdoc" b
 /**
 * {@inheritdoc}
 */
 endsnippet
 
+snippet type_declaration "Type Declaration" b
+/** @var ${1:type} **/
+endsnippet
 
 snippet fp "Public function" b
 public function $1($2) {
@@ -360,5 +363,112 @@ class ${3:ClassName} {
 			return $$7->$0;
 		}
 	}
+}
+endsnippet
+
+#################################
+####### DRUPAL HOOKS ############
+#################################
+snippet dhook_token_info "Drupal Hook Token Info" b
+/**
+* implements hook_token_info()
+*/
+function ${1:`!v expand("%:p:h:t")`}_token_info()
+{
+
+	$type = [
+		'name' => t('${2:Name}'),
+		'description' => t('${3:Description}'),
+	];
+	$tokens['${4:token}'] = [
+		'name' => t('${5:$4}'),
+		'name' => t('${6:Description}'),
+	];
+
+	return [
+		'types' => ['$1' => $type],
+		'tokens' => ['$1' => $tokens]
+	];
+}
+
+/**
+* implements hook_tokens()
+*/
+function $1_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+	$replacements = [];
+	if ($type === '$1') {
+		foreach ($tokens as $name => $original) {
+			switch($name) {
+			case '$4':
+				$replacements[$original\] = \Drupal::service('${7:service_name}')->${8:service_method}();
+				$config = \Drupal::config('${9:config_name}');
+
+				// add config as a cache dependency. When config change the cache in invalidated.
+				$bubbleable_metadata->addCacheableDependency($config); 
+				break;$0
+			}
+		}
+	}
+}
+endsnippet
+
+snippet dhook_mail "Drupal hook mail" b
+/**
+* implements hook_mail().
+*/
+function ${1:`!v expand("%:p:h:t")`}_mail($key, &$message, $params)
+{
+	switch ($key) {
+		case '${2:$1}':
+			// $message['header'] can be used to add additional headers.
+			$message['from'] = \Drupal::config('${3:system.site}')->get('${4:mail}');
+			$message['subject'] = t('${5:my subject}');
+			$message['body'][] = $params['${6:message}'];
+			break;
+	}
+}
+endsnippet
+
+snippet dhook_help "Drupal hook help" b
+/**
+* implements hook help
+*/
+function ${1:`!v expand("%:p:h:t")`}_help($route_name, RouteMatchInterface $route_match)
+{
+	switch ($route_name) {
+		case '${2:help.page.$1}':
+			$output = "";
+			$output .= "<h3>" . t('${3:title}') . "</h3>";
+			$output .= "<p>" . t('${4:description}') . "</p>";
+			return $output;
+			default:
+	}
+}
+endsnippet
+
+
+snippet dhook_theme "Drupal hook theme" b
+/**
+* Implements hook_theme().
+*/
+function ${1:`!v expand("%:p:h:t")`}_theme($existing, $type, $path) {
+  $variables = array(
+    'mymodule' => array(
+      'variables' => array(
+        'source_text' => NULL
+      ),
+      'template' => '${2:$1}',
+    ),
+    'myfield' => array(
+      'variables' => [
+        'title' => '',
+        'items' => [],
+        'attributes' => []
+      ],
+      'template' => '${3:myfield}',
+    )
+  );
+
+  return $variables;
 }
 endsnippet
