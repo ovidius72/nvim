@@ -6,6 +6,10 @@
   "tsserver.enable": true,
   "suggest.echodocSupport": true,
   "coc.source.file.priority": 0,
+  "project.rootPatterns": [
+    ".git",
+    "node_modules"
+  ],
   "git.addGBlameToBufferVar": true,
   "smartf.timeout": 4000,
   "smartf.wordJump": false,
