@@ -110,13 +110,14 @@ xmap ag <Plug>(coc-git-chunk-outer)
 
 " coc-smartf
 " press <esc> to cancel.
-nmap <leader>U <Plug>(coc-smartf-forward)
+" nmap <leader>J <Plug>(coc-smartf-forward)
+nmap <M-i> <Plug>(coc-smartf-forward)
 " nmap <tab> <Plug>(coc-smartf-forward)
 " nmap <S-tab> <Plug>(coc-smartf-backward)
 " nmap f <Plug>(coc-smartf-forward)
-nmap <leader>K <Plug>(coc-smartf-backward)
-" nmap <leader>J <Plug>(coc-smartf-repeat)
-" nmap <leader>K <Plug>(coc-smartf-repeat-opposite)
+nmap <M-u> <Plug>(coc-smartf-backward)
+nmap <M-;> <Plug>(coc-smartf-repeat)
+nmap <M-,> <Plug>(coc-smartf-repeat-opposite)
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
@@ -384,11 +385,13 @@ function! EasyMotionCoc() abort
   if EasyMotion#is_active()
     let g:easymotion#is_active = 1
     CocDisable
+    ALEDisable
     let g:quick_scope_enable = 0
   else
     if g:easymotion#is_active == 1
       let g:easymotion#is_active = 0
       CocEnable
+      ALEEnable
       let g:quick_scope_enable = 1
     endif
   endif

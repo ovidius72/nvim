@@ -49,3 +49,19 @@ nmap ,,w <Plug>(easymotion-overwin-w)
 " nmap <Leader>jF <Plug>Sneak_F
 " nmap <Leader>jt <Plug>Sneak_t
 " nmap <Leader>jT <Plug>Sneak_T
+
+
+
+" incsearch.vim x fuzzy x vim-easymotion
+
+function! s:config_easyfuzzymotion(...) abort
+  return extend(copy({
+  \   'converters': [incsearch#config#fuzzy#converter()],
+  \   'modules': [incsearch#config#easymotion#module()],
+  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+  \   'is_expr': 0,
+  \   'is_stay': 1
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Leader>/ incsearch#go(<SID>config_easyfuzzymotion())

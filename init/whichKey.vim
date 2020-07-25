@@ -86,9 +86,9 @@ let g:which_key_map.l = 'buffers..'
 let g:which_key_map.y = 'copy to clipboard'
 let g:which_key_map.Y = 'paste from clipboard'
 
-let g:which_key_map.J = 'Smartf'
+" let g:which_key_map.J = 'Smartf'
 " let g:which_key_map.J = 'Smartf repeat'
-let g:which_key_map.K = 'Smartf Back'
+" let g:which_key_map.K = 'Smartf Back'
 " let g:which_key_map.K = 'Smartf Back repeat'
 
 " \'k': {
