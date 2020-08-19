@@ -18,8 +18,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 " Plug 'justinmk/vim-sneak'
+Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'Shougo/echodoc'
 Plug 'mbbill/undotree'
 Plug 'kkoomen/vim-doge'
@@ -29,7 +30,7 @@ Plug 'mhinz/vim-startify'
 " Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'
 " Plug 'franbach/miramare'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'urbainvaes/vim-tmux-pilot'
@@ -76,7 +77,7 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dstein64/vim-win'
 " Plug 'pangloss/vim-javascript'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 " Plug 'peitalin/vim-jsx-typescript'
 Plug 'evanleck/vim-svelte'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -123,7 +124,7 @@ source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/easymotion.vim
+" source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/anyjump.vim
 " source ~/.config/nvim/init/dotoo.vim

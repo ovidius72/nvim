@@ -380,20 +380,20 @@ nnoremap <silent><nowait>  <space>clp  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait>  <space>clr  :<C-u>CocListResume<CR>
 
-let g:easymotion#is_active = 0
-function! EasyMotionCoc() abort
-  if EasyMotion#is_active()
-    let g:easymotion#is_active = 1
-    CocDisable
-    ALEDisable
-    let g:quick_scope_enable = 0
-  else
-    if g:easymotion#is_active == 1
-      let g:easymotion#is_active = 0
-      CocEnable
-      ALEEnable
-      let g:quick_scope_enable = 1
-    endif
-  endif
-endfunction
-autocmd TextChanged,CursorMoved * call EasyMotionCoc()
+" let g:easymotion#is_active = 0
+" function! EasyMotionCoc() abort
+"   if EasyMotion#is_active()
+"     let g:easymotion#is_active = 1
+"     CocDisable
+"     ALEDisable
+"     let g:quick_scope_enable = 0
+"   else
+"     if g:easymotion#is_active == 1
+"       let g:easymotion#is_active = 0
+"       CocEnable
+"       ALEEnable
+"       let g:quick_scope_enable = 1
+"     endif
+"   endif
+" endfunction
+" autocmd TextChanged,CursorMoved * call EasyMotionCoc()
