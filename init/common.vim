@@ -262,6 +262,34 @@ imap _gll console.log();<Esc>==F(a"<Esc>pa", <Esc>a
 nmap <Leader>ol yiwo_gll<Esc>pviw<Esc>
 vmap <Leader>ol y<Esc>o_gll<Esc>pviw<Esc>F,vt)
 
+function! PrintLog()
+  let l:fType = expand("%:e")
+  echo l:fType
+  if l:fType == 'js'
+    execute "normal yiwo_gll"
+    normal pviw
+  elseif l:fType== 'py'
+    execute "normal yiwoprint()"
+    normal ==F(
+    normal a"
+    normal pa", 
+    normal pviw
+  elseif l:fType == 'rs'
+    execute "normal yiwoprintln!();"
+    normal ==F(
+    normal a"
+    normal pa {}", 
+    normal pviw
+  elseif l:fType == 'java'
+    execute "normal yiwoSystem.out.println();"
+    normal ==F(
+    normal a"
+    normal pa", 
+    normal pviw
+  endif
+endfunction
+
+map <leader>op :call PrintLog()<CR>
 
 " comment and yank to the next line
 nmap gcy Ygccp
