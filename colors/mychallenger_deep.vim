@@ -57,6 +57,8 @@ let s:green = { "gui": "#95ffa4", "cterm": "120", "cterm16": "2"}
 let s:dark_green = { "gui": "#62d196", "cterm": "119", "cterm16": "10"}
 
 let s:yellow = { "gui": "#ffe9aa", "cterm": "228", "cterm16": "3"}
+let s:yellow_light = { "gui": "#ffffb2", "cterm": "228", "cterm16": "3"}
+let s:selection = { "gui": "#b2ffff", "cterm": "228", "cterm16": "3"}
 let s:dark_yellow = { "gui": "#ffb378", "cterm": "215", "cterm16": "11"}
 
 let s:blue = { "gui": "#91ddff", "cterm": "159", "cterm16": "4"}
@@ -83,6 +85,7 @@ let s:bg_dark         = s:subtle_black
 let s:norm            = s:clouds
 let s:norm_subtle     = s:dark_clouds
 let s:visual          = s:bg_dark
+" let s:visual          = s:dark_yellow
 
 let s:head_a         = s:dark_blue
 let s:head_b         = s:blue
@@ -158,10 +161,10 @@ hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
 
-call s:h("Underlined",    {"fg": s:norm                      , "gui": "underline", "cterm": "underline"})
-call s:h("Ignore",        {"fg": s:bg                                                                  })
-call s:h("Error",         {"fg": s:dark_red, "bg": s:bg_subtle , "gui": "bold"     , "cterm": "bold"     })
-call s:h("Todo",          {"fg": s:dark_yellow, "bg": s:bg_subtle, "gui": "bold"     , "cterm": "bold"     })
+call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
+call s:h("Ignore",        {"fg": s:bg                                                              })
+call s:h("Error",         {"fg": s:dark_red, "bg": s:bg_subtle , "gui": "bold", "cterm": "bold"     })
+call s:h("Todo",          {"fg": s:dark_yellow, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"     })
 
 " ui chrome ====================================================================
 " ordered according to `:help hitest.vim`
@@ -173,8 +176,14 @@ call s:h("Float",    {"fg": s:dark_yellow})
 call s:h("NonText",       {"fg": s:bg_dark})
 call s:h("Directory",     {"fg": s:purple})
 call s:h("ErrorMsg",      {"fg": s:dark_red})
-call s:h("IncSearch",     {"bg": s:red, "fg": s:clouds})
-call s:h("Search",        {"bg": s:bg_dark})
+" call s:h("IncSearch",     {"bg": s:red, "fg": s:clouds})
+" call s:h("Search",        {"bg": s:bg_dark})
+call s:h("IncSearch",     {"bg": s:yellow, "fg": s:dark_red})
+call s:h("Search",        {"bg": s:yellow, "fg": s:black})
+call s:h("ClapInput",        {"bg": s:bg_subtle, "fg": s:green})
+call s:h("ClapSearchText",   {"bg": s:bg_subtle, "fg": s:purple})
+call s:h("ClapSpinner",      {"bg": s:bg_subtle, "fg": s:cyan})
+
 call s:h("MoreMsg",       {"fg": s:medium_gray, "gui": "bold", "cterm": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:dark_asphalt, "bg": s:asphalt})
@@ -185,9 +194,12 @@ call s:h("Conceal",       {"fg": s:norm})
 call s:h("StatusLineNC",  {"bg": s:bg_dark, "fg": s:medium_gray})
 call s:h("VertSplit",     {"fg": s:bg_subtle})
 call s:h("Title",         {"fg": s:dark_blue})
-call s:h("Visual",        {"bg": s:visual})
+call s:h("Visual",        {"bg": s:dark_asphalt})
+
+call s:h("Visual",        {"bg": s:selection, "fg": s:black})
+
 call s:h("WarningMsg",    {"fg": s:yellow})
-call s:h("WildMenu",      {"fg": s:bg_subtle, "bg": s:cyan})
+call s:h("WildMenu",      {"fg": s:bg_subtle, "bg": s:dark_cyan})
 call s:h("Folded",        {"bg": s:purple, "fg": s:bg_subtle})
 call s:h("FoldColumn",    {"fg": s:yellow})
 call s:h("DiffAdd",       {"fg": s:green})
@@ -214,7 +226,8 @@ call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_dark})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_dark})
 call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_dark})
-call s:h("CursorColumn",  {"bg": s:bg_subtle})
+call s:h("CursorColumn",  {"bg": s:subtle_black, "fg": s:white})
+" call s:h("CursorColumn",  {"bg": s:subtle_black, "fg": s:white})
 call s:h("CursorLine",    {"bg": s:asphalt_medium})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
@@ -225,6 +238,7 @@ endif
 
 " remainder of syntax highlighting
 call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:purple, "gui": "bold", "cterm": "bold"})
+call s:h("MatchParen",    {"bg": s:bg_dark, "fg": s:dark_red, "gui": "bold", "cterm": "bold"})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
 " hi helpHyperTextJump guifg=#5FAFD7 ctermfg=74
@@ -236,6 +250,8 @@ hi! link htmlEndTag       htmlTag
 hi! link htmlTagName      KeyWord
 " html5 tags show up as htmlTagN
 hi! link htmlTagN         Keyword
+" hi default link ClapInput Keyword
+" hi default link ClapDisplay Pmenu
 
 " HTML content
 call s:h("htmlH1",        {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"     })

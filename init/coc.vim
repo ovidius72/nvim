@@ -8,7 +8,6 @@ let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-yank',
       \ 'coc-explorer',
-      \ 'coc-import-cost',
       \ 'coc-docker',
       \ 'coc-sql',
       \ 'coc-smartf',
@@ -30,6 +29,7 @@ let g:coc_global_extensions = [
       \ 'coc-project',
       \ ]
 
+      " \ 'coc-import-cost',
       " \ 'coc-rls',
   "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
   "rust-analyzer.callInfo.full": true,
@@ -42,6 +42,7 @@ let g:coc_global_extensions = [
   "rust-analyzer.notifications.cargoTomlNotFound": true,
   "rust-analyzer.completion.addCallParenthesis": true,
   "rust-analyzer.completion.addCallArgumentSnippets": true,
+let g:coc_node_path = '~/.nvm/versions/node/v12.16.1/bin/node'
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
@@ -51,8 +52,8 @@ set nowritebackup
 set nobackup
 
 " always show signcolumns
-" set signcolumn=yes
-set signcolumn=auto:2
+set signcolumn=yes:2
+" set signcolumn=auto:2
 
 let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
@@ -74,9 +75,9 @@ hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 " // Dark ColorScheme
 " autocmd ColorScheme *
 "       \ hi CocUnderline gui=underline term=underline
-      " \ | hi CocErrorHighlight guifg=#d75f87
-      " \ | hi CocWarningHighlight guibg=#dc752f
-      " \ | hi CocInfoHighlight guibg=#92c797
+"       \ | hi CocErrorHighlight guifg=#d75f87
+"       \ | hi CocWarningHighlight guibg=#dc752f
+"       \ | hi CocInfoHighlight guibg=#92c797
 " au FocusGained,BufEnter,CursorHold * nested checktime %
 
 " // Light ColorScheme
@@ -126,6 +127,7 @@ augroup Smartf
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
 augroup end
 
+" augroup BufEnter coc-diagnostic
 " {{ coc snippets
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -163,6 +165,39 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc-explorer
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\     'root-uri': '~/.config/nvim',
+\   },
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+
 " noremap ge :CocCommand explorer
 "     \ --toggle
 "     \ --sources=buffer+,file+
@@ -170,23 +205,23 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 noremap <leader>[ :CocCommand explorer
       \ --toggle
-      \ --sources=buffer+,file+<cr>
+      \ --sources=file+<cr>
 
 noremap <leader>] :CocCommand explorer
-      \ --no-toggle
-      \ --sources=buffer+,file+<cr>
+      \ --toggle
+      \ --sources=file+<cr>
 
 noremap <leader>po :CocCommand explorer
       \ --toggle
-      \ --sources=buffer+,file+<cr>
+      \ --sources=file+<cr>
 
 noremap <leader>ct :CocCommand explorer
       \ --toggle
-      \ --sources=buffer+,file+<cr>
+      \ --sources=file+<cr>
 
 noremap <leader>cx :CocCommand explorer
       \ --no-toggle
-      \ --sources=buffer+,file+<cr>
+      \ --sources=file+<cr>
 
 " noremap <silent> <leader>cx :execute 'CocCommand explorer' .
 "       \ ' --no-toggle' .
@@ -278,6 +313,10 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 " nmap <silent> <C-d> <Plug>(coc-range-select)
@@ -324,6 +363,8 @@ augroup end
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 vmap <leader>cv  <Plug>(coc-codeaction-selected)
 nmap <leader>cv  <Plug>(coc-codeaction-selected)
+nmap <leader>co  <Plug>(coc-codeaction-line)
+vmap <leader>co  <Plug>(coc-codeaction-line)
 
 nmap <leader>cz :CocRestart<CR>
 nmap <leader>cu :CocUpdate<CR>
@@ -340,6 +381,10 @@ xmap <silent><C-s> <Plug>(coc-range-select)
 xmap <silent><C-a> <Plug>(coc-range-select-backward)
 
 " Remap for do codeAction of current line
+nmap <leader>cL <Plug>(coc-codelens-action)
+nmap <leader>ce <Plug>(coc-float-hide)
+nmap <leader>cj <Plug>(coc-float-jump)
+nmap <leader>cO <Plug>(coc-openlink)
 nmap <leader>ca <Plug>(coc-codeaction)
 xmap <leader>ca <Plug>(coc-codeaction-selected)
 nmap <Leader>ck :CocCommand docthis.documentThis<cr>

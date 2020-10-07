@@ -14,19 +14,19 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 
 " let g:ale_open_list = 2
-" let g:ale_sign_error = '✘'
+let g:ale_sign_error = '✘'
 " let g:ale_sign_error = '🐞'
-" let g:ale_sign_warning = '⚠'
-" let g:ale_sign_warning = '⚡'
+let g:ale_sign_warning = '⚠'
+let g:ale_sign_warning = '⚡'
 " let g:ale_sign_info = ''
-" let g:ale_sign_info = 'ℹ️'
-" let g:ale_sign_style_error = ''
+let g:ale_sign_info = 'ℹ️'
+let g:ale_sign_style_error = ''
 " let g:ale_sign_style_error = '🐞'
-" let g:ale_sign_style_warning = ''
+let g:ale_sign_style_warning = ''
 " let g:ale_sign_style_warning = '⚡'
 
-" highlight ALEErrorSign ctermbg=NONE ctermfg=red
-" highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 " highlight link ALEErrorLine Folded
 
 " let g:ale_echo_msg_error_str = 'E'
@@ -44,10 +44,10 @@ nmap <silent> <Leader>en <Plug>(ale_next_wrap)
 " augroup END
 
 let g:ale_linters = {
-\ 'typescript': ['eslint', 'tslint', 'tsserver'],
+\ 'typescript': ['eslint', 'tsserver'],
 \ 'javascript': ['eslint'],
-\ 'typescript.tsx': ['eslint', 'tslint', 'tsserver'],
-\ 'typescriptreact': ['eslint', 'tslint', 'tsserver'],
+\ 'typescript.tsx': ['eslint', 'tsserver'],
+\ 'typescriptreact': ['eslint', 'tsserver'],
 \ 'cpp': ['gcc'],
 \}
 " \ 'cpp': ['gcc'],
@@ -62,10 +62,10 @@ let g:ale_typescript_eslint_use_global = 1
 " let g:ale_list_window_size = 5
 
 let g:ale_fixers = {
-\   'typescript': ['eslint', 'tslint', 'prettier'], 
-\   'typescript.tsx': ['eslint', 'tslint', 'prettier'], 
-\   '.tsx': ['eslint', 'tslint', 'prettier'], 
-\   '.ts': ['eslint', 'tslint', 'prettier'], 
+\   'typescript': ['eslint', 'prettier'], 
+\   'typescript.tsx': ['eslint', 'prettier'], 
+\   '.tsx': ['eslint',  'prettier'], 
+\   '.ts': ['eslint',  'prettier'], 
 \   'javascript': ['prettier', 'eslint', 'prettier'],
 \   'javascript.jsx': ['prettier', 'eslint', 'prettier'],
 \   '.js': ['prettier', 'eslint', 'prettier'],

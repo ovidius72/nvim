@@ -18,19 +18,26 @@ Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'markonm/traces.vim'
+" Plug 'easymotion/vim-easymotion'
 " Plug 'justinmk/vim-sneak'
 Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'Shougo/echodoc'
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 Plug 'kkoomen/vim-doge'
-Plug 'jacks0n/Drupal-Hook-Generator.vim', { 'for': 'php' }
+" Plug 'rhysd/clever-f.vim'
+" Plug 'dahu/vim-fanfingtastic'
+" Plug 't9md/vim-smalls'
+
+" Plug 'jacks0n/Drupal-Hook-Generator.vim', { 'for': 'php' }
 Plug 'mhinz/vim-startify'
+Plug 'meain/vim-package-info', { 'do': 'npm install' }
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
 Plug 'liuchengxu/vim-which-key'
 " Plug 'franbach/miramare'
 " Plug 'morhetz/gruvbox'
+" Plug 'co1ncidence/mountaineer.vim'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'urbainvaes/vim-tmux-pilot'
@@ -40,8 +47,8 @@ Plug 'puremourning/vimspector'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
-Plug 'tsandall/vim-rego'
-Plug 'unblevable/quick-scope'
+" Plug 'tsandall/vim-rego'
+" Plug 'unblevable/quick-scope'
 Plug 'pechorin/any-jump.vim'
 " Plug 'dhruvasagar/vim-zoom'
 Plug 'Lenovsky/nuake'
@@ -79,7 +86,7 @@ Plug 'dstein64/vim-win'
 " Plug 'pangloss/vim-javascript'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'peitalin/vim-jsx-typescript'
-Plug 'evanleck/vim-svelte'
+" Plug 'evanleck/vim-svelte'
 Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'leafgarland/typescript-vim'
 " Plug 'HerringtonDarkholme/yats.vim'
@@ -87,7 +94,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'terryma/vim-expand-region'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'mxw/vim-jsx'
-Plug 'ianks/vim-tsx'
+" Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
@@ -99,14 +106,14 @@ Plug 'tpope/vim-commentary'
 " Plug 'IMOKURI/line-number-interval.nvim'
 Plug 'francoiscabrol/ranger.vim'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
 
-source ~/.config/nvim/init/common.vim
+" source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/whichKey.vim
-source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
+" source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
 " source ~/.config/nvim/init/lens.vim
 source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/ale.vim
@@ -121,20 +128,21 @@ source ~/.config/nvim/init/bufsurf.vim
 source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/ranger.vim
 " source ~/.config/nvim/init/nerdtree.vim
-source ~/.config/nvim/init/common.vim
+" source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
-source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/easymotion.vim
+" source ~/.config/nvim/init/colors.vim
+" source ~/.config/nvim/init/easymotion.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/anyjump.vim
 " source ~/.config/nvim/init/dotoo.vim
 source ~/.config/nvim/init/vim-win.vim
-source ~/.config/nvim/init/colors.vim
+" source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/coc.vim
+" source ~/.config/nvim/init/sneak.vim
 source ~/.config/nvim/init/aerojump.vim
 source ~/.config/nvim/init/vim-doge.vim
-source ~/.config/nvim/init/nvim-colorizer.lua.vim
+" source ~/.config/nvim/init/nvim-colorizer.lua.vim
 " source ~/.config/nvim/init/hexokinase.vim
 runtime macros/sandwich/keymap/surround.vim
 " source ~/.config/nvim/init/line-number-interval.vim
