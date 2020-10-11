@@ -1,4 +1,4 @@
-" let g:BufSurfIgnore = 'gitgutter'
+ let g:BufSurfIgnore = 'fzf,gitgutter'
 "bufsurf
 nmap g[ :BufSurfBack<CR>
 nmap g] :BufSurfForward<CR>

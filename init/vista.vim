@@ -51,5 +51,6 @@ let g:vista#renderer#enable_icon = 1
 " \   "variable": "\uf71b",
 " \  }
 
-noremap <Leader>tf :Vista finder<cr>
-nmap <Leader>tv :Vista!!<CR>
+noremap <Leader>vf :Vista focus<cr>
+noremap <Leader>vg :Vista finder<cr>
+nmap <Leader>vv :Vista!!<CR>

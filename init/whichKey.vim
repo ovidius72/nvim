@@ -36,8 +36,10 @@ noremap <leader><leader>5 :5wincmd w<cr>
 noremap <leader><leader>6 :6wincmd w<cr>
 noremap <leader><leader>7 :7wincmd w<cr>
 noremap <leader>ps :Startify<cr>
-map <silent><leader>l :Clap buffers<cr>
-map <silent><leader>i :Clap files<cr>
+" map <silent><leader>l :Clap buffers<cr>
+" map <silent><leader>i :Clap files<cr>
+map <silent><leader>l :Buffers<cr>
+map <silent><leader>i :Files<cr>
 " map <silent><leader><leader> :Clap files<cr>
 
 
@@ -242,6 +244,8 @@ let g:which_key_map.e = {
 "" =============================== F ==========================
 let g:which_key_map.f = { 
       \ 'name': '+file',
+      \ 'a'   : [':CocFzfList actions', 'Coc Actions'],
+      \ 'd'   : [':CocFzfList diagnostics', 'Coc Diagnostics'],
       \ 'e'   : {
         \ 'name': '+Config',
         \ 'r' : 'source nvim',
@@ -251,6 +255,13 @@ let g:which_key_map.f = {
         \ 'I' : 'install',
         \ },
       \ 'f'   : 'all files',
+      \ 'O'   : [':CocFzfList outline', 'Coc Outline'],
+      \ 'S'   : [':CocFzfList services', 'Coc Services'],
+      \ 'C'   : [':CocFzfList sources', 'Coc Sources'],
+      \ 'q'   : [':CocFzfList symbols', 'Coc Symbols'],
+      \ 'y'   : [':CocFzfList yank', 'Coc Yank'],
+      \ 'k'   : [':CocFzfList commands', 'Coc Commands'],
+      \ 'p'   : [':CocFzfListResume', 'Coc List Resume'],
       \ 'i'   : 'Coc Find Symbol',
       \ 'o'   : 'git files',
       \ 'r'   : 'file history',
@@ -367,40 +378,40 @@ let g:which_key_map.j = {
 "" =============================== K ==========================
       " \'x': [],
       " \'z': [],
-let g:which_key_map[" "] = {
-      \'name': '+clap',
-      \'a': [':Clap grep2', 'grep2 on the fly'],
-      \'b': [':Clap buffers', 'buffers'],
-      \'c': [':Clap commits', 'commits'],
-      \'C': [':Clap bcommits', 'buffer commits'],
-      \'d': [':Clap git_diff_files', 'Git diff files'],
-      \'e': [':Clap grep', 'grep'],
-      \'f': [':Clap filer', 'filer'],
-      \'g': [':Clap gfiles', 'git files'],
-      \'h': [':Clap hist:', 'command history'],
-      \'i': [':Clap filer', 'ivy'],
-      \'j': [':Clap jumps', 'jumps'],
-      \'k': [':Clap files', 'files'],
-      \'K': [':Clap colors', 'colors'],
-      \'l': [':Clap history', 'latest files'],
-      \'m': [':Clap marks', 'marks'],
-      \'M': [':Clap maps', 'maps'],
-      \"n": [':Clap providers', 'providers'],
-      \'o': [':Clap loclist', 'loclist'],
-      \'p': [':Clap proj_tags', 'project tags'],
-      \'q': [':Clap quickfix', 'quickfix'],
-      \'r': [':Clap registers', 'registers'],
-      \'s': [':Clap blines', 'buffer lines'],
-      \'S': [':Clap lines', 'lines'],
-      \'t': [':Clap tags', 'tags'],
-      \'T': [':Clap filetypes', 'file types'],
-      \'u': [':Clap grep ++query=<cword>', 'query'],
-      \'v': [':Clap help_tags', 'help tags'],
-      \'w': [':Clap windows', 'windows'],
-      \'y': [':Clap yanks', 'yanks'],
-      \'/': [':Clap hist/', 'search history'],
-      \';': [':Clap command', 'command list'],
-      \}
+" let g:which_key_map[" "] = {
+"       \'name': '+clap',
+"       \'a': [':Clap grep2', 'grep2 on the fly'],
+"       \'b': [':Clap buffers', 'buffers'],
+"       \'c': [':Clap commits', 'commits'],
+"       \'C': [':Clap bcommits', 'buffer commits'],
+"       \'d': [':Clap git_diff_files', 'Git diff files'],
+"       \'e': [':Clap grep', 'grep'],
+"       \'f': [':Clap filer', 'filer'],
+"       \'g': [':Clap gfiles', 'git files'],
+"       \'h': [':Clap hist:', 'command history'],
+"       \'i': [':Clap filer', 'ivy'],
+"       \'j': [':Clap jumps', 'jumps'],
+"       \'k': [':Clap files', 'files'],
+"       \'K': [':Clap colors', 'colors'],
+"       \'l': [':Clap history', 'latest files'],
+"       \'m': [':Clap marks', 'marks'],
+"       \'M': [':Clap maps', 'maps'],
+"       \"n": [':Clap providers', 'providers'],
+"       \'o': [':Clap loclist', 'loclist'],
+"       \'p': [':Clap proj_tags', 'project tags'],
+"       \'q': [':Clap quickfix', 'quickfix'],
+"       \'r': [':Clap registers', 'registers'],
+"       \'s': [':Clap blines', 'buffer lines'],
+"       \'S': [':Clap lines', 'lines'],
+"       \'t': [':Clap tags', 'tags'],
+"       \'T': [':Clap filetypes', 'file types'],
+"       \'u': [':Clap grep ++query=<cword>', 'query'],
+"       \'v': [':Clap help_tags', 'help tags'],
+"       \'w': [':Clap windows', 'windows'],
+"       \'y': [':Clap yanks', 'yanks'],
+"       \'/': [':Clap hist/', 'search history'],
+"       \';': [':Clap command', 'command list'],
+"       \}
 
 "" =============================== L ==========================
 " let g:which_key_map.l = { 
@@ -482,10 +493,8 @@ let g:which_key_map.s = {
 let g:which_key_map.t = { 
       \ 'name': '+tags',
       \'b': 'fzf buffer tags',
-      \'f': 'vista finder',
       \'h': 'help',
       \'t': 'fzf project tags',
-      \'v': 'vista toggle',
       \}
 
 let g:which_key_map.T = { 
@@ -502,6 +511,9 @@ let g:which_key_map.T = {
 "" =============================== V ==========================
 let g:which_key_map.v = {
       \'name': '+visual',
+      \'g': 'vista finder',
+      \'f': 'vista focus',
+      \'v': 'vista toggle',
       \'s': {
         \'name': '+sandwich',
         \'a': 'add',

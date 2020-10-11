@@ -8,6 +8,7 @@
   "coc.source.file.priority": 0,
   "coc.preferences.rootPatterns": [".git", "node_modules"],
   "list.source.symbols.excludes": [".gid", "node_modules", "dist", "build"],
+  "list.source.files.excludePatterns": ["node_modules"],
   "git.addGBlameToBufferVar": true,
   "smartf.timeout": 4000,
   "smartf.wordJump": false,

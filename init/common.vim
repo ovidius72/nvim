@@ -26,7 +26,7 @@ set formatoptions-=cro
 
 " setlocal cursorcolumn
 setlocal nowrap
-set wrap!
+set nowrap
 syntax on
 filetype plugin on
 filetype indent on
@@ -36,7 +36,7 @@ let mapleader=" "
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 let &t_ut=''
-autocmd FileType qf setlocal wrap
+autocmd FileType qf setlocal nowrap
 
 " vim commentary for rego files.
 autocmd FileType rego setlocal commentstring=#\ %s
@@ -108,15 +108,6 @@ map <Leader>hr :%retab!<CR>
 " xmap s <Nop>
 " nmap ss cl
 
-" vim-qick-scope
-" let g:qs_lazy_highlight = 1
-" augroup qs_colors
-"   autocmd!
-"   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff6f' gui=underline ctermfg=155 cterm=underline
-"   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
-" augroup END
-" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ',', ';', '{', '}', '(', ')', '[', ']', '.', '/', '"', '|', '\', '$', '#', '_']
 
 
 " autocmd FileType cpp set makeprg=clang++\ -std=c++2a\ -o\ '%<'\ '%'

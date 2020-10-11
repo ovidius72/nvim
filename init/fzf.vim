@@ -19,13 +19,15 @@ let g:fzf_action = {
 " bottom aligned floating not pushing screen. 
 let g:fzf_layout = {
       \'window': {
-        \ 'width': 1, 
+        \ 'width': 0.8, 
         \ 'height': 0.4,
-        \ 'yoffset': 1,
-        \ 'border': 'horizontal' 
+        \ 'border': 'rounded',
+        \ 'highlight': 'Operator'
       \}
     \}
 
+    " \ 'border': 'horizontal'
+    " \ 'yoffset': 1,
 " let g:animate#duration = 200.0
 " let g:animate#easing_func = 'animate#ease_linear'
 " let g:fzf_layout = {
@@ -88,7 +90,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+" inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " nmap <Leader>ph :History<CR>
 " nmap <Leader>hw :Windows<CR>
