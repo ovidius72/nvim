@@ -195,16 +195,16 @@ tnoremap <F7> <C-\><C-n>:Nuake<CR>
 let g:signify_disable_by_default = 0
 
 
-omap ic <Plug>(signigy-motion-inner-pending)
-xmap ic <Plug>(signigy-motion-outer-visual)
-omap ac <Plug>(signigy-motion-outer-pending)
-xmap ia <Plug>(signigy-motion-outer-visual)
+" omap ic <Plug>(signify-motion-inner-pending)
+" xmap ic <Plug>(signify-motion-outer-visual)
+" omap ac <Plug>(signify-motion-outer-pending)
+" xmap ia <Plug>(signify-motion-outer-visual)
 " nmap <silent>gh :SignifyHunkDiff<CR>
 " nmap <silent>gb :SignifyHunkUndo<CR>
-nmap <Leader>ggn <Plug>(signigy-next-hunk)
-nmap <Leader>ggp <Plug>(signigy-prev-hunk)
+" nmap <Leader>ggn <Plug>(signify-next-hunk)
+" nmap <Leader>ggp <Plug>(signify-prev-hunk)
 " nmap <Leader>ggs <Plug>(GitGutterStageHunk)
-nmap <Leader>ggu :SignifyHunkUndo<CR>
+" nmap <Leader>ggu :SignifyHunkUndo<CR>
 " nmap <Leader>' :pclose<CR>
 "
 nmap <leader>gl :Gclog<cr>

@@ -1,5 +1,5 @@
 " *************** fzf
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 
 " This is the default extra key bindings
 let g:fzf_action = {

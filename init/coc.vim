@@ -42,7 +42,7 @@ let g:coc_global_extensions = [
   "rust-analyzer.notifications.cargoTomlNotFound": true,
   "rust-analyzer.completion.addCallParenthesis": true,
   "rust-analyzer.completion.addCallArgumentSnippets": true,
-let g:coc_node_path = '~/.nvm/versions/node/v12.16.1/bin/node'
+" let g:coc_node_path = '~/.nvm/versions/node/v12.16.1/bin/node'
 set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
