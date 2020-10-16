@@ -6,6 +6,11 @@
   "tsserver.enable": true,
   "suggest.echodocSupport": true,
   "coc.source.file.priority": 0,
+  "project.enable": true,
+  "project.rootPatterns": [
+    ".git",
+    "node_modules"
+  ],
   "coc.preferences.rootPatterns": [".git", "node_modules"],
   "list.source.symbols.excludes": [".gid", "node_modules", "dist", "build"],
   "list.source.files.excludePatterns": ["node_modules"],

@@ -204,6 +204,7 @@ let g:which_key_map.c = {
           \'s': 'save',
           \'l': 'load',
         \},
+      \ 'p': 'projects',
       \ 't': 'Toggle Explorer',
       \ 'u': 'Coc Update',
       \ 'v': 'code-action-selected',
@@ -309,6 +310,7 @@ let g:which_key_map.g = {
 let g:which_key_map.h = { 
       \'name': '+highlight',
       \'h': 'toggle-under-cursor',
+      \'m': [':MinimapToggle', 'Minimap Toggle'],
       \'l': 'toggle-list-chars',
       \'r': 'convert spaces to tabs',
       \'s': 'toggle-hls(highlight)',
@@ -446,12 +448,12 @@ let g:which_key_map.o = {
 let g:which_key_map.p = { 
       \ 'name': '+project',
       \ 'a': 'Ag',
-      \ 'A': 'Add Project Session',
-      \ 'p': 'Project Sessions',
+      \ 'S': 'Add Session',
+      \ 'p': 'Projects',
       \ 'o': 'toggle explorer',
       \ 'g': 'Git Files',
       \ 'h': 'Files',
-      \ 's': 'Start',
+      \ 's': 'Sessions',
       \ 'z': 'project tags',
       \}
 

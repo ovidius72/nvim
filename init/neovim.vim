@@ -13,14 +13,15 @@ if !has('nvim')
 endif
 
 call plug#begin()
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
-Plug 'kkoomen/vim-doge'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'liuchengxu/vim-which-key'
 Plug 'rbgrouleff/bclose.vim'
@@ -31,7 +32,7 @@ Plug 'ton/vim-bufsurf'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
@@ -46,16 +47,31 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
+Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
+Plug 'Lenovsky/nuake'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'hardcoreplayers/dashboard-nvim'
+Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'mattn/emmet-vim'
+Plug 'rhysd/clever-f.vim'
+
+
+" Plug 'mcchrish/nnn.vim'
+" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+" Plug 'kyazdani42/nvim-web-devicons' " for file icons
+" Plug 'kyazdani42/nvim-tree.lua'
 
 "
 " Plug 'airblade/vim-gitgutter'
-" Plug 'hardcoreplayers/dashboard-nvim'
 " Plug 'mhinz/vim-startify'
 " Plug 'chriskempson/base16-vim'
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } 
 " Plug 'mbbill/undotree'
-" Plug 'rhysd/clever-f.vim'
 " Plug 'dahu/vim-fanfingtastic'
 " Plug 't9md/vim-smalls'
 " Plug 'markonm/traces.vim'
@@ -68,7 +84,6 @@ Plug 'unblevable/quick-scope'
 " Plug 'franbach/miramare'
 " Plug 'morhetz/gruvbox'
 " Plug 'co1ncidence/mountaineer.vim'
-" Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'urbainvaes/vim-tmux-pilot'
 " Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
@@ -76,7 +91,6 @@ Plug 'unblevable/quick-scope'
 " Plug 'puremourning/vimspector'
 " Plug 'tsandall/vim-rego'
 " Plug 'dhruvasagar/vim-zoom'
-" Plug 'Lenovsky/nuake'
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'liuchengxu/space-vim-theme'
 " Plug 'vim-airline/vim-airline'
@@ -89,7 +103,6 @@ Plug 'unblevable/quick-scope'
 " Plug 'jez/vim-better-sml'
 " Plug 'nathanaelkane/vim-indent-guides'
 
-" Plug 'mattn/emmet-vim'
 " Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'pangloss/vim-javascript'
@@ -114,13 +127,14 @@ call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
+let g:cursorhold_updatetime = 100
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vista.vim
-source ~/.config/nvim/init/ale.vim
+" source ~/.config/nvim/init/ale.vim
 source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/bufsurf.vim
 " source ~/.config/nvim/init/clap.vim
@@ -132,5 +146,8 @@ source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
-source ~/.config/nvim/init/quick-scope.vim
+" source ~/.config/nvim/init/quick-scope.vim
+source ~/.config/nvim/init/fern.vim
+" source ~/.config/nvim/init/nnn.vim
+" source ~/.config/nvim/init/nvim-lua-tree.vim
 runtime macros/sandwich/keymap/surround.vim

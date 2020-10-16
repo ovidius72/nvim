@@ -173,7 +173,7 @@ call s:h("SpecialKey",    {"fg": s:blue})
 call s:h("Boolean",    {"fg": s:dark_yellow})
 call s:h("Number",    {"fg": s:dark_yellow})
 call s:h("Float",    {"fg": s:dark_yellow})
-call s:h("NonText",       {"fg": s:bg_dark})
+call s:h("NonText",       {"fg": s:dark_asphalt})
 call s:h("Directory",     {"fg": s:purple})
 call s:h("ErrorMsg",      {"fg": s:dark_red})
 " call s:h("IncSearch",     {"bg": s:red, "fg": s:clouds})
@@ -195,7 +195,7 @@ call s:h("StatusLineNC",  {"bg": s:bg_dark, "fg": s:medium_gray})
 call s:h("VertSplit",     {"fg": s:bg_subtle})
 call s:h("Title",         {"fg": s:dark_blue})
 call s:h("Visual",        {"bg": s:dark_asphalt})
-
+		
 call s:h("Visual",        {"bg": s:selection, "fg": s:black})
 
 call s:h("WarningMsg",    {"fg": s:yellow})

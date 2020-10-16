@@ -1,4 +1,6 @@
 " *************** fzf
+set rtp+=~/.fzf
+
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -20,7 +22,7 @@ let g:fzf_action = {
 let g:fzf_layout = {
       \'window': {
         \ 'width': 0.8, 
-        \ 'height': 0.4,
+        \ 'height': 0.6,
         \ 'border': 'rounded',
         \ 'highlight': 'Operator'
       \}
@@ -174,6 +176,7 @@ command! -bang -nargs=* Find
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+
 " neovim config
 command! -bang NeovimConfigFiles call fzf#vim#files('~/.config/nvim', <bang>0)
 nmap <Leader>fef :NeovimConfigFiles<CR>
@@ -188,7 +191,6 @@ command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(

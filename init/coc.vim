@@ -165,51 +165,51 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc-explorer
-let g:coc_explorer_global_presets = {
-\   '.vim': {
-\     'root-uri': '~/.config/nvim',
-\   },
-\   'tab': {
-\     'position': 'tab',
-\     'quit-on-open': v:true,
-\   },
-\   'floating': {
-\     'position': 'floating',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingTop': {
-\     'position': 'floating',
-\     'floating-position': 'center-top',
-\   },
-\   'floatingLeftside': {
-\     'position': 'floating',
-\     'floating-position': 'left-center',
-\     'floating-width': 50,
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingRightside': {
-\     'position': 'floating',
-\     'floating-position': 'right-center',
-\     'floating-width': 50,
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'simplify': {
-\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
+" let g:coc_explorer_global_presets = {
+" \   '.vim': {
+" \     'root-uri': '~/.config/nvim',
+" \   },
+" \   'tab': {
+" \     'position': 'tab',
+" \     'quit-on-open': v:true,
+" \   },
+" \   'floating': {
+" \     'position': 'floating',
+" \     'open-action-strategy': 'sourceWindow',
+" \   },
+" \   'floatingTop': {
+" \     'position': 'floating',
+" \     'floating-position': 'center-top',
+" \   },
+" \   'floatingLeftside': {
+" \     'position': 'floating',
+" \     'floating-position': 'left-center',
+" \     'floating-width': 50,
+" \     'open-action-strategy': 'sourceWindow',
+" \   },
+" \   'floatingRightside': {
+" \     'position': 'floating',
+" \     'floating-position': 'right-center',
+" \     'floating-width': 50,
+" \     'open-action-strategy': 'sourceWindow',
+" \   },
+" \   'simplify': {
+" \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+" \   }
+" \ }
 
 " noremap ge :CocCommand explorer
 "     \ --toggle
 "     \ --sources=buffer+,file+
 "     \ --fi <CR>
 
-noremap <leader>[ :CocCommand explorer
-      \ --toggle
-      \ --sources=file+<cr>
+" noremap <leader>[ :CocCommand explorer
+"       \ --toggle
+"       \ --sources=file+<cr>
 
-noremap <leader>] :CocCommand explorer
-      \ --toggle
-      \ --sources=file+<cr>
+" noremap <leader>] :CocCommand explorer
+"       \ --no-toggle
+"       \ --sources=file+<cr>
 
 noremap <leader>po :CocCommand explorer
       \ --toggle
@@ -369,12 +369,15 @@ vmap <leader>co  <Plug>(coc-codeaction-line)
 nmap <leader>cz :CocRestart<CR>
 nmap <leader>cu :CocUpdate<CR>
 " sessions
-command! -nargs=0 SESSLOAD   :call     CocAction('runCommand', 'session.load')
-command! -nargs=0 SESSSAVE   :call     CocAction('runCommand', 'session.save')
-nmap <leader>css :SESSSAVE<CR>
-nmap <leader>csl :SESSLOAD<CR>
-nmap <leader>pp :SESSLOAD<CR>
-nmap <silent><leader>pA :SESSSAVE<CR>
+nmap <leader>ps :CocCommand session.load<CR>
+nmap <leader>pS :CocCommand session.save<CR>
+
+nmap <leader>pl :CocList project<CR>
+nmap <leader>css :CocCommand session.save<CR>
+nmap <leader>csl :CocCommand session.load<CR>:
+nmap <leader>pp :CocList project<CR>
+" nmap <leader>pp :SESSLOAD<CR>
+" nmap <silent><leader>pA :SESSSAVE<CR>
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent><C-s> <Plug>(coc-range-select)
 xmap <silent><C-s> <Plug>(coc-range-select)

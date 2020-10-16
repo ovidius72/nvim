@@ -65,6 +65,8 @@ nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
 " tnoremap jj <C-\><C-n> 
 
+"Enable Minimap
+let g:minimap_auto_start = 0
 
 command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
 map <leader>feU :PU<cr>
@@ -249,7 +251,7 @@ vnoremap gy y']
 " Console log from insert mode; Puts focus inside parentheses
 
 imap _cll console.log();<Esc>==F(a
-imap _gll console.log();<Esc>==F(a"<Esc>pa", <Esc>a
+imap _gll console.log();<Esc>==F(a'<Esc>pa', <Esc>a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 " vmap <silent><c-c><c-l> yogll<Esc>pviw
 " Console log from normal mode, inserted on next line with word your on inside parentheses
