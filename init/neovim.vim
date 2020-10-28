@@ -16,24 +16,29 @@ call plug#begin()
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
+" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'kristijanhusak/defx-icons'
+" Plug 'antoinemadec/coc-fzf'
+" Plug 'haya14busa/incsearch.vim'
+" Plug 'haya14busa/incsearch-easymotion.vim'
+" Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'liuchengxu/vim-which-key'
-Plug 'rbgrouleff/bclose.vim'
+" Plug 'rbgrouleff/bclose.vim'
+Plug 'Asheq/close-buffers.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'pechorin/any-jump.vim'
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 " Plug 'w0rp/ale'
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
@@ -48,19 +53,19 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'unblevable/quick-scope'
-Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
-Plug 'Lenovsky/nuake'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'hardcoreplayers/dashboard-nvim'
-Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
+" Plug 'Lenovsky/nuake'
+" Plug 'lambdalisue/fern.vim'
+" Plug 'lambdalisue/nerdfont.vim'
+" Plug 'lambdalisue/fern-git-status.vim'
+" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+" Plug 'antoinemadec/FixCursorHold.nvim'
+" Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mattn/emmet-vim'
 Plug 'rhysd/clever-f.vim'
 
 
+" Plug 'hardcoreplayers/dashboard-nvim'
 " Plug 'mcchrish/nnn.vim'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 " Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -106,15 +111,15 @@ Plug 'rhysd/clever-f.vim'
 " Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'pangloss/vim-javascript'
-" Plug 'sheerun/vim-polyglot'
-" Plug 'peitalin/vim-jsx-typescript'
+Plug 'sheerun/vim-polyglot'
+Plug 'peitalin/vim-jsx-typescript'
 " Plug 'evanleck/vim-svelte'
 " Plug 'leafgarland/typescript-vim'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'justinmk/vim-syntax-extra'
 " Plug 'terryma/vim-expand-region'
-" Plug 'mxw/vim-jsx'
-" Plug 'ianks/vim-tsx'
+Plug 'mxw/vim-jsx'
+Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 " Plug 'mhinz/vim-signify'
 " Plug 'Yggdroot/indentLine'
@@ -127,27 +132,29 @@ call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
-let g:cursorhold_updatetime = 100
+" let g:cursorhold_updatetime = 100
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
 source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/vista.vim
+" source ~/.config/nvim/init/vista.vim
 " source ~/.config/nvim/init/ale.vim
 source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/bufsurf.vim
+source ~/.config/nvim/init/close-buffers.vim
 " source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/echodoc.vim
-source ~/.config/nvim/init/anyjump.vim
+" source ~/.config/nvim/init/anyjump.vim
 source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
+" source ~/.config/nvim/init/denite.vim
 " source ~/.config/nvim/init/quick-scope.vim
-source ~/.config/nvim/init/fern.vim
+" source ~/.config/nvim/init/fern.vim
 " source ~/.config/nvim/init/nnn.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
 runtime macros/sandwich/keymap/surround.vim

@@ -9,7 +9,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-" let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_layout = { 'down': '~30%' }
 
 " In Neovim, you can set up fzf window using a Vim command
 " let g:fzf_layout = { 'window': 'enew' }
@@ -19,22 +19,24 @@ let g:fzf_action = {
 " Centered floating window with rounded borders.
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'rounded': v:true } }
 " bottom aligned floating not pushing screen. 
-let g:fzf_layout = {
-      \'window': {
-        \ 'width': 0.8, 
-        \ 'height': 0.6,
-        \ 'border': 'rounded',
-        \ 'highlight': 'Operator'
-      \}
-    \}
+" let g:fzf_layout = {
+"       \'window': {
+"         \ 'width': 0.8, 
+"         \ 'height': 0.6,
+"         \ 'border': 'rounded',
+"         \ 'highlight': 'Operator',
+"       \}
+"     \}
 
-    " \ 'border': 'horizontal'
     " \ 'yoffset': 1,
+" \ 'border': 'horizontal'
 " let g:animate#duration = 200.0
 " let g:animate#easing_func = 'animate#ease_linear'
 " let g:fzf_layout = {
 "  \ 'window': 'new | wincmd J | resize 1 | call animate#window_percent_height(0.5)'
 " \ }
+" bottom not pushing.
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.3, 'yoffset': 1, 'border': 'horizontal' } }
 
 " Customize fzf colors to match your color scheme
 " let g:fzf_colors =
@@ -138,8 +140,8 @@ nmap <Leader>bb :Buffers<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
 " nmap <Leader>bd :bp<CR>:bd#<CR>
-nmap <Leader>bd :Bclose<CR>
-nmap <Leader>bk :Bclose!<CR>
+" nmap <Leader>bd :Bclose<CR>
+" nmap <Leader>bk :Bclose!<CR>
 nmap <Leader>tb :BTags<CR>
 nmap <Leader>bt :BTags<CR>
 
@@ -166,7 +168,7 @@ nmap <Leader>sg :GGrep<CR>
 nmap <Leader>sh :History/<CR>
 " command history
 nmap <Leader>sc :History:<CR>
-nmap <Leader>sa :Ag<CR>
+nmap <Leader>sa :AGP<CR>
 nmap <Leader>sA :Ag!<CR>
 nmap <Leader>fw :Find<CR>
 
@@ -249,30 +251,3 @@ nnoremap <silent> <Leader>br :call fzf#run({
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
-
-" if has('nvim') && exists('&winblend') && &termguicolors
-"   set winblend=0
-
-"   hi NormalFloat guibg=None
-"   if exists('g:fzf_colors.bg')
-"     call remove(g:fzf_colors, 'bg')
-"   endif
-
-"   if stridx($FZF_DEFAULT_OPTS, '--border') == -1
-"     let $FZF_DEFAULT_OPTS .= ' --border'
-"   endif
-
-"   function! FloatingFZF()
-"     let width = float2nr(&columns * 0.8)
-"     let height = float2nr(&lines * 0.6)
-"     let opts = { 'relative': 'editor',
-"                \ 'row': (&lines - height) / 2,
-"                \ 'col': (&columns - width) / 2,
-"                \ 'width': width,
-"                \ 'height': height }
-
-"     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-"   endfunction
-
-"   let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-" endif

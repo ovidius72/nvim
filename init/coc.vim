@@ -1,7 +1,5 @@
 let g:coc_global_extensions = [
-      \ 'coc-json',
       \ 'coc-prettier',
-      \ 'coc-tslint',
       \ 'coc-actions',
       \ 'coc-styled-components',
       \ 'coc-diagnostic',
@@ -10,7 +8,6 @@ let g:coc_global_extensions = [
       \ 'coc-explorer',
       \ 'coc-docker',
       \ 'coc-sql',
-      \ 'coc-smartf',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-emmet',
@@ -30,6 +27,8 @@ let g:coc_global_extensions = [
       \ ]
 
       " \ 'coc-import-cost',
+      " \ 'coc-tslint',
+      " \ 'coc-smartf',
       " \ 'coc-rls',
   "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
   "rust-analyzer.callInfo.full": true,
@@ -59,8 +58,11 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 let g:coc_status_info_sign = '•'
 
-hi! CocErrorHighlight guibg=bg guifg=fg gui=undercurl guisp=#ff5458 
-hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffb378
+hi! CocErrorHighlight guibg=bg guifg=fg gui=undercurl guisp=#ff6458 
+hi! CocErrorSign guifg=bg guifg=#ff6458
+hi! CocWarningSign guifg=bg guifg=#ffe9aa
+hi! CocInfoSign guifg=bg guifg=#95ffa4
+hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffe9aa
 hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
 
@@ -165,51 +167,51 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc-explorer
-" let g:coc_explorer_global_presets = {
-" \   '.vim': {
-" \     'root-uri': '~/.config/nvim',
-" \   },
-" \   'tab': {
-" \     'position': 'tab',
-" \     'quit-on-open': v:true,
-" \   },
-" \   'floating': {
-" \     'position': 'floating',
-" \     'open-action-strategy': 'sourceWindow',
-" \   },
-" \   'floatingTop': {
-" \     'position': 'floating',
-" \     'floating-position': 'center-top',
-" \   },
-" \   'floatingLeftside': {
-" \     'position': 'floating',
-" \     'floating-position': 'left-center',
-" \     'floating-width': 50,
-" \     'open-action-strategy': 'sourceWindow',
-" \   },
-" \   'floatingRightside': {
-" \     'position': 'floating',
-" \     'floating-position': 'right-center',
-" \     'floating-width': 50,
-" \     'open-action-strategy': 'sourceWindow',
-" \   },
-" \   'simplify': {
-" \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-" \   }
-" \ }
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\     'root-uri': '~/.config/nvim',
+\   },
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
 
-" noremap ge :CocCommand explorer
-"     \ --toggle
-"     \ --sources=buffer+,file+
-"     \ --fi <CR>
+noremap ge :CocCommand explorer
+    \ --toggle
+    \ --sources=buffer+,file+
+    \ --fi <CR>
 
-" noremap <leader>[ :CocCommand explorer
-"       \ --toggle
-"       \ --sources=file+<cr>
+noremap <leader>[ :CocCommand explorer
+      \ --toggle
+      \ --sources=file+<cr>
 
-" noremap <leader>] :CocCommand explorer
-"       \ --no-toggle
-"       \ --sources=file+<cr>
+noremap <leader>] :CocCommand explorer
+      \ --no-toggle
+      \ --sources=file+<cr>
 
 noremap <leader>po :CocCommand explorer
       \ --toggle

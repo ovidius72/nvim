@@ -41,6 +41,7 @@ noremap <leader>ps :Startify<cr>
 map <silent><leader>l :Buffers<cr>
 map <silent><leader>i :Files<cr>
 " map <silent><leader><leader> :Clap files<cr>
+" map <silent><leader><leader>l :History<cr>
 
 
 " noremap ,1 :1wincmd w<cr>
@@ -142,13 +143,19 @@ let g:which_key_map.a = {
 let g:which_key_map.b = { 
       \'name': '+buffers',
       \'b': 'buffers',
-      \'d': 'kill buffer',
       \'e': 'source buffer',
+      \'h': 'close hidden',
+      \'l': 'close nameless',
+      \'k': 'close current',
       \'K': 'kill buffer discard changed',
+      \'m': 'close menu',
       \'n': 'next-buffers',
+      \'o': 'close other',
       \'p': 'prev-buffers',
       \'r': 'list-reverse',
       \'s': 'save buffer',
+      \'t': 'buffer tags',
+      \'S': 'close select',
       \'u': 'undo close last buffer',
       \}
 
@@ -591,10 +598,10 @@ let g:which_key_map.x = {
 
 "" =============================== Z ==========================
 
+      " \'/': 'incsearch-f',
+      " \'?': 'incsearch-?',
 let g:which_key_map.z = { 
       \'name': '+search',
-      \'/': 'incsearch-f',
-      \'?': 'incsearch-?',
       \'z': 'incsearch-stay',
       \'f': {
         \'name': '+fuzzy',

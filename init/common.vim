@@ -33,9 +33,11 @@ filetype indent on
 set hidden
 imap jj <Esc>
 let mapleader=" "
+" enable italis in tmux
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 let &t_ut=''
+
 autocmd FileType qf setlocal nowrap
 
 " vim commentary for rego files.
@@ -235,7 +237,16 @@ nmap <leader>gD :Ghdiffsplit<cr>
 " nmap <Leader>' :pclose<CR>
 
 " vim-move mofifier key (default Alt)
-" let g:move_key_modifier = 'C'
+let g:move_key_modifier = 'tab'
+vmap <M-s> <Plug>MoveBlockDown
+vmap <M-w> <Plug>MoveBlockUp
+vmap <M-a> <Plug>MoveBlockLeft
+vmap <M-d> <Plug>MoveBlockRight
+
+nmap <M-s> <Plug>MoveLineDown
+nmap <M-w> <Plug>MoveLineUp
+nmap <M-a> <Plug>MoveCharLeft
+nmap <M-d> <Plug>MoveCharRight
 
 " save all in various modes
 nmap <leader>qq :qa<cr>
@@ -302,9 +313,9 @@ augroup vimrc-incsearch-highlight
 augroup END
 
 " incserach-easymotion
-map z/ <Plug>(incsearch-easymotion-/)
-map z? <Plug>(incsearch-easymotion-?)
-map zg/ <Plug>(incsearch-easymotion-stay)
+" map z/ <Plug>(incsearch-easymotion-/)
+" map z? <Plug>(incsearch-easymotion-?)
+" map zg/ <Plug>(incsearch-easymotion-stay)
 
 function! s:noregexp(pattern) abort
   return '\V' . escape(a:pattern, '\')
@@ -314,25 +325,25 @@ function! s:config() abort
   return {'converters': [function('s:noregexp')]}
 endfunction
 
-noremap <silent><expr> <space>/ incsearch#go(<SID>config())
-map z/ <Plug>(incsearch-fuzzy-/)
-map z? <Plug>(incsearch-fuzzy-?)
-map z<space> <Plug>(incsearch-fuzzy-stay)
+" noremap <silent><expr> <space>/ incsearch#go(<SID>config())
+" map z/ <Plug>(incsearch-fuzzy-/)
+" map z? <Plug>(incsearch-fuzzy-?)
+" map z<space> <Plug>(incsearch-fuzzy-stay)
 
-map <leader>z/ <Plug>(incsearch-forward)
-map <leader>z? <Plug>(incsearch-backward)
-map <leader>zz <Plug>(incsearch-stay)
-map <leader>zf/ <Plug>(incsearch-fuzzy-/)
-map <leader>zf? <Plug>(incsearch-fuzzy-?)
-map <leader>zff <Plug>(incsearch-fuzzy-stay)
+" map <leader>z/ <Plug>(incsearch-forward)
+" map <leader>z? <Plug>(incsearch-backward)
+" map <leader>zz <Plug>(incsearch-stay)
+" map <leader>zf/ <Plug>(incsearch-fuzzy-/)
+" map <leader>zf? <Plug>(incsearch-fuzzy-?)
+" map <leader>zff <Plug>(incsearch-fuzzy-stay)
 
-map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
-map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
-map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
+" map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
+" map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
+" map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
 
-map <leader>zm/ <Plug>(incsearch-easymotion-/)
-map <leader>zm? <Plug>(incsearch-easymotion-?)
-map <leader>zmm <Plug>(incsearch-easymotion-stay)
+" map <leader>zm/ <Plug>(incsearch-easymotion-/)
+" map <leader>zm? <Plug>(incsearch-easymotion-?)
+" map <leader>zmm <Plug>(incsearch-easymotion-stay)
 
 " " incsearch.vim x fuzzy x vim-easymotion
 " function! s:config_easyfuzzymotion(...) abort
@@ -378,18 +389,18 @@ nnoremap <Leader>xo i<cr><Esc>
 " vnoremap zo <c-w>=
 
 " INCSEARCH
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" map /  <Plug>(incsearch-forward)
+" map ?  <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
 " :h g:incsearch#auto_nohlsearch
 set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+" let g:incsearch#auto_nohlsearch = 1
+" map n  <Plug>(incsearch-nohl-n)
+" map N  <Plug>(incsearch-nohl-N)
+" map *  <Plug>(incsearch-nohl-*)
+" map #  <Plug>(incsearch-nohl-#)
+" map g* <Plug>(incsearch-nohl-g*)
+" map g# <Plug>(incsearch-nohl-g#)
 
 
 
