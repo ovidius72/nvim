@@ -129,6 +129,10 @@ augroup Smartf
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
 augroup end
 
+" augroup ShowDiagnostic
+"   autocmd User CocStatusChange CocDiagnostic
+" augroup end
+
 " augroup BufEnter coc-diagnostic
 " {{ coc snippets
 " Use <C-l> for trigger snippet expand.
@@ -362,6 +366,23 @@ augroup mygroup
  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+" Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+
+" NeoVim-only mapping for visual mode scroll
+" Useful on signatureHelp after jump placeholder of snippet expansion
+if has('nvim')
+  vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
+  vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
+endif
+
+
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 vmap <leader>cv  <Plug>(coc-codeaction-selected)
 nmap <leader>cv  <Plug>(coc-codeaction-selected)
@@ -414,7 +435,7 @@ nnoremap <silent><nowait> <space>cll :CocList<cr>
 " Show all diagnostics
 nnoremap <silent><nowait>  <space>cld  :<C-u>CocList diagnostics<cr>
 " show coc actions
-nnoremap <silent><nowait>  <space>cla  :<C-u>CocList actions<cr>
+" nnoremap <silent><nowait>  <space>cla  :<C-u>CocList actions<cr>
 " Manage extensions
 nnoremap <silent><nowait>  <space>cle  :<C-u>CocList extensions<cr>
 " Show commands
