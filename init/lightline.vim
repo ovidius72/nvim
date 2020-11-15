@@ -136,14 +136,11 @@ let g:lightline = {
         \ 'buffers': 1 
       \},
       \ 'component_function': {
-      \   'method': 'NearestMethodOrFunction',
       \   'cocstatus': 'LightLineCoc',
       \   'gitbranch': 'LightlineFugitive',
-      \   'currentfunction': 'CocCurrentFunction',
       \   'MyFiletype': 'MyFiletype',
       \   'gitgutter': 'LightLineGitGutter',
       \   'fileformat': 'MyFileformat',
-      \   'blame': 'LightLineGitBlame',
       \   'winnr': 'GetWinNumber',
       \   'fileReadMode': 'GetFileReadOnly',
       \   'modified': 'GetModified',
@@ -173,6 +170,9 @@ let g:lightline = {
         \ }
   \ }
 
+      " \   'currentfunction': 'CocCurrentFunction',
+      " \   'method': 'NearestMethodOrFunction',
+      " \   'blame': 'LightLineGitBlame',
 " let g:lightline.separator = {
 " 	\   'left': '', 'right': ''
 "  \}
@@ -254,7 +254,7 @@ function! CocGitStatus() abort
   let blame = get(b:, 'coc_git_blame', '') 
   let fullStr = empty(bg) ? "" : " " . bg . ' ' . blame
   let minStr = empty(bg) ? "" : " " . bg . ' '
-  return winwidth(0) > 120 ? fullStr : minStr
+  return winwidth(0) > 500 ? fullStr : minStr
 endfunction
 
 function! LightlineCocFixes() abort
@@ -262,7 +262,8 @@ function! LightlineCocFixes() abort
   return b:coc_line_fixes > 0 ? printf('%d ', b:coc_line_fixes) : ''
 endfunction
 
-autocmd User CocStatusChange,CocDiagnosticChange,CocCurrentFunction call lightline#update()
+" autocmd BufWritePost * call lightline#update()
+" autocmd User CocDiagnosticChange call lightline#update()
 " " Diagnostic's feedback {{{
 " function! CocUpdateQuickFixes(error, actions) abort
 "   let coc_quickfixes = {}

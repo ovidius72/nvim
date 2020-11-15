@@ -20,15 +20,17 @@ Plug 'junegunn/fzf.vim'
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'kristijanhusak/defx-icons'
-" Plug 'antoinemadec/coc-fzf'
-" Plug 'haya14busa/incsearch.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'antoinemadec/coc-fzf'
+Plug 'haya14busa/incsearch.vim'
+" Plug 'easymotion/vim-easymotion'
 " Plug 'haya14busa/incsearch-easymotion.vim'
-" Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'liuchengxu/vim-which-key'
-" Plug 'rbgrouleff/bclose.vim'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'pechorin/any-jump.vim'
@@ -52,7 +54,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
 " Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
 " Plug 'Lenovsky/nuake'
 Plug 'lambdalisue/fern.vim'
@@ -62,13 +64,14 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mattn/emmet-vim'
-Plug 'rhysd/clever-f.vim'
+" Plug 'rhysd/clever-f.vim'
 
 
 " Plug 'hardcoreplayers/dashboard-nvim'
 " Plug 'mcchrish/nnn.vim'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-" Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'romgrk/barbar.nvim'
 " Plug 'kyazdani42/nvim-tree.lua'
 
 "
@@ -80,7 +83,6 @@ Plug 'rhysd/clever-f.vim'
 " Plug 'dahu/vim-fanfingtastic'
 " Plug 't9md/vim-smalls'
 " Plug 'markonm/traces.vim'
-" Plug 'easymotion/vim-easymotion'
 " Plug 'justinmk/vim-sneak'
 " Plug 'jacks0n/Drupal-Hook-Generator.vim', { 'for': 'php' }
 
@@ -132,13 +134,13 @@ call plug#end()
 
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
-" let g:cursorhold_updatetime = 100
+let g:cursorhold_updatetime = 200
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
 source ~/.config/nvim/init/colors.vim
-" source ~/.config/nvim/init/vista.vim
+source ~/.config/nvim/init/vista.vim
 " source ~/.config/nvim/init/ale.vim
 source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/bufsurf.vim
@@ -153,8 +155,9 @@ source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
-" source ~/.config/nvim/init/quick-scope.vim
+source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
+source ~/.config/nvim/init/barbar.vim
 " source ~/.config/nvim/init/nnn.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
 runtime macros/sandwich/keymap/surround.vim

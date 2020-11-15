@@ -9,11 +9,14 @@ set timeoutlen=600
 " autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+"Bclose
+let g:blose_no_plugin_maps=1
 
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 
 let g:which_key_disable_default_offset=1
 let g:which_key_use_floating_win=1
+nnoremap <leader>bk :Bclose<CR>
 
 hi WhichKey           guibg=#1b192c guifg=#95ffa4
 hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
@@ -163,7 +166,7 @@ let g:which_key_map.b = {
 "" =============================== C ==========================
 let g:which_key_map.c = { 
       \ 'name': '+coc',
-      \ 'a': 'code-action',
+      \ 'a': 'Code Action',
       \ 'b':{ 
         \'name': '+coc-bookmarks',
         \'l': 'list',
@@ -177,8 +180,9 @@ let g:which_key_map.c = {
         \'name': '+coc-diagnostic',
         \'i': 'diagnostic info',
       \},
+      \ 'e': 'Hide Float',
       \ 'f': 'fix',
-      \ 'F': 'fix-selected',
+      \ 'F': 'Fix Selected',
       \ 'g': {
         \ 'name': '+coc-git',
         \ 'c' : 'commits',
@@ -191,13 +195,13 @@ let g:which_key_map.c = {
         \},
       \ 'h' : [':CocInfo','CocInfo'],
       \ 'i' : 'Actions Menu',
+      \ 'j' : 'Jump Float',
       \ 'k' : 'Generete JSDoc',
       \ 'l': {
           \'name': '+coc-list',
-          \'l': '+Lists',
-          \'c': '+Commands',
-          \'e': '+Extensions',
-          \'a': 'actions',
+          \'l': 'Lists',
+          \'c': 'Commands',
+          \'e': 'Extensions',
           \'d': 'diagnostic',
           \'o': 'outline',
           \'n': 'next',
@@ -205,19 +209,22 @@ let g:which_key_map.c = {
           \'s': 'symbols',
           \'r': 'resume',
         \},
-        \ 'r': 'code-rename',
+        \ 'r': 'Code Rename',
         \ 's': {
           \'name': '+session',
           \'s': 'save',
           \'l': 'load',
         \},
+      \ 'L': 'CodeLens Actions',
+      \ 'o': 'CodeAction Line',
+      \ 'O': 'Open Link',
       \ 'p': 'projects',
       \ 't': 'Toggle Explorer',
       \ 'u': 'Coc Update',
-      \ 'v': 'code-action-selected',
+      \ 'v': 'Code Action Selected',
       \ 'x': 'Open Explorer',
       \ 'y': 'yanks',
-      \ 'w': 'grep-word',
+      \ 'w': 'Grep Word',
       \ 'z': 'Coc Restart',
       \}
 
@@ -273,6 +280,7 @@ let g:which_key_map.f = {
       \ 'i'   : 'Coc Find Symbol',
       \ 'o'   : 'git files',
       \ 'r'   : 'file history',
+      \ 'R'   : [':e!', 'file reload'],
       \ 's'   : 'save buffers',
       \ 'g'   : 'git files status',
       \ ';'   : 'command history',
@@ -598,10 +606,11 @@ let g:which_key_map.x = {
 
 "" =============================== Z ==========================
 
-      " \'/': 'incsearch-f',
-      " \'?': 'incsearch-?',
+
 let g:which_key_map.z = { 
       \'name': '+search',
+      \'/': 'incsearch-f',
+      \'?': 'incsearch-?',
       \'z': 'incsearch-stay',
       \'f': {
         \'name': '+fuzzy',
@@ -610,12 +619,6 @@ let g:which_key_map.z = {
         \'f': 'incsearch-fuzzy-stay',
       \},
       \'i': [':set noignorecase! | echo "Changed ignorecase"', 'toggle ignorecase'],
-      \'m': {
-        \'name': '+motion',
-        \'/': 'incsearch-easymotion-/',
-        \'?': 'incsearch-easymotion-?',
-        \'m': 'incsearch-easymotion-stay',
-      \},
       \'s': {
         \'name': '+spell',
         \'/': 'spell-/',
@@ -625,3 +628,9 @@ let g:which_key_map.z = {
     \}
 
 
+      " \'m': {
+      "   \'name': '+motion',
+      "   \'/': 'incsearch-easymotion-/',
+      "   \'?': 'incsearch-easymotion-?',
+      "   \'m': 'incsearch-easymotion-stay',
+      " \},

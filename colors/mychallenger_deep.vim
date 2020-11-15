@@ -44,6 +44,8 @@ let s:light_gray    = { "gui": "#B2B2B2", "cterm": "249", "cterm16" : "249" }
 let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
 
 " flat colors:
+let s:steal           = { "gui": "#464f7f", "cterm": "120", "cterm16": "2"}
+let s:steal2          = { "gui": "#2b283a", "cterm": "120", "cterm16": "2"}
 let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt_medium = { "gui": "#141228", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "0"}
@@ -113,6 +115,13 @@ function! s:h(group, style)
     \ "ctermbg=" . l:ctermbg
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
+
+call s:h("BufferCurrent",        {"bg": s:bg, "fg": s:dark_cyan, "gui": 'bold'})
+call s:h("BufferCurrentMod",     {"bg": s:bg, "fg": s:red, "gui": 'bold'})
+call s:h("BufferVisible",        {"bg": s:bg, "fg": s:light_gray})
+call s:h("BufferVisibleSign",    {"bg": s:bg, "fg": s:light_gray})
+call s:h("BufferVisibleTarget",  {"bg": s:bg, "fg": s:light_gray})
+call s:h("BufferInactive",       {"bg": s:bg, "fg": s:steal, "gui": 'bold'})
 
 " common groups ================================================================
 " (see `:h w18`)
@@ -225,10 +234,10 @@ call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_dark})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_dark})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_dark})
 call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
-call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_dark})
+call s:h("TabLineFill",   {"fg": s:norm, "bg": s:asphalt})
 call s:h("CursorColumn",  {"bg": s:subtle_black, "fg": s:white})
 " call s:h("CursorColumn",  {"bg": s:subtle_black, "fg": s:white})
-call s:h("CursorLine",    {"bg": s:asphalt_medium})
+call s:h("CursorLine",    {"bg": s:steal2})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
 if g:mychallenger_deep_underlined_cursor_line == 1

@@ -67,6 +67,7 @@ nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
 " tnoremap jj <C-\><C-n> 
 
+
 "Enable Minimap
 let g:minimap_auto_start = 0
 
@@ -237,16 +238,16 @@ nmap <leader>gD :Ghdiffsplit<cr>
 " nmap <Leader>' :pclose<CR>
 
 " vim-move mofifier key (default Alt)
-let g:move_key_modifier = 'tab'
-vmap <M-s> <Plug>MoveBlockDown
-vmap <M-w> <Plug>MoveBlockUp
-vmap <M-a> <Plug>MoveBlockLeft
-vmap <M-d> <Plug>MoveBlockRight
+" let g:move_key_modifier = 'tab'
+" vmap <M-s> <Plug>MoveBlockDown
+" vmap <M-w> <Plug>MoveBlockUp
+" vmap <M-a> <Plug>MoveBlockLeft
+" vmap <M-d> <Plug>MoveBlockRight
 
-nmap <M-s> <Plug>MoveLineDown
-nmap <M-w> <Plug>MoveLineUp
-nmap <M-a> <Plug>MoveCharLeft
-nmap <M-d> <Plug>MoveCharRight
+" nmap <M-s> <Plug>MoveLineDown
+" nmap <M-w> <Plug>MoveLineUp
+" nmap <M-a> <Plug>MoveCharLeft
+" nmap <M-d> <Plug>MoveCharRight
 
 " save all in various modes
 nmap <leader>qq :qa<cr>
@@ -326,24 +327,24 @@ function! s:config() abort
 endfunction
 
 " noremap <silent><expr> <space>/ incsearch#go(<SID>config())
-" map z/ <Plug>(incsearch-fuzzy-/)
-" map z? <Plug>(incsearch-fuzzy-?)
-" map z<space> <Plug>(incsearch-fuzzy-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map z<space> <Plug>(incsearch-fuzzy-stay)
 
-" map <leader>z/ <Plug>(incsearch-forward)
-" map <leader>z? <Plug>(incsearch-backward)
-" map <leader>zz <Plug>(incsearch-stay)
-" map <leader>zf/ <Plug>(incsearch-fuzzy-/)
-" map <leader>zf? <Plug>(incsearch-fuzzy-?)
-" map <leader>zff <Plug>(incsearch-fuzzy-stay)
+map <leader>z/ <Plug>(incsearch-forward)
+map <leader>z? <Plug>(incsearch-backward)
+map <leader>zz <Plug>(incsearch-stay)
+map <leader>zf/ <Plug>(incsearch-fuzzy-/)
+map <leader>zf? <Plug>(incsearch-fuzzy-?)
+map <leader>zff <Plug>(incsearch-fuzzy-stay)
 
-" map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
-" map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
-" map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
+map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
+map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
+map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
 
-" map <leader>zm/ <Plug>(incsearch-easymotion-/)
-" map <leader>zm? <Plug>(incsearch-easymotion-?)
-" map <leader>zmm <Plug>(incsearch-easymotion-stay)
+map <leader>zm/ <Plug>(incsearch-easymotion-/)
+map <leader>zm? <Plug>(incsearch-easymotion-?)
+map <leader>zmm <Plug>(incsearch-easymotion-stay)
 
 " " incsearch.vim x fuzzy x vim-easymotion
 " function! s:config_easyfuzzymotion(...) abort
