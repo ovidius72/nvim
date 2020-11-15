@@ -5,7 +5,6 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-snippets',
       \ 'coc-yank',
-      \ 'coc-explorer',
       \ 'coc-docker',
       \ 'coc-sql',
       \ 'coc-highlight',
@@ -26,6 +25,7 @@ let g:coc_global_extensions = [
       \ 'coc-project',
       \ ]
 
+      " \ 'coc-explorer',
       " \ 'coc-import-cost',
       " \ 'coc-tslint',
       " \ 'coc-smartf',

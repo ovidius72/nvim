@@ -55,11 +55,11 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'unblevable/quick-scope'
 " Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
 " Plug 'Lenovsky/nuake'
-" Plug 'lambdalisue/fern.vim'
-" Plug 'lambdalisue/nerdfont.vim'
-" Plug 'lambdalisue/fern-git-status.vim'
-" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-" Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
 " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mattn/emmet-vim'
 Plug 'rhysd/clever-f.vim'
@@ -154,7 +154,7 @@ source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
 " source ~/.config/nvim/init/quick-scope.vim
-" source ~/.config/nvim/init/fern.vim
+source ~/.config/nvim/init/fern.vim
 " source ~/.config/nvim/init/nnn.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
 runtime macros/sandwich/keymap/surround.vim

@@ -64,6 +64,7 @@
   "git.virtualTextPrefix": " ",
   "diagnostic.virtualTextPrefix": "[  ] ",
   "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.messageDelay": 1000,
   "git.addGBlameToVirtualText": false,
   "signature.preferShownAbove": true,
   "signature.hideOnTextChange": true,
@@ -179,17 +180,6 @@
       },
       "initializationOptions": {
         "storagePath": "/tmp/intelephense"
-      }
-    },
-    "elmLS": {
-      "command": "elm-language-server",
-      "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
-      "initializationOptions": {
-        "elmPath": "elm",
-        "elmFormatPath": "elm-format",
-        "elmTestPath": "elm-test",
-        "elmAnalyseTrigger": "change"
       }
     }
   },
