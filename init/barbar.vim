@@ -1,6 +1,6 @@
 " Magic buffer-picking mode
 nnoremap <silent> <A-;> :BufferPick<CR>
-nnoremap <silent> <Tab><Tab> :BufferPick<CR>
+" nnoremap <silent> <Tab><Tab> :BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
 nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>

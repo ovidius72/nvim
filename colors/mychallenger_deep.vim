@@ -127,6 +127,8 @@ call s:h("BufferInactive",       {"bg": s:bg, "fg": s:steal, "gui": 'bold'})
 " (see `:h w18`)
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
+call s:h("NormalFloat",        {"bg": s:bg, "fg": s:norm})
+call s:h("NormalNC",        {"bg": s:bg, "fg": s:norm})
 call s:h("Cursor",        {"bg": s:blue, "fg": s:bg_dark})
 call s:h("Comment",       {"fg": s:medium_gray, "gui": "italic", "cterm": "italic"})
 
@@ -165,6 +167,7 @@ hi! link Typedef          Type
 
 call s:h("Special",       {"fg": s:cyan})
 hi! link SpecialChar      Special
+hi! link SpecialKey       Special
 hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special

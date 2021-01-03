@@ -27,3 +27,22 @@
 snippet import_react "Description" b
 import React from 'react';
 endsnippet
+
+snippet rfn "React Functional Component" b
+import React, {FC} from 'react';
+
+export type $1Props = {
+	$2
+}
+
+const $1:FC<$1Props> = ({
+}) => {
+	return ($0);
+}
+
+export {$1}
+endsnippet
+
+snippet obp "Generic Object Type"
+Record<string, unknown>
+endsnippet

@@ -1,5 +1,8 @@
 " vim-qick-scope
 let g:qs_lazy_highlight = 1
+
+" highlight QuickScopePrimary guifg='#afff6f' gui=underline ctermfg=155 cterm=underline
+" highlight QuickScopeSecondary guifg='#ffb378' gui=underline ctermfg=81 cterm=underline
 augroup qs_colors
   autocmd!
   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff6f' gui=underline ctermfg=155 cterm=underline

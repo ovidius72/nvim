@@ -20,7 +20,8 @@ Plug 'junegunn/fzf.vim'
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'kristijanhusak/defx-icons'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'voldikss/vim-floaterm'
 Plug 'antoinemadec/coc-fzf'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'easymotion/vim-easymotion'
@@ -54,7 +55,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 " Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
 " Plug 'Lenovsky/nuake'
 Plug 'lambdalisue/fern.vim'
@@ -63,15 +64,15 @@ Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 " Plug 'rhysd/clever-f.vim'
 
 
 " Plug 'hardcoreplayers/dashboard-nvim'
 " Plug 'mcchrish/nnn.vim'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'romgrk/barbar.nvim'
+" Plug 'kyazdani42/nvim-web-devicons' " for file icons
+" Plug 'romgrk/barbar.nvim'
 " Plug 'kyazdani42/nvim-tree.lua'
 
 "
@@ -155,9 +156,10 @@ source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
-source ~/.config/nvim/init/quick-scope.vim
+" source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
-source ~/.config/nvim/init/barbar.vim
+" source ~/.config/nvim/init/barbar.vim
 " source ~/.config/nvim/init/nnn.vim
+" source ~/.config/nvim/init/float-teminal.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
 runtime macros/sandwich/keymap/surround.vim

@@ -5,7 +5,6 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-snippets',
       \ 'coc-yank',
-      \ 'coc-explorer',
       \ 'coc-docker',
       \ 'coc-sql',
       \ 'coc-highlight',
@@ -21,11 +20,12 @@ let g:coc_global_extensions = [
       \ 'coc-sh',
       \ 'coc-gitignore',
       \ 'coc-docthis',
-      \ 'coc-rust-analyzer',
       \ 'coc-git',
       \ 'coc-project',
       \ ]
 
+      " \ 'coc-explorer'
+      " \ 'coc-rust-analyzer',
       " \ 'coc-import-cost',
       " \ 'coc-tslint',
       " \ 'coc-smartf',
@@ -221,42 +221,52 @@ noremap <leader>po :CocCommand explorer
       \ --toggle
       \ --sources=file+<cr>
 
-noremap <leader>ct :CocCommand explorer
-      \ --toggle
-      \ --sources=file+<cr>
+" noremap <leader>ct :CocCommand explorer
+"       \ --toggle
+"       \ --sources=file+<cr>
 
 noremap <leader>cx :CocCommand explorer
       \ --no-toggle
       \ --sources=file+<cr>
 
-" noremap <silent> <leader>cx :execute 'CocCommand explorer' .
-"       \ ' --no-toggle' .
-"       \ ' --sources=buffer+,file+' .
-"       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
+function! s:explorer_cur_dir()
+  let node_info = CocAction('runCommand', 'explorer.getNodeInfo', 0)
+  return fnamemodify(node_info['fullpath'], ':h')
+endfunction
 
-" noremap <silent> <leader>ct :execute 'CocCommand explorer' .
-"       \ ' --toggle' 
-"       \ ' --sources=buffer+,file+' .
-"       \ ' --file-columns=git:selection:clip:diagnosticError:diagnosticWarning:indent:icon:filename --reveal ' . expand('%:p')<CR>
-" coc-expolorer
-" nmap ge :CocCommand explorer
-"       \ --toggle
-"       \ --source=buffer+,file+
-"       \ --buffers-columns=selection,name,buffname,modified,bufnr
-"       \ --file-columns=icon,git,selection,clip,diagnosticError,diagnosticWarning,created,modified,accessed,indent,readonly,filename,size .<CR>
+function! s:exec_cur_dir(cmd)
+  let dir = s:explorer_cur_dir()
+  execute 'cd ' . dir
+  execute a:cmd
+endfunction
 
-" nmap gt :CocCommand explorer 
-"       \ --reveal
-"       \ --no-toggle
-"       \ --source=buffer+,file+
-"       \ --file-columns=git,selection,icon,clip,indent,filename,size<CR>
+function! s:init_explorer()
+  set winblend=10
 
-" coc-explorer
-" noremap <silent> <leader>x :execute 'CocCommand explorer' .
-" nmap ge :execute 'CocCommand explorer' .
-"       \ ' --toggle' .
-"       \ ' --sources=buffer+,file+' .
-"       \ ' --file-columns=git,selection,icon,clip,indent,filename --reveal ' . expand('%:p')<CR>
+  " Integration with other plugins
+
+  " CocList
+  nmap <buffer> <Leader>cg :call <SID>exec_cur_dir('CocList -I grep')<CR>
+  nmap <buffer> <Leader>cG :call <SID>exec_cur_dir('CocList -I grep -regex')<CR>
+  nmap <buffer> <C-p> :call <SID>exec_cur_dir('CocList files')<CR>
+
+  " vim-floaterm
+  nmap <buffer> <Leader>ct :call <SID>exec_cur_dir('FloatermNew --wintype=floating')<CR>
+endfunction
+
+function! s:enter_explorer()
+  if &filetype == 'coc-explorer'
+    " statusline
+    setl statusline=coc-explorer
+  endif
+endfunction
+
+augroup CocExplorerCustom
+  autocmd!
+  autocmd BufEnter * call <SID>enter_explorer()
+  autocmd FileType coc-explorer call <SID>init_explorer()
+augroup END
+
 
 "coc-marks
 nmap <Leader>cbb :CocList marks<CR>

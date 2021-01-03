@@ -67,15 +67,16 @@
   "signature.hideOnTextChange": false,
   "signature.triggerSignatureWait": 300,
   "signature.target": "echo",
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextPrefix": "[  ] ",
+  "diagnostic.virtualText": false,
+  "diagnostic.virtualTextPrefix": "[ ] ",
   "diagnostic.virtualTextCurrentLineOnly": true,
   "diagnostic.enable": true,
   "diagnostic.infoSign": " ",
   "diagnostic.errorSign": " ",
   "diagnostic.warningSign": " ",
   "diagnostic.hintSign": "",
-  "diagnostic.messageTarget": "echo",
+  "diagnostic.messageTarget": "float",
+  "diagnostic.messageDelay": 600,
   "diagnostic.format": " : [%source%code] [%severity] %message",
   "diagnostic.checkCurrentLine": true,
   "diagnostic.enableHighlightLineNumber": true,
@@ -100,15 +101,15 @@
   "explorer.buffer.showHiddenBuffers": false,
   "explorer.icon.enableNerdfont": true,
   "explorer.openAction.select.filterFloatWindows": false,
-  "explorer.file.column.git.icon.added": "✚",
-  "explorer.file.column.git.icon.untracked": "◎",
-  "explorer.file.column.git.icon.modified": "✐",
+  "explorer.git.icon.status.added": "✚",
+  "explorer.git.icon.status.untracked": "◎",
+  "explorer.git.icon.status.modified": "✐",
   "explorer.previewAction.onHover": false,
-  "explorer.file.column.git.icon.deleted": "🗷",
-  "explorer.file.column.git.icon.mixed": "⁉",
-  "explorer.file.column.git.icon.copied": "➜",
-  "explorer.file.column.git.icon.renamed": "®",
-  "explorer.file.column.git.icon.unmerged": "🗈",
+  "explorer.git.icon.status.deleted": "🗷",
+  "explorer.git.icon.status.mixed": "⁉",
+  "explorer.git.icon.status.copied": "➜",
+  "explorer.git.icon.status.renamed": "®",
+  "explorer.git.icon.status.unmerged": "🗈",
   "explorer.file.showHiddenFiles": true,
   "snippets.shortcut": "Snip",
   "coc.source.file.shortcut": "File",
@@ -153,38 +154,38 @@
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
-    },
-    "intelephense": {
-      "command": "intelephense",
-      "args": ["--stdio"],
-      "filetypes": ["php", ".module", ".install", ".inc", "inc", "module"],
-      "progressOnInitialization": true,
-      "settings": {
-        "intelephense": {
-          "files": {
-            "maxSize": 3000000,
-            "associations": [
-              "*.php",
-              "*.phtml",
-              "*.inc",
-              "*.module",
-              "*.install",
-              "*.theme",
-              ".engine",
-              ".profile",
-              ".info",
-              ".test"
-            ]
-          }
-        }
-      },
-      "initializationOptions": {
-        "storagePath": "/tmp/intelephense"
-      }
     }
-  },
-  "python.autoComplete.extraPaths": [
-    "${env:SPARK_HOME}/python",
-    "${env:SPARK_HOME}/python/pyspark"
-  ]
+//    "intelephense": {
+//      "command": "intelephense",
+//      "args": ["--stdio"],
+//      "filetypes": ["php", ".module", ".install", ".inc", "inc", "module"],
+//      "progressOnInitialization": true,
+//      "settings": {
+//        "intelephense": {
+//          "files": {
+//            "maxSize": 3000000,
+//            "associations": [
+//              "*.php",
+//              "*.phtml",
+//              "*.inc",
+//              "*.module",
+//              "*.install",
+//              "*.theme",
+//              ".engine",
+//              ".profile",
+//              ".info",
+//              ".test"
+//            ]
+//          }
+//        }
+//      },
+//      "initializationOptions": {
+//        "storagePath": "/tmp/intelephense"
+//      }
+//    }
+  }
+//  "python.autoComplete.extraPaths": [
+//    "${env:SPARK_HOME}/python",
+//    "${env:SPARK_HOME}/python/pyspark"
+//  ]
 }
