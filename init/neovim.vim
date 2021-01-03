@@ -16,6 +16,7 @@ call plug#begin()
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rhysd/git-messenger.vim'
 " Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -38,6 +39,8 @@ Plug 'pechorin/any-jump.vim'
 " Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'pineapplegiant/spaceduck'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 " Plug 'w0rp/ale'
@@ -89,7 +92,6 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
-" Plug 'franbach/miramare'
 " Plug 'morhetz/gruvbox'
 " Plug 'co1ncidence/mountaineer.vim'
 " Plug 'christoomey/vim-tmux-navigator'

@@ -34,8 +34,8 @@
     "default": "\uf29c"
   },
   "project.enable": true,
-  "project.rootPatterns": [".git", "node_modules"],
-  "coc.preferences.rootPatterns": [".git", "node_modules"],
+  "project.rootPatterns": [".git"],
+  "coc.preferences.rootPatterns": [".git"],
   "list.source.symbols.excludes": [".git", "node_modules", "dist", "build"],
   "list.source.files.excludePatterns": ["node_modules"],
   "tailwindCSS.cssLanguages": [
@@ -48,9 +48,6 @@
     "vue"
   ],
   "git.addGBlameToBufferVar": true,
-  "smartf.timeout": 4000,
-  "smartf.wordJump": false,
-  "smartf.jumpOnTrigger": false,
   "coc.source.around.priority": 1,
   "emmet.priority": 3,
   "coc.source.buffer.priority": 0,
@@ -65,7 +62,7 @@
   "signature.enable": true,
   "signature.preferShownAbove": true,
   "signature.hideOnTextChange": false,
-  "signature.triggerSignatureWait": 300,
+  "signature.triggerSignatureWait": 200,
   "signature.target": "echo",
   "diagnostic.virtualText": false,
   "diagnostic.virtualTextPrefix": "[ ] ",

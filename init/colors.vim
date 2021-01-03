@@ -98,7 +98,8 @@ hi WhichKeyFloating   guibg=#1b192c
 "     \}
 " " let g:airline_theme = 'one'
 " colorscheme PaperColor
-" set background=light
+" set background=dark
+" let g:lightline.colorscheme = 'PaperColor_dark'
 " let g:airline_theme = 'papercolor'
 " let g:indentLine_color_gui = '#DFE0DF'
 " let g:lightline.colorscheme = 'PaperColor_light'
@@ -331,3 +332,14 @@ hi WhichKeyFloating   guibg=#1b192c
 highlight Comment cterm=italic
 " hi link jsxCloseString Label
 " hi link jsxOpenPunct jsxPunct
+" colorscheme night-owl
+" let g:lightline = { 'colorscheme': 'nightowl' }
+
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
+
+" colorscheme spaceduck
+" let g:lightline = { 'colorscheme': 'spaceduck' }

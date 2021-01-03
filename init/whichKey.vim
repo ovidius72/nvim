@@ -146,6 +146,7 @@ let g:which_key_map.a = {
 let g:which_key_map.b = { 
       \'name': '+buffers',
       \'b': 'buffers',
+      \'c': 'select and close',
       \'e': 'source buffer',
       \'h': 'close hidden',
       \'l': 'close nameless',

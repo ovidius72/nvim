@@ -76,6 +76,23 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " xmap <leader>Hm <plug>(fzf-maps-x)
 " omap <leader>Hm <plug>(fzf-maps-o)
 
+" select and close buffers.
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
@@ -137,6 +154,7 @@ nmap <Leader>pa :Ag<CR>
 "
 " Buffers keybinding
 nmap <Leader>bb :Buffers<CR>
+nmap <Leader>bc :BD<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
 " nmap <Leader>bd :bp<CR>:bd#<CR>
