@@ -37,7 +37,6 @@
 " Challenge Deep
 colorscheme mychallenger_deep
 let g:lightline.colorscheme = 'mychallenger_deep'
-" let g:airline_theme = 'challenger_deep'
 let g:mychallenger_deep_terminal_italics = 1
 let g:mychallenger_deep_underlined_cursor_line = 0 
 hi CocFloating guibg=#292c3f ctermbg=60
@@ -47,6 +46,9 @@ hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
 hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
 hi WhichKeyFloating   guibg=#1b192c
 
+" Toast
+" set background=light
+" colorscheme toast
 " Photon
 " colorscheme photon
 " let g:lightline.colorscheme = 'icebergDark'
