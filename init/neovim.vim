@@ -58,7 +58,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
 " Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
 " Plug 'Lenovsky/nuake'
 Plug 'lambdalisue/fern.vim'
@@ -149,7 +149,6 @@ source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/bufsurf.vim
 source ~/.config/nvim/init/close-buffers.vim
 " source ~/.config/nvim/init/clap.vim
-source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/echodoc.vim
 " source ~/.config/nvim/init/anyjump.vim
@@ -158,10 +157,11 @@ source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
-" source ~/.config/nvim/init/quick-scope.vim
+source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
 " source ~/.config/nvim/init/barbar.vim
 " source ~/.config/nvim/init/nnn.vim
 " source ~/.config/nvim/init/float-teminal.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
+source ~/.config/nvim/init/common.vim
 runtime macros/sandwich/keymap/surround.vim
