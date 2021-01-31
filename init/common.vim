@@ -239,15 +239,16 @@ nmap <leader>gD :Ghdiffsplit<cr>
 
 " vim-move mofifier key (default Alt)
 " let g:move_key_modifier = 'tab'
-" vmap <M-s> <Plug>MoveBlockDown
-" vmap <M-w> <Plug>MoveBlockUp
-" vmap <M-a> <Plug>MoveBlockLeft
-" vmap <M-d> <Plug>MoveBlockRight
+let g:move_map_keys=0
+vmap <M-j>  <Plug>MoveBlockDown
+vmap <M-k> <Plug>MoveBlockUp
+vmap <M-h> <Plug>MoveBlockLeft
+vmap <M-l> <Plug>MoveBlockRight
 
-" nmap <M-s> <Plug>MoveLineDown
-" nmap <M-w> <Plug>MoveLineUp
-" nmap <M-a> <Plug>MoveCharLeft
-" nmap <M-d> <Plug>MoveCharRight
+nmap <M-j> <Plug>MoveLineDown
+nmap <M-k> <Plug>MoveLineUp
+nmap <M-h> <Plug>MoveCharLeft
+nmap <M-l> <Plug>MoveCharRight
 
 " save all in various modes
 nmap <leader>qq :qa<cr>
