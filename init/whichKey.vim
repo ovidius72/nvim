@@ -308,12 +308,7 @@ let g:which_key_map.g = {
       \ 'D': 'git VDiff',
       \ 'd': 'git HDiff',
       \ 'f': 'fzf git Files',
-      \ 'g': { 
-      \   'name': '+actions',
-      \   'n': 'next hunk',
-      \   'p': 'prev hunk',
-      \   'u': 'undo hunk',
-      \ },
+      \ 'g': 'LazyGit',
       \ 'l': 'git log',
       \ 'F': 'fzf git files preview',
       \ 'p': 'push',
@@ -482,10 +477,16 @@ let g:which_key_map.q = {
 
 "" ============================== R ===========================
 let g:which_key_map.r = {
-      \'name': 'AnyJump',
-      \'r': 'any jump',
-      \'b': 'any jump back',
-      \'l': 'any jump last',
+      \'name': 'Jump',
+      \'a': 'AerojumpFromCursorBolt',
+      \'d': 'AerojumpDefault',
+      \'m': 'AerojumpMilk',
+      \'s': 'AerojumpSpace',
+      \'t': 'AerojumpBolt',
+      \'r': 'AnyJump',
+      \'v': 'AnyJumpVisual',
+      \'b': 'AnyJumpBack',
+      \'l': 'AnyJumpLastResults',
       \}
 
 

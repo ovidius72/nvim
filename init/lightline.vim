@@ -10,13 +10,14 @@ function! LightLineCoc()
         return ''
     endif 
     " return trim(coc#status())
-    return trim(g:coc_status)
+    " return trim(g:coc_status)
+    return winwidth(0) > 120 ? trim(g:coc_status) : ''
 endfunction
 
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
   " return blame
-  return winwidth(0) > 120 ? blame : ''
+  return winwidth(0) > 150 ? blame : ''
 endfunction
 
 " let s:function_icon = s:font ? 'Ⓕ  ' : ''
@@ -57,7 +58,7 @@ function! FileName()
 endfunction
 
 function! IconFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : ' ') : ''
+  return (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : ' ')
 endfunction
 
 function! MyFiletype()
@@ -66,7 +67,7 @@ function! MyFiletype()
 endfunction
 
 function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  return winwidth(0) > 80 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
  
 function! GetFileReadOnly() abort
@@ -189,7 +190,7 @@ let g:lightline.tabline = {'left': [['buffers']], 'right': [] }
 function! LightlineFugitive()
   if exists('*FugitiveHead')
     let branch = FugitiveHead()
-    return branch !=# '' ? '  '. branch : ''
+    return winwidth(0) > 200 ? branch !=# '' ? '  '. branch : '' : ""
   endif
   return ''
 endfunction
@@ -211,7 +212,7 @@ endfunction
 function! LightLineGitGutter()
   if ! exists('*GitGutterGetHunkSummary')
         \ || ! get(g:, 'gitgutter_enabled', 0)
-        \ || winwidth('.') <= 90
+        \ || winwidth('.') <= 120
     " let stat = get(b:, 'coc_git_status')
     " let projStat = get(g:, 'coc_git_status')
     " let symbols = ['+','~','-']
@@ -226,12 +227,12 @@ function! LightLineGitGutter()
       call add(ret, symbols[i] . hunks[i])
     endif
   endfor
-  return  empty(ret) ? '' : ' ' . join(ret, ' ')
+  return winwidth(0) > 120 ? empty(ret) ? '' : ' ' . join(ret, ' ') : ""
 endfunction
 
 function! LightlineCocErrors() abort
   let s = s:lightline_coc_diagnostic('error', 'error')
-  return empty(s) ? '' : ' ' . s 
+  return winwidth(0) > 120 ? empty(s) ? '' : ' ' . s : ""
 endfunction
 
 function! LightlineCocWarnings() abort
@@ -254,12 +255,14 @@ function! CocGitStatus() abort
   let blame = get(b:, 'coc_git_blame', '') 
   let fullStr = empty(bg) ? "" : " " . bg . ' ' . blame
   let minStr = empty(bg) ? "" : " " . bg . ' '
-  return winwidth(0) > 500 ? fullStr : minStr
+  return winwidth(0) > 110 ? fullStr : ""
 endfunction
 
 function! LightlineCocFixes() abort
   let b:coc_line_fixes = get(get(b:, 'coc_quickfixes', {}), line('.'), 0)
-  return b:coc_line_fixes > 0 ? printf('%d ', b:coc_line_fixes) : ''
+  return winwidth(0) > 120 
+    ? b:coc_line_fixes > 0 ? printf('%d ', b:coc_line_fixes) : ''
+    : ""
 endfunction
 
 " autocmd BufWritePost * call lightline#update()
@@ -295,7 +298,7 @@ endfunction
 " \|  call CocActionAsync('quickfixes', function('CocUpdateQuickFixes'))
 
 function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  return winwidth(0) > 100 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
