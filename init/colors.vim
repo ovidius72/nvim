@@ -13,9 +13,20 @@
 " let g:lightline.colorscheme = 'dogrun'
 
 " XCodeDark
- " colorscheme xcodedark
- " set bg=dark
- " let g:lightline.colorscheme = 'xcodedark'
+" colorscheme xcodedarkhc
+" set bg=dark
+" let g:xcodedarkhc_green_comments = 1
+" let g:xcodedarkhc_emph_types = 0
+" let g:xcodedarkhc_emph_funcs = 1
+" let g:xcodedarkhc_emph_idents = 1
+" let g:xcodedarkhc_match_paren_style = 0
+" let g:xcodedarkhc_dim_punctuation = 1
+" let g:lightline.colorscheme = 'xcodedarkhc'
+" augroup vim-colors-xcode
+"     autocmd!
+" augroup END
+" autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
+" autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
 
 "Space vim dark colorscheme
 " colorscheme space-vim-dark
@@ -35,16 +46,16 @@
 " let g:challenger_deep_terminal_italics = 1
 
 " Challenge Deep
-colorscheme mychallenger_deep
-let g:lightline.colorscheme = 'mychallenger_deep'
-let g:mychallenger_deep_terminal_italics = 1
-let g:mychallenger_deep_underlined_cursor_line = 0 
-hi CocFloating guibg=#292c3f ctermbg=60
-hi WhichKey           guibg=#1b192c guifg=#95ffa4
-hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
-hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
-hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
-hi WhichKeyFloating   guibg=#1b192c
+" colorscheme mychallenger_deep
+" let g:lightline.colorscheme = 'mychallenger_deep'
+" let g:mychallenger_deep_terminal_italics = 1
+" let g:mychallenger_deep_underlined_cursor_line = 0 
+" hi CocFloating guibg=#292c3f ctermbg=60
+" hi WhichKey           guibg=#1b192c guifg=#95ffa4
+" hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
+" hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
+" hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
+" hi WhichKeyFloating   guibg=#1b192c
 
 " Toast
 " set background=light
@@ -200,11 +211,15 @@ hi WhichKeyFloating   guibg=#1b192c
 " hi jsObjectKey guifg=#56B6C2
 
 " OneHalf
-" colorscheme onehalflight
-" set background=light
+colorscheme onehalfdark
+set bg=dark
+let g:lightline.colorscheme = 'onehalfdark'
 " let g:airline_theme = 'onehalflight'
 
-" firewatch
+" Sonokai
+" colorscheme sonokai
+" let g:sonokai_enable_italics = 1
+" " firewatch
 " set background=light
 " let g:two_firewatch_italics=1
 " colo two-firewatch
@@ -311,6 +326,12 @@ hi WhichKeyFloating   guibg=#1b192c
 " let g:nord_underline = 1
 " MEH
 " colorscheme meh
+
+
+"lighthaus
+" colorscheme lighthaus
+" let g:lightline.colorscheme = 'lighthaus'
+" let g:lighthaus_vsplit_line_light = 1
 
 " augroup nord-theme-overrides
 "   autocmd!

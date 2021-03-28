@@ -18,6 +18,25 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+
+
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'jcypret/nord-vim-midnight'
+Plug 'lighthaus-theme/vim-lighthaus'
+Plug 'sonph/onehalf', { 'rpt': 'vim' }
+Plug 'sainnhe/sonokai'
+
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'arzg/vim-colors-xcode'
+Plug 'andymass/vim-matchup'
+
+
+
+
 " Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -52,6 +71,7 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-unimpaired'
 Plug 'dstein64/vim-win'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -67,7 +87,8 @@ Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'matze/vim-move'
-" Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'mattn/emmet-vim'
 " Plug 'rhysd/clever-f.vim'
 
@@ -118,9 +139,9 @@ Plug 'matze/vim-move'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'pangloss/vim-javascript'
 Plug 'sheerun/vim-polyglot'
+Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 " Plug 'evanleck/vim-svelte'
-" Plug 'leafgarland/typescript-vim'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'justinmk/vim-syntax-extra'
 " Plug 'terryma/vim-expand-region'
@@ -131,10 +152,22 @@ Plug 'ianks/vim-tsx'
 " Plug 'Yggdroot/indentLine'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'IMOKURI/line-number-interval.nvim'
-" Plug 'francoiscabrol/ranger.vim'
+Plug 'francoiscabrol/ranger.vim'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
+
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"     highlight = {
+"         enable = true,
+"     },
+"     incremental_selection = {
+"         enable = false,
+"     },
+"     ensure_installed = {'javascript', 'typescript', 'tsx'}
+" }
+" EOF
 
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
@@ -143,6 +176,7 @@ source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/whichKey.vim
 source ~/.config/nvim/init/lightline.vim
 source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
+source ~/.config/nvim/colors/autoload/lightline/onehalfdark.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vista.vim
 " source ~/.config/nvim/init/ale.vim
@@ -152,7 +186,9 @@ source ~/.config/nvim/init/close-buffers.vim
 " source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/vim-sandwich.vim
 source ~/.config/nvim/init/echodoc.vim
-" source ~/.config/nvim/init/anyjump.vim
+source ~/.config/nvim/init/anyjump.vim
+source ~/.config/nvim/init/aerojump.vim
+source ~/.config/nvim/init/lazygit.vim
 source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/coc.vim
@@ -160,9 +196,12 @@ source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
 source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
+source ~/.config/nvim/init/ranger.vim
 " source ~/.config/nvim/init/barbar.vim
 " source ~/.config/nvim/init/nnn.vim
 " source ~/.config/nvim/init/float-teminal.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
+source ~/.config/nvim/init/telescope.vim
+luafile ~/.config/nvim/init/telescope.lua
 source ~/.config/nvim/init/common.vim
 runtime macros/sandwich/keymap/surround.vim

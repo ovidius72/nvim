@@ -15,5 +15,9 @@
 "     set guifont=Courier_New:h11:cDEFAULT
 "   endif
 " endif
-source ~/.config/nvim/init/neovim.vim
+if exists('g:vscode')
+  source ~/.config/nvim/init-vscode.vim
+else
+  source ~/.config/nvim/init/neovim.vim
+endif
 " source ~/.config/nvim/init/veonim.vim

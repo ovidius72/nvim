@@ -116,6 +116,9 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
+call s:h("TelescopeSelection",   {"bg": s:bg,     "fg": s:dark_cyan, "gui": "bold"})
+call s:h("TelescopeMatching",    {"bg": s:yellow, "fg": s:dark_asphalt,    "gui": "bold"})
+
 call s:h("BufferCurrent",        {"bg": s:bg, "fg": s:dark_cyan, "gui": 'bold'})
 call s:h("BufferCurrentMod",     {"bg": s:bg, "fg": s:red, "gui": 'bold'})
 call s:h("BufferVisible",        {"bg": s:bg, "fg": s:light_gray})

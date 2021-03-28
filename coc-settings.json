@@ -6,6 +6,7 @@
   "tsserver.enable": true,
   "suggest.echodocSupport": true,
   "coc.source.file.priority": 0,
+  "coc-actions.showActionKind": true,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
@@ -38,15 +39,10 @@
   "coc.preferences.rootPatterns": [".git"],
   "list.source.symbols.excludes": [".git", "node_modules", "dist", "build"],
   "list.source.files.excludePatterns": ["node_modules"],
-  "tailwindCSS.cssLanguages": [
-    "css",
-    "less",
-    "postcss",
-    "sass",
-    "scss",
-    "stylus",
-    "vue"
-  ],
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "prettier.onlyUseLocalVersion": false,
+  "prettier.singleQuote": true,
   "git.addGBlameToBufferVar": true,
   "coc.source.around.priority": 1,
   "emmet.priority": 3,
@@ -64,9 +60,9 @@
   "signature.hideOnTextChange": false,
   "signature.triggerSignatureWait": 200,
   "signature.target": "echo",
-  "diagnostic.virtualText": false,
+  "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": "[ ] ",
-  "diagnostic.virtualTextCurrentLineOnly": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.enable": true,
   "diagnostic.infoSign": " ",
   "diagnostic.errorSign": " ",
@@ -85,7 +81,6 @@
   "yank.priority": 0,
   "yank.enableCompletion": false,
   "git.enableGlobalStatus": false,
-  "git.signOffset": 1,
   "git.enableGutters": true,
   "git.addedSign.text": "┃",
   "git.addedSign.hlGroup": "DiffAdd",
@@ -97,7 +92,6 @@
   "git.changeRemovedSign.text": "┃",
   "explorer.buffer.showHiddenBuffers": false,
   "explorer.icon.enableNerdfont": true,
-  "explorer.openAction.select.filterFloatWindows": false,
   "explorer.git.icon.status.added": "✚",
   "explorer.git.icon.status.untracked": "◎",
   "explorer.git.icon.status.modified": "✐",
@@ -151,38 +145,49 @@
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
+    },
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmPath": "elm", // optional
+        "elmFormatPath": "elm-format", // optional
+        "elmTestPath": "elm-test", // optional
+        "elmAnalyseTrigger": "change" // optional
+      }
     }
-//    "intelephense": {
-//      "command": "intelephense",
-//      "args": ["--stdio"],
-//      "filetypes": ["php", ".module", ".install", ".inc", "inc", "module"],
-//      "progressOnInitialization": true,
-//      "settings": {
-//        "intelephense": {
-//          "files": {
-//            "maxSize": 3000000,
-//            "associations": [
-//              "*.php",
-//              "*.phtml",
-//              "*.inc",
-//              "*.module",
-//              "*.install",
-//              "*.theme",
-//              ".engine",
-//              ".profile",
-//              ".info",
-//              ".test"
-//            ]
-//          }
-//        }
-//      },
-//      "initializationOptions": {
-//        "storagePath": "/tmp/intelephense"
-//      }
-//    }
+    //    "intelephense": {
+    //      "command": "intelephense",
+    //      "args": ["--stdio"],
+    //      "filetypes": ["php", ".module", ".install", ".inc", "inc", "module"],
+    //      "progressOnInitialization": true,
+    //      "settings": {
+    //        "intelephense": {
+    //          "files": {
+    //            "maxSize": 3000000,
+    //            "associations": [
+    //              "*.php",
+    //              "*.phtml",
+    //              "*.inc",
+    //              "*.module",
+    //              "*.install",
+    //              "*.theme",
+    //              ".engine",
+    //              ".profile",
+    //              ".info",
+    //              ".test"
+    //            ]
+    //          }
+    //        }
+    //      },
+    //      "initializationOptions": {
+    //        "storagePath": "/tmp/intelephense"
+    //      }
+    //    }
   }
-//  "python.autoComplete.extraPaths": [
-//    "${env:SPARK_HOME}/python",
-//    "${env:SPARK_HOME}/python/pyspark"
-//  ]
+  //  "python.autoComplete.extraPaths": [
+  //    "${env:SPARK_HOME}/python",
+  //    "${env:SPARK_HOME}/python/pyspark"
+  //  ]
 }
