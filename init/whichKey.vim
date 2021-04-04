@@ -16,13 +16,15 @@ let g:blose_no_plugin_maps=1
 let g:which_key_exit = [27, 7] 
 let g:which_key_disable_default_offset=1
 let g:which_key_use_floating_win=1
+let g:which_key_centered=0
 nnoremap <leader>bk :Bclose<CR>
 
-hi WhichKey           guibg=#1b192c guifg=#95ffa4
-hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
-hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
-hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
-hi WhichKeyFloating   guibg=#1b192c
+" hi WhichKey           guibg=#1b192c guifg=#95ffa4
+" hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
+" hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
+" hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
+" hi WhichKeyFloating   guibg=#1b192c
+hi WhichKeyFloating   guibg=#171717
 
 nnoremap <silent><leader>fs :silent wa<CR>
 nnoremap <silent><leader>bs :silent w<CR>
@@ -57,6 +59,7 @@ map <silent><leader>i :Files<cr>
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
+let g:which_key_map["S"] = 'Spectre'
 " let g:which_key_map["<space>"] = 'files'
 let g:which_key_map["'"] = 'close preview'
 " let g:which_key_map["SPC"] = 'Ace windows'
@@ -320,6 +323,9 @@ let g:which_key_map.g = {
 "" =============================== H ==========================
 let g:which_key_map.h = { 
       \'name': '+highlight',
+      \'c': 'Contex Toggle',
+      \'C': 'Context Update',
+      \'p': 'Context Peek',
       \'h': 'toggle-under-cursor',
       \'m': [':MinimapToggle', 'Minimap Toggle'],
       \'l': 'toggle-list-chars',
@@ -479,8 +485,10 @@ let g:which_key_map.q = {
 let g:which_key_map.r = {
       \'name': 'Jump',
       \'a': 'AerojumpFromCursorBolt',
+      \'c': 'Ranger Current Dir',
       \'d': 'AerojumpDefault',
       \'m': 'AerojumpMilk',
+      \'g': 'Ranger',
       \'s': 'AerojumpSpace',
       \'t': 'AerojumpBolt',
       \'r': 'AnyJump',
@@ -499,6 +507,8 @@ let g:which_key_map.s = {
       \'F': 'Rg Fuzzy full-scree ',
       \'l': 'loaded buffer lines',
       \'h': 'search history',
+      \'j': 'Spectre Word',
+      \'p': 'Specter File',
       \'c': 'command history',
       \'g': 'git grep',
       \'s': 'current buffer lines',

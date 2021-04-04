@@ -12,16 +12,24 @@
 " set bg=dark
 " let g:lightline.colorscheme = 'dogrun'
 
+" EQUINUSOCIO
+source ~/.config/nvim/plugged/equinusocio-material.vim/autoload/equinusocio_material.vim
+colorscheme equinusocio_material
+let g:equinusocio_material_style = 'darker'
+" let g:lightline.colorscheme = 'equinusocio_material'
+" let g:lightline.colorscheme = 'mychallenger_deep'
+
 " XCodeDark
-" colorscheme xcodedarkhc
-" set bg=dark
-" let g:xcodedarkhc_green_comments = 1
-" let g:xcodedarkhc_emph_types = 0
+colorscheme xcodedarkhc
+set bg=dark
+let g:xcodedarkhc_green_comments = 0
+" let g:xcodedarkhc_emph_types = 1
 " let g:xcodedarkhc_emph_funcs = 1
 " let g:xcodedarkhc_emph_idents = 1
-" let g:xcodedarkhc_match_paren_style = 0
-" let g:xcodedarkhc_dim_punctuation = 1
+let g:xcodedarkhc_match_paren_style = 0
+let g:xcodedarkhc_dim_punctuation = 0
 " let g:lightline.colorscheme = 'xcodedarkhc'
+" let g:lightline.colorscheme = 'mychallenger_deep'
 " augroup vim-colors-xcode
 "     autocmd!
 " augroup END
@@ -46,7 +54,7 @@
 " let g:challenger_deep_terminal_italics = 1
 
 " Challenge Deep
-" colorscheme mychallenger_deep
+" colorscheme challenger_deep
 " let g:lightline.colorscheme = 'mychallenger_deep'
 " let g:mychallenger_deep_terminal_italics = 1
 " let g:mychallenger_deep_underlined_cursor_line = 0 
@@ -211,9 +219,9 @@
 " hi jsObjectKey guifg=#56B6C2
 
 " OneHalf
-colorscheme onehalfdark
-set bg=dark
-let g:lightline.colorscheme = 'onehalfdark'
+" colorscheme onehalfdark
+" set bg=dark
+" let g:lightline.colorscheme = 'onehalfdark'
 " let g:airline_theme = 'onehalflight'
 
 " Sonokai
@@ -352,7 +360,7 @@ let g:lightline.colorscheme = 'onehalfdark'
 " hi link typescriptIdentifierName TypescriptSpecial
 " hi link typescriptObjectLiteral TypescriptSpecial
 " hi link typescriptFuncCallArg TypescriptSpecial
-highlight Comment cterm=italic
+" highlight Comment cterm=italic
 " hi link jsxCloseString Label
 " hi link jsxOpenPunct jsxPunct
 " colorscheme night-owl
@@ -366,3 +374,13 @@ highlight Comment cterm=italic
 
 " colorscheme spaceduck
 " let g:lightline = { 'colorscheme': 'spaceduck' }
+
+" colorscheme zephyr
+" let g:lightline = { 'colorscheme': 'spaceduck' }
+
+" colorscheme deus
+" let g:lightline = { 'colorscheme': 'deus' }
+"
+" colorscheme aurora
+" let g:lightline = { 'colorscheme': 'mychallenger_deep' }
+

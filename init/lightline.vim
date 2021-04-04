@@ -63,7 +63,7 @@ endfunction
 
 function! MyFiletype()
   " return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : '') : ''
-  return '[' . &filetype . ']'
+  return '' " '[' . &filetype . ']'
 endfunction
 
 function! MyFileformat()
@@ -92,7 +92,6 @@ function! GetWinNumber()
 endfunction
 
 
-" \ 'colorscheme': 'solarized',
 let g:lightline = {
       \ 'inactive': { 
         \ 'left': [
@@ -171,26 +170,16 @@ let g:lightline = {
         \ }
   \ }
 
-      " \   'currentfunction': 'CocCurrentFunction',
-      " \   'method': 'NearestMethodOrFunction',
-      " \   'blame': 'LightLineGitBlame',
-" let g:lightline.separator = {
-" 	\   'left': '', 'right': ''
-"  \}
-      " \   'left': ' ', 'right': '' 
 let g:lightline.subseparator = {
 	\   'left': '', 'right': '' 
   \}
-
-
-
 
 let g:lightline.tabline = {'left': [['buffers']], 'right': [] }
 
 function! LightlineFugitive()
   if exists('*FugitiveHead')
     let branch = FugitiveHead()
-    return winwidth(0) > 200 ? branch !=# '' ? '  '. branch : '' : ""
+    return winwidth(0) > 80 ? branch !=# '' ? '  '. branch : '' : ""
   endif
   return ''
 endfunction
@@ -255,7 +244,7 @@ function! CocGitStatus() abort
   let blame = get(b:, 'coc_git_blame', '') 
   let fullStr = empty(bg) ? "" : " " . bg . ' ' . blame
   let minStr = empty(bg) ? "" : " " . bg . ' '
-  return winwidth(0) > 110 ? fullStr : ""
+  return winwidth(0) > 110 ? minStr : ""
 endfunction
 
 function! LightlineCocFixes() abort
@@ -266,7 +255,7 @@ function! LightlineCocFixes() abort
 endfunction
 
 " autocmd BufWritePost * call lightline#update()
-" autocmd User CocDiagnosticChange call lightline#update()
+autocmd User CocDiagnosticChange call lightline#update()
 " " Diagnostic's feedback {{{
 " function! CocUpdateQuickFixes(error, actions) abort
 "   let coc_quickfixes = {}
