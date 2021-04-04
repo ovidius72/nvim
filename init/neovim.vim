@@ -123,7 +123,7 @@ Plug 'mattn/emmet-vim'
 " Plug 'mcchrish/nnn.vim'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 " Plug 'kyazdani42/nvim-web-devicons' " for file icons
-" Plug 'romgrk/barbar.nvim'
+Plug 'romgrk/barbar.nvim'
 " Plug 'kyazdani42/nvim-tree.lua'
 
 "
@@ -234,7 +234,7 @@ source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/rnvimr.vim
-" source ~/.config/nvim/init/barbar.vim
+source ~/.config/nvim/init/barbar.vim
 " source ~/.config/nvim/init/nnn.vim
 source ~/.config/nvim/init/float-teminal.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
