@@ -13,9 +13,9 @@
 " let g:lightline.colorscheme = 'dogrun'
 
 " EQUINUSOCIO
-source ~/.config/nvim/plugged/equinusocio-material.vim/autoload/equinusocio_material.vim
-colorscheme equinusocio_material
-let g:equinusocio_material_style = 'darker'
+" source ~/.config/nvim/plugged/equinusocio-material.vim/autoload/equinusocio_material.vim
+" colorscheme equinusocio_material
+" let g:equinusocio_material_style = 'darker'
 " let g:lightline.colorscheme = 'equinusocio_material'
 " let g:lightline.colorscheme = 'mychallenger_deep'
 
@@ -28,6 +28,7 @@ let g:xcodedarkhc_green_comments = 0
 " let g:xcodedarkhc_emph_idents = 1
 let g:xcodedarkhc_match_paren_style = 0
 let g:xcodedarkhc_dim_punctuation = 0
+hi! link xmlError None
 " let g:lightline.colorscheme = 'xcodedarkhc'
 " let g:lightline.colorscheme = 'mychallenger_deep'
 " augroup vim-colors-xcode

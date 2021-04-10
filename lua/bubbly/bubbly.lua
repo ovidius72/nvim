@@ -21,6 +21,7 @@ vim.g.bubbly_palette = {
 vim.g.bubbly_statusline = {
    'mode',
    'path',
+   'test',
    'truncate',
    -- {{ data = 'string', color = {foreground = 'red', background= 'darkgrey' }, style= bold, left = '/', right = '/' }},
    'signify',
@@ -112,13 +113,13 @@ vim.g.bubbly_tags = {
   default = 'H',
 
   mode = {
-    normal = 'N',
-    insert = 'I',
-    visual = 'V',
-    visualblock = 'V-B',
-    command = 'C',
-    terminal = 'T',
-    replace = 'R',
+    normal = 'NORMAL',
+    insert = 'INSERT',
+    visual = 'VISUAL',
+    visualblock = 'V-BLOCK',
+    command = 'COMMANDJ',
+    terminal = 'TERMINAL',
+    replace = 'REPLACE',
     default = 'U',
   },
   paste = 'P',
@@ -133,7 +134,7 @@ vim.g.bubbly_colors = {
   mode = {
     normal = 'lightblue', -- uses by default 'background' as the foreground color.
     insert = 'red',
-    visual = 'red',
+    visual = 'yellow',
     visualblock = 'yellow',
     command = 'cyan',
     terminal = 'darkgrey',

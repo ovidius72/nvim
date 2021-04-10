@@ -17,7 +17,7 @@ let g:which_key_exit = [27, 7]
 let g:which_key_disable_default_offset=1
 let g:which_key_use_floating_win=1
 let g:which_key_centered=0
-nnoremap <leader>bk :Bclose<CR>
+" nnoremap <leader>bk :Bclose<CR>
 
 " hi WhichKey           guibg=#1b192c guifg=#95ffa4
 " hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
@@ -33,13 +33,13 @@ nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
 nnoremap <silent><leader>atq :QuickScopeToggle<CR>
 nnoremap <leader><TAB> <C-^>
-noremap <leader><leader>1 :1wincmd w<cr>
-noremap <leader><leader>2 :2wincmd w<cr>
-noremap <leader><leader>3 :3wincmd w<cr>
-noremap <leader><leader>4 :4wincmd w<cr>
-noremap <leader><leader>5 :5wincmd w<cr>
-noremap <leader><leader>6 :6wincmd w<cr>
-noremap <leader><leader>7 :7wincmd w<cr>
+" noremap <leader><leader>1 :1wincmd w<cr>
+" noremap <leader><leader>2 :2wincmd w<cr>
+" noremap <leader><leader>3 :3wincmd w<cr>
+" noremap <leader><leader>4 :4wincmd w<cr>
+" noremap <leader><leader>5 :5wincmd w<cr>
+" noremap <leader><leader>6 :6wincmd w<cr>
+" noremap <leader><leader>7 :7wincmd w<cr>
 noremap <leader>ps :Startify<cr>
 " map <silent><leader>l :Clap buffers<cr>
 " map <silent><leader>i :Clap files<cr>
@@ -131,7 +131,6 @@ let g:which_key_map.a = {
       \'e': 'node',
       \'f': 'floating-term',
       \'g': 'tig',
-      \'n': 'Nuake',
       \'r': {
         \ 'name': '+ranger',
         \ 'r': 'ranger',
@@ -170,6 +169,7 @@ let g:which_key_map.b = {
 "" =============================== C ==========================
 let g:which_key_map.c = { 
       \ 'name': '+coc',
+      \ ';': 'CocFzfList',
       \ 'a': 'Code Action',
       \ 'b':{ 
         \'name': '+coc-bookmarks',
@@ -198,7 +198,7 @@ let g:which_key_map.c = {
         \ 't' : 'toggle gutters',
         \},
       \ 'h' : [':CocInfo','CocInfo'],
-      \ 'i' : 'Actions Menu',
+      \ 'i' : 'Diagnostics Info',
       \ 'j' : 'Jump Float',
       \ 'k' : 'Generete JSDoc',
       \ 'l': {

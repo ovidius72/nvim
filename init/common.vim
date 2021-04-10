@@ -19,8 +19,8 @@ set spell!
 set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
+" set colorcolumn=999999
 " set inccommand=""
-
 " disable comment on new line.
 set formatoptions-=cro
 

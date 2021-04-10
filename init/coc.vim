@@ -58,7 +58,7 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 let g:coc_status_info_sign = '•'
 
-hi! CocErrorHighlight guibg=bg guifg=fg gui=undercurl guisp=#ff6458 
+hi! CocErrorHighlight gui=undercurl guisp=#ff6458 
 hi! CocErrorSign guifg=bg guifg=#ff6458
 hi! CocWarningSign guifg=bg guifg=#ffe9aa
 hi! CocInfoSign guifg=bg guifg=#95ffa4
@@ -66,6 +66,8 @@ hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffe9aa
 hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
 
+" autocmd QuitPre * if empty(&bt) | lclose | endif
+" autocmd QuitPre * if !empty(&bt) | CocDiagnostic | endif
 " to be used in coc config.
 "diagnostic.infoSign": " ",
 "diagnostic.errorSign": " ",
@@ -209,13 +211,13 @@ noremap ge :CocCommand explorer
     \ --sources=buffer+,file+
     \ --fi <CR>
 
-noremap <leader>[ :CocCommand explorer
-      \ --toggle
-      \ --sources=file+<cr>
+" noremap <leader>[ :CocCommand explorer
+"       \ --toggle
+"       \ --sources=file+<cr>
 
-noremap <leader>] :CocCommand explorer
-      \ --no-toggle
-      \ --sources=file+<cr>
+" noremap <leader>] :CocCommand explorer
+"       \ --no-toggle
+"       \ --sources=file+<cr>
 
 noremap <leader>po :CocCommand explorer
       \ --toggle
@@ -307,7 +309,9 @@ nmap <Leader>fi :<C-u>CocList -I symbols<cr>
 " nmap <silent><leader>cdi <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>el <Plug>(coc-diagnostic-info)
 " nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
-nmap <silent><leader>cdi <Plug>(coc-diagnostic-info)
+nmap <silent><leader>ci <Plug>(coc-diagnostic-info)
+nmap <silent><leader>u <Plug>(coc-diagnostic-info)
+nmap <silent><leader>c; :<C-u>CocFzfList<cr>
 nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 
 " Remap keys for gotos
@@ -322,8 +326,6 @@ nnoremap <silent> <Leader>fc :CocSearch <C-R>=expand('<cword>')<CR><CR>
 nnoremap <silent> <Leader>fx :CocSearch -w <C-R>=expand('<cword>')<CR><CR>
 
 
-" Coc-actions extension
-map <silent><leader>ci :CocCommand actions.open<CR>
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)

@@ -13,10 +13,7 @@ if !has('nvim')
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
-" Plug 'beauwilliams/statusline.lua'
-
+Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -26,49 +23,24 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
-" If you want to display icons, then use one of these plugins:
 Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'chuling/equinusocio-material.vim'
+Plug 'cormacrelf/vim-colors-github'
 
-Plug 'datwaft/bubbly.nvim'
+" Plug 'ghifarit53/tokyonight-vim'
+" Plug 'chuling/equinusocio-material.vim'
 
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'jcypret/nord-vim-midnight'
-Plug 'lighthaus-theme/vim-lighthaus'
-" Plug 'sonph/onehalf', { 'rpt': 'vim' }
-Plug 'sainnhe/sonokai'
-Plug 'theniceboy/nvim-deus'
-
-" Plug 'KeitaNakamura/neodark.vim'
 Plug 'arzg/vim-colors-xcode'
-Plug 'glepnir/zephyr-nvim'
-Plug 'ray-x/aurora'
-Plug 'novakne/kosmikoa.nvim'
-Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'teloe/bland.vim'
-Plug 'habamax/vim-saturnite'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'wadackel/vim-dogrun'
-Plug 'savq/melange'
-
-
-Plug 'andymass/vim-matchup'
-
-
-
+" Plug 'andymass/vim-matchup'
 
 " Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'kristijanhusak/defx-icons'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'voldikss/vim-floaterm'
 Plug 'antoinemadec/coc-fzf'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'easymotion/vim-easymotion'
-" Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
@@ -81,10 +53,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'pineapplegiant/spaceduck'
 Plug 'NLKNguyen/papercolor-theme'
-" Plug 'itchyny/lightline.vim'
-" Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jsit/toast.vim'
 " Plug 'w0rp/ale'
 " Plug 'AndrewRadev/splitjoin.vim'
@@ -92,7 +61,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
-Plug 'wellle/context.vim'
+" Plug 'wellle/context.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-unimpaired'
@@ -101,8 +70,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-commentary'
 Plug 'unblevable/quick-scope'
-" Plug 'wfxr/minimap.vim', { 'do': ':!cargo install --locked code-minimap' }
-" Plug 'Lenovsky/nuake'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -110,7 +77,7 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'romgrk/nvim-treesitter-context'
 
 " Plug 'rktjmp/lush.nvim'
@@ -131,7 +98,9 @@ Plug 'romgrk/barbar.nvim'
 " Plug 'mhinz/vim-startify'
 " Plug 'chriskempson/base16-vim'
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } 
-" Plug 'mbbill/undotree'
+Plug 'mbbill/undotree'
+Plug 'simnalamburt/vim-mundo'
+
 " Plug 'dahu/vim-fanfingtastic'
 " Plug 't9md/vim-smalls'
 " Plug 'markonm/traces.vim'
@@ -175,7 +144,8 @@ Plug 'mxw/vim-jsx'
 Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-signify'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'IMOKURI/line-number-interval.nvim'
 Plug 'francoiscabrol/ranger.vim'
@@ -188,23 +158,23 @@ call plug#end()
 lua init = require('init')
 lua init.setup()
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true,
-    },
-    incremental_selection = {
-        enable = true,
-    },
-    matchup = {
-        enable = true,
-    },
-    indent = {
-        enable = true,
-    },
-    ensure_installed = {'javascript', 'typescript', 'tsx'}
-}
-EOF
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"     highlight = {
+"         enable = true,
+"     },
+"     incremental_selection = {
+"         enable = true,
+"     },
+"     matchup = {
+"         enable = true,
+"     },
+"     indent = {
+"         enable = true,
+"     },
+"     ensure_installed = {'javascript', 'typescript', 'tsx'}
+" }
+" EOF
 
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
@@ -227,7 +197,6 @@ source ~/.config/nvim/init/aerojump.vim
 source ~/.config/nvim/init/lazygit.vim
 source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/colors.vim
-source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
 source ~/.config/nvim/init/quick-scope.vim
@@ -241,8 +210,14 @@ source ~/.config/nvim/init/float-teminal.vim
 source ~/.config/nvim/init/telescope.vim
 luafile ~/.config/nvim/init/telescope.lua
 source ~/.config/nvim/init/spectre.vim
-source ~/.config/nvim/init/context.vim
+" source ~/.config/nvim/init/context.vim
 " source ~/.config/nvim/lua/galaxyline.lua
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/echodoc.vim
+source ~/.config/nvim/init/undotree.vim
+source ~/.config/nvim/init/coc.vim
 runtime macros/sandwich/keymap/surround.vim
+
+hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#000000 guibg=#ff6458
+hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#000000 guibg=#ffe9aa
+hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#000000 guibg=#95ffa4
