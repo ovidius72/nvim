@@ -36,3 +36,65 @@ let bufferline.tabpages = v:true
 let bufferline.tabpages = v:true
 let bufferline.closable = v:true
 let bufferline.icons = 'both'
+let bufferline.icon_custom_colors = v:true
+
+let fg_target = '#ff8a7a'
+hi BufferVisible guibg=#34353b guifg=White
+hi BufferVisibleIndex guibg=#34353b guifg=White
+hi BufferVisibleMod guibg=#34353b guifg=White
+hi BufferVisibleSign guibg=#34353b guifg=White
+hi BufferVisibleTarget guibg=#34353b guifg=White
+
+hi BufferInactive guibg=Black guifg=#43454b
+hi BufferInactiveMod guibg=Black guifg=#43454b
+hi BufferInactiveSign guibg=Black guifg=#43454b
+hi BufferInactiveIndex guibg=Black guifg=#43454b
+hi BufferInactiveIcon guibg=Black guifg=#43454b
+hi BufferInactiveTarget guibg=Black guifg=#43454b
+
+hi BufferCurrent guibg=#6bdfff guifg=#43454b
+hi BufferCurrentMod guibg=#6bdfff guifg=#43454b
+hi BufferCurrentSign guibg=#6bdfff guifg=#43454b
+hi BufferCurrentIndex guibg=#6bdfff guifg=#43454b
+hi BufferCurrentIcon guibg=#6bdfff guifg=#43454b
+hi BufferCurrentTarget guibg=#6bdfff guifg=#43454b
+
+hi BufferTabpages guibg=bg guifg=White
+hi BufferTabpageFill guibg=bg guifg=White
+" let fg_current  = s:fg(['Normal'], '#efefef')
+" let fg_visible  = s:fg(['TabLineSel'], '#efefef')
+" let fg_inactive = s:fg(['TabLineFill'], '#888888')
+
+" let fg_modified  = s:fg(['WarningMsg'], '#E5AB0E')
+" let fg_special  = s:fg(['Special'], '#599eff')
+" let fg_subtle  = s:fg(['NonText', 'Comment'], '#555555')
+
+" let bg_current  = s:bg(['Normal'], '#000000')
+" let bg_visible  = s:bg(['TabLineSel', 'Normal'], '#000000')
+" let bg_inactive = s:bg(['TabLineFill', 'StatusLine'], '#000000')
+" call s:hi_all([
+" \ ['BufferCurrent',        fg_current,  bg_current],
+" \ ['BufferCurrentIndex',   fg_special,  bg_current],
+" \ ['BufferCurrentMod',     fg_modified, bg_current],
+" \ ['BufferCurrentSign',    fg_special,  bg_current],
+" \ ['BufferCurrentTarget',  fg_target,   bg_current,   'bold'],
+" \ ['BufferVisible',        fg_visible,  bg_visible],
+" \ ['BufferVisibleIndex',   fg_visible,  bg_visible],
+" \ ['BufferVisibleMod',     fg_modified, bg_visible],
+" \ ['BufferVisibleSign',    fg_visible,  bg_visible],
+" \ ['BufferVisibleTarget',  fg_target,   bg_visible,   'bold'],
+" \ ['BufferInactive',       fg_inactive, bg_inactive],
+" \ ['BufferInactiveIndex',  fg_subtle,   bg_inactive],
+" \ ['BufferInactiveMod',    fg_modified, bg_inactive],
+" \ ['BufferInactiveSign',   fg_subtle,   bg_inactive],
+" \ ['BufferInactiveTarget', fg_target,   bg_inactive,  'bold'],
+" \ ['BufferTabpages',       fg_special,  bg_inactive, 'bold'],
+" \ ['BufferTabpageFill',    fg_inactive, bg_inactive],
+" \ ])
+
+" call s:hi_link([
+" \ ['BufferCurrentIcon',  'BufferCurrent'],
+" \ ['BufferVisibleIcon',  'BufferVisible'],
+" \ ['BufferInactiveIcon', 'BufferInactive'],
+" \ ])
+

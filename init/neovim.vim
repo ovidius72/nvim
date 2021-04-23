@@ -31,7 +31,11 @@ Plug 'cormacrelf/vim-colors-github'
 " Plug 'chuling/equinusocio-material.vim'
 
 Plug 'arzg/vim-colors-xcode'
-Plug 'teloe/bland.vim'
+Plug 'Pablo1107/codi.vim'
+Plug 'psliwka/vim-smoothie'
+Plug 'micmine/jumpwire.nvim'
+
+
 " Plug 'andymass/vim-matchup'
 
 " Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
@@ -82,7 +86,7 @@ Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Plug 'rktjmp/lush.nvim'
 " Plug 'npxbr/gruvbox.nvim'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 " Plug 'rhysd/clever-f.vim'
 
 
@@ -146,6 +150,11 @@ Plug 'ianks/vim-tsx'
 Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'Xuyuanp/scrollbar.nvim'
+Plug 'gelguy/wilder.nvim'
+
+
+" Plug 'emilsoman/indent-highlight.vim'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'IMOKURI/line-number-interval.nvim'
 Plug 'francoiscabrol/ranger.vim'
@@ -203,7 +212,6 @@ source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/rnvimr.vim
-source ~/.config/nvim/init/barbar.vim
 " source ~/.config/nvim/init/nnn.vim
 source ~/.config/nvim/init/float-teminal.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim
@@ -215,7 +223,12 @@ source ~/.config/nvim/init/spectre.vim
 source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/undotree.vim
+" source ~/.config/nvim/init/scrollbar.vim
+source ~/.config/nvim/init/wilder.vim
+source ~/.config/nvim/init/smoothie.vim
+source ~/.config/nvim/init/jumpwire.vim
 source ~/.config/nvim/init/coc.vim
+source ~/.config/nvim/init/barbar.vim
 runtime macros/sandwich/keymap/surround.vim
 
 hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#000000 guibg=#ff6458

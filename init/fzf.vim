@@ -131,7 +131,7 @@ nmap <Leader>mm :Marks<CR>
 map <Leader>ff :Files<cr>
 map <Leader>fo :GFiles<cr>
 map <Leader>fg :GFiles?<cr>
-map <Leader>fr :History<cr>
+map <Leader>fr :call fzf#vim#history()<cr>
 map <Leader>fl :Buffers<cr>
 map <Leader>f/ :History/<cr>
 map <Leader>f; :History:<cr>
@@ -204,25 +204,28 @@ nmap <Leader>fef :NeovimConfigFiles<CR>
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
 
+command! -bang -nargs=* HistoryNoPreview
+      \ call fzf#vim#command_history(<q-args>, &columns > 200 ? fzf#vim#with_preview() : {}, <bang>0)
+
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
+    \ call fzf#vim#files(<q-args>, &columns > 180 ? fzf#vim#with_preview({'options': ['--info=inline']}) : {}, <bang>0)
 
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
-  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+  \   &columns > 180 ? fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}) : {}, <bang>0)
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+  \   &columns > 180 ? fzf#vim#with_preview() : {}, <bang>0)
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+  call fzf#vim#grep(initial_command, 1, &columns > 180 ? fzf#vim#with_preview(spec) : {}, a:fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)

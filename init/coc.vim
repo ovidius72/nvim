@@ -411,12 +411,10 @@ nmap <leader>pl :CocList project<CR>
 nmap <leader>css :CocCommand session.save<CR>
 nmap <leader>csl :CocCommand session.load<CR>:
 nmap <leader>pp :CocList project<CR>
-" nmap <leader>pp :SESSLOAD<CR>
-" nmap <silent><leader>pA :SESSSAVE<CR>
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent><C-s> <Plug>(coc-range-select)
-xmap <silent><C-s> <Plug>(coc-range-select)
-xmap <silent><C-a> <Plug>(coc-range-select-backward)
+nmap <silent><A-'> <Plug>(coc-range-select)
+xmap <silent><A-'> <Plug>(coc-range-select)
+xmap <silent><A-;> <Plug>(coc-range-select-backward)
 
 " Remap for do codeAction of current line
 nmap <leader>cL <Plug>(coc-codelens-action)

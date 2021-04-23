@@ -331,6 +331,7 @@ let g:which_key_map.h = {
       \'l': 'toggle-list-chars',
       \'r': 'convert spaces to tabs',
       \'s': 'toggle-hls(highlight)',
+      \'S': 'toggle smooth scroll',
       \'t': 'toggle spaces/tabs',
       \'z': 'toggle spell check',
       \}
@@ -373,23 +374,11 @@ let g:which_key_map.H = {
 
 "" =============================== J ==========================
 let g:which_key_map.j = { 
-      \ 'name': '+easymotion',
-      \ 'w': 'word',
-      \ 'p': 'prev',
-      \ 'n': 'next',
-      \ '.': 'repeat',
-      \ 'o': {
-      \ 'name': '+overwin',
-      \   'c': 'f',
-      \   'l': 'line',
-      \   'w': 'word',
-      \ },
-      \ 'b': {
-      \   'name': '+bidirectional',
-      \   't': 'tl',
-      \   'w': 'word',
-      \   'k': 'jk',
-      \ },
+      \ 'name': '+jump',
+      \ 'i': 'Implementation File',
+      \ 'm': 'Markup File',
+      \ 't': 'Test File',
+      \ 's': 'Style File'
       \}
 "
 "" <-- j/J

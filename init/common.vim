@@ -456,14 +456,15 @@ let g:vim_jsx_pretty_disable_ts = 1
 " Indentline
 " let g:indentLine_color_gui = '#333333'
 " let g:indentLine_color_gui = '#DFE0DF'
-let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 0
+" let g:indentLine_leadingSpaceChar = '⟶' " ·
+let g:indentLine_enabled = 1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_concealcursor=0
+let g:indentLine_concealCursor=0
 " let g:indentLine_concealcursor = 1
 " let g:indentLine_char = '┆'
 " let g:indentLine_faster = 1
-" let g:neoterm_size = 9
-" let g:neoterm_autoinsert = 0
-" let g:neoterm_autoscroll = 1
-"endif
 
 " Floating Term
 let s:float_term_border_win = 0
