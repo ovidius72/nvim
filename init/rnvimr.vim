@@ -17,7 +17,7 @@ let g:rnvimr_border_attr = {'fg': 14, 'bg': -1}
 let g:rnvimr_enable_bw = 1
 
 " Add a shadow window, value is equal to 100 will disable shadow
-let g:rnvimr_shadow_winblend = 70
+let g:rnvimr_shadow_winblend = 50
 
 " Draw border with both
 let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
@@ -56,8 +56,8 @@ let g:rnvimr_ranger_views = [
 " Customize the initial layout
 let g:rnvimr_layout = {
             \ 'relative': 'editor',
-            \ 'width': float2nr(round(0.7 * &columns)),
-            \ 'height': float2nr(round(0.7 * &lines)),
+            \ 'width': float2nr(round(0.8 * &columns)),
+            \ 'height': float2nr(round(0.8 * &lines)),
             \ 'col': float2nr(round(0.15 * &columns)),
             \ 'row': float2nr(round(0.15 * &lines)),
             \ 'style': 'minimal'
@@ -66,7 +66,7 @@ let g:rnvimr_layout = {
 " Customize multiple preset layouts
 " '{}' represents the initial layout
 let g:rnvimr_presets = [
-            \ {'width': 0.600, 'height': 0.600},
+            \ {'width': 0.800, 'height': 0.700},
             \ {},
             \ {'width': 0.800, 'height': 0.800},
             \ {'width': 0.950, 'height': 0.950},

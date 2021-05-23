@@ -446,9 +446,9 @@ let g:user_emmet_settings = {
 " let g:polyglot_disabled = ['jsx', 'tsx']
 " let g:polyglot_disabled = ['typescript']
 
-let g:vim_jsx_pretty_colorful_config = 1
-let g:vim_jsx_pretty_disable_tsx = 0
-let g:vim_jsx_pretty_disable_ts = 1
+" let g:vim_jsx_pretty_colorful_config = 1
+" let g:vim_jsx_pretty_disable_tsx = 0
+" let g:vim_jsx_pretty_disable_ts = 1
 " let g:vim_jsx_pretty_highlight_close_tag = 1
 " let g:javascript_plugin_jsdoc = 1
 " let g:jsx_ext_required = 0

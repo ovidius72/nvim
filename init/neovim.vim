@@ -28,12 +28,16 @@ Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'cormacrelf/vim-colors-github'
 
 " Plug 'ghifarit53/tokyonight-vim'
+Plug 'folke/tokyonight.nvim'
+
 " Plug 'chuling/equinusocio-material.vim'
 
 Plug 'arzg/vim-colors-xcode'
 Plug 'Pablo1107/codi.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'micmine/jumpwire.nvim'
+" Plug 'kdav5758/TrueZen.nvim'
+
 
 
 " Plug 'andymass/vim-matchup'
@@ -149,7 +153,7 @@ Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'gelguy/wilder.nvim'
 
@@ -231,6 +235,6 @@ source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/barbar.vim
 runtime macros/sandwich/keymap/surround.vim
 
-hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#000000 guibg=#ff6458
-hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#000000 guibg=#ffe9aa
-hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#000000 guibg=#95ffa4
+hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
+hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg
+hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#95ffa4 guibg=bg

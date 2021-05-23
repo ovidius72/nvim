@@ -39,7 +39,7 @@ nnoremap <leader>tk :<c-u>call VSCodeNotify('workbench.action.openGlobalKeybindi
 nnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 xnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 nnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
-xnoremap <leader>of :<c-u>call VSCodeNotify('workbench.action.format')<cr>
+xnoremap <leader>of :<c-u>call VSCodeNotify('workbench.action.formatDocument')<cr>
 xnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
 nnoremap <leader>] :<c-u>call VSCodeNotify('revealInExplorer')<cr>
 nnoremap <leader>[ :<c-u>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>

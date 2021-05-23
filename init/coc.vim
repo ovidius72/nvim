@@ -116,20 +116,20 @@ xmap ag <Plug>(coc-git-chunk-outer)
 " coc-smartf
 " press <esc> to cancel.
 " nmap <leader>J <Plug>(coc-smartf-forward)
-nmap <M-i> <Plug>(coc-smartf-forward)
+" nmap <M-i> <Plug>(coc-smartf-forward)
 " nmap <tab> <Plug>(coc-smartf-forward)
 " nmap <S-tab> <Plug>(coc-smartf-backward)
 " nmap f <Plug>(coc-smartf-forward)
-nmap <M-u> <Plug>(coc-smartf-backward)
-nmap <M-;> <Plug>(coc-smartf-repeat)
-nmap <M-,> <Plug>(coc-smartf-repeat-opposite)
+" nmap <M-u> <Plug>(coc-smartf-backward)
+" nmap <M-;> <Plug>(coc-smartf-repeat)
+" nmap <M-,> <Plug>(coc-smartf-repeat-opposite)
 " nmap ; <Plug>(coc-smartf-repeat)
 " nmap , <Plug>(coc-smartf-repeat-opposite)
 
-augroup Smartf
-  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#ffffff guibg=#d75f87
-  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
-augroup end
+" augroup Smartf
+"   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#ffffff guibg=#d75f87
+"   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#dc752f
+" augroup end
 
 " augroup ShowDiagnostic
 "   autocmd User CocStatusChange CocDiagnostic
@@ -158,11 +158,11 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -380,20 +380,14 @@ augroup end
 
 
 
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-" Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
-nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
-" NeoVim-only mapping for visual mode scroll
-" Useful on signatureHelp after jump placeholder of snippet expansion
-if has('nvim')
-  vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
-  vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
-endif
-
+" if has('nvim-0.4.0') || has('patch-8.2.0750')
+"   nnoremap <silent><nowait><expr> <C-n> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-n>"
+"   nnoremap <silent><nowait><expr> <C-p> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-p>"
+"   inoremap <silent><nowait><expr> <C-n> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+"   inoremap <silent><nowait><expr> <C-p> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+"   vnoremap <silent><nowait><expr> <C-n> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-n>"
+"   vnoremap <silent><nowait><expr> <C-p> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-p>"
+" endif
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 vmap <leader>cv  <Plug>(coc-codeaction-selected)
