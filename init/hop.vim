@@ -1,0 +1,9 @@
+nmap ( :HopChar1<cr>
+nmap <leader>j1 :HopChar1Visual<cr>
+nmap <M-i> :HopChar1Visual<cr>
+nmap <leader>ja :HopChar1Visual<cr>
+nmap <leader>jj :HopLineVisual<cr>
+nmap <leader>jw :HopWordVisual<cr>
+nmap <M-w> :HopWordVisual<cr>
+nmap <leader>j2 :HopChar2Visual<cr>
+nmap <leader>ja :HopChar2Visual<cr>

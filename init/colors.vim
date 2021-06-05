@@ -385,3 +385,5 @@ hi! link xmlError None
 " colorscheme aurora
 " let g:lightline = { 'colorscheme': 'mychallenger_deep' }
 
+" let g:tokyonight_style = "storm"
+" colorscheme tokyonight

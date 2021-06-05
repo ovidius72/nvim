@@ -44,7 +44,7 @@ noremap <leader>ps :Startify<cr>
 " map <silent><leader>l :Clap buffers<cr>
 " map <silent><leader>i :Clap files<cr>
 map <silent><leader>l :Buffers<cr>
-map <silent><leader>i :Files<cr>
+map <silent><leader>i :HFiles<cr>
 " map <silent><leader><leader> :Clap files<cr>
 " map <silent><leader><leader>l :History<cr>
 

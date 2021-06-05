@@ -7,6 +7,24 @@ gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive
 
 local colors = {
     none = "NONE",
+    bg = "#1e1c31",
+    line_bg = "#212121",
+    fg = "#D8DEE9",
+    fg_green = "#95ffa4",
+    yellow = "#ffe9aa",
+    cyan = "#63f2f1",
+    darkblue = "#65b2ff",
+    green = "#95ffa4",
+    orange = "#FF8800",
+    purple = "#c991e1",
+    magenta = "#906cff",
+    blue = "#91ddff",
+    red = "#ff8080",
+    lightbg = "#100e23",
+    greenYel = "#ffb378"
+}
+local bck_colors = {
+    none = "NONE",
     bg = "#282c34",
     line_bg = "#282c34",
     fg = "#D8DEE9",
@@ -33,7 +51,7 @@ local buffer_not_empty = function()
 end
 
 local mode_map = {
-    ['n'] = {'NORMAL', colors.darkblue},
+    ['n'] = {'NORMAL', colors.cyan},
     ['i'] = {'INSERT', colors.fg_green},
     ['R'] = {'REPLACE', colors.red},
     ['v'] = {'VISUAL', colors.greenYel},

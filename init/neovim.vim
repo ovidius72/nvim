@@ -29,13 +29,13 @@ Plug 'cormacrelf/vim-colors-github'
 
 " Plug 'ghifarit53/tokyonight-vim'
 Plug 'folke/tokyonight.nvim'
-
 " Plug 'chuling/equinusocio-material.vim'
 
 Plug 'arzg/vim-colors-xcode'
 Plug 'Pablo1107/codi.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'micmine/jumpwire.nvim'
+Plug 'phaazon/hop.nvim', { 'branch': 'pre-extmarks'}
 " Plug 'kdav5758/TrueZen.nvim'
 
 
@@ -47,7 +47,7 @@ Plug 'micmine/jumpwire.nvim'
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'kristijanhusak/defx-icons'
 Plug 'voldikss/vim-floaterm'
-Plug 'antoinemadec/coc-fzf'
+" Plug 'antoinemadec/coc-fzf'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
@@ -216,6 +216,7 @@ source ~/.config/nvim/init/quick-scope.vim
 source ~/.config/nvim/init/fern.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/rnvimr.vim
+source ~/.config/nvim/init/hop.vim
 " source ~/.config/nvim/init/nnn.vim
 source ~/.config/nvim/init/float-teminal.vim
 " source ~/.config/nvim/init/nvim-lua-tree.vim

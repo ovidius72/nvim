@@ -17,7 +17,7 @@ let g:fzf_action = {
 " let g:fzf_layout = { 'window': '10split enew' }
 
 " Centered floating window with rounded borders.
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'Todo', 'rounded': v:true } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'NonText', 'rounded': v:true } }
 " bottom aligned floating not pushing screen. 
 " let g:fzf_layout = {
 "       \'window': {
@@ -206,6 +206,9 @@ autocmd  FileType fzf set noshowmode noruler nonu
 
 command! -bang -nargs=* HistoryNoPreview
       \ call fzf#vim#command_history(<q-args>, &columns > 200 ? fzf#vim#with_preview() : {}, <bang>0)
+
+command! -bang -nargs=? -complete=dir HFiles
+  \ call fzf#vim#files(<q-args>, & columns > 180 ?  fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}) : {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, &columns > 180 ? fzf#vim#with_preview({'options': ['--info=inline']}) : {}, <bang>0)
