@@ -15,7 +15,13 @@
 "     set guifont=Courier_New:h11:cDEFAULT
 "   endif
 " endif
-if exists('g:vscode')
+if exists('g:goneovim')
+  source ~/.config/nvim/init-goneovim.vim
+  source ~/.config/nvim/init/neovim.vim
+elseif has('gui_vimr')
+  source ~/.config/nvim/init/vimr.vim
+
+elseif exists('g:vscode')
   source ~/.config/nvim/init-vscode.vim
 else
   source ~/.config/nvim/init/neovim.vim

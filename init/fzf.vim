@@ -208,7 +208,7 @@ command! -bang -nargs=* HistoryNoPreview
       \ call fzf#vim#command_history(<q-args>, &columns > 200 ? fzf#vim#with_preview() : {}, <bang>0)
 
 command! -bang -nargs=? -complete=dir HFiles
-  \ call fzf#vim#files(<q-args>, & columns > 180 ?  fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}) : {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
+  \ call fzf#vim#files(<q-args>, &columns > 180 ?  fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}) : {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, &columns > 180 ? fzf#vim#with_preview({'options': ['--info=inline']}) : {}, <bang>0)

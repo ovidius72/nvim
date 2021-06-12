@@ -20,15 +20,15 @@
 " let g:lightline.colorscheme = 'mychallenger_deep'
 
 " XCodeDark
-colorscheme xcodedarkhc
-set bg=dark
-let g:xcodedarkhc_green_comments = 0
+" colorscheme xcodedarkhc
+" set bg=dark
+" let g:xcodedarkhc_green_comments = 0
 " let g:xcodedarkhc_emph_types = 1
 " let g:xcodedarkhc_emph_funcs = 1
 " let g:xcodedarkhc_emph_idents = 1
-let g:xcodedarkhc_match_paren_style = 0
-let g:xcodedarkhc_dim_punctuation = 0
-hi! link xmlError None
+" let g:xcodedarkhc_match_paren_style = 0
+" let g:xcodedarkhc_dim_punctuation = 0
+" hi! link xmlError None
 " let g:lightline.colorscheme = 'xcodedarkhc'
 " let g:lightline.colorscheme = 'mychallenger_deep'
 " augroup vim-colors-xcode
@@ -269,7 +269,7 @@ hi! link xmlError None
 " let g:lightline.colorscheme = "hypsteria_alter"
 " let g:gruvbox_italic=1
 " let g:gruvbox_contrast_dark = "hard"
-" colorscheme gruvbox
+" colorscheme gruvy
 " set bg=dark
 " let g:airline_theme = 'gruvbox'
 
@@ -387,3 +387,9 @@ hi! link xmlError None
 
 " let g:tokyonight_style = "storm"
 " colorscheme tokyonight
+
+" colorscheme ghdark
+" let g:gh_color = 'soft'
+
+" colorscheme github-colors
+colorscheme kosmikoa

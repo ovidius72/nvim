@@ -454,7 +454,8 @@ let g:user_emmet_settings = {
 " let g:jsx_ext_required = 0
 
 " Indentline
-" let g:indentLine_color_gui = '#333333'
+let g:indentLine_color_gui = '#3c4048'
+let g:indentLine_color_term = 202
 " let g:indentLine_color_gui = '#DFE0DF'
 let g:indentLine_leadingSpaceEnabled = 0
 " let g:indentLine_leadingSpaceChar = '⟶' " ·

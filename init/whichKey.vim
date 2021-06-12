@@ -45,6 +45,7 @@ noremap <leader>ps :Startify<cr>
 " map <silent><leader>i :Clap files<cr>
 map <silent><leader>l :Buffers<cr>
 map <silent><leader>i :HFiles<cr>
+map <silent><leader>M :MaximizerToggle<cr>
 " map <silent><leader><leader> :Clap files<cr>
 " map <silent><leader><leader>l :History<cr>
 
@@ -94,6 +95,7 @@ let g:which_key_map.i = 'open file..'
 let g:which_key_map.l = 'buffers..'
 let g:which_key_map.y = 'copy to clipboard'
 let g:which_key_map.Y = 'paste from clipboard'
+let g:which_key_map.M = 'MaximizerToggle' 
 
 " let g:which_key_map.J = 'Smartf'
 " let g:which_key_map.J = 'Smartf repeat'
@@ -310,6 +312,9 @@ let g:which_key_map.g = {
       \ 'c': 'fzf git commits',
       \ 'D': 'git VDiff',
       \ 'd': 'git HDiff',
+      \ '3': [':Gvdiffsplit!', 'Split 3 W'],
+      \ 'r': [':diffget //2', 'Get Left'],
+      \ 'u': [':diffget //3', 'Get Right'],
       \ 'f': 'fzf git Files',
       \ 'g': 'LazyGit',
       \ 'l': 'git log',

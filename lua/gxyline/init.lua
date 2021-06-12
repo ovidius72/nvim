@@ -5,25 +5,25 @@ local u = utils.u
 
 gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive statuslines
 
+-- local colors = {
+--     none = "NONE",
+--     bg = "#1e1c31",
+--     line_bg = "#212121",
+--     fg = "#D8DEE9",
+--     fg_green = "#95ffa4",
+--     yellow = "#ffe9aa",
+--     cyan = "#63f2f1",
+--     darkblue = "#65b2ff",
+--     green = "#95ffa4",
+--     orange = "#FF8800",
+--     purple = "#c991e1",
+--     magenta = "#906cff",
+--     blue = "#91ddff",
+--     red = "#ff8080",
+--     lightbg = "#100e23",
+--     greenYel = "#ffb378"
+-- }
 local colors = {
-    none = "NONE",
-    bg = "#1e1c31",
-    line_bg = "#212121",
-    fg = "#D8DEE9",
-    fg_green = "#95ffa4",
-    yellow = "#ffe9aa",
-    cyan = "#63f2f1",
-    darkblue = "#65b2ff",
-    green = "#95ffa4",
-    orange = "#FF8800",
-    purple = "#c991e1",
-    magenta = "#906cff",
-    blue = "#91ddff",
-    red = "#ff8080",
-    lightbg = "#100e23",
-    greenYel = "#ffb378"
-}
-local bck_colors = {
     none = "NONE",
     bg = "#282c34",
     line_bg = "#282c34",
@@ -360,7 +360,7 @@ gls.right[6] = {
         provider = {
             function()
                 return string.format(
-                  ' %s:%s', vim.fn.line('.'), vim.fn.col('.')
+                  ' %s/%s:%s',vim.fn.line('.'), vim.api.nvim_buf_line_count(0), vim.fn.col('.')
                 )
             end,
         },

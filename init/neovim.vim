@@ -25,7 +25,21 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
-Plug 'cormacrelf/vim-colors-github'
+Plug 'rktjmp/lush.nvim'
+Plug 'novakne/kosmikoa.nvim'
+Plug 'npxbr/gruvbox.nvim'
+Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'elianiva/gruvy.nvim'
+Plug 'mnishz/colorscheme-preview.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'lourenci/github-colors'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'rafamadriz/neon'
+" Plug 'folke/trouble.nvim'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'Yagua/nebulous.nvim'
+
+
 
 " Plug 'ghifarit53/tokyonight-vim'
 Plug 'folke/tokyonight.nvim'
@@ -85,43 +99,17 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-" Plug 'romgrk/nvim-treesitter-context'
-
-" Plug 'rktjmp/lush.nvim'
-" Plug 'npxbr/gruvbox.nvim'
-" Plug 'mattn/emmet-vim'
-" Plug 'rhysd/clever-f.vim'
-
-
-" Plug 'hardcoreplayers/dashboard-nvim'
-" Plug 'mcchrish/nnn.vim'
-" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-" Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'romgrk/barbar.nvim'
-" Plug 'kyazdani42/nvim-tree.lua'
-
-"
 " Plug 'airblade/vim-gitgutter'
-" Plug 'mhinz/vim-startify'
-" Plug 'chriskempson/base16-vim'
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } 
 Plug 'mbbill/undotree'
 Plug 'simnalamburt/vim-mundo'
-
-" Plug 'dahu/vim-fanfingtastic'
-" Plug 't9md/vim-smalls'
-" Plug 'markonm/traces.vim'
-" Plug 'justinmk/vim-sneak'
-" Plug 'jacks0n/Drupal-Hook-Generator.vim', { 'for': 'php' }
-
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
 " Plug 'morhetz/gruvbox'
-" Plug 'co1ncidence/mountaineer.vim'
-" Plug 'christoomey/vim-tmux-navigator'
-" Plug 'urbainvaes/vim-tmux-pilot'
-" Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --enable-python' }
+Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --force-enable-php' }
+Plug 'szw/vim-maximizer'
 " Plug 'vim-vdebug/vdebug'
 " Plug 'puremourning/vimspector'
 " Plug 'tsandall/vim-rego'
@@ -158,36 +146,41 @@ Plug 'Yggdroot/indentLine'
 Plug 'gelguy/wilder.nvim'
 
 
-" Plug 'emilsoman/indent-highlight.vim'
+Plug 'emilsoman/indent-highlight.vim'
 " Plug 'Chiel92/vim-autoformat'
-" Plug 'IMOKURI/line-number-interval.nvim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'kevinhwang91/rnvimr'
 
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-" Plug 'norcalli/nvim-colorizer.lua'
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 lua init = require('init')
 lua init.setup()
 
-" lua <<EOF
-" require'nvim-treesitter.configs'.setup {
-"     highlight = {
-"         enable = true,
-"     },
-"     incremental_selection = {
-"         enable = true,
-"     },
-"     matchup = {
-"         enable = true,
-"     },
-"     indent = {
-"         enable = true,
-"     },
-"     ensure_installed = {'javascript', 'typescript', 'tsx'}
-" }
-" EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {'javascript', 'typescript', 'tsx', 'php'},
+    highlight = {
+        enable = true,
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "gnn",
+          node_incremental = "gnd",
+          scope_incremental = "gni",
+          node_decremental = "gnu"
+        }
+    },
+    matchup = {
+        enable = true,
+    },
+    indent = {
+        enable = true,
+    }
+}
+EOF
 
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
@@ -234,6 +227,7 @@ source ~/.config/nvim/init/smoothie.vim
 source ~/.config/nvim/init/jumpwire.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/barbar.vim
+source ~/.config/nvim/init/vimspector.vim
 runtime macros/sandwich/keymap/surround.vim
 
 hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
