@@ -196,6 +196,26 @@ tnoremap <F7> <C-\><C-n>:Nuake<CR>
 
 " ****************** SIGNIFY *************
 let g:signify_disable_by_default = 0
+" let g:signify_sign_add  = '▊'
+let g:signify_sign_add="┃"
+let g:signify_sign_delete="◢'"
+let g:signify_sign_delete_first_line="◥'"
+let g:signify_sign_change='┃'
+" let g:signify_sign_change = '██'
+nmap [g <Plug>(signify-prev-hunk)
+nmap ]g <Plug>(signify-next-hunk)
+
+augroup showHunk
+  autocmd!
+  autocmd User SignifyHunk call s:show_current_hunk()
+augroup end
+
+function! s:show_current_hunk() abort
+  let h = sy#util#get_hunk_stats()
+  if !empty(h)
+    echo printf('[Hunk %d/%d]', h.current_hunk, h.total_hunks)
+  endif
+endfunction
 
 
 " omap ic <Plug>(signify-motion-inner-pending)
@@ -454,19 +474,58 @@ let g:user_emmet_settings = {
 " let g:jsx_ext_required = 0
 
 " Indentline
-let g:indentLine_color_gui = '#3c4048'
-let g:indentLine_color_term = 202
+" let g:indentLine_color_gui = '#3c4048'
+" let g:indentLine_color_term = 202
 " let g:indentLine_color_gui = '#DFE0DF'
-let g:indentLine_leadingSpaceEnabled = 0
+" let g:indentLine_leadingSpaceEnabled = 0
 " let g:indentLine_leadingSpaceChar = '⟶' " ·
 let g:indentLine_enabled = 1
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_concealcursor=0
-let g:indentLine_concealCursor=0
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_concealcursor=0
+" let g:indentLine_concealCursor=0
 " let g:indentLine_concealcursor = 1
 " let g:indentLine_char = '┆'
+let g:indentLine_char = "▏"
 " let g:indentLine_faster = 1
+let g:indent_blankline_char = "▏"
 
+let g:indent_blankline_filetype_exclude = ["help", "terminal"]
+let g:indent_blankline_buftype_exclude = ["terminal"]
+
+let g:indent_blankline_show_trailing_blankline_indent = v:false
+let g:indent_blankline_use_treesitter = v:true
+let g:indent_blankline_show_first_indent_level = v:false
+let g:indent_blankline_show_current_context = v:true
+highlight IndentBlanklineChar guifg=#1a261c gui=nocombine
+let g:indent_blankline_context_patterns = [
+      \ "typescriptStatementKeyword",
+      \ "typescriptParenExp",
+      \ "typescriptBlock",
+      \ "tsTag",
+      \ "typeDefinition",
+      \ "tsxElement",
+      \ "tsxTagName",
+      \ "func_literal",
+      \ "try",
+      \ "php",
+      \ "except",
+      \ "argument_list",
+      \ "dictionary",
+      \ "class",
+      \ "function",
+      \ "method",
+      \ "^if",
+      \ "^else",
+      \ "^return",
+      \ "tag",
+      \ "jsx",
+      \ "^while",
+      \ "^for",
+      \ "^object",
+      \ "^table",
+      \ "block",
+      \ "arguments"
+      \ ]
 " Floating Term
 let s:float_term_border_win = 0
 let s:float_term_win = 0

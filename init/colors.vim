@@ -1,3 +1,4 @@
+set termguicolors
 " set t_Co=256
 " Alduin
 " colorscheme alduin
@@ -107,20 +108,20 @@
 " colorscheme fault
 
 "
-"PaperColor
-" let g:PaperColor_Theme_Options = {
-"       \ 'language': {
-"       \    'typescript': {
-"       \         'highlight_builtins': 1
-"       \    },
-"       \    'typescriptreact': {
-"       \         'highlight_builtins': 1
-"       \    }
-"       \}
-"     \}
-" " let g:airline_theme = 'one'
-" colorscheme PaperColor
-" set background=dark
+" PaperColor
+ " let g:PaperColor_Theme_Options = {
+ "       \ 'language': {
+ "       \    'typescript': {
+ "       \         'highlight_builtins': 1
+ "       \    },
+ "       \    'typescriptreact': {
+ "       \         'highlight_builtins': 1
+ "       \    }
+ "       \}
+ "     \}
+ " let g:airline_theme = 'one'
+ " colorscheme PaperColor
+ " set background=dark
 " let g:lightline.colorscheme = 'PaperColor_dark'
 " let g:airline_theme = 'papercolor'
 " let g:indentLine_color_gui = '#DFE0DF'
@@ -325,6 +326,8 @@
 " Nord
 " colorscheme nord
 " set background=dark
+" let g:nord_contrast = 1
+" let g:nord_borders = 1
 " let g:lightline.colorscheme = 'nord'
 " let g:nord_cursor_line_number_background = 1
 " let g:nord_uniform_satus_lines = 1
@@ -382,7 +385,7 @@
 " colorscheme deus
 " let g:lightline = { 'colorscheme': 'deus' }
 "
-" colorscheme aurora
+colorscheme aurora
 " let g:lightline = { 'colorscheme': 'mychallenger_deep' }
 
 " let g:tokyonight_style = "storm"
@@ -390,6 +393,23 @@
 
 " colorscheme ghdark
 " let g:gh_color = 'soft'
-
+" colorscheme moonlight
+" colorscheme bogster
+" colorscheme hivacruz
 " colorscheme github-colors
-colorscheme kosmikoa
+" colorscheme kosmikoa
+" colorscheme nvim-hybrid
+
+" make background transparent.
+hi Normal guibg=none ctermbg=none
+hi LineNr guibg=none ctermbg=none
+hi Folded guibg=none ctermbg=none
+hi NonText guibg=none ctermbg=none
+hi SpecialKey guibg=none ctermbg=none
+hi VertSplit guibg=none ctermbg=none
+hi SignColumn guibg=none ctermbg=none
+hi EndOfBuffer guibg=none ctermbg=none
+
+" remove tilde chars at the end of buffer.
+let &fcs='eob: '
+

@@ -3,6 +3,7 @@
   "typescript.suggest.enabled": true,
   "tsserver.formatOnType": true,
   "emmet.excludeLanguages": ["markdown", "typescriptreact"],
+  "gitignore.enable": true,
   "vetur.completion.autoImport": true,
   "vetur.validation.template": true,
   "vetur.experimental.templateInterpolationService": true,
@@ -16,6 +17,7 @@
     "vendor",
     "bootstrap",
     "app",
+    "routes",
     "application",
     "library",
     "src"
@@ -160,7 +162,7 @@
   "signature.triggerSignatureWait": 400,
   "signature.target": "echo",
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextPrefix": "         ",
+  "diagnostic.virtualTextPrefix": " ",
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.enableSign": true,
   "diagnostic.showUnused": true,
@@ -216,7 +218,7 @@
     "python": ["py", "html"],
     "javascript": ["javascript"],
     "javascriptreact": ["javascript"],
-    "typescript": ["javascript"],
+    "typescript": ["javascript", "typescript", "typescriptreact"],
     "typescriptreact": ["typescript", "javascript"]
   },
   "languageserver": {

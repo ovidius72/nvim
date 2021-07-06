@@ -24,6 +24,9 @@ function! s:split(...) abort
 endfunction
 
 let mapleader=" "
+nnoremap gd :<c-u>call VSCodeNotify('editor.action.goToTypeDefinition')<cr>
+nnoremap gi :<c-u>call VSCodeNotify('editor.action.goToImplementation')<cr>
+nnoremap gr :<c-u>call VSCodeNotify('editor.action.goToReferences')<cr>
 
 nnoremap <leader><TAB> :buffer#<CR>
 nnoremap <SHIFT>k :<c-u>call VSCodeNotify('workbench.action.showOver')<cr>
@@ -39,7 +42,8 @@ nnoremap <leader>tk :<c-u>call VSCodeNotify('workbench.action.openGlobalKeybindi
 nnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 xnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 nnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
-xnoremap <leader>of :<c-u>call VSCodeNotify('workbench.action.formatDocument')<cr>
+nnoremap <leader>of :<c-u>call VSCodeNotify('editor.action.formatDocument')<cr>
+xnoremap <leader>of :<c-u>call VSCodeNotify('editor.action.formatSelection')<cr>
 xnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
 nnoremap <leader>] :<c-u>call VSCodeNotify('revealInExplorer')<cr>
 nnoremap <leader>[ :<c-u>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>

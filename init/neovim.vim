@@ -14,6 +14,8 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
+Plug 'mhinz/vim-signify'
+" Plug 'beauwilliams/focus.nvim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -27,16 +29,23 @@ Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'rktjmp/lush.nvim'
 Plug 'novakne/kosmikoa.nvim'
+Plug 'shaunsingh/moonlight.nvim'
+Plug 'ntk148v/vim-horizon'
+Plug 'ray-x/aurora'
+Plug 'glepnir/zephyr-nvim'
 Plug 'npxbr/gruvbox.nvim'
+Plug 'bobrippling/vim-bogster'
+Plug 'kinoute/vim-hivacruz-theme'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'elianiva/gruvy.nvim'
+Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'mnishz/colorscheme-preview.vim'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'lourenci/github-colors'
+Plug 'shaunsingh/nord.nvim'
+Plug 'NTBBloodbath/doom-one.nvim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'rafamadriz/neon'
 " Plug 'folke/trouble.nvim'
-Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'Yagua/nebulous.nvim'
 
 
@@ -44,6 +53,11 @@ Plug 'Yagua/nebulous.nvim'
 " Plug 'ghifarit53/tokyonight-vim'
 Plug 'folke/tokyonight.nvim'
 " Plug 'chuling/equinusocio-material.vim'
+Plug 'Iron-E/nvim-highlite'
+Plug 'Th3Whit3Wolf/one-nvim'
+Plug 'PHSix/nvim-hybrid'
+Plug 'olimorris/onedark.nvim'
+
 
 Plug 'arzg/vim-colors-xcode'
 Plug 'Pablo1107/codi.vim'
@@ -108,7 +122,7 @@ Plug 'simnalamburt/vim-mundo'
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
 " Plug 'morhetz/gruvbox'
-Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --enable-chrome --force-enable-php' }
+Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --force-enable-chrome --force-enable-php' }
 Plug 'szw/vim-maximizer'
 " Plug 'vim-vdebug/vdebug'
 " Plug 'puremourning/vimspector'
@@ -139,14 +153,13 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-jsx'
 Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
-Plug 'mhinz/vim-signify'
-Plug 'Yggdroot/indentLine'
-" Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'gelguy/wilder.nvim'
 
 
-Plug 'emilsoman/indent-highlight.vim'
+" Plug 'emilsoman/indent-highlight.vim'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'kevinhwang91/rnvimr'
@@ -225,11 +238,13 @@ source ~/.config/nvim/init/undotree.vim
 source ~/.config/nvim/init/wilder.vim
 source ~/.config/nvim/init/smoothie.vim
 source ~/.config/nvim/init/jumpwire.vim
+source ~/.config/nvim/init/signify.vim
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/barbar.vim
 source ~/.config/nvim/init/vimspector.vim
+source ~/.config/nvim/init/colors.vim
 runtime macros/sandwich/keymap/surround.vim
 
-hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
-hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg
-hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#95ffa4 guibg=bg
+" hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
+" hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg
+" hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#95ffa4 guibg=bg
