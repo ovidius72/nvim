@@ -2,7 +2,7 @@ local actions = require('telescope.actions')
 -- Global remapping
 ------------------------------
 -- '--color=never',
-require('telescope').load_extension('media_files')
+-- require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
         vimgrep_arguments = {
@@ -13,24 +13,32 @@ require('telescope').setup {
             '--column',
             '--smart-case'
         },
-        prompt_position = "bottom",
         prompt_prefix = " ",
         selection_caret = "> ",
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
-        sorting_strategy = "descending",
+        sorting_strategy = "ascending",
         layout_strategy = "vertical",
-        layout_defaults = {horizontal = {mirror = false}, vertical = {mirror = false, preview_height = 0.4}},
+        layout_config = {
+            horizontal = {
+                mirror = false,
+                preview_height = 0.4,
+                preview_cutoff = 120,
+                results_width = 0.8,
+                width = 0.75,
+                results_height = 1,
+                prompt_position = "bottom",
+            },
+            vertical = {
+                mirror = false,
+            },
+        },
         file_sorter = require'telescope.sorters'.get_fuzzy_file,
         file_ignore_patterns = {},
         generic_sorter = require'telescope.sorters'.fuzzy_with_index_bias,
         shorten_path = true,
         winblend = 0,
-        width = 0.75,
-        preview_cutoff = 120,
-        results_height = 1,
-        results_width = 0.8,
         border = {},
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         color_devicons = true,
@@ -66,14 +74,4 @@ require('telescope').setup {
             }
         }
     },
-    require'telescope'.setup {
-        extensions = {
-            media_files = {
-                -- filetypes whitelist
-                -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-                filetypes = {"png", "webp", "jpg", "jpeg"},
-                find_cmd = "rg" -- find command (defaults to `fd`)
-            }
-        }
-    }
 }

@@ -39,7 +39,7 @@ Plug 'kinoute/vim-hivacruz-theme'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'elianiva/gruvy.nvim'
 Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'mnishz/colorscheme-preview.vim'
+" Plug 'mnishz/colorscheme-preview.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'NTBBloodbath/doom-one.nvim'
