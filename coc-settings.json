@@ -12,7 +12,6 @@
   "vetur.validation.templateProps": true,
   "tsserver.enable": true,
   "intelephense.licenceKey": "00B18KQH3XJPJ89",
-  "intelephense.environment.documentRoot": "./application",
   "intelephense.environment.includePaths": [
     "vendor",
     "bootstrap",
@@ -96,6 +95,7 @@
     "zip",
     "zlib"
   ],
+  "intelephense.environment.phpVersion": "7.3.0",
   "intelephense.files.exclude": [
     "**/.git/**",
     "**/.svn/**",

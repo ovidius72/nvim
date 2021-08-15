@@ -44,11 +44,12 @@ xnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor'
 nnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
 nnoremap <leader>of :<c-u>call VSCodeNotify('editor.action.formatDocument')<cr>
 xnoremap <leader>of :<c-u>call VSCodeNotify('editor.action.formatSelection')<cr>
+nnoremap <leader>oo :<c-u>call VSCodeNotify('editor.action.organizeImports')<cr>
 xnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
 nnoremap <leader>] :<c-u>call VSCodeNotify('revealInExplorer')<cr>
 nnoremap <leader>[ :<c-u>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>
 nnoremap <leader>i :<c-u>call VSCodeNotify('workbench.action.quickOpen')<cr>
-" nnoremap <leader>wv :<c-u>call VSCodeNotify('workbench.action.splitEditorRight')<cr>
+nnoremap <leader>co :<c-u>call VSCodeNotify('problems.action.showQuickFixes')<cr>
 " nnoremap <leader>ws :<c-u>call VSCodeNotify('workbench.action.splitEditorDown')<cr>
 nnoremap <leader>wv <Cmd>call <SID>split('v')<CR>
 xnoremap <leader>wv <Cmd>call <SID>split('v')<CR>
@@ -56,7 +57,7 @@ nnoremap <leader>ws <Cmd>call <SID>split('h')<CR>
 xnoremap <leader>ws <Cmd>call <SID>split('h')<CR>
 nnoremap <leader>bk <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 nnoremap <leader>an <Cmd>call VSCodeNotify('workbench.action.terminal.focus')<CR>
-nnoremap <leader>l <Cmd>call VSCodeNotify('workbench.action.openRecent')<CR>
+nnoremap <leader>l <Cmd>call VSCodeNotify('workbench.action.showAllEditorsByMostRecentlyUsed')<CR>
 nnoremap <leader>1 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex1')<CR>
 nnoremap <leader>2 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex2')<CR>
 nnoremap <leader>3 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex3')<CR>

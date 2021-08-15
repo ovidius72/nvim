@@ -39,6 +39,8 @@ Plug 'kinoute/vim-hivacruz-theme'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'elianiva/gruvy.nvim'
 Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'projekt0n/github-nvim-theme'
+Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 " Plug 'mnishz/colorscheme-preview.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'shaunsingh/nord.nvim'
@@ -154,7 +156,7 @@ Plug 'mxw/vim-jsx'
 Plug 'ianks/vim-tsx'
 " Plug 'majutsushi/tagbar'
 " Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'gelguy/wilder.nvim'
 

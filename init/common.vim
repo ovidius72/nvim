@@ -14,7 +14,7 @@ set shortmess=aFc
 set termguicolors
 set timeout
 set foldmethod=manual
-set foldcolumn=1
+set foldcolumn=0
 set spell!
 set spelllang=en_us,it
 set matchpairs+=<:>
@@ -479,7 +479,7 @@ let g:user_emmet_settings = {
 " let g:indentLine_color_gui = '#DFE0DF'
 " let g:indentLine_leadingSpaceEnabled = 0
 " let g:indentLine_leadingSpaceChar = '⟶' " ·
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " let g:indentLine_concealcursor=0
 " let g:indentLine_concealCursor=0

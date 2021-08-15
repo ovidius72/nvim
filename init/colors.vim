@@ -385,7 +385,8 @@ set termguicolors
 " colorscheme deus
 " let g:lightline = { 'colorscheme': 'deus' }
 "
-colorscheme aurora
+" colorscheme aurora
+" colorscheme mychallenger_deep
 " let g:lightline = { 'colorscheme': 'mychallenger_deep' }
 
 " let g:tokyonight_style = "storm"
@@ -401,15 +402,28 @@ colorscheme aurora
 " colorscheme nvim-hybrid
 
 " make background transparent.
-hi Normal guibg=none ctermbg=none
-hi LineNr guibg=none ctermbg=none
-hi Folded guibg=none ctermbg=none
-hi NonText guibg=none ctermbg=none
-hi SpecialKey guibg=none ctermbg=none
-hi VertSplit guibg=none ctermbg=none
-hi SignColumn guibg=none ctermbg=none
-hi EndOfBuffer guibg=none ctermbg=none
+" hi Normal guibg=none ctermbg=none
+" hi LineNr guibg=none ctermbg=none
+" hi Folded guibg=none ctermbg=none
+" hi NonText guibg=none ctermbg=none
+" hi SpecialKey guibg=none ctermbg=none
+" hi VertSplit guibg=none ctermbg=none
+" hi SignColumn guibg=none ctermbg=none
+" hi EndOfBuffer guibg=none ctermbg=none
 
 " remove tilde chars at the end of buffer.
 let &fcs='eob: '
 
+lua << EOF
+--  require("github-theme").setup({
+--      themeStyle = "dimmed",
+--      functionStyle = "none",
+--      sidebars = {"qf", "vista_kind", "terminal" },
+--      darkFloat = false
+--  })
+EOF
+
+let g:rose_pine_variant = 'moon'
+let g:rose_pine_enable_italics = v:false
+let g:rose_pine_disable_background = v:false
+colorscheme rose-pine
