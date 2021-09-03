@@ -19,8 +19,10 @@
     "routes",
     "application",
     "library",
-    "src"
+    "src",
+    "src/AppBundle"
   ],
+  "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.stubs": [
     "apache",
     "bcmath",
@@ -96,6 +98,7 @@
     "zlib"
   ],
   "intelephense.environment.phpVersion": "7.3.0",
+  "intelephense.telemetry.enabled": false,
   "intelephense.files.exclude": [
     "**/.git/**",
     "**/.svn/**",
@@ -104,7 +107,8 @@
     "**/.DS_Store/**",
     "**/node_modules/**",
     "**/bower_components/**",
-    "**/.history/**"
+    "**/.history/**",
+    "**/var/**"
   ],
   "suggest.echodocSupport": true,
   "coc.source.file.priority": 0,
@@ -160,7 +164,7 @@
   "signature.preferShownAbove": false,
   "signature.hideOnTextChange": false,
   "signature.triggerSignatureWait": 400,
-  "signature.target": "echo",
+  "signature.target": "float",
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": " ",
   "diagnostic.virtualTextCurrentLineOnly": false,

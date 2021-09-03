@@ -12,6 +12,15 @@ set timeoutlen=600
 "Bclose
 let g:blose_no_plugin_maps=1
 
+" toggle quickfix list
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 
 let g:which_key_disable_default_offset=1
@@ -81,6 +90,12 @@ let g:which_key_map["9"] = 'which_key_ignore'
 let g:which_key_map["0"] = 'which_key_ignore'
 let g:which_key_map["<F9>"] = 'which_key_ignore'
 let g:which_key_map["0..9"] = 'Switch Buffers'
+nnoremap <silent>    <A-n> :cnext<CR>
+nnoremap <silent>    <A-p> :cprev<CR>
+nnoremap <silent>    <A-m> :call ToggleQuickFix()<CR>
+let g:which_key_map["<A-n>"] = 'Quickfix Next'
+let g:which_key_map["<A-p>"] = 'Quickfix Prev'
+let g:which_key_map["<A-m>"] = 'Quickfix Toggle'
 " let g:which_key_map.1 = 'Buffer 1'
 " let g:which_key_map.2 = 'Buffer 2'
 " let g:which_key_map.3 = 'Buffer 3'
@@ -102,25 +117,6 @@ let g:which_key_map.M = 'MaximizerToggle'
 " let g:which_key_map.K = 'Smartf Back'
 " let g:which_key_map.K = 'Smartf Back repeat'
 
-" \'k': {
-"   \'name': '+clap',
-"   \'b': 'buffers',
-"   \'c': 'colors',
-"   \'f': 'git-files',
-"   \'g': 'grep',
-"   \'h': 'command-history',
-"   \'i': 'grep-query',
-"   \'j': 'jumps',
-"   \'k': 'clap',
-"   \'l': 'lines',
-"   \'m': 'marks',
-"   \'o': 'files',
-"   \'r': 'registers',
-"   \'s': 'history',
-"   \'t': 'tags',
-"   \'w': 'windows',
-"   \'y': 'yanks',
-"   \'x': 'filer',
 "" =============================== A ==========================
 let g:which_key_map.a = { 
       \'name': '+apps',
@@ -171,7 +167,6 @@ let g:which_key_map.b = {
 "" =============================== C ==========================
 let g:which_key_map.c = { 
       \ 'name': '+coc',
-      \ ';': 'CocFzfList',
       \ 'a': 'Code Action',
       \ 'b':{ 
         \'name': '+coc-bookmarks',
@@ -387,6 +382,24 @@ let g:which_key_map.j = {
       \}
 "
 "" <-- j/J
+
+" let g:which_key_map.k = {
+"   \'name': '+lists',
+"   \'q': {
+"     \'name': '+quickfix',
+"     \'n': ['cnext', 'Quickfix Next'],
+"     \'p': ['cnext', 'Quickfix Previous'],
+"     \'o': ['copen', 'Quickfix Open'],
+"     \'c': ['cclose', 'Quickfix Close'],
+"     \},
+"   \'l': {
+"     \'name': '+loclist',
+"     \'n': ['lnext', 'Loclist Next'],
+"     \'p': ['lnext', 'Loclist Previous'],
+"     \'o': ['lopen', 'Loclist Open'],
+"     \'c': ['lclose', 'Loclist Close'],
+"     \}
+"   \}
 
 "" =============================== K ==========================
       " \'x': [],

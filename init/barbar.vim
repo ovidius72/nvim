@@ -38,29 +38,29 @@ let bufferline.closable = v:true
 let bufferline.icons = 'both'
 let bufferline.icon_custom_colors = v:true
 
-let fg_target = '#ff8a7a'
-hi BufferVisible guibg=#34353b guifg=White
-hi BufferVisibleIndex guibg=#34353b guifg=White
-hi BufferVisibleMod guibg=#34353b guifg=White
-hi BufferVisibleSign guibg=#34353b guifg=White
-hi BufferVisibleTarget guibg=#34353b guifg=White
+" let fg_target = '#ff8a7a'
+" hi BufferVisible guibg=#e5cfff guifg=White
+" hi BufferVisibleIndex guibg=#e5cfff guifg=White
+" hi BufferVisibleMod guibg=#e5cfff guifg=White
+" hi BufferVisibleSign guibg=#e5cfff guifg=White
+" hi BufferVisibleTarget guibg=#e5cfff guifg=White
 
-hi BufferInactive guibg=Black guifg=#43454b
-hi BufferInactiveMod guibg=Black guifg=#43454b
-hi BufferInactiveSign guibg=Black guifg=#43454b
-hi BufferInactiveIndex guibg=Black guifg=#43454b
-hi BufferInactiveIcon guibg=Black guifg=#43454b
-hi BufferInactiveTarget guibg=Black guifg=#43454b
+" hi BufferInactive guibg=Black guifg=White
+" hi BufferInactiveMod guibg=Black guifg=White
+" hi BufferInactiveSign guibg=Black guifg=White
+" hi BufferInactiveIndex guibg=Black guifg=White
+" hi BufferInactiveIcon guibg=Black guifg=White
+" hi BufferInactiveTarget guibg=Black guifg=White
 
-hi BufferCurrent guibg=#6bdfff guifg=#43454b
-hi BufferCurrentMod guibg=#6bdfff guifg=#43454b
-hi BufferCurrentSign guibg=#6bdfff guifg=#43454b
-hi BufferCurrentIndex guibg=#6bdfff guifg=#43454b
-hi BufferCurrentIcon guibg=#6bdfff guifg=#43454b
-hi BufferCurrentTarget guibg=#6bdfff guifg=#43454b
+" hi BufferCurrent guibg=#6bdfff guifg=White
+" hi BufferCurrentMod guibg=#6bdfff guifg=White
+" hi BufferCurrentSign guibg=#6bdfff guifg=White
+" hi BufferCurrentIndex guibg=#6bdfff guifg=White
+" hi BufferCurrentIcon guibg=#6bdfff guifg=White
+" hi BufferCurrentTarget guibg=#6bdfff guifg=White
 
-hi BufferTabpages guibg=bg guifg=White
-hi BufferTabpageFill guibg=bg guifg=White
+" hi BufferTabpages guibg=bg guifg=Black
+" hi BufferTabpageFill guibg=bg guifg=Black
 " let fg_current  = s:fg(['Normal'], '#efefef')
 " let fg_visible  = s:fg(['TabLineSel'], '#efefef')
 " let fg_inactive = s:fg(['TabLineFill'], '#888888')

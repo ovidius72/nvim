@@ -49,8 +49,20 @@ au BufNewFile,BufRead *.module set filetype=php
 
 augroup PHP
   autocmd!
-  autocmd FileType php setlocal iskeyword+=$
+  autocmd FileType php setlocal iskeyword+=$ | set autoindent
 augroup END
+
+"useful remap
+nnoremap Y yg_
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
 inoremap <c-u> <c-g>u<c-u>
@@ -67,6 +79,15 @@ nnoremap <C-l> <C-w>l
 "use jj to escaper from term 
 " tnoremap jj <C-\><C-n> 
 
+lua <<EOF
+-- local snap = require'snap'
+-- snap.maps {
+--   {"<Leader><Leader>", snap.config.file {producer = "ripgrep.file"}},
+--   {"<Leader>fb", snap.config.file {producer = "vim.buffer"}},
+--   {"<Leader>fo", snap.config.file {producer = "vim.oldfile"}},
+--   {"<Leader>ff", snap.config.vimgrep {}},
+-- }
+EOF
 
 "Enable Minimap
 let g:minimap_auto_start = 0
@@ -145,8 +166,8 @@ map <Leader>hr :%retab!<CR>
 augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.js set filetype=javascript
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-    au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    au BufNewFile,BufRead *.jsx set filetype=javascriptreact
+    au BufNewFile,BufRead *.tsx set filetype=typescriptreact
     " au BufNewFile,BufRead *.ts set filetype=typescript.ts
     " au BufNewFile,BufRead *.* setlocal cursorcolumn
 augroup END
@@ -159,15 +180,6 @@ nnoremap <leader>hh :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
 " Replace word under the cursor.
 nnoremap <Leader>xr :%s/\<<C-r><C-w>\>//g<Left><Left>
 
-
-
-" Nuake
-nnoremap <leader>an :Nuake<CR>
-inoremap <F7> <C-\><C-n>:Nuake<CR>
-tnoremap <F7> <C-\><C-n>:Nuake<CR>
-
-
-" let g:tmux_navigator_no_mappings = 1
 " nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
 " nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
 " nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
@@ -269,6 +281,20 @@ nmap <M-j> <Plug>MoveLineDown
 nmap <M-k> <Plug>MoveLineUp
 nmap <M-h> <Plug>MoveCharLeft
 nmap <M-l> <Plug>MoveCharRight
+
+" MAC
+"<M-j>
+nmap ∆ <Plug>MoveLineDown 
+vmap ∆ <Plug>MoveBlockDown 
+"<M-k>
+nmap ˚ <Plug>MoveLineUp
+vmap ˚ <Plug>MoveBlockUp
+"<M-h>
+nmap ˙ <Plug>MoveCharLeft
+vmap ˙ <Plug>MoveBlockLeft
+"<M-l>
+nmap ¬ <Plug>MoveCharRight
+vmap ¬ <Plug>MoveBlockRight
 
 " save all in various modes
 nmap <leader>qq :qa<cr>

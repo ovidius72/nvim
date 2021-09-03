@@ -2,6 +2,7 @@ local gl = require("galaxyline")
 local utils = require('utils');
 local gls = gl.section
 local u = utils.u
+local gps = require('nvim-gps')
 
 gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive statuslines
 
@@ -23,25 +24,47 @@ gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive
 --     lightbg = "#100e23",
 --     greenYel = "#ffb378"
 -- }
+
+-- zenbones theme
 local colors = {
-    none = "NONE",
-    bg = "#282c34",
-    line_bg = "#282c34",
-    fg = "#D8DEE9",
-    fg_green = "#65a380",
-    yellow = "#A3BE8C",
-    cyan = "#6bdfff",
-    darkblue = "#61afef",
-    green = "#BBE67E",
-    orange = "#FF8800",
-    purple = "#cda1ff",
-    magenta = "#c678dd",
-    blue = "#22262C",
-    red = "#DF8890",
-    lightbg = "#3C4048",
-    nord = "#81A1C1",
-    greenYel = "#EBCB8B"
+  none = "NONE",
+  bg = "#d2d2ce",
+  line_bg = "#d2d2ce",
+  fg = "#f0edec",
+  fg_green = "#65a380",
+  yellow = "#c0b0a8",
+  cyan = "#566a76",
+  darkblue = "#1f5a7a",
+  green = "#617437",
+  orange = "#FF8800",
+  purple = "#cda1ff",
+  magenta = "#c678dd",
+  blue = "#a6ceef",
+  red = "#c23c55",
+  lightbg = "#d2d2ce",
+  nord = "#81A1C1",
+  greenYel = "#55672a"
 }
+-- dark
+-- local colors = {
+--     none = "NONE",
+--     bg = "#282c34",
+--     line_bg = "#282c34",
+--     fg = "#D8DEE9",
+--     fg_green = "#65a380",
+--     yellow = "#A3BE8C",
+--     cyan = "#6bdfff",
+--     darkblue = "#61afef",
+--     green = "#BBE67E",
+--     orange = "#FF8800",
+--     purple = "#cda1ff",
+--     magenta = "#c678dd",
+--     blue = "#22262C",
+--     red = "#DF8890",
+--     lightbg = "#3C4048",
+--     nord = "#81A1C1",
+--     greenYel = "#EBCB8B"
+-- }
 
 local buffer_not_empty = function()
   if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
@@ -189,6 +212,17 @@ local checkwidth = function()
 end
 
 gls.left[8] = {
+    nvimGPS = {
+        provider = function()
+          return "T: " .. gps.get_location()
+        end,
+        condition = function()
+          return gps.is_available()
+        end
+    }
+}
+
+gls.left[9] = {
     DiffAdd = {
         provider = "DiffAdd",
         condition = checkwidth,
@@ -197,7 +231,7 @@ gls.left[8] = {
     }
 }
 
-gls.left[9] = {
+gls.left[10] = {
     DiffModified = {
         provider = "DiffModified",
         condition = checkwidth,
@@ -206,7 +240,7 @@ gls.left[9] = {
     }
 }
 
-gls.left[10] = {
+gls.left[11] = {
     DiffRemove = {
         provider = "DiffRemove",
         condition = checkwidth,
@@ -215,7 +249,7 @@ gls.left[10] = {
     }
 }
 
-gls.left[11] = {
+gls.left[12] = {
     LeftEnd = {
         provider = function()
             return " "
@@ -228,7 +262,7 @@ gls.left[11] = {
 }
 
 
-gls.left[12] = {
+gls.left[13] = {
     Space = {
         provider = function()
             return " "
@@ -238,7 +272,7 @@ gls.left[12] = {
     }
 }
 
-gls.left[13] = {
+gls.left[14] = {
     CocStatus = {
         provider = function() 
             -- return vim.fn['coc#status']()

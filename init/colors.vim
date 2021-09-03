@@ -402,28 +402,29 @@ set termguicolors
 " colorscheme nvim-hybrid
 
 " make background transparent.
-" hi Normal guibg=none ctermbg=none
-" hi LineNr guibg=none ctermbg=none
-" hi Folded guibg=none ctermbg=none
-" hi NonText guibg=none ctermbg=none
-" hi SpecialKey guibg=none ctermbg=none
-" hi VertSplit guibg=none ctermbg=none
-" hi SignColumn guibg=none ctermbg=none
-" hi EndOfBuffer guibg=none ctermbg=none
+hi Normal guibg=none ctermbg=none
+hi LineNr guibg=none ctermbg=none
+hi Folded guibg=none ctermbg=none
+hi NonText guibg=none ctermbg=none
+hi SpecialKey guibg=none ctermbg=none
+hi VertSplit guibg=none ctermbg=none
+hi SignColumn guibg=none ctermbg=none
+hi EndOfBuffer guibg=none ctermbg=none
 
 " remove tilde chars at the end of buffer.
 let &fcs='eob: '
 
 lua << EOF
---  require("github-theme").setup({
---      themeStyle = "dimmed",
---      functionStyle = "none",
---      sidebars = {"qf", "vista_kind", "terminal" },
---      darkFloat = false
---  })
+-- require("github-theme").setup({
+--     themeStyle = "light",
+--     functionStyle = "italic",
+--     sidebars = {"qf", "vista_kind", "terminal" },
+--     darkFloat = false
+--})
 EOF
 
-let g:rose_pine_variant = 'moon'
-let g:rose_pine_enable_italics = v:false
-let g:rose_pine_disable_background = v:false
-colorscheme rose-pine
+" LUA DYNAMIC COLOR SCHEME + LUALINE
+lua <<EOF
+
+EOF
+

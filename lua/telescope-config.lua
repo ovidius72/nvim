@@ -1,8 +1,5 @@
 local actions = require('telescope.actions')
 -- Global remapping
-------------------------------
--- '--color=never',
--- require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
         vimgrep_arguments = {
@@ -13,7 +10,7 @@ require('telescope').setup {
             '--column',
             '--smart-case'
         },
-        prompt_prefix = " ",
+        prompt_prefix = " >",
         selection_caret = "> ",
         entry_prefix = "  ",
         initial_mode = "insert",
@@ -34,11 +31,11 @@ require('telescope').setup {
                 mirror = false,
             },
         },
-        -- file_sorter = require'telescope.sorters'.get_fuzzy_file,
+        file_sorter = require'telescope.sorters'.get_fzy_sorter,
         file_ignore_patterns = {},
-        -- generic_sorter = require'telescope.sorters'.fuzzy_with_index_bias,
-        display_path = true,
-        winblend = 0,
+        generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
+        -- display_path = true,
+        inblend = 0,
         border = {},
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         color_devicons = true,
@@ -48,7 +45,7 @@ require('telescope').setup {
         grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
         qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
         -- Developer configurations: Not meant for general override
-        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+        -- buffer_previewer_maker = require'telescope.previewers'.buffer_previver_maker,
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,
@@ -56,22 +53,41 @@ require('telescope').setup {
                 -- To disable a keymap, put [map] = false
                 -- So, to not map "<C-n>", just put
                 -- ["<c-x>"] = false,
+                ["<c-q>"] = actions.send_to_qflist,
 
                 -- Otherwise, just set the mapping to the function that you want it to be.
                 -- ["<C-i>"] = actions.select_horizontal,
 
                 -- Add up multiple actions
                 ["<CR>"] = actions.select_default + actions.center
-
-                -- You can perform as many actions in a row as you like
-                -- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
             },
             n = {
                 ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous
+                ["<C-k>"] = actions.move_selection_previous,
+                ["<c-q>"] = actions.send_to_qflist,
                 -- ["<esc>"] = actions.close,
                 -- ["<C-i>"] = my_cool_custom_action,
             }
         }
     },
+    extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        }
+    }
 }
+require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('coc')
+-- require('telescope').load_extension('z')
+
+local M = {}
+
+M.search_vim_files = function()
+  require("telescope.builtin").find_files({
+    prompt_title = "< Vim Files >",
+    cwd = "~/.config/nvim",
+  })
+end
+
+return M

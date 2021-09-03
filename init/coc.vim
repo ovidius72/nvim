@@ -64,6 +64,8 @@ hi! CocWarningSign guifg=bg guifg=#ffe9aa
 hi! CocInfoSign guifg=bg guifg=#95ffa4
 hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffe9aa
 hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
+hi! CocHintHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
+hi! CocHintLine guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
 
 " autocmd QuitPre * if empty(&bt) | lclose | endif
@@ -208,8 +210,7 @@ let g:coc_explorer_global_presets = {
 
 noremap ge :CocCommand explorer
     \ --toggle
-    \ --sources=buffer+,file+
-    \ --fi <CR>
+    \ --sources=buffer+,file+<CR>
 
 " noremap <leader>[ :CocCommand explorer
 "       \ --toggle
@@ -244,11 +245,9 @@ endfunction
 
 function! s:init_explorer()
   set winblend=10
-
   " Integration with other plugins
-
   " CocList
-  nmap <buffer> <Leader>cg :call <SID>exec_cur_dir('CocList -I grep')<CR>
+  nmap <buffer> <Leader>cgg :call <SID>exec_cur_dir('CocList -I grep')<CR>
   nmap <buffer> <Leader>cG :call <SID>exec_cur_dir('CocList -I grep -regex')<CR>
   nmap <buffer> <C-p> :call <SID>exec_cur_dir('CocList files')<CR>
 
@@ -311,7 +310,6 @@ nmap <Leader>fi :<C-u>CocList -I symbols<cr>
 " nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
 nmap <silent><leader>ci <Plug>(coc-diagnostic-info)
 nmap <silent><leader>u <Plug>(coc-diagnostic-info)
-nmap <silent><leader>c; :<C-u>CocFzfList<cr>
 nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 
 " Remap keys for gotos
