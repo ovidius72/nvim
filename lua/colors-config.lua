@@ -1,4 +1,4 @@
-local themeName = 'rose-pine'
+local themeName = 'moonlight'
 
 function setTransapentBackground()
 -- transparent background
@@ -40,6 +40,14 @@ vim.g.rose_pine_disable_background = false
 vim.g.zenbones_solid_vert_split = false
 vim.g.zenbones_dim_noncurrent_window = true
 vim.g.zenbones_lightness = null -- null(default) | 'bright' | 'dim'
+-- moonlight config
+vim.g.moonlight_italic_comments = true
+vim.g.moonlight_italic_keywords = true
+vim.g.moonlight_italic_functions = true
+vim.g.moonlight_italic_variables = false
+vim.g.moonlight_contrast = true
+vim.g.moonlight_borders = true 
+vim.g.moonlight_disable_background = false
 
 -- Set colorscheme after options
 -- use either the vim or lua command.

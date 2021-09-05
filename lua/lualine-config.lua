@@ -1,18 +1,21 @@
 local gps = require('nvim-gps')
 
-
 require'lualine'.setup {
   options = {
-    theme= 'rose-pine',
+    theme= 'moonlight',
     icons_enabled = true,
-    component_separators = {'', ''},
-    section_separators = {'', ''},
+    -- component_separators = {'', ''},
+    -- section_separators = {'', ''},
+    -- section_separators = {'', ''},
+    -- component_separators = {'', ''},
+    section_separators = '',
+    component_separators = '|',
     disabled_filetypes = {}
   },
   sections = {
     lualine_a = {{'mode', format=function(mode) return mode:sub(1,1) end }},
     lualine_b = {
-      {'filename', { file_status = true, path = 0 }}
+      {'filename', { file_status = true, path = 1  }}
     },
     lualine_c = {
       {
@@ -27,11 +30,7 @@ require'lualine'.setup {
         color_info = '#31748f', -- Changes diagnostic's hint foreground color
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' '}
       },
-      {
-        gps.get_location,
-        condition = gps.is_available,
-        -- format = function(data) return "a: " .. data end
-      },
+      { gps.get_location, condition = gps.is_available },
       {
         "g:coc_status"
       }
@@ -74,5 +73,7 @@ require'lualine'.setup {
     lualine_z = {}
   },
   tabline = {},
-  extensions = {}
+  extensions = {
+    'quickfix', 'fzf', 'fugitive'
+  }
 }

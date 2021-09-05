@@ -53,6 +53,7 @@ augroup PHP
 augroup END
 
 "useful remap
+nmap vv vaw
 nnoremap Y yg_
 nnoremap n nzzzv
 nnoremap N Nzzzv

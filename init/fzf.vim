@@ -24,6 +24,7 @@ let g:fzf_action = {
 
 " Centered floating window with rounded borders.
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'NonText', 'rounded': v:true } }
+let g:fzf_preview_window = ['up:60%', 'ctrl-/']
 " bottom aligned floating not pushing screen. 
 " let g:fzf_layout = {
 "       \'window': {
@@ -45,20 +46,20 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'NonT
 " let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.3, 'yoffset': 1, 'border': 'horizontal' } }
 
 " Customize fzf colors to match your color scheme
-let g:fzf_colors =
-      \ { 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Exception'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'Label', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Normal'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment'] }
+" let g:fzf_colors =
+"       \ { 'fg':      ['fg', 'Normal'],
+"       \ 'bg':      ['bg', 'Exception'],
+"       \ 'hl':      ['fg', 'Comment'],
+"       \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"       \ 'bg+':     ['bg', 'Label', 'CursorColumn'],
+"       \ 'hl+':     ['fg', 'Statement'],
+"       \ 'info':    ['fg', 'PreProc'],
+"       \ 'border':  ['fg', 'Normal'],
+"       \ 'prompt':  ['fg', 'Conditional'],
+"       \ 'pointer': ['fg', 'Exception'],
+"       \ 'marker':  ['fg', 'Keyword'],
+"       \ 'spinner': ['fg', 'Label'],
+"       \ 'header':  ['fg', 'Comment'] }
   
 
 " Enable per-command history.
@@ -137,19 +138,19 @@ nmap <Leader>mm :Marks<CR>
 map <Leader>ff :Files<cr>
 map <Leader>fo :GFiles<cr>
 map <Leader>fg :GFiles?<cr>
-map <Leader>fr :call fzf#vim#history()<cr>
+map <Leader>fr :History<cr>
 map <Leader>fl :Buffers<cr>
 map <Leader>f/ :History/<cr>
 map <Leader>f; :History:<cr>
 map <Leader>fm :Marks<cr>
 
 " Git keybinding
-nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gs :Git<CR>
 nmap <Leader>gS :GFiles?<CR>
 nmap <Leader>gc :Commits<CR>
 nmap <Leader>gf :GFiles<CR>
 nmap <Leader>gP :Gpush<CR>
-nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
+nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('up'))<CR>
 
 " Project keybinding
 nmap <Leader>ph :Files<CR>
@@ -196,15 +197,19 @@ nmap <Leader>sa :AGP<CR>
 nmap <Leader>sA :Ag!<CR>
 nmap <Leader>fw :Find<CR>
 
+" nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('up'))<CR>
 command! -bang -nargs=* Find
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always '.shellescape(expand('<cword>')), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   fzf#vim#with_preview('up:60%'),
   \   <bang>0)
 
 " neovim config
-command! -bang NeovimConfigFiles call fzf#vim#files('~/.config/nvim', <bang>0)
+command! -bang NeovimConfigFiles 
+      \ call fzf#vim#files(
+      \ '~/.config/nvim',
+      \ fzf#vim#with_preview('up:60%'),
+      \ <bang>0)
 nmap <Leader>fef :NeovimConfigFiles<CR>
 
 autocmd! FileType fzf
@@ -251,9 +256,8 @@ command! -nargs=* Ag2 call fzf#run({
 
 command! -bang -nargs=* AGP
   \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+  \   fzf#vim#with_preview('up:60%'),
+  \  <bang>0)
 
 nnoremap <silent> <Leader>HC :call fzf#run({
 \   'source':

@@ -36,7 +36,7 @@ let bufferline.tabpages = v:true
 let bufferline.tabpages = v:true
 let bufferline.closable = v:true
 let bufferline.icons = 'both'
-let bufferline.icon_custom_colors = v:true
+let bufferline.icon_custom_colors = v:false
 
 " let fg_target = '#ff8a7a'
 " hi BufferVisible guibg=#e5cfff guifg=White

@@ -12,6 +12,7 @@
   "vetur.validation.templateProps": true,
   "tsserver.enable": true,
   "intelephense.licenceKey": "00B18KQH3XJPJ89",
+  "php-cs-fixer.enableActionProvider": true,
   "intelephense.environment.includePaths": [
     "vendor",
     "bootstrap",

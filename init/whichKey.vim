@@ -90,8 +90,8 @@ let g:which_key_map["9"] = 'which_key_ignore'
 let g:which_key_map["0"] = 'which_key_ignore'
 let g:which_key_map["<F9>"] = 'which_key_ignore'
 let g:which_key_map["0..9"] = 'Switch Buffers'
-nnoremap <silent>    <A-n> :cnext<CR>
-nnoremap <silent>    <A-p> :cprev<CR>
+nnoremap <silent>    <A-N> :cnext<CR>
+nnoremap <silent>    <A-P> :cprev<CR>
 nnoremap <silent>    <A-m> :call ToggleQuickFix()<CR>
 let g:which_key_map["<A-n>"] = 'Quickfix Next'
 let g:which_key_map["<A-p>"] = 'Quickfix Prev'
@@ -256,12 +256,9 @@ let g:which_key_map.e = {
       \ 'p': 'ale-pre',
       \}
 
-
 "" =============================== F ==========================
 let g:which_key_map.f = { 
       \ 'name': '+file',
-      \ 'a'   : [':CocFzfList actions', 'Coc Actions'],
-      \ 'd'   : [':CocFzfList diagnostics', 'Coc Diagnostics'],
       \ 'e'   : {
         \ 'name': '+Config',
         \ 'r' : 'source nvim',
@@ -271,13 +268,6 @@ let g:which_key_map.f = {
         \ 'I' : 'install',
         \ },
       \ 'f'   : 'all files',
-      \ 'O'   : [':CocFzfList outline', 'Coc Outline'],
-      \ 'S'   : [':CocFzfList services', 'Coc Services'],
-      \ 'C'   : [':CocFzfList sources', 'Coc Sources'],
-      \ 'q'   : [':CocFzfList symbols', 'Coc Symbols'],
-      \ 'y'   : [':CocFzfList yank', 'Coc Yank'],
-      \ 'k'   : [':CocFzfList commands', 'Coc Commands'],
-      \ 'p'   : [':CocFzfListResume', 'Coc List Resume'],
       \ 'i'   : 'Coc Find Symbol',
       \ 'o'   : 'git files',
       \ 'r'   : 'file history',
