@@ -402,15 +402,15 @@ set termguicolors
 " colorscheme nvim-hybrid
 
 " make background transparent.
-hi Normal guibg=none ctermbg=none
-hi LineNr guibg=none ctermbg=none
-hi Folded guibg=none ctermbg=none
-hi NonText guibg=none ctermbg=none
-hi SpecialKey guibg=none ctermbg=none
-hi VertSplit guibg=none ctermbg=none
-hi SignColumn guibg=none ctermbg=none
-hi EndOfBuffer guibg=none ctermbg=none
-hi CursorLine guibg=none ctermbg=none
+" hi Normal guibg=none ctermbg=none
+" hi LineNr guibg=none ctermbg=none
+" hi Folded guibg=none ctermbg=none
+" hi NonText guibg=none ctermbg=none
+" hi SpecialKey guibg=none ctermbg=none
+" hi VertSplit guibg=none ctermbg=none
+" hi SignColumn guibg=none ctermbg=none
+" hi EndOfBuffer guibg=none ctermbg=none
+" hi CursorLine guibg=none ctermbg=none
 
 " remove tilde chars at the end of buffer.
 let &fcs='eob: '
@@ -423,9 +423,3 @@ lua << EOF
 --     darkFloat = false
 --})
 EOF
-
-" LUA DYNAMIC COLOR SCHEME + LUALINE
-lua <<EOF
-
-EOF
-

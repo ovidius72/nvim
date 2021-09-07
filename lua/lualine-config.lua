@@ -2,7 +2,7 @@ local gps = require('nvim-gps')
 
 require'lualine'.setup {
   options = {
-    theme= 'moonlight',
+    theme= 'mychallenger_deep',
     icons_enabled = true,
     -- component_separators = {'', ''},
     -- section_separators = {'', ''},
@@ -24,10 +24,10 @@ require'lualine'.setup {
         -- displays diagnostics from defined severity
         sections = {'error', 'warn', 'info', 'hint'},
         -- all colors are in format #rrggbb
-        color_error = '#eb6f92', -- changes diagnostic's error foreground color
-        color_warn = '#f6c177', -- changes diagnostic's warn foreground color
-        color_hint = '#9ccfd8', -- Changes diagnostic's info foreground color
-        color_info = '#31748f', -- Changes diagnostic's hint foreground color
+        color_error = '#ff8080', -- changes diagnostic's error foreground color
+        color_warn = '#ffe9aa', -- changes diagnostic's warn foreground color
+        color_hint = '#63f2f1', -- Changes diagnostic's info foreground color
+        color_info = '#95ffa4', -- Changes diagnostic's hint foreground color
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' '}
       },
       { gps.get_location, condition = gps.is_available },
@@ -61,10 +61,10 @@ require'lualine'.setup {
         -- displays diagnostics from defined severity
         sections = {'error', 'warn', 'info', 'hint'},
         -- all colors are in format #rrggbb
-        color_error = '#eb6f92', -- changes diagnostic's error foreground color
-        color_warn = '#f6c177', -- changes diagnostic's warn foreground color
-        color_hint = '#9ccfd8', -- Changes diagnostic's info foreground color
-        color_info = '#31748f', -- Changes diagnostic's hint foreground color
+        color_error = '#ff8080', -- changes diagnostic's error foreground color
+        color_warn = '#ffe9aa', -- changes diagnostic's warn foreground color
+        color_hint = '#63f2f1', -- Changes diagnostic's info foreground color
+        color_info = '#95ffa4', -- Changes diagnostic's hint foreground color
         symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}
       }
     },

@@ -38,6 +38,17 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 let &t_ut=''
 
+" nvim-hlslens
+"noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
+"            \<Cmd>lua require('hlslens').start()<CR>
+"noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
+"            \<Cmd>lua require('hlslens').start()<CR>
+"noremap * *<Cmd>lua require('hlslens').start()<CR>
+"noremap # #<Cmd>lua require('hlslens').start()<CR>
+"noremap g* g*<Cmd>lua require('hlslens').start()<CR>
+"noremap g# g#<Cmd>lua require('hlslens').start()<CR>
+""
+
 autocmd FileType qf setlocal nowrap
 
 " vim commentary for rego files.
@@ -298,8 +309,8 @@ nmap ¬ <Plug>MoveCharRight
 vmap ¬ <Plug>MoveBlockRight
 
 " save all in various modes
-nmap <leader>qq :qa<cr>
-nmap <leader>qw :waq<cr>
+" nmap <leader>qq :qa<cr>
+" nmap <leader>qw :waq<cr>
 
 
 " buffer

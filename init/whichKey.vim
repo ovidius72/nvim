@@ -90,12 +90,13 @@ let g:which_key_map["9"] = 'which_key_ignore'
 let g:which_key_map["0"] = 'which_key_ignore'
 let g:which_key_map["<F9>"] = 'which_key_ignore'
 let g:which_key_map["0..9"] = 'Switch Buffers'
-nnoremap <silent>    <A-N> :cnext<CR>
-nnoremap <silent>    <A-P> :cprev<CR>
-nnoremap <silent>    <A-m> :call ToggleQuickFix()<CR>
-let g:which_key_map["<A-n>"] = 'Quickfix Next'
-let g:which_key_map["<A-p>"] = 'Quickfix Prev'
-let g:which_key_map["<A-m>"] = 'Quickfix Toggle'
+nnoremap <silent><leader>qq :call ToggleQuickFix()<CR>
+nnoremap <silent><leader>qp :cprev<CR>
+nnoremap <silent><leader>qn :cnext<CR>
+
+" let g:which_key_map["<leader>qp"] = 'Quickfix Next'
+" let g:which_key_map["<leader>qn"] = 'Quickfix Prev'
+" let g:which_key_map["<leader>ql"] = 'Quickfix Toggle'
 " let g:which_key_map.1 = 'Buffer 1'
 " let g:which_key_map.2 = 'Buffer 2'
 " let g:which_key_map.3 = 'Buffer 3'
@@ -294,15 +295,21 @@ let g:which_key_map.f = {
       "   \},
 let g:which_key_map.g = { 
       \ 'name': '+git',
+      \ 'b': [':Git blame', 'Git Blame'],
+      \ 'r': [':GV', 'Git Commit Browser'],
+      \ 't': [':GV!', 'Git Commit Browser(Current)' ],
+      \ 'R': [':GV?', 'Git Commit Browser(LocationList)' ],
       \ 'c': 'fzf git commits',
       \ 'D': 'git VDiff',
       \ 'd': 'git HDiff',
       \ '3': [':Gvdiffsplit!', 'Split 3 W'],
-      \ 'r': [':diffget //2', 'Get Left'],
+      \ '2': [':diffget //2', 'Get Left'],
       \ 'u': [':diffget //3', 'Get Right'],
       \ 'f': 'fzf git Files',
       \ 'g': 'LazyGit',
       \ 'l': 'git log',
+      \ 'n': 'Neogit',
+      \ 'm': 'Git Messenger Popup',
       \ 'F': 'fzf git files preview',
       \ 'p': 'push',
       \ 's': 'status',
@@ -473,14 +480,15 @@ let g:which_key_map.p = {
 
 "" =============================== Q ==========================
 let g:which_key_map.q = { 
-      \ 'name': '+quit',
-      \ 'q': 'quit',
-      \ 'w': 'save-quit',
+      \ 'name': '+lists',
+      \ 'q': [':ToggleQuickFix', 'toggle'],
+      \ 'p': [':cprev', 'previous'],
+      \ 'n': [':cnext', 'next'],
       \}
 
 "" ============================== R ===========================
 let g:which_key_map.r = {
-      \'name': 'Jump',
+      \'name': '+jump',
       \'a': 'AerojumpFromCursorBolt',
       \'c': 'Ranger Current Dir',
       \'d': 'AerojumpDefault',

@@ -31,8 +31,10 @@ Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'hoob3rt/lualine.nvim'
 Plug 'junegunn/gv.vim'
-
+Plug 'tversteeg/registers.nvim'
+" Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
+Plug 'elianiva/gitgud.nvim'
 Plug 'maaslalani/nordbuddy'
 Plug 'novakne/kosmikoa.nvim'
 Plug 'shaunsingh/moonlight.nvim'
@@ -58,16 +60,11 @@ Plug 'Iron-E/nvim-highlite'
 Plug 'Th3Whit3Wolf/one-nvim'
 Plug 'kyazdani42/blue-moon'
 
-Plug 'PHSix/nvim-hybrid'
-Plug 'olimorris/onedark.nvim'
 Plug 'arzg/vim-colors-xcode'
 Plug 'EdenEast/nightfox.nvim'
-Plug 'NTBBloodbath/doom-one.nvim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'jsit/toast.vim'
-Plug 'shaunsingh/nord.nvim'
 " Plug 'rafamadriz/neon'
 " Plug 'mnishz/colorscheme-preview.vim'
 " <-- colorschemes
@@ -95,6 +92,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'andymass/vim-matchup'
 Plug 'sindrets/diffview.nvim'
 Plug 'voldikss/vim-floaterm'
+" Plug 'rbong/vim-flog'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'

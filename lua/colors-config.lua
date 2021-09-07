@@ -1,4 +1,4 @@
-local themeName = 'moonlight'
+local themeName = 'mychallenger_deep'
 
 function setTransapentBackground()
 -- transparent background
@@ -49,6 +49,10 @@ vim.g.moonlight_contrast = true
 vim.g.moonlight_borders = true 
 vim.g.moonlight_disable_background = false
 
+-- embark
+vim.g.embark_terminal_italics = true
+
+
 -- Set colorscheme after options
 -- use either the vim or lua command.
 vim.cmd('colorscheme ' .. themeName)
@@ -70,4 +74,4 @@ vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua set_rose_pine_variant('bas
 require('plenary.reload').reload_module('lualine')
 require('lualine-config')
 
-setTransapentBackground()
+-- setTransapentBackground()
