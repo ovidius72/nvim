@@ -21,6 +21,7 @@ function! s:init_fern() abort
   nmap <buffer> s <Plug>(fern-action-open:split)
   nmap <buffer> d <Plug>(fern-action-remove)
   nmap <buffer> r <Plug>(fern-action-move)
+  nmap <buffer> gY <Plug>(fern-action-yank)
   nmap <buffer><nowait> <leader>] <C-w><C-p>
 endfunction
 

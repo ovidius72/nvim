@@ -219,27 +219,27 @@ nnoremap <Leader>xr :%s/\<<C-r><C-w>\>//g<Left><Left>
 " au CursorMoved * if gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
 
 " ****************** SIGNIFY *************
-let g:signify_disable_by_default = 0
-" let g:signify_sign_add  = '▊'
-let g:signify_sign_add="┃"
-let g:signify_sign_delete="◢'"
-let g:signify_sign_delete_first_line="◥'"
-let g:signify_sign_change='┃'
-" let g:signify_sign_change = '██'
-nmap [g <Plug>(signify-prev-hunk)
-nmap ]g <Plug>(signify-next-hunk)
+" let g:signify_disable_by_default = 0
+" " let g:signify_sign_add  = '▊'
+" let g:signify_sign_add="┃"
+" let g:signify_sign_delete="◢'"
+" let g:signify_sign_delete_first_line="◥'"
+" let g:signify_sign_change='┃'
+" " let g:signify_sign_change = '██'
+" nmap [g <Plug>(signify-prev-hunk)
+" nmap ]g <Plug>(signify-next-hunk)
 
-augroup showHunk
-  autocmd!
-  autocmd User SignifyHunk call s:show_current_hunk()
-augroup end
+" augroup showHunk
+"   autocmd!
+"   autocmd User SignifyHunk call s:show_current_hunk()
+" augroup end
 
-function! s:show_current_hunk() abort
-  let h = sy#util#get_hunk_stats()
-  if !empty(h)
-    echo printf('[Hunk %d/%d]', h.current_hunk, h.total_hunks)
-  endif
-endfunction
+" function! s:show_current_hunk() abort
+"   let h = sy#util#get_hunk_stats()
+"   if !empty(h)
+"     echo printf('[Hunk %d/%d]', h.current_hunk, h.total_hunks)
+"   endif
+" endfunction
 
 
 " omap ic <Plug>(signify-motion-inner-pending)

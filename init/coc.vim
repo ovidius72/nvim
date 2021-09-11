@@ -18,6 +18,7 @@ let g:coc_global_extensions = [
       \ 'coc-html',
       \ 'coc-css',
       \ 'coc-sh',
+      \ 'coc-lua',
       \ 'coc-gitignore',
       \ 'coc-docthis',
       \ 'coc-git',
@@ -54,18 +55,18 @@ set nobackup
 set signcolumn=yes:1
 " set signcolumn=auto:2
 
-let g:coc_status_error_sign = '•'
-let g:coc_status_warning_sign = '•'
-let g:coc_status_info_sign = '•'
+" let g:coc_status_error_sign = '•'
+" let g:coc_status_warning_sign = '•'
+" let g:coc_status_info_sign = '•'
 
-hi! CocErrorHighlight gui=undercurl guisp=#ff6458 
-hi! CocErrorSign guifg=bg guifg=#ff6458
-hi! CocWarningSign guifg=bg guifg=#ffe9aa
-hi! CocInfoSign guifg=bg guifg=#95ffa4
-hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffe9aa
-hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
-hi! CocHintHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
-hi! CocHintLine guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
+" hi! CocErrorHighlight gui=undercurl guisp=#ff6458 
+" hi! CocErrorSign guifg=bg guifg=#ff6458
+" hi! CocWarningSign guifg=bg guifg=#ffe9aa
+" hi! CocInfoSign guifg=bg guifg=#95ffa4
+" hi! CocWarningHighlight guibg=bg guifg=fg gui=undercurl guisp=#ffe9aa
+" hi! CocInfoHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
+" hi! CocHintHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
+" hi! CocHintLine guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
 
 " autocmd QuitPre * if empty(&bt) | lclose | endif

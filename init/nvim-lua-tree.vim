@@ -39,6 +39,7 @@ let g:lua_tree_bindings = {
     \ 'paste':           'p',
     \ 'prev_git_item':   '[c',
     \ 'next_git_item':   ']c',
+    \ 'copy_absolute_path': 'gY',
     \}
 
 " Disable default mappings by plugin

@@ -32,16 +32,16 @@ Plug 'matze/vim-move'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-source ~/.config/nvim/init/vista.vim
+" source ~/.config/nvim/init/vista.vim
 source ~/.config/nvim/init/fzf.vim
-source ~/.config/nvim/init/bufsurf.vim
-source ~/.config/nvim/init/close-buffers.vim
-source ~/.config/nvim/init/vim-sandwich.vim
-source ~/.config/nvim/init/anyjump.vim
-source ~/.config/nvim/init/aerojump.vim
-source ~/.config/nvim/init/lazygit.vim
+" source ~/.config/nvim/init/bufsurf.vim
+" source ~/.config/nvim/init/close-buffers.vim
+" source ~/.config/nvim/init/vim-sandwich.vim
+" source ~/.config/nvim/init/anyjump.vim
+" source ~/.config/nvim/init/aerojump.vim
+" source ~/.config/nvim/init/lazygit.vim
 source ~/.config/nvim/init/vim-win.vim
-source ~/.config/nvim/init/colors.vim
+" source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vim-doge.vim
 source ~/.config/nvim/init/common.vim
 runtime macros/sandwich/keymap/surround.vim

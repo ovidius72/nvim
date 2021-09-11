@@ -1,8 +1,21 @@
 local gps = require('nvim-gps')
 
+local function line_progress()
+  return '%3p%%'
+end
+
+local function vim_icon()
+  return ''
+end
+
+local function short_mode(mode)
+  return mode:sub(1,1) 
+end
+
+
 require'lualine'.setup {
   options = {
-    theme= 'mychallenger_deep',
+    theme= 'catppuccino',
     icons_enabled = true,
     -- component_separators = {'', ''},
     -- section_separators = {'', ''},
@@ -13,7 +26,10 @@ require'lualine'.setup {
     disabled_filetypes = {}
   },
   sections = {
-    lualine_a = {{'mode', format=function(mode) return mode:sub(1,1) end }},
+    lualine_a = {
+      {vim_icon},
+      {'mode', format=short_mode}
+  },
     lualine_b = {
       {'filename', { file_status = true, path = 1  }}
     },
@@ -35,7 +51,7 @@ require'lualine'.setup {
         "g:coc_status"
       }
     },
-    lualine_x = {'filetype'},
+    lualine_x = {{ 'filetype', { colored = true } }},
     -- lualine_y = {'progress'},
     lualine_y = {
       'branch',
@@ -49,7 +65,7 @@ require'lualine'.setup {
         symbols = {added = '+', modified = '~', removed = '-'} -- changes diff symbols
       }
     },
-    lualine_z = {'location', 'progress'}
+    lualine_z = {'location', line_progress}
   },
   inactive_sections = {
     lualine_a = {},

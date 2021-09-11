@@ -1,4 +1,5 @@
 local actions = require "fzf-lua.actions"
+
 require'fzf-lua'.setup {
   winopts = {
     -- split         = "new",           -- open in a split instead?

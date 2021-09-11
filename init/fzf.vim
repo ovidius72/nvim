@@ -13,60 +13,37 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" Default fzf layout
-" - down / up / left / right
-" let g:fzf_layout = { 'down': '~30%' }
-
-" In Neovim, you can set up fzf window using a Vim command
-" let g:fzf_layout = { 'window': 'enew' }
-" let g:fzf_layout = { 'window': '-tabnew' }
-" let g:fzf_layout = { 'window': '10split enew' }
-
-" Centered floating window with rounded borders.
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'NonText', 'rounded': v:true, 'relative': v:false, 'yoffset': '0.5' } }
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'NonText', 'rounded': v:true } }
 let g:fzf_preview_window = ['up:60%', 'ctrl-/']
-" bottom aligned floating not pushing screen. 
-" let g:fzf_layout = {
-"       \'window': {
-"         \ 'width': 0.8, 
-"         \ 'height': 0.6,
-"         \ 'border': 'rounded',
-"         \ 'highlight': 'Operator',
-"       \}
-"     \}
-
-    " \ 'yoffset': 1,
-" \ 'border': 'horizontal'
-" let g:animate#duration = 200.0
-" let g:animate#easing_func = 'animate#ease_linear'
-" let g:fzf_layout = {
-"  \ 'window': 'new | wincmd J | resize 1 | call animate#window_percent_height(0.5)'
-" \ }
-" bottom not pushing.
-" let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.3, 'yoffset': 1, 'border': 'horizontal' } }
 
 " Customize fzf colors to match your color scheme
-" let g:fzf_colors =
-"       \ { 'fg':      ['fg', 'Normal'],
-"       \ 'bg':      ['bg', 'Exception'],
-"       \ 'hl':      ['fg', 'Comment'],
-"       \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"       \ 'bg+':     ['bg', 'Label', 'CursorColumn'],
-"       \ 'hl+':     ['fg', 'Statement'],
-"       \ 'info':    ['fg', 'PreProc'],
-"       \ 'border':  ['fg', 'Normal'],
-"       \ 'prompt':  ['fg', 'Conditional'],
-"       \ 'pointer': ['fg', 'Exception'],
-"       \ 'marker':  ['fg', 'Keyword'],
-"       \ 'spinner': ['fg', 'Label'],
-"       \ 'header':  ['fg', 'Comment'] }
+let g:fzf_colors =
+      \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Background'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'TabLine'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Normal'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
   
+let $FZF_DEFAULT_OPTS='--info=inline
+  \ --bind ctrl-y:preview-up,ctrl-e:preview-down,
+  \ctrl-b:preview-page-up,ctrl-f:preview-page-down,
+  \ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down'
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 0
 
@@ -220,7 +197,7 @@ command! -bang -nargs=* HistoryNoPreview
       \ call fzf#vim#command_history(<q-args>, &columns > 200 ? fzf#vim#with_preview() : {}, <bang>0)
 
 command! -bang -nargs=? -complete=dir HFiles
-  \ call fzf#vim#files(<q-args>, &columns > 180 ?  fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}) : {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
+  \ call fzf#vim#files(<q-args>, &columns > 110 ?  fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}) : {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, &columns > 180 ? fzf#vim#with_preview({'options': ['--info=inline']}) : {}, <bang>0)

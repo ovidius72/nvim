@@ -18,9 +18,8 @@
 if exists('g:goneovim')
   source ~/.config/nvim/init-goneovim.vim
   source ~/.config/nvim/init/neovim.vim
-elseif has('gui_vimr')
-  source ~/.config/nvim/init/vimr.vim
-
+" elseif has('gui_vimr')
+"   source ~/.config/nvim/vimr.vim
 elseif exists('g:vscode')
   source ~/.config/nvim/init-vscode.vim
 else

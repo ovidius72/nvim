@@ -9,6 +9,11 @@ require('colors-config')
 require('lualine-config')
 require('nvim-rev-config')
 require('nvim-gps-config')
+require('colorizer').setup({
+    '*';
+  });
+require('gitsigns-config')
+require('bufferline-config')
 -- require('fzf_lua-config')
 -- local highlight = require 'vim.highlight'
 -- require('telescope.lua')

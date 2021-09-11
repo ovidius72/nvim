@@ -14,11 +14,12 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'rktjmp/lush.nvim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'rhysd/git-messenger.vim'
 Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
@@ -32,36 +33,22 @@ Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'hoob3rt/lualine.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'tversteeg/registers.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
 " Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
-Plug 'elianiva/gitgud.nvim'
-Plug 'maaslalani/nordbuddy'
-Plug 'novakne/kosmikoa.nvim'
 Plug 'shaunsingh/moonlight.nvim'
-
 Plug 'savq/melange'
-Plug 'sainnhe/edge'
-Plug 'ishan9299/nvim-solarized-lua'
 Plug 'mcchrish/zenbones.nvim'
 Plug 'ntk148v/vim-horizon'
-Plug 'ray-x/aurora'
-Plug 'glepnir/zephyr-nvim'
 Plug 'npxbr/gruvbox.nvim'
-Plug 'bobrippling/vim-bogster'
-Plug 'kinoute/vim-hivacruz-theme'
 Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'elianiva/gruvy.nvim'
-Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'projekt0n/github-nvim-theme'
-Plug 'yashguptaz/calvera-dark.nvim'
 Plug 'franbach/miramare'
 Plug 'folke/tokyonight.nvim'
-Plug 'Iron-E/nvim-highlite'
-Plug 'Th3Whit3Wolf/one-nvim'
+Plug 'Pocco81/Catppuccino.nvim'
 Plug 'kyazdani42/blue-moon'
-
-Plug 'arzg/vim-colors-xcode'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'jsit/toast.vim'
@@ -72,6 +59,7 @@ Plug 'jsit/toast.vim'
 
 " Plug 'folke/trouble.nvim'
 Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'preservim/vimux'
 Plug 's1n7ax/nvim-comment-frame'
 " Plug 'AckslD/nvim-neoclip.lua'
@@ -112,7 +100,7 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'TimUntersberger/neogit'
+" Plug 'TimUntersberger/neogit'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-unimpaired'
 Plug 'dstein64/vim-win'
@@ -130,7 +118,8 @@ Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
-Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/barbar.nvim'
+Plug 'akinsho/bufferline.nvim'
 Plug 'SmiteshP/nvim-gps'
 Plug 'mbbill/undotree'
 Plug 'simnalamburt/vim-mundo'
@@ -169,7 +158,28 @@ require'nvim-treesitter.configs'.setup {
     autotag = {
       enable = true,
     },
-    ensure_installed = {'javascript', 'typescript', 'tsx', 'php'},
+    ensure_installed = {
+      'javascript',
+      'html',
+      'scss',
+      'json',
+      'graphql',
+      'vue',
+      'jsonc',
+      'comment',
+      'regex',
+      'json5',
+      'css',
+      'bash',
+      'yaml',
+      'ql',
+      'typescript',
+      'tsx',
+      'php',
+      'toml',
+      'python',
+      'dockerfile'
+    },
     highlight = {
         enable = true,
     },
@@ -238,7 +248,7 @@ source ~/.config/nvim/init/smoothie.vim
 source ~/.config/nvim/init/jumpwire.vim
 source ~/.config/nvim/init/signify.vim
 source ~/.config/nvim/init/coc.vim
-source ~/.config/nvim/init/barbar.vim
+" source ~/.config/nvim/init/barbar.vim
 source ~/.config/nvim/init/tagalong.vim
 source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/vim-test.vim
