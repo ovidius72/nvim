@@ -1,5 +1,5 @@
 " set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h18:style=Regular
-" set guifont=JetBrainsMono\ Nerd\ Font:size=14
+" set guifont=JetBrainsMono\ Nerd\ Font:size=16
 " set guicursor += a:blinkon333
 
 " if has("gui_running")
@@ -20,6 +20,21 @@ if exists('g:goneovim')
   source ~/.config/nvim/init/neovim.vim
 " elseif has('gui_vimr')
 "   source ~/.config/nvim/vimr.vim
+elseif exists('g:fvim_loaded')
+    source ~/.config/nvim/init/neovim.vim
+    " good old 'set guifont' compatibility with HiDPI hints...
+    if g:fvim_os == 'windows' || g:fvim_render_scale > 1.0
+      set guifont=Iosevka\ Slab:h14
+      set guifont=JetBrainsMono\ Nerd\ Font:size=16
+    else
+      set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h18:style=Regular
+      set guifont=JetBrainsMono\ Nerd\ Font:size=16
+    endif
+      
+    " Ctrl-ScrollWheel for zooming in/out
+    nnoremap <silent> <C-ScrollWheelUp> :set guifont=+<CR>
+    nnoremap <silent> <C-ScrollWheelDown> :set guifont=-<CR>
+    nnoremap <A-CR> :FVimToggleFullScreen<CR>
 elseif exists('g:vscode')
   source ~/.config/nvim/init-vscode.vim
 else

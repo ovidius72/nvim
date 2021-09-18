@@ -35,7 +35,7 @@ Plug 'junegunn/gv.vim'
 Plug 'tversteeg/registers.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
-" Plug 'tanvirtin/vgit.nvim'
+Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
 Plug 'shaunsingh/moonlight.nvim'
 Plug 'savq/melange'
@@ -47,6 +47,8 @@ Plug 'elianiva/gruvy.nvim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'franbach/miramare'
 Plug 'folke/tokyonight.nvim'
+Plug 'nxvu699134/vn-night.nvim'
+
 Plug 'Pocco81/Catppuccino.nvim'
 Plug 'kyazdani42/blue-moon'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
@@ -104,6 +106,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-unimpaired'
 Plug 'dstein64/vim-win'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-commentary'
@@ -118,9 +123,12 @@ Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
+Plug 'SmiteshP/nvim-gps'
+Plug 'sindrets/winshift.nvim'
+
+" Plug 'rmagatti/goto-preview' " requires lsp
 " Plug 'romgrk/barbar.nvim'
 Plug 'akinsho/bufferline.nvim'
-Plug 'SmiteshP/nvim-gps'
 Plug 'mbbill/undotree'
 Plug 'simnalamburt/vim-mundo'
 " Plug 'camspiers/animate.vim'
@@ -147,6 +155,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'kevinhwang91/rnvimr'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'glepnir/dashboard-nvim'
 call plug#end()
 
 
@@ -160,6 +169,7 @@ require'nvim-treesitter.configs'.setup {
     },
     ensure_installed = {
       'javascript',
+      'lua',
       'html',
       'scss',
       'json',
@@ -195,12 +205,12 @@ require'nvim-treesitter.configs'.setup {
     matchup = {
         enable = false,
     },
+    nvimGPS = { 
+      enable = true,
+    },
     indent = {
         enable = false,
     },
-    nvimGPS = { 
-      enable = true,
-    }
 }
 EOF
 
@@ -254,6 +264,8 @@ source ~/.config/nvim/init/vimspector.vim
 source ~/.config/nvim/init/vim-test.vim
 source ~/.config/nvim/init/nvim-comment-frame.vim
 source ~/.config/nvim/init/hop.vim
+source ~/.config/nvim/init/dadbod.vim
+" source ~/.config/nvim/init/dashboard.vim
 runtime macros/sandwich/keymap/surround.vim
 
 " hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg

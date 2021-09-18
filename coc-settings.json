@@ -1,4 +1,5 @@
 {
+  "coc.preferences.semanticTokensHighlights": false,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
   "tsserver.formatOnType": true,
@@ -12,6 +13,7 @@
   "vetur.validation.templateProps": true,
   "tsserver.enable": true,
   "intelephense.licenceKey": "00B18KQH3XJPJ89",
+  "Lua.diagnostics.globals": ["vim", "bit"],
   "intelephense.environment.includePaths": [
     "vendor",
     "bootstrap",
@@ -22,7 +24,7 @@
     "src",
     "src/AppBundle"
   ],
-  "intelephense.diagnostics.undefinedMethods": false,
+  "intelephense.diagnostics.undefinedMethods": true,
   "intelephense.stubs": [
     "apache",
     "bcmath",
@@ -212,7 +214,6 @@
   "snippets.shortcut": "Snip",
   "coc.source.file.shortcut": "File",
   "coc.source.buffer.shortcut": "Buf",
-  "coc.source.issues.shortcut": "Issue",
   "coc.source.around.shortcut": "Around",
   "snippets.ultisnips.directories": ["~/.config/nvim/ultisnips", "UltiSnips"],
   "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnips",

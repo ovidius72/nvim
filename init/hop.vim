@@ -14,6 +14,7 @@ nmap <leader>jl :HopLine<cr>
 nmap <leader>jw :HopWord<cr>
 nmap <M-w> :HopWord<cr>
 nmap <leader>ja :HopChar2<cr>
+nmap <leader>k :HopChar2<cr>
 nmap <leader>jj :HopWordAC<cr>
 nmap <leader>jk :HopWordBC<cr>
 nmap <leader>jp :HopPattern<cr>

@@ -3,17 +3,19 @@ local M = {}
 local utils = require('utils')
 -- require('gxyline')
 require('keys')
--- require('diffview-config')
+require('diffview-config')
+require('vgit-config')
 require('telescope-config')
 require('colors-config')
 require('lualine-config')
 require('nvim-rev-config')
 require('nvim-gps-config')
-require('colorizer').setup({
-    '*';
-  });
+require('colorizer').setup({ '*'; });
 require('gitsigns-config')
 require('bufferline-config')
+require('winshift-config')
+-- require('goto-preview-config') Require LSP
+
 -- require('fzf_lua-config')
 -- local highlight = require 'vim.highlight'
 -- require('telescope.lua')

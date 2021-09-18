@@ -444,8 +444,9 @@ let g:which_key_map.j = {
 
 "" ============================= M ============================
 let g:which_key_map.m = { 
-      \'name': '+marks',
+      \'name': '+other',
       \'m': 'marks',
+      \'w': [':WinShift', 'WinShift'],
       \}
 
 
@@ -591,6 +592,7 @@ let g:which_key_map.w = {
     \ 'K' : ['resize -5'  , 'expand-window-up']      ,
     \ '=' : ['<C-W>='     , 'balance-window']        ,
     \ 'q' : ['<C-W>c'     , 'delete-window']         ,
+    \ 'Q' : 'exit'         ,
     \ 's' : ['<C-W>s'     , 'split-window-below']    ,
     \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
     \ '?' : ['Windows'    , 'fzf-window']            ,

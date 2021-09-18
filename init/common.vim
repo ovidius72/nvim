@@ -19,6 +19,7 @@ set spell!
 set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
+set fillchars+=diff:╱
 " set colorcolumn=999999
 " set inccommand=""
 " disable comment on new line.
@@ -27,6 +28,9 @@ set formatoptions-=cro
 " setlocal cursorcolumn
 setlocal nowrap
 set nowrap
+" set breakindent
+" set breakindentopt=shift:2
+" set showbreak=\\\\\ OR ↳
 syntax on
 filetype plugin on
 filetype indent on
@@ -37,7 +41,7 @@ let mapleader=" "
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 let &t_ut=''
-
+" fads sdaf asdf sda f adsf dsa f sda fsda f sda fsd afsd f ds f sdaf sda f sdaf s adf sda f sdaf sd af sd f sdf sda fsdf sd fsa dfsd f sd fsdaf sda f sdfs dfds sdf a
 " nvim-hlslens
 "noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
 "            \<Cmd>lua require('hlslens').start()<CR>
@@ -64,10 +68,31 @@ augroup PHP
 augroup END
 
 "useful remap
+nnoremap + <C-a>
+nnoremap - <C-x>
+xnoremap + g<C-a>
+xnoremap - g<C-x>
+
 nmap vv vaw
+nnoremap {  {zz
+nnoremap }  }zz
+nnoremap n  nzz
+nnoremap N  Nzz
+" nnoremap [c [czz
+" nnoremap ]c ]czz
+nnoremap [j <C-o>zz
+nnoremap ]j <C-i>zz
+nnoremap [s [szz
+nnoremap ]s ]szz
+nnoremap cp yap<S-}>p
+
+"redirect change operations to the black hole register.
+nnoremap c "_c
+nnoremap C "_C
+
 nnoremap Y yg_
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 nnoremap J mzJ`z
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
@@ -75,6 +100,10 @@ inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" automatically equalize splits when vim is resized
+autocmd VimResized * wincmd =
+
 
 " in insert mode delteting with ctrl-u or ctrl-w can be recovered.
 inoremap <c-u> <c-g>u<c-u>
@@ -311,6 +340,7 @@ vmap ¬ <Plug>MoveBlockRight
 " save all in various modes
 " nmap <leader>qq :qa<cr>
 " nmap <leader>qw :waq<cr>
+nmap <leader>wQ :qa!<cr>
 
 
 " buffer

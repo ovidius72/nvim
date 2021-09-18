@@ -1,6 +1,6 @@
-local themeName = 'dark_catppuccino'
+local themeName = 'neon_latte'
 
-local function setTransapentBackground()
+function SetTransapentBackground()
 -- transparent background
   vim.cmd [[ hi Normal guibg=none ctermbg=none ]]
   vim.cmd [[ hi LineNr guibg=none ctermbg=none ]]
@@ -12,26 +12,26 @@ local function setTransapentBackground()
   vim.cmd [[ hi EndOfBuffer guibg=none ctermbg=none ]]
 end
 
-local function reloadLualine() 
+function ReloadLualine()
   require('plenary.reload').reload_module('lualine')
   require('lualine-config')
   -- require('lualine').setup({ options = { theme = themeName } })
 end
 
-local function change_rose_pine_theme()
+function ChangeRosePineTheme()
   require('rose-pine.functions').toggle_variant()
-  reloadLualine()
+  ReloadLualine()
   -- setTransapentBackground()
 end
 
-local function set_rose_pine_variant(variant)
+function SetRosePineVariant(variant)
   require('rose-pine.functions').select_variant(variant)
-  reloadLualine()
+  ReloadLualine()
 end
 
 function SetColorscheme(colorscheme)
   vim.cmd('colorscheme ' .. colorscheme)
-  reloadLualine()
+  ReloadLualine()
 end
 
 ----------------------------------------------------------------------
@@ -52,7 +52,7 @@ vim.g.rose_pine_disable_background = false
 ----------------------------------------------------------------------
 vim.g.zenbones_solid_vert_split = false
 vim.g.zenbones_dim_noncurrent_window = true
-vim.g.zenbones_lightness = null -- null(default) | 'bright' | 'dim'
+vim.g.zenbones_lightness = "" -- null(default) | 'bright' | 'dim'
 
 ----------------------------------------------------------------------
 --                            Moonlight                             --
@@ -78,22 +78,26 @@ local cp_api = require('catppuccino.api.colors')
 local err, colors = cp_api.get_colors('neon_latte')
 local util = require("catppuccino.utils.util")
 
+-- deep challenger color scheme.
 catppuccino.remap(
     {
-    -- bg = '#221733',
+    -- bg = '#1e1c31',
     -- bg_statusline = '#1d142b',
-    -- magenta_br = '#c991e1',
-    -- magenta= '#906cff',
-    -- yellow_br = '#ffe9aa',
-    -- yellow= '#ffe37e',
-    -- red_br = '#ff8080',
-    -- red = '#ff5458',
-    -- green= '#95ffa4',
-    -- green_br = '#62d196',
+    -- blue = '#c991e1',
+    -- blue_cr= '#906cff',
+    -- green = '#ffe9aa',
+    -- green_br= '#ffe37e',
+    -- magenta = '#ff8080',
+    -- magenta_br = '#ff5458',
+    -- yellow = '#95ffa4',
+    -- yellow_br = '#62d196',
     -- cyan = '#aaffe4',
     -- cyan_br = '#63f2f1',
-    -- blu_br = '#91ddff',
-    -- blu= '#65b2ff',
+    -- red_br = '#91ddff',
+    -- red= '#65b2ff',
+    -- fg='#f3f3f3',
+    -- white='#f3f3f3',
+    -- fg_alt='#f3f3f3',
   },
     {
       CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.2), style='undercurl' },
@@ -102,11 +106,11 @@ catppuccino.remap(
   )
 
 catppuccino.setup({
-    colorscheme = "dark_catppuccino",
+    colorscheme = "neon_latte",
     transparency = false,
 		styles = {
 			comments = "italic",
-			functions = "NONE",
+			functions = "bold",
 			keywords = "NONE",
 			strings = "NONE",
 			variables = "bold",
@@ -132,7 +136,7 @@ catppuccino.setup({
 -- use either the vim or lua command.
 vim.cmd('colorscheme ' .. themeName)
 -- require('github-theme').setup({
---   themeStyle = 'light'
+--   theme_style = 'dark_default'
 -- })
 
 -- remove tilde characters at the end of the buffer.
@@ -140,17 +144,17 @@ vim.cmd("let &fcs='eob: '")
 -- require(themeName).setup({})
 
 -- Toggle catppuccino variant
-vim.api.nvim_set_keymap('n', '<leader>tcl', [[<cmd>lua setColorscheme('light_melya')<CR>]], { noremap = true, silent = true });
-vim.api.nvim_set_keymap('n', '<leader>tcd', [[<cmd>lua setColorscheme('dark_catppuccino')<CR>]], { noremap = true, silent = true });
-vim.api.nvim_set_keymap('n', '<leader>tcn', [[<cmd>lua setColorscheme('neon_latte')<CR>]], { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<leader>tcl', [[<cmd>lua SetColorscheme('light_melya')<CR>]], { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<leader>tcd', [[<cmd>lua SetColorscheme('dark_catppuccino')<CR>]], { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<leader>tcn', [[<cmd>lua SetColorscheme('neon_latte')<CR>]], { noremap = true, silent = true });
 
-vim.api.nvim_set_keymap('n', '<leader>tcr', [[<cmd>lua change_rose_pine_theme()<cr>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tcr', [[<cmd>lua ChangeRosePineTheme()<cr>]], { noremap = true, silent = true })
 -- Toggle rose-pine variant
-vim.api.nvim_set_keymap('n', '<leader>tcm', [[<cmd>lua change_rose_pine_theme()<cr>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tcm', [[<cmd>lua ChangeRosePineTheme()<cr>]], { noremap = true, silent = true })
 -- Select each variant
-vim.api.nvim_set_keymap('n', '<leader>t1', [[<cmd>lua set_rose_pine_variant('dawn')<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t2', [[<cmd>lua set_rose_pine_variant('moon')<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua set_rose_pine_variant('base')<cr>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t1', [[<cmd>lua SetRosePineVariant('dawn')<cr>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t2', [[<cmd>lua SetRosePineVariant('moon')<cr>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua SetRosePineVariant('base')<cr>]], { noremap = true, silent = true })
 
 require('plenary.reload').reload_module('lualine')
 require('lualine-config')
