@@ -272,5 +272,5 @@ runtime macros/sandwich/keymap/surround.vim
 " hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg
 " hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#95ffa4 guibg=bg
 lua init = require('init')
-lua init.setup()
+" lua init.setup()
 " source ~/.config/nvim/init/colors.vim

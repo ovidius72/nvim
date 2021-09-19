@@ -62,7 +62,7 @@ vim.g.moonlight_italic_keywords = true
 vim.g.moonlight_italic_functions = true
 vim.g.moonlight_italic_variables = false
 vim.g.moonlight_contrast = true
-vim.g.moonlight_borders = true 
+vim.g.moonlight_borders = true
 vim.g.moonlight_disable_background = false
 
   ----------------------------------------------------------------------
@@ -75,32 +75,37 @@ vim.g.embark_terminal_italics = true
 ----------------------------------------------------------------------
 local catppuccino = require('catppuccino');
 local cp_api = require('catppuccino.api.colors')
-local err, colors = cp_api.get_colors('neon_latte')
+local _, colors = cp_api.get_colors('neon_latte')
 local util = require("catppuccino.utils.util")
 
 -- deep challenger color scheme.
 catppuccino.remap(
     {
-    -- bg = '#1e1c31',
-    -- bg_statusline = '#1d142b',
-    -- blue = '#c991e1',
-    -- blue_cr= '#906cff',
-    -- green = '#ffe9aa',
-    -- green_br= '#ffe37e',
-    -- magenta = '#ff8080',
-    -- magenta_br = '#ff5458',
-    -- yellow = '#95ffa4',
-    -- yellow_br = '#62d196',
-    -- cyan = '#aaffe4',
-    -- cyan_br = '#63f2f1',
-    -- red_br = '#91ddff',
-    -- red= '#65b2ff',
-    -- fg='#f3f3f3',
-    -- white='#f3f3f3',
-    -- fg_alt='#f3f3f3',
+    black = "#212121",
+    subtle_black = "#303030",
+    asphalt_medium = "#141228",
+    asphalt_subtle = "#100e23",
+    steal = '#464f7f',
+    bg = '#1e1c31',
+    bg_statusline = '#1d142b',
+    blue = '#c991e1',
+    blue_br= '#906cff',
+    green = '#ffe9aa',
+    green_br= '#ffe37e',
+    magenta = '#ff8080',
+    magenta_br = '#ff5458',
+    yellow = '#95ffa4',
+    yellow_br = '#62d196',
+    cyan = '#aaffe4',
+    cyan_br = '#63f2f1',
+    red_br = '#91ddff',
+    red= '#65b2ff',
+    fg='#f3f3f3',
+    white='#f3f3f3',
+    fg_alt='#f3f3f3',
   },
     {
-      CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.2), style='undercurl' },
+      CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.4), style='undercurl'},
       -- CocFadeOut = { fg = colors.red, style='undercurl' }
     }
   )
@@ -110,7 +115,7 @@ catppuccino.setup({
     transparency = false,
 		styles = {
 			comments = "italic",
-			functions = "bold",
+			functions = "none",
 			keywords = "NONE",
 			strings = "NONE",
 			variables = "bold",
