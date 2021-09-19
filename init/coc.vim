@@ -471,3 +471,13 @@ nnoremap <silent><nowait>  <space>clr  :<C-u>CocListResume<CR>
 "   endif
 " endfunction
 " autocmd TextChanged,CursorMoved * call EasyMotionCoc()
+"
+inoremap <silent> <C-x> <C-r>=ShowDoc()<CR><C-e>
+function! ShowDoc() abort
+  let winid = get(g:, 'coc_last_float_win', -1)
+  if winid != -1
+    let bufnr = winbufnr(winid)
+    exe 'below sb '.bufnr
+  endif
+  return ''
+endfunction

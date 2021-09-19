@@ -32,7 +32,7 @@ Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'hoob3rt/lualine.nvim'
 Plug 'junegunn/gv.vim'
-Plug 'tversteeg/registers.nvim'
+" Plug 'tversteeg/registers.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tanvirtin/vgit.nvim'
