@@ -67,7 +67,7 @@ require'lualine'.setup {
     -- section_separators = {'', ''},
     -- component_separators = {'', ''},
     section_separators = '',
-    component_separators = '|',
+    component_separators = '',
     disabled_filetypes = {}
   },
   sections = {
@@ -76,7 +76,7 @@ require'lualine'.setup {
       {'mode', format=short_mode}
   },
     lualine_b = {
-      {'filename', { file_status = true, path = 1  }}
+      {'filename', { file_status = true, path = 0  }}
     },
     lualine_c = {
       {
@@ -99,7 +99,10 @@ require'lualine'.setup {
     lualine_x = {{ 'filetype', { colored = true } }},
     -- lualine_y = {'progress'},
     lualine_y = {
-      'branch',
+      {
+        'branch',
+        icon = "",
+      },
       {
         'diff',
         colored = true, -- displays diff status in color if set to true
@@ -110,7 +113,7 @@ require'lualine'.setup {
         symbols = {added = '+', modified = '~', removed = '-'} -- changes diff symbols
       }
     },
-    lualine_z = {'location', line_progress}
+    lualine_z = {line_progress}
   },
   inactive_sections = {
     lualine_a = {},

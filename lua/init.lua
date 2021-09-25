@@ -14,6 +14,7 @@ require('colorizer').setup({ '*'; });
 require('gitsigns-config')
 require('bufferline-config')
 require('winshift-config')
+-- require('sidebar-config')
 -- require('goto-preview-config') Require LSP
 
 -- require('fzf_lua-config')
@@ -23,5 +24,11 @@ require('winshift-config')
 function M.setup()
   -- utils.load('plugins')
 end
+
+require("bufjump").setup({
+    forward = "]a",
+    backward = "[a",
+    on_success = nil
+})
 
 return M

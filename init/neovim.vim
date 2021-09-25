@@ -32,7 +32,9 @@ Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'hoob3rt/lualine.nvim'
 Plug 'junegunn/gv.vim'
+Plug 'kwkarlwang/bufjump.nvim'
 " Plug 'tversteeg/registers.nvim'
+" Plug 'GustavoKatel/sidebar.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tanvirtin/vgit.nvim'
@@ -205,9 +207,9 @@ require'nvim-treesitter.configs'.setup {
     matchup = {
         enable = false,
     },
-    nvimGPS = { 
-      enable = true,
-    },
+    -- nvimGPS = { 
+    --   enable = true,
+    -- },
     indent = {
         enable = false,
     },

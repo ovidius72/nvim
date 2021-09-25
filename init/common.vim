@@ -13,13 +13,23 @@ set smartcase
 set shortmess=aFc
 set termguicolors
 set timeout
+" folding
 set foldmethod=manual
 set foldcolumn=0
+" set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+" set foldtext=getline(v:foldstart).'...'.trim(getline(v:foldend))
+set fillchars=fold:\\
+set foldnestmax=3
+set foldminlines=1
+" set foldtext=substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))
+
 set spell!
 set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
 set fillchars+=diff:╱
+
 " set colorcolumn=999999
 " set inccommand=""
 " disable comment on new line.
