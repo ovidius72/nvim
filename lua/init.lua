@@ -1,10 +1,10 @@
 local M = {}
 -- require('bubbly')
-local utils = require('utils')
+-- local utils = require('utils')
 -- require('gxyline')
 require('keys')
 require('diffview-config')
--- require('vgit-config')
+require('vgit-config')
 require('telescope-config')
 require('colors-config')
 require('lualine-config')

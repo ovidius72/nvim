@@ -39,6 +39,7 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
+Plug 'wuelnerdotexe/vim-enfocado', { 'branch' : 'development' }
 Plug 'shaunsingh/moonlight.nvim'
 Plug 'savq/melange'
 Plug 'mcchrish/zenbones.nvim'

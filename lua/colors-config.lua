@@ -140,6 +140,7 @@ catppuccino.setup({
 -- Set colorscheme after options
 -- use either the vim or lua command.
 vim.cmd('colorscheme ' .. themeName)
+vim.cmd("let &fcs='eob: '")
 -- require('github-theme').setup({
 --   theme_style = 'dark_default'
 -- })
