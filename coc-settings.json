@@ -18,6 +18,7 @@
   "vetur.validation.templateProps": true,
   "intelephense.licenceKey": "00B18KQH3XJPJ89",
   "Lua.diagnostics.globals": ["vim", "bit"],
+  "git.showCommitInFloating": true,
   "intelephense.environment.includePaths": [
     "vendor",
     "bootstrap",

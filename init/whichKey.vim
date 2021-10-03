@@ -20,6 +20,8 @@ function! ToggleQuickFix()
         cclose
     endif
 endfunction
+" clear quickfix
+command! ClearQuickFixList cexpr []
 
 "binds both escape and Ctrl-g to quit which-key.
 let g:which_key_exit = [27, 7] 
@@ -91,6 +93,7 @@ let g:which_key_map["0"] = 'which_key_ignore'
 let g:which_key_map["<F9>"] = 'which_key_ignore'
 let g:which_key_map["0..9"] = 'Switch Buffers'
 nnoremap <silent><leader>qq :call ToggleQuickFix()<CR>
+" nnoremap <silent><leader>qx :ClearQuickFixList<CR>
 nnoremap <silent><leader>qp :cprev<CR>
 nnoremap <silent><leader>qn :cnext<CR>
 
@@ -483,6 +486,7 @@ let g:which_key_map.p = {
 let g:which_key_map.q = { 
       \ 'name': '+lists',
       \ 'q': [':ToggleQuickFix', 'toggle'],
+      \ 'x': [':ClearQuickFixList', 'clear'],
       \ 'p': [':cprev', 'previous'],
       \ 'n': [':cnext', 'next'],
       \}

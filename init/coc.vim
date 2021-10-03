@@ -96,8 +96,8 @@ set signcolumn=yes:1
 
 " coc-git
 " navigate chunks of current buffer
-" nmap [g <Plug>(coc-git-prevchunk)
-" nmap ]g <Plug>(coc-git-nextchunk)
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
 " show commit contains current position
 nmap <Leader>cgc <Plug>(coc-git-commit)

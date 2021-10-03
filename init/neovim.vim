@@ -35,9 +35,9 @@ Plug 'junegunn/gv.vim'
 Plug 'kwkarlwang/bufjump.nvim'
 " Plug 'tversteeg/registers.nvim'
 " Plug 'GustavoKatel/sidebar.nvim'
-Plug 'lewis6991/gitsigns.nvim'
+" Plug 'lewis6991/gitsigns.nvim'
 
-Plug 'tanvirtin/vgit.nvim'
+" Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
 Plug 'wuelnerdotexe/vim-enfocado', { 'branch' : 'development' }
 Plug 'shaunsingh/moonlight.nvim'
@@ -114,6 +114,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'https://github.com/p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'unblevable/quick-scope'
@@ -194,10 +195,10 @@ require'nvim-treesitter.configs'.setup {
       'dockerfile'
     },
     highlight = {
-        enable = true,
+        enable = false,
     },
     incremental_selection = {
-        enable = true,
+        enable = false,
         keymaps = {
           init_selection = "gnn",
           node_incremental = "gnd",
@@ -215,6 +216,10 @@ require'nvim-treesitter.configs'.setup {
         enable = false,
     },
 }
+-- require "nvim-treesitter.highlight"                                              
+-- local hlmap = vim.treesitter.highlighter.hl_map                                  
+-- hlmap["punctuation.delimiter"] = "Delimiter"
+-- hlmap["punctuation.bracket"] = nil
 EOF
 
 runtime macros/sandwich/keymap/surround.vim
