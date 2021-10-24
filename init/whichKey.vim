@@ -71,7 +71,7 @@ map <silent><leader>M :MaximizerToggle<cr>
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
-let g:which_key_map["S"] = 'Spectre'
+" let g:which_key_map["S"] = 'Spectre'
 " let g:which_key_map["<space>"] = 'files'
 let g:which_key_map["'"] = 'close preview'
 " let g:which_key_map["SPC"] = 'Ace windows'
@@ -172,14 +172,6 @@ let g:which_key_map.b = {
 let g:which_key_map.c = { 
       \ 'name': '+coc',
       \ 'a': 'Code Action',
-      \ 'b':{ 
-        \'name': '+coc-bookmarks',
-        \'l': 'list',
-        \'j': 'next',
-        \'k': 'prev',
-        \'t': 'toggle',
-        \'a': 'annotate',
-        \},
       \ 'c' : [':CocConfig','Coc Config'],
       \ 'd':{ 
         \'name': '+coc-diagnostic',
@@ -201,7 +193,6 @@ let g:which_key_map.c = {
       \ 'h' : [':CocInfo','CocInfo'],
       \ 'i' : 'Diagnostics Info',
       \ 'j' : 'Jump Float',
-      \ 'k' : 'Generete JSDoc',
       \ 'l': {
           \'name': '+coc-list',
           \'l': 'Lists',
@@ -221,10 +212,10 @@ let g:which_key_map.c = {
           \'l': 'load',
         \},
       \ 'L': 'CodeLens Actions',
+      \ 'm': 'Marks',
       \ 'o': 'CodeAction Line',
       \ 'O': 'Open Link',
       \ 'p': 'projects',
-      \ 't': 'Toggle Explorer',
       \ 'u': 'Coc Update',
       \ 'v': 'Code Action Selected',
       \ 'x': 'Open Explorer',
@@ -454,13 +445,19 @@ let g:which_key_map.m = {
 
 
 "" ============================== N ===========================
+let g:which_key_map.n = { 
+      \'name': '+empty+',
+      \}
 
 
 
 "" ============================== O ==========================
 let g:which_key_map.o = { 
       \'name': '+custom',
+      \'s': 'ISwap',
+      \'w': 'ISwapWith',
       \'l': 'js-console.log',
+      \'p': 'language log',
       \'o': 'organize import',
       \'f': 'format',
       \'F': 'fold',
@@ -512,13 +509,21 @@ let g:which_key_map.r = {
 let g:which_key_map.s = { 
       \'name': '+grep',
       \'a': 'Ag',
+      \ 'e': {
+        \ 'name': '+config',
+        \ 'd': 'Neovim Init',
+        \ 'f': 'Config files',
+        \ 'I': 'Plug Install',
+        \ 'U': 'Plug Update',
+        \ 'r': 'Reload config',
+      \ },
       \'A': 'Ag full-screen',
       \'f': 'Rg Fuzzy',
       \'F': 'Rg Fuzzy full-scree ',
       \'l': 'loaded buffer lines',
       \'h': 'search history',
       \'j': 'Spectre Word',
-      \'p': 'Specter File',
+      \'p': 'Spectre File',
       \'c': 'command history',
       \'g': 'git grep',
       \'s': 'current buffer lines',
@@ -614,14 +619,11 @@ let g:which_key_map.x = {
       \'name': '+code',
       \'r': 'replace-word',
       \'d': 'doge generate (DOC)',
+      \'k': 'RevJ',
+      \'K': 'RevJ-Region',
       \'o': 'Split at cursor',
-      \'s': 'split into multiline',
+      \'s': 'Split into multiline',
       \'j': 'join multilines',
-      \'c': {
-        \'name': 'comment',
-        \'c': 'Comment+motion',
-        \'y': 'Comment and yank',
-        \},
       \}
 
 
@@ -649,11 +651,3 @@ let g:which_key_map.z = {
         \'s': 'spell-stay',
       \},
     \}
-
-
-      " \'m': {
-      "   \'name': '+motion',
-      "   \'/': 'incsearch-easymotion-/',
-      "   \'?': 'incsearch-easymotion-?',
-      "   \'m': 'incsearch-easymotion-stay',
-      " \},

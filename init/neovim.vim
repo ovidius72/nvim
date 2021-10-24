@@ -39,24 +39,21 @@ Plug 'kwkarlwang/bufjump.nvim'
 
 " Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
-Plug 'wuelnerdotexe/vim-enfocado', { 'branch' : 'development' }
 Plug 'shaunsingh/moonlight.nvim'
 Plug 'savq/melange'
 Plug 'mcchrish/zenbones.nvim'
 Plug 'ntk148v/vim-horizon'
 Plug 'npxbr/gruvbox.nvim'
-Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'elianiva/gruvy.nvim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'franbach/miramare'
 Plug 'folke/tokyonight.nvim'
-Plug 'nxvu699134/vn-night.nvim'
+Plug 'Yagua/nebulous.nvim'
+
 
 Plug 'Pocco81/Catppuccino.nvim'
-Plug 'kyazdani42/blue-moon'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'jsit/toast.vim'
 " Plug 'rafamadriz/neon'
 " Plug 'mnishz/colorscheme-preview.vim'
 " <-- colorschemes
@@ -71,6 +68,8 @@ Plug 's1n7ax/nvim-comment-frame'
 Plug 'ironhouzi/starlite-nvim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'camspiers/snap'
+Plug 'mizlan/iswap.nvim'
+
 
 " Plug 'haringsrob/nvim_context_vt'
 Plug 'kana/vim-textobj-user'
@@ -127,6 +126,7 @@ Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
+" Plug 'nvim-treesitter/treesitter-textobjects'
 Plug 'SmiteshP/nvim-gps'
 Plug 'sindrets/winshift.nvim'
 

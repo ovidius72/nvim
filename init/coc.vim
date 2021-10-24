@@ -271,13 +271,7 @@ augroup END
 
 
 "coc-marks
-nmap <Leader>cbb :CocList marks<CR>
-"coc-bookmark
-nmap <Leader>cbl :CocList bookmark<CR>
-nmap <Leader>cbj <Plug>(coc-bookmark-next)
-nmap <Leader>cbk <Plug>(coc-bookmark-prev)
-nmap <Leader>cbt <Plug>(coc-bookmark-toggle)
-nmap <Leader>cba <Plug>(coc-bookmark-annotate)
+nmap <Leader>cm :CocList marks<CR>
 
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -429,7 +423,7 @@ command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 nmap <leader>oF :Fold<cr>
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') | :call CocAction('format') | echo "Organize Imports and format executed"
 nmap <leader>oo :OR<cr>
 
 " nnoremap <space>cf <Plug>(coc-codelens-action)

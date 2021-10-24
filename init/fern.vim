@@ -6,9 +6,7 @@ let g:loaded_netrwFileHandlers = 1
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden = 1
 map <leader>[ :Fern . -drawer -toggle -width=35<CR>
-map <leader>nn :Fern . -drawer -toggle -width=35<CR>
 map <leader>] :Fern . -drawer -reveal=% -width=35<CR>
-map <leader>nf :Fern . -drawer -reveal=% -width=35<CR>
 
 function! s:init_fern() abort
   " Use 'select' instead of 'edit' for default 'open' action

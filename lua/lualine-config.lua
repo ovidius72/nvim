@@ -59,6 +59,7 @@ local gps = require('nvim-gps')
 
     require'lualine'.setup {
       options = {
+        -- theme= 'nebulous',
         theme= 'catppuccino',
         -- theme= 'github',
         icons_enabled = true,

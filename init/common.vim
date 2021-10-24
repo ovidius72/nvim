@@ -372,7 +372,6 @@ vmap <Leader>ol y<Esc>o_gll<Esc>pviw<Esc>F,vt)
 
 function! PrintLog()
   let l:fType = expand("%:e")
-  echo l:fType
   if l:fType == 'js'
     execute "normal yiwo_gll"
     normal pviw
@@ -394,6 +393,12 @@ function! PrintLog()
     normal a"
     normal pa", 
     normal pviw
+  elseif l:fType == 'php'
+    execute "normal yiwodump();"
+    normal ==F(
+    normal a"
+    normal pa: " . 
+    normal pviw
   endif
 endfunction
 
@@ -402,8 +407,8 @@ map <leader>op :call PrintLog()<CR>
 " comment and yank to the next line
 nmap gcy Ygccp
 " nmap cgc <Plug>ChangeCommentary
-nmap <leader>xcc gc
-nmap <leader>xcy gcy
+" nmap <leader>xcc gc
+"nmap <leader>xcy gcy nmap <leader>xcy gcy
 
 " *************** inc serach
 augroup vimrc-incsearch-highlight
