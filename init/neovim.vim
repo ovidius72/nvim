@@ -29,8 +29,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " lua
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons' " vimscript
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'kwkarlwang/bufjump.nvim'
 " Plug 'tversteeg/registers.nvim'
@@ -49,6 +50,8 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'franbach/miramare'
 Plug 'folke/tokyonight.nvim'
 Plug 'Yagua/nebulous.nvim'
+Plug 'rmehri01/onenord.nvim'
+
 
 
 Plug 'Pocco81/Catppuccino.nvim'
@@ -117,12 +120,12 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'unblevable/quick-scope'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'matze/vim-move'
+" Plug 'lambdalisue/fern.vim'
+" Plug 'lambdalisue/nerdfont.vim'
+" Plug 'lambdalisue/fern-git-status.vim'
+" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+" Plug 'antoinemadec/FixCursorHold.nvim'
+" Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
@@ -246,7 +249,7 @@ source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
 source ~/.config/nvim/init/quick-scope.vim
-source ~/.config/nvim/init/fern.vim
+" source ~/.config/nvim/init/fern.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/rnvimr.vim
 " source ~/.config/nvim/init/nnn.vim

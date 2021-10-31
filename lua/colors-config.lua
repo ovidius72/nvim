@@ -107,6 +107,7 @@ catppuccino.remap(
     {
       CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.4), style='undercurl'},
       -- CocFadeOut = { fg = colors.red, style='undercurl' }
+      NvimTreeNormal = { bg = util.darken(colors.bg, 0.30) }
     }
   )
 
