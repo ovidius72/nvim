@@ -125,7 +125,7 @@ Plug 'unblevable/quick-scope'
 " Plug 'lambdalisue/fern-git-status.vim'
 " Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " Plug 'antoinemadec/FixCursorHold.nvim'
-" Plug 'matze/vim-move'
+Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
