@@ -54,7 +54,7 @@ Plug 'npxbr/gruvbox.nvim'
 
 
 
-Plug 'Pocco81/Catppuccino.nvim'
+Plug 'ovidius72/Catppuccino.nvim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'rafamadriz/neon'

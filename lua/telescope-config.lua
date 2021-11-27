@@ -41,9 +41,9 @@ require('telescope').setup {
         color_devicons = true,
         use_less = true,
         set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,
-        file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-        grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-        qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+        -- file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+        -- grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+        -- qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
         -- Developer configurations: Not meant for general override
         -- buffer_previewer_maker = require'telescope.previewers'.buffer_previver_maker,
         mappings = {
@@ -64,7 +64,8 @@ require('telescope').setup {
             n = {
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
-                ["<c-q>"] = actions.send_to_qflist,
+                ["<C-q>"] = actions.send_to_qflist,
+                ["<C-l>"] = "which_key",
                 -- ["<esc>"] = actions.close,
                 -- ["<C-i>"] = my_cool_custom_action,
             }
