@@ -90,4 +90,6 @@ M.search_vim_files = function()
   })
 end
 
+vim.api.nvim_set_keymap('v', '<leader><leader>v', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', {noremap = true, silent = true })
+
 return M

@@ -3,8 +3,8 @@ vim.cmd('source ~/.config/nvim/init/nvim-tree-lua.vim')
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 -- default mappings
 local list = {
-  { key = { "o", "<2-LeftMouse>", "l"},   cb = tree_cb("edit") },
-  { key = {"<CR>", "<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
+  { key = { "o", "<CR>", "<2-LeftMouse>", "l"},   cb = tree_cb("edit") },
+  { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
   { key = "v",                            cb = tree_cb("vsplit") },
   { key = "e",                            cb = tree_cb("split") },
   { key = "<C-t>",                        cb = tree_cb("tabnew") },

@@ -60,7 +60,7 @@ end
 require'lualine'.setup {
   options = {
     -- theme= 'nebulous',
-    theme= 'catppuccino',
+    theme= 'auto',
     -- theme= 'github',
     icons_enabled = true,
     -- component_separators = {'', ''},

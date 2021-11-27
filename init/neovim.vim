@@ -28,8 +28,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
-Plug 'kyazdani42/nvim-web-devicons' " lua
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-web-devicons' " lua
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/gv.vim'
@@ -40,17 +40,17 @@ Plug 'kwkarlwang/bufjump.nvim'
 
 " Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
-Plug 'shaunsingh/moonlight.nvim'
-Plug 'savq/melange'
+" Plug 'shaunsingh/moonlight.nvim'
+" Plug 'savq/melange'
 Plug 'mcchrish/zenbones.nvim'
-Plug 'ntk148v/vim-horizon'
+" Plug 'ntk148v/vim-horizon'
 Plug 'npxbr/gruvbox.nvim'
-Plug 'elianiva/gruvy.nvim'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'franbach/miramare'
-Plug 'folke/tokyonight.nvim'
-Plug 'Yagua/nebulous.nvim'
-Plug 'rmehri01/onenord.nvim'
+" Plug 'elianiva/gruvy.nvim'
+" Plug 'projekt0n/github-nvim-theme'
+" Plug 'franbach/miramare'
+" Plug 'folke/tokyonight.nvim'
+" Plug 'Yagua/nebulous.nvim'
+" Plug 'rmehri01/onenord.nvim'
 
 
 
@@ -84,6 +84,7 @@ Plug 'Pablo1107/codi.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'micmine/jumpwire.nvim'
 Plug 'phaazon/hop.nvim'
+" Plug 'ggandor/lightspeed.nvim'
 Plug 'andymass/vim-matchup'
 Plug 'sindrets/diffview.nvim'
 Plug 'voldikss/vim-floaterm'
@@ -120,11 +121,11 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'unblevable/quick-scope'
-" Plug 'lambdalisue/fern.vim'
-" Plug 'lambdalisue/nerdfont.vim'
-" Plug 'lambdalisue/fern-git-status.vim'
-" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-" Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -249,7 +250,7 @@ source ~/.config/nvim/init/vim-win.vim
 source ~/.config/nvim/init/vim-doge.vim
 " source ~/.config/nvim/init/denite.vim
 source ~/.config/nvim/init/quick-scope.vim
-" source ~/.config/nvim/init/fern.vim
+source ~/.config/nvim/init/fern.vim
 source ~/.config/nvim/init/ranger.vim
 source ~/.config/nvim/init/rnvimr.vim
 " source ~/.config/nvim/init/nnn.vim
@@ -277,7 +278,7 @@ source ~/.config/nvim/init/nvim-comment-frame.vim
 source ~/.config/nvim/init/hop.vim
 source ~/.config/nvim/init/dadbod.vim
 " source ~/.config/nvim/init/dashboard.vim
-runtime macros/sandwich/keymap/surround.vim
+runtime macros/sandwich/keymap/surrounnd.vim
 
 " hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
 " hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg

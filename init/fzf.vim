@@ -227,9 +227,8 @@ command! -nargs=* Ag2 call fzf#run({
 \                   escape(empty(<q-args>) ? '^(?=.)' : <q-args>, '"\')),
 \ 'sink*':    function('<sid>ag_handler'),
 \ 'options': '--ansi --expect=ctrl-t,ctrl-v,ctrl-x --delimiter : --nth 4.. '.
-\            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all '.
-\            '--color hl:68,hl+:110',
-\ 'down':    '50%'
+\            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all',
+\ 'down':    '25%'
 \ })
 
 command! -bang -nargs=* AGP

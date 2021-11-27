@@ -396,9 +396,10 @@ function! PrintLog()
   elseif l:fType == 'php'
     execute "normal yiwodump();"
     normal ==F(
-    normal a"
-    normal pa: " . 
-    normal pviw
+    normal a["
+    normal pa: " => 
+    normal pa]
+    normal bviw
   endif
 endfunction
 
