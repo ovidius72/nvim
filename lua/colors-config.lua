@@ -1,4 +1,4 @@
-local themeName = 'neon_latte'
+local themeName = 'rose-pine'
 
 function SetTransapentBackground()
 -- transparent background
@@ -73,69 +73,69 @@ vim.g.embark_terminal_italics = true
 ----------------------------------------------------------------------
 --                           Catppuccino                            --
 ----------------------------------------------------------------------
-local catppuccino = require('catppuccino');
-local cp_api = require('catppuccino.api.colors')
-local _, colors = cp_api.get_colors('neon_latte')
-local util = require("catppuccino.utils.util")
+-- local catppuccino = require('catppuccino');
+-- local cp_api = require('catppuccino.api.colors')
+-- local _, colors = cp_api.get_colors('neon_latte')
+-- local util = require("catppuccino.utils.util")
 
 -- deep challenger color scheme.
-catppuccino.remap(
-    {
-    black = "#212121",
-    subtle_black = "#303030",
-    asphalt_medium = "#141228",
-    asphalt_subtle = "#100e23",
-    steal = '#464f7f',
-    bg = '#1e1c31',
-    bg_statusline = '#1d142b',
-    blue = '#c991e1',
-    blue_br= '#906cff',
-    green = '#ffe9aa',
-    green_br= '#ffe37e',
-    magenta_br = '#ff8080',
-    magenta = '#ff8080',
-    yellow = '#95ffa4',
-    yellow_br = '#62d196',
-    cyan = '#aaffe4',
-    cyan_br = '#63f2f1',
-    red_br = '#91ddff',
-    red= '#65b2ff',
-    fg='#f3f3f3',
-    white='#f3f3f3',
-    fg_alt='#f3f3f3',
-  },
-    {
-      CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.4), style='undercurl'},
-      -- CocFadeOut = { fg = colors.red, style='undercurl' }
-    }
-  )
+-- catppuccino.remap(
+--     {
+--     black = "#212121",
+--     subtle_black = "#303030",
+--     asphalt_medium = "#141228",
+--     asphalt_subtle = "#100e23",
+--     steal = '#464f7f',
+--     bg = '#1e1c31',
+--     bg_statusline = '#1d142b',
+--     blue = '#c991e1',
+--     blue_br= '#906cff',
+--     green = '#ffe9aa',
+--     green_br= '#ffe37e',
+--     magenta_br = '#ff8080',
+--     magenta = '#ff8080',
+--     yellow = '#95ffa4',
+--     yellow_br = '#62d196',
+--     cyan = '#aaffe4',
+--     cyan_br = '#63f2f1',
+--     red_br = '#91ddff',
+--     red= '#65b2ff',
+--     fg='#f3f3f3',
+--     white='#f3f3f3',
+--     fg_alt='#f3f3f3',
+--   },
+--     {
+--       CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.4), style='undercurl'},
+--       -- CocFadeOut = { fg = colors.red, style='undercurl' }
+--     }
+--   )
 
-catppuccino.setup({
-    colorscheme = "neon_latte",
-    transparency = false,
-		styles = {
-			comments = "italic",
-			functions = "none",
-			keywords = "NONE",
-			strings = "NONE",
-			variables = "bold",
-		},
-    term_colors = true,
-    integration = {
-      native_lsp = { enabled = false },
-      bufferline = true,
-      telescope = true,
-      which_key = true,
-      barbar = false,
-      hop = true,
-      neogit = true,
-      gitsings = true,
-      indent_blankline = {
-        enabled = true,
-        color_indent_levels = true
-      },
-    }
-})
+-- catppuccino.setup({
+--     colorscheme = "neon_latte",
+--     transparency = false,
+-- 		styles = {
+-- 			comments = "italic",
+-- 			functions = "none",
+-- 			keywords = "NONE",
+-- 			strings = "NONE",
+-- 			variables = "bold",
+-- 		},
+--     term_colors = true,
+--     integration = {
+--       native_lsp = { enabled = false },
+--       bufferline = true,
+--       telescope = true,
+--       which_key = true,
+--       barbar = false,
+--       hop = true,
+--       neogit = true,
+--       gitsings = true,
+--       indent_blankline = {
+--         enabled = true,
+--         color_indent_levels = true
+--       },
+--     }
+-- })
 
 -- Set colorscheme after options
 -- use either the vim or lua command.
