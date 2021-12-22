@@ -1,6 +1,7 @@
 local vgit = require('vgit')
 -- local dimensions = require('vgit.dimensions')
 local utils = require('vgit.utils')
+
 vgit.setup({
     -- debug = true, -- Only enable this to trace issues related to the app,
     keymaps = {

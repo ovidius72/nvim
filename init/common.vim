@@ -29,6 +29,7 @@ set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
 set fillchars+=diff:╱
+" set clipboard+=unnamedplus
 
 " set colorcolumn=999999
 " set inccommand=""

@@ -38,7 +38,7 @@ Plug 'kwkarlwang/bufjump.nvim'
 " Plug 'GustavoKatel/sidebar.nvim'
 " Plug 'lewis6991/gitsigns.nvim'
 
-" Plug 'tanvirtin/vgit.nvim'
+Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
 " Plug 'shaunsingh/moonlight.nvim'
 " Plug 'savq/melange'

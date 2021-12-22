@@ -22,3 +22,4 @@ nnoremap <leader><leader>m <cmd>lua require('telescope.builtin').marks()<cr>
 
 " Custom
 nnoremap <leader><leader>e <cmd>lua require('telescope-config').search_vim_files()<cr>
+nnoremap <leader><leader>n <cmd>:VGit actions<cr>

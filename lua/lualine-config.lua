@@ -1,46 +1,21 @@
 local gps = require('nvim-gps')
 
--- local function indentSize ()
---   local tabLevel = vim.api.nvim_command.tab_size
---   print(tabLevel)
---   return tabLevel
--- end
--- local currentTreesitterContext = function()
---   if not packer_plugins["nvim-treesitter"] or packer_plugins["nvim-treesitter"].loaded == false then
---     return " "
---   end
---   local f = require'nvim-treesitter'.statusline({
---     indicator_size = 300,
---     type_patterns = {"class", "function", "method", "interface", "type_spec", "table", "if_statement", "for_statement", "for_in_statement"}
---   })
---   local fun_name = string.format("%s", f) -- convert to string, it may be a empty ts node
---   if fun_name == "vim.NIL" then
---     return " "
---   end
---   return " " .. fun_name
--- end
+local function is_test_file() 
+  return vim.fn['ultest#is_test_file']('%') > 0
+end
 
--- local current_treesitter_context = function()
---   -- if not packer_plugins["nvim-treesitter"] or packer_plugins["nvim-treesitter"].loaded == false then
---   --   return " "
---   -- end
---   local f = require'nvim-treesitter'.statusline({
---     indicator_size = 300,
---     type_patterns = {"class", "function", "method", "interface", "type_spec", "table", "if_statement", "for_statement", "for_in_statement"}
---   })
---   local context = string.format("%s", f) -- convert to string, it may be a empty ts node
-
---   if context == "vim.NIL" then
---     return " "
---   end
---   return " " .. context
-
--- end
+local function testFileIcon()
+  return is_test_file() and '' or ''
+end
 
 local function line_progress()
   return '%3p%%'
 end
 
+local function test_stats()
+  local stats = vim.fn['ultest#status']()
+  return is_test_file() and ('🚦' .. stats.tests .. ' - 🎉' .. stats.passed .. ' - 🚫' .. stats.failed .. ' - 🏃' .. stats.running) or ''
+end
 
 local function vim_icon()
   return ''
@@ -78,7 +53,7 @@ require'lualine'.setup {
     },
     lualine_b = {
       { 'filetype', colored = true, icon_only = true },
-      {'filename', file_status = true, path = 0 }
+      {'filename', file_status = true, path = 1 }
     },
     lualine_c = {
       {
@@ -101,7 +76,7 @@ require'lualine'.setup {
         'branch',
         icon = "",
         color = 'BufferLineInfoDiagnosticSelected',
-      }
+      },
     },
     -- lualine_y = {'progress'},
     lualine_y = {
@@ -116,7 +91,11 @@ require'lualine'.setup {
         symbols = {added = '+', modified = '~', removed = '-'} -- changes diff symbols
       }
     },
-    lualine_z = { { line_progress, color = 'DiffAdd' }}
+    lualine_z = {
+      { line_progress, color = 'DiffAdd' },
+      { condition = is_test_file, testFileIcon, color = 'DiffChange' },
+      { condition = is_test_file, colored = true, test_stats, color = 'DiffChange' },
+    }
   },
   inactive_sections = {
     lualine_a = {},
