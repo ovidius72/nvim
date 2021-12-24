@@ -15,6 +15,7 @@ require('colorizer').setup({ '*'; });
 require('bufferline-config')
 require('winshift-config')
 require('zen-mode-config')
+require('indent-blankline-config')
 -- require('nvim-tree-lua-config')
 -- require('nvim-ts-rainbow-config')
 -- require('sidebar-config')
