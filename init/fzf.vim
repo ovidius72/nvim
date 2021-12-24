@@ -14,7 +14,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'NonText', 'rounded': v:true, 'relative': v:false, 'yoffset': '0.5' } }
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'NonText', 'rounded': v:true } }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'NonText', 'rounded': v:true } }
 let g:fzf_preview_window = ['up:60%', 'ctrl-/']
 
 " Customize fzf colors to match your color scheme
@@ -125,7 +125,7 @@ map <Leader>fm :Marks<cr>
 nmap <Leader>gs :Git<CR>
 nmap <Leader>gS :GFiles?<CR>
 nmap <Leader>gc :Commits<CR>
-nmap <Leader>gn :Neogit<CR>
+" nmap <Leader>gn :Neogit<CR>
 nmap <Leader>gf :GFiles<CR>
 nmap <Leader>gP :Gpush<CR>
 nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('up'))<CR>

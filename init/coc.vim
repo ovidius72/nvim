@@ -23,9 +23,9 @@ let g:coc_global_extensions = [
       \ 'coc-docthis',
       \ 'coc-git',
       \ 'coc-project',
+      \ 'coc-explorer'
       \ ]
 
-      " \ 'coc-explorer'
       " \ 'coc-rust-analyzer',
       " \ 'coc-import-cost',
       " \ 'coc-tslint',

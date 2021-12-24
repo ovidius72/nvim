@@ -76,7 +76,7 @@ Plug 'mizlan/iswap.nvim'
 
 " Plug 'haringsrob/nvim_context_vt'
 Plug 'kana/vim-textobj-user'
-Plug 'sgur/vim-textobj-parameter'
+" Plug 'sgur/vim-textobj-parameter'
 Plug 'AckslD/nvim-revJ.lua'
 Plug 'windwp/nvim-ts-autotag'
 
@@ -164,6 +164,7 @@ Plug 'kevinhwang91/rnvimr'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'glepnir/dashboard-nvim'
+Plug 'folke/zen-mode.nvim'
 call plug#end()
 
 

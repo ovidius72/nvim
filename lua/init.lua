@@ -14,6 +14,7 @@ require('colorizer').setup({ '*'; });
 -- require('gitsigns-config')
 require('bufferline-config')
 require('winshift-config')
+require('zen-mode-config')
 -- require('nvim-tree-lua-config')
 -- require('nvim-ts-rainbow-config')
 -- require('sidebar-config')

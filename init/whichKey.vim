@@ -143,7 +143,8 @@ let g:which_key_map.a = {
       \'t': {
         \'name': '+toggle',
         \'q': 'quickscope',
-        \},
+      \},
+      \'z': [":ZenMode", "ZenMode"]
       \}
 
 "" =============================== B ==========================
@@ -302,7 +303,7 @@ let g:which_key_map.g = {
       \ 'f': 'fzf git Files',
       \ 'g': 'LazyGit',
       \ 'l': 'git log',
-      \ 'n': 'Neogit',
+      \ 'n': [":VGit actions", "VGit"],
       \ 'm': 'Git Messenger Popup',
       \ 'F': 'fzf git files preview',
       \ 'p': 'push',

@@ -102,8 +102,8 @@ nnoremap c "_c
 nnoremap C "_C
 
 nnoremap Y yg_
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap J mzJ`z
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
@@ -231,7 +231,6 @@ nnoremap <leader>hh :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls!<CR>
 
 " Replace word under the cursor.
 nnoremap <Leader>xr :%s/\<<C-r><C-w>\>//g<Left><Left>
-
 " nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
 " nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
 " nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
