@@ -1,16 +1,13 @@
 call which_key#register('<space>', "g:which_key_map")
 nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
-" let maplocalleader=","
-nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
+" " let maplocalleader=","
+" nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
 set timeoutlen=600
 " autocmd! FileType which_key
 " autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
-"Bclose
-let g:blose_no_plugin_maps=1
 
 " toggle quickfix list
 function! ToggleQuickFix()
@@ -31,14 +28,14 @@ let g:which_key_centered=0
 " nnoremap <leader>bk :Bclose<CR>
 
 " hi WhichKey           guibg=#1b192c guifg=#95ffa4
-" hi WhichKeySeparator  guibg=#1b192c guifg=#aaffe4
-" hi WhichKeyGroup      guibg=#1b192c guifg=#906cff
+" hi WhichKeySeparator    guibg=NONE guifg=NONE
+" hi WhichKeyGroup      guibg=#9b192c guifg=#906cff
 " hi WhichKeyDesc       guibg=#1b192c guifg=#91ddff
 " hi WhichKeyFloating   guibg=#1b192c
-hi WhichKeyFloating   guibg=#171717
+" hi WhichKeyFloating   guibg=#171717
 
-nnoremap <silent><leader>fs :silent wa<CR>
-nnoremap <silent><leader>bs :silent w<CR>
+nnoremap <silent><leader>fs :wa<CR>
+nnoremap <silent><leader>bs :w<CR>
 " noremap <silent><leader><leader> :call win#Win(1)<cr>
 nnoremap <silent><leader>fer :so ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>fed :e ~/.config/nvim/init/neovim.vim<CR>
@@ -71,8 +68,6 @@ map <silent><leader>M :MaximizerToggle<cr>
 let g:which_key_map = {}
 
 let g:which_key_map["<Tab>"] = 'Last Buffer'
-" let g:which_key_map["S"] = 'Spectre'
-" let g:which_key_map["<space>"] = 'files'
 let g:which_key_map["'"] = 'close preview'
 " let g:which_key_map["SPC"] = 'Ace windows'
 let g:which_key_map["["] = 'Toggle explorer'
@@ -116,11 +111,38 @@ let g:which_key_map.y = 'copy to clipboard'
 let g:which_key_map.Y = 'paste from clipboard'
 let g:which_key_map.M = 'MaximizerToggle' 
 
-" let g:which_key_map.J = 'Smartf'
-" let g:which_key_map.J = 'Smartf repeat'
-" let g:which_key_map.K = 'Smartf Back'
-" let g:which_key_map.K = 'Smartf Back repeat'
-
+let g:which_key_map[' '] = { 
+      \'name': '+telescope',
+      \'/': 'Search History',
+      \':': 'Search History',
+      \'a': 'Fuzzy Find in Buffer',
+      \'b': 'Builtins',
+      \'B': 'File Browser',
+      \'c': 'Commands',
+      \'d': 'Find Files 1',
+      \'e': 'Vim Files',
+      \'f': 'Find Files 2',
+      \'g': {
+        \ 'name': '+Git',
+        \ 'b': 'Branches',
+        \ 's': 'Status',
+        \ 'S': 'Stash',
+        \ 'c': 'Commits',
+        \ 'C': 'Buffer Commits',
+      \},
+      \'l': 'Buffers',
+      \'o': 'Old Files',
+      \'p': 'Live Grep',
+      \'P': 'Spell Suggest',
+      \'r': 'Registers',
+      \'s': 'Grep String',
+      \'S': 'Grep String For',
+      \'t': 'Todos',
+      \'w': 'Grep Word',
+      \'j': 'Jump List',
+      \'m': 'Marks',
+      \'E': 'Symbols',
+    \}
 "" =============================== A ==========================
 let g:which_key_map.a = { 
       \'name': '+apps',
@@ -264,6 +286,7 @@ let g:which_key_map.f = {
         \ 'I' : 'install',
         \ },
       \ 'f'   : 'all files',
+      \ 'p'   : 'Telescope Live Grep',
       \ 'i'   : 'Coc Find Symbol',
       \ 'o'   : 'git files',
       \ 'r'   : 'file history',

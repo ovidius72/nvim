@@ -6,15 +6,15 @@ require("indent_blankline").setup {
   show_current_context_start = false,
   show_current_context_start_on_current_line = false,
   use_treesitter = true,
+  char = '│',
   strict_tabs = true,
-  context_highlight_list = {
-    "vimSep"
-  },
+  -- context_highlight_list = {
+  --   "Include"
+  -- },
   context_patterns = {
     "typescriptStatementKeyword",
     "typescriptParenExp",
     "typescriptBlock",
-    "typescriptTemplate",
     "tsTag",
     "typeDefinition",
     "tsxElement",
@@ -52,3 +52,5 @@ require("indent_blankline").setup {
   --   dfix = "ciao"
   -- }
 }
+
+

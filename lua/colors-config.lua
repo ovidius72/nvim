@@ -1,4 +1,4 @@
-local themeName = 'neon_latte'
+local themeName = 'rose-pine'
 
 function SetTransapentBackground()
 -- transparent background
@@ -19,14 +19,14 @@ function ReloadLualine()
 end
 
 function ChangeRosePineTheme()
-  require('rose-pine.functions').toggle_variant()
-  ReloadLualine()
+  require('rose-pine').toggle()
+  -- ReloadLualine()
   -- setTransapentBackground()
 end
 
 function SetRosePineVariant(variant)
-  require('rose-pine.functions').select_variant(variant)
-  ReloadLualine()
+  require('rose-pine').set(variant)
+  -- ReloadLualine()
 end
 
 function SetColorscheme(colorscheme)
@@ -34,6 +34,68 @@ function SetColorscheme(colorscheme)
   ReloadLualine()
 end
 
+
+local catppuccin = require("catppuccin")
+
+---------------------------------------------------
+-- CATPUCCINO
+-- ---------------------------------------------------
+-- configure it
+catppuccin.setup(
+    {
+		transparent_background = false,
+		term_colors = true,
+		styles = {
+			comments = "italic",
+			functions = "bold,italic",
+			keywords = "bold",
+			strings = "NONE",
+			variables = "bold",
+		},
+		integrations = {
+			treesitter = true,
+			native_lsp = {
+				enabled = false,
+				virtual_text = {
+					errors = "italic",
+					hints = "italic",
+					warnings = "italic",
+					information = "italic",
+				},
+				underlines = {
+					errors = "underline",
+					hints = "underline",
+					warnings = "underline",
+					information = "underline",
+				},
+			},
+			lsp_trouble = false,
+			lsp_saga = false,
+			gitgutter = false,
+			gitsigns = false,
+			telescope = true,
+			nvimtree = {
+				enabled = true,
+				show_root = true,
+			},
+			which_key = true,
+			indent_blankline = {
+				enabled = true,
+				colored_indent_levels = true,
+			},
+			dashboard = false,
+			neogit = false,
+			vim_sneak = false,
+			fern = false,
+			barbar = false,
+			bufferline = true,
+			markdown = false,
+			lightspeed = false,
+			ts_rainbow = false,
+			hop = true,
+		},
+	}
+)
 ----------------------------------------------------------------------
 --                            Rose Pine                             --
 ----------------------------------------------------------------------
@@ -46,6 +108,9 @@ vim.g.rose_pine_variant = 'moon'
 vim.g.rose_pine_disable_italics = false
 -- Use terminal background
 vim.g.rose_pine_disable_background = false
+vim.g.rose_pine_bold_vertical_split_line = true
+vim.g.rose_pine_inactive_background = false
+
 
 ----------------------------------------------------------------------
 --                             Zenbones                             --
@@ -70,76 +135,110 @@ vim.g.moonlight_disable_background = false
   ----------------------------------------------------------------------
 vim.g.embark_terminal_italics = true
 
+
+  ----------------------------------------------------------------------
+  --                              nightfox                              --
+  ----------------------------------------------------------------------
+local nightfox = require('nightfox')
+
+-- This function set the configuration of nightfox. If a value is not passed in the setup function
+-- it will be taken from the default configuration above
+nightfox.setup({
+	fox = "nightfox", -- Which fox style should be applied
+  transparent = false, -- Disable setting the background color
+  alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
+  terminal_colors = true, -- Configure the colors used when opening :terminal
+  styles = {
+    comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
+    functions = "italic,bold", -- Style that is applied to functions: see `highlight-args` for options
+    keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
+    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
+    variables = "bold", -- Style that is applied to variables: see `highlight-args` for options
+  },
+  inverse = {
+    match_paren = true, -- Enable/Disable inverse highlighting for match parens
+    visual = false, -- Enable/Disable inverse highlighting for visual selection
+    search = false, -- Enable/Disable inverse highlights for search highlights
+  },
+  colors = {}, -- Override default colors
+  hlgroups = {}, -- Override highlight groups
+})
+
+-- Load the configuration set above and apply the colorscheme
+nightfox.load()
+
 ----------------------------------------------------------------------
 --                           Catppuccino                            --
 ----------------------------------------------------------------------
-local catppuccino = require('catppuccino');
-local cp_api = require('catppuccino.api.colors')
-local _, colors = cp_api.get_colors('neon_latte')
-local util = require("catppuccino.utils.util")
+-- local catppuccino = require('catppuccino');
+-- local cp_api = require('catppuccino.api.colors')
+-- local _, colors = cp_api.get_colors('neon_latte')
+-- local util = require("catppuccino.utils.util")
 
--- deep challenger color scheme.
-catppuccino.remap(
-    {
-    black = "#212121",
-    subtle_black = "#303030",
-    asphalt_medium = "#141228",
-    asphalt_subtle = "#100e23",
-    steal = '#464f7f',
-    bg = '#1e1c31',
-    bg_statusline = '#1d142b',
-    blue = '#c991e1',
-    blue_br= '#906cff',
-    green = '#ffe9aa',
-    green_br= '#ffe37e',
-    magenta_br = '#ff8080',
-    magenta = '#ff8080',
-    yellow = '#95ffa4',
-    yellow_br = '#62d196',
-    cyan = '#aaffe4',
-    cyan_br = '#63f2f1',
-    red_br = '#91ddff',
-    red= '#65b2ff',
-    fg='#f3f3f3',
-    white='#f3f3f3',
-    fg_alt='#f3f3f3',
-  },
-    {
-      CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.4), style='undercurl'},
-      -- CocFadeOut = { fg = colors.red, style='undercurl' }
-      NvimTreeNormal = { bg = util.darken(colors.bg, 0.30) },
-      FernRoot = { bg = util.darken(colors.bg, 0.30) },
+-- -- deep challenger color scheme.
+-- catppuccino.remap(
+--     {
+--     black = "#212121",
+--     subtle_black = "#303030",
+--     asphalt_medium = "#141228",
+--     asphalt_subtle = "#100e23",
+--     steal = '#464f7f',
+--     bg = '#1e1c31',
+--     bg_statusline = '#1d142b',
+--     blue = '#c991e1',
+--     blue_br= '#906cff',
+--     green = '#ffe9aa',
+--     green_br= '#ffe37e',
+--     magenta_br = '#ff8080',
+--     magenta = '#ff8080',
+--     yellow = '#95ffa4',
+--     yellow_br = '#62d196',
+--     cyan = '#aaffe4',
+--     cyan_br = '#63f2f1',
+--     red_br = '#91ddff',
+--     red= '#65b2ff',
+--     fg='#f3f3f3',
+--     white='#f3f3f3',
+--     fg_alt='#f3f3f3',
+--   },
+--     {
+--       CocUnusedHighlight = { fg = util.brighten(colors.fg_gutter, 0.4), style='undercurl'},
+--       CocHighlightText = { bg = '#464f7f', style='none'},
+--       Search = { bg = '#464f7f', style='none'},
+--       -- CocFadeOut = { fg = colors.red, style='undercurl' }
+--       NvimTreeNormal = { bg = util.darken(colors.bg, 0.30) },
+--       FernRoot = { bg = util.darken(colors.bg, 0.30) },
+--       Visual = { bg = '#ffe9aa', fg = colors.black },
+--     }
+--   )
 
-    }
-  )
-
-catppuccino.setup({
-    colorscheme = "neon_latte",
-    transparency = false,
-		styles = {
-			comments = "italic",
-			functions = "none",
-			keywords = "NONE",
-			strings = "NONE",
-			variables = "bold",
-		},
-    term_colors = true,
-    integration = {
-      native_lsp = { enabled = false },
-      bufferline = true,
-      telescope = true,
-      which_key = true,
-      barbar = false,
-      hop = true,
-      neogit = true,
-      gitgutter = true,
-      gitsings = true,
-      indent_blankline = {
-        enabled = true,
-        color_indent_levels = true
-      },
-    }
-})
+-- catppuccino.setup({
+--     colorscheme = "neon_latte",
+--     transparency = false,
+-- 		styles = {
+-- 			comments = "italic",
+-- 			functions = "none",
+-- 			keywords = "bold",
+-- 			strings = "NONE",
+-- 			variables = "bold",
+-- 		},
+--     term_colors = true,
+--     integration = {
+--       native_lsp = { enabled = false },
+--       bufferline = true,
+--       telescope = true,
+--       which_key = true,
+--       barbar = false,
+--       hop = true,
+--       neogit = true,
+--       gitgutter = true,
+--       gitsings = true,
+--       indent_blankline = {
+--         enabled = true,
+--         color_indent_levels = true
+--       },
+--     }
+-- })
 ----------------------------------------------------------------------
 --                             Nebulous                             --
 ----------------------------------------------------------------------
@@ -196,4 +295,14 @@ vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua SetRosePineVariant('base')
 require('plenary.reload').reload_module('lualine')
 require('lualine-config')
 
+-- vim.cmd[[highlight IndentBlanklineChar guifg=#313131]]
+
 -- setTransapentBackground()
+-- vim.cmd [[
+-- augroup my-glyph-palette
+--   autocmd! *
+--   autocmd FileType fern call glyph_palette#apply()
+--   autocmd FileType nerdtree,startify call glyph_palette#apply()
+-- augroup END
+-- ]]
+vim.cmd [[ highlight default link WhichKeySeperator NONE ]]

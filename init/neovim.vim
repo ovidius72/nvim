@@ -25,7 +25,7 @@ Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 " Plug 'kyazdani42/nvim-web-devicons' " lua
@@ -55,6 +55,9 @@ Plug 'npxbr/gruvbox.nvim'
 
 
 Plug 'ovidius72/Catppuccino.nvim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'rafamadriz/neon'
@@ -67,10 +70,14 @@ Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'preservim/vimux'
 Plug 's1n7ax/nvim-comment-frame'
+Plug 'folke/todo-comments.nvim'
+
 " Plug 'AckslD/nvim-neoclip.lua'
 Plug 'ironhouzi/starlite-nvim'
+
+" Autoclose/change html/jsx tags.
 Plug 'AndrewRadev/tagalong.vim'
-Plug 'camspiers/snap'
+" Plug 'camspiers/snap'
 Plug 'mizlan/iswap.nvim'
 
 
@@ -170,9 +177,6 @@ call plug#end()
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-    context_commentstring = {
-      enable = true
-    },
     autotag = {
       enable = true,
     },

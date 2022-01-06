@@ -1,3 +1,6 @@
+"Bclose
+let g:blose_no_plugin_maps=1
+
 nnoremap <silent><leader>ba :Bdelete all<CR>
 nnoremap <silent><leader>bS :Bdelete select<CR>
 nnoremap <silent><leader>bk :Bclose<CR>

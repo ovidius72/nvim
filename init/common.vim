@@ -509,6 +509,29 @@ set hlsearch
 " map g# <Plug>(incsearch-nohl-g#)
 
 
+
+
+
+" TAGBAR
+" let g:tagbar_type_typescript = {
+"   \ 'ctagsbin' : 'tstags',
+"   \ 'ctagsargs' : '-f-',
+"   \ 'kinds': [
+"     \ 'e:enums:0:1',
+"     \ 'f:function:0:1',
+"     \ 't:typealias:0:1',
+"     \ 'M:Module:0:1',
+"     \ 'I:import:0:1',
+"     \ 'i:interface:0:1',
+"     \ 'C:class:0:1',
+"     \ 'm:method:0:1',
+"     \ 'p:property:0:1',
+"     \ 'v:variable:0:1',
+"     \ 'c:const:0:1',
+"   \ ],
+"   \ 'sort' : 0
+" \ }
+
 " Emmet
 let g:user_emmet_leader_key='<Tab>'
 let g:user_emmet_settings = {
@@ -520,6 +543,73 @@ let g:user_emmet_settings = {
     \  },
   \}
 
+" Highlight the word under cursor
+" autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
+" Javascript
+" let g:polyglot_disabled = ['jsx', 'tsx']
+" let g:polyglot_disabled = ['typescript']
+
+" let g:vim_jsx_pretty_colorful_config = 1
+" let g:vim_jsx_pretty_disable_tsx = 0
+" let g:vim_jsx_pretty_disable_ts = 1
+" let g:vim_jsx_pretty_highlight_close_tag = 1
+" let g:javascript_plugin_jsdoc = 1
+" let g:jsx_ext_required = 0
+
+" Indentline
+" let g:indentLine_color_gui = '#3c4048'
+" let g:indentLine_color_term = 202
+" let g:indentLine_color_gui = '#DFE0DF'
+" let g:indentLine_leadingSpaceEnabled = 0
+" let g:indentLine_leadingSpaceChar = '⟶' " ·
+" let g:indentLine_enabled = 0
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_concealcursor=0
+" let g:indentLine_concealCursor=0
+" let g:indentLine_concealcursor = 1
+" let g:indentLine_char = '┆'
+" let g:indentLine_char = "▏"
+" let g:indentLine_faster = 1
+" let g:indent_blankline_char = "▏"
+
+" let g:indent_blankline_filetype_exclude = ["help", "terminal"]
+" let g:indent_blankline_buftype_exclude = ["terminal"]
+
+" let g:indent_blankline_show_trailing_blankline_indent = v:false
+" let g:indent_blankline_use_treesitter = v:true
+" let g:indent_blankline_show_first_indent_level = v:false
+" let g:indent_blankline_show_current_context = v:true
+" highlight IndentBlanklineChar guifg=#1a261c gui=nocombine
+" let g:indent_blankline_context_patterns = [
+"       \ "typescriptStatementKeyword",
+"       \ "typescriptParenExp",
+"       \ "typescriptBlock",
+"       \ "tsTag",
+"       \ "typeDefinition",
+"       \ "tsxElement",
+"       \ "tsxTagName",
+"       \ "func_literal",
+"       \ "try",
+"       \ "php",
+"       \ "except",
+"       \ "argument_list",
+"       \ "dictionary",
+"       \ "class",
+"       \ "function",
+"       \ "method",
+"       \ "^if",
+"       \ "^else",
+"       \ "^return",
+"       \ "tag",
+"       \ "jsx",
+"       \ "^while",
+"       \ "^for",
+"       \ "^object",
+"       \ "^table",
+"       \ "block",
+"       \ "arguments"
+"       \ ]
 " Floating Term
 let s:float_term_border_win = 0
 let s:float_term_win = 0

@@ -4,9 +4,8 @@ local M = {}
 -- require('gxyline')
 require('keys')
 require('diffview-config')
-require('vgit-config')
+-- require('vgit-config')
 require('telescope-config')
-require('colors-config')
 require('lualine-config')
 require('nvim-rev-config')
 require('nvim-gps-config')
@@ -16,6 +15,8 @@ require('bufferline-config')
 require('winshift-config')
 require('zen-mode-config')
 require('indent-blankline-config')
+require('iswap-config')
+require('todo-comments-config')
 -- require('nvim-tree-lua-config')
 -- require('nvim-ts-rainbow-config')
 -- require('sidebar-config')
@@ -34,5 +35,6 @@ require("bufjump").setup({
     backward = "[a",
     on_success = nil
 })
+require('colors-config')
 
 return M
