@@ -128,8 +128,8 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'unblevable/quick-scope'
-Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
@@ -282,6 +282,7 @@ source ~/.config/nvim/init/vim-test.vim
 source ~/.config/nvim/init/nvim-comment-frame.vim
 source ~/.config/nvim/init/hop.vim
 source ~/.config/nvim/init/dadbod.vim
+source ~/.config/nvim/init/git-messenger.vim
 " source ~/.config/nvim/init/dashboard.vim
 runtime macros/sandwich/keymap/surrounnd.vim
 

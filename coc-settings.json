@@ -145,7 +145,7 @@
   "project.rootPatterns": [".git"],
   "coc.preferences.rootPatterns": [".git"],
   "list.source.symbols.excludes": [".git", "node_modules", "dist", "build"],
-  "list.source.files.excludePatterns": ["node_modules"],
+  "list.source.files.excludePatterns": ["node_modules", "dist", "build"],
   "prettier.eslintIntegration": true,
   "prettier.tslintIntegration": false,
   "prettier.singleQuote": true,
