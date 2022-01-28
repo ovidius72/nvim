@@ -4,7 +4,7 @@ nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 " nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
-set timeoutlen=600
+set timeoutlen=1000
 " autocmd! FileType which_key
 " autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
@@ -469,9 +469,9 @@ let g:which_key_map.m = {
 
 
 "" ============================== N ===========================
-let g:which_key_map.n = { 
-      \'name': '+empty+',
-      \}
+" let g:which_key_map.n = { 
+"       \'name': '+empty+',
+"       \}
 
 
 

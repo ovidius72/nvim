@@ -412,11 +412,11 @@ nmap gcy Ygccp
 "nmap <leader>xcy gcy nmap <leader>xcy gcy
 
 " *************** inc serach
-augroup vimrc-incsearch-highlight
- autocmd!
- autocmd CmdlineEnter /,\? :set hlsearch
- autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
+" augroup vimrc-incsearch-highlight
+"  autocmd!
+"  autocmd CmdlineEnter /,\? :set hlsearch " lua require('hlsearch').start()
+"  autocmd CmdlineLeave /,\? :set nohlsearch
+" augroup END
 
 " incserach-easymotion
 " map z/ <Plug>(incsearch-easymotion-/)
@@ -479,6 +479,25 @@ nnoremap <silent> <leader>Tc :tabclose<cr>
 " nnoremap <silent> <leader><bs> :exec 'set showtabline='.string(!&showtabline)<cr>
 
 " zoom
+" function! ToggleZoom() abort
+"   if !exists("g:isZoomed")
+"     let g:zoomed=0
+"   end
+"   let val = get(g:, 'isZoomed')
+"   echo val
+"   if val==0
+"     echo "zooming"
+"     let g:isZoomed = 1
+"     :<c-w>_<c-w>\|
+"   else
+"     echo "unzooming"
+"     let g:isZoomed = 0
+"     :<c-w>=
+"   endif
+" endfunction
+
+" command! -nargs=* ZZ call ToggleZoom()
+
 noremap <leader>wmm <c-w>_<c-w>\|
 noremap <leader>wmi <c-w>_ \| <c-w>\|
 noremap <leader>wmo <c-w>=

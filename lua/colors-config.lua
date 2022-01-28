@@ -1,4 +1,4 @@
-local themeName = 'rose-pine'
+local themeName = 'kanagawa'
 
 function SetTransapentBackground()
 -- transparent background
@@ -129,6 +129,25 @@ vim.g.moonlight_italic_variables = false
 vim.g.moonlight_contrast = true
 vim.g.moonlight_borders = true
 vim.g.moonlight_disable_background = false
+
+-- ╔════════════════════════════════════════════════════════════════════╗
+-- ║                              Kanagawa                              ║
+-- ╚════════════════════════════════════════════════════════════════════╝
+require('kanagawa').setup({
+    undercurl = true,           -- enable undercurls
+    commentStyle = "italic",
+    functionStyle = "bold",
+    keywordStyle = "italic",
+    statementStyle = "italic",
+    typeStyle = "NONE",
+    variablebuiltinStyle = "italic,bold",
+    specialReturn = true,       -- special highlight for the return keyword
+    specialException = true,    -- special highlight for exception handling keywords 
+    transparent = false,        -- do not set background color
+    dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+    colors = {},
+    overrides = {},
+})
 
   ----------------------------------------------------------------------
   --                              embark                              --
@@ -284,9 +303,6 @@ vim.api.nvim_set_keymap('n', '<leader>tcl', [[<cmd>lua SetColorscheme('light_mel
 vim.api.nvim_set_keymap('n', '<leader>tcd', [[<cmd>lua SetColorscheme('dark_catppuccino')<CR>]], { noremap = true, silent = true });
 vim.api.nvim_set_keymap('n', '<leader>tcn', [[<cmd>lua SetColorscheme('neon_latte')<CR>]], { noremap = true, silent = true });
 
-vim.api.nvim_set_keymap('n', '<leader>tcr', [[<cmd>lua ChangeRosePineTheme()<cr>]], { noremap = true, silent = true })
--- Toggle rose-pine variant
-vim.api.nvim_set_keymap('n', '<leader>tcm', [[<cmd>lua ChangeRosePineTheme()<cr>]], { noremap = true, silent = true })
 -- Select each variant
 vim.api.nvim_set_keymap('n', '<leader>t1', [[<cmd>lua SetRosePineVariant('dawn')<cr>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t2', [[<cmd>lua SetRosePineVariant('moon')<cr>]], { noremap = true, silent = true })

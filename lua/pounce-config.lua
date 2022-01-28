@@ -5,7 +5,6 @@ require'pounce'.setup{
 }
 vim.cmd [[
   nmap <C-m> <cmd>Pounce<CR>
-  nmap <C-,> <cmd>PounceRepeat<CR>
   vmap gs <cmd>Pounce<CR>
   omap gs <cmd>Pounce<CR>
 ]]
