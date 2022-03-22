@@ -18,12 +18,13 @@ require('indent-blankline-config')
 require('iswap-config')
 require('todo-comments-config')
 require('comment-box-config')
+-- require('reach-config')
 -- require('hlslens-config')
 -- require('pounce-config')
 -- require('nvim-tree-lua-config')
 -- require('nvim-ts-rainbow-config')
 -- require('sidebar-config')
--- require('goto-preview-config') Require LSP
+-- require('goto-preview-config') -- Require LSP
 
 -- require('fzf_lua-config')
 -- local highlight = require 'vim.highlight'

@@ -1,4 +1,4 @@
-local themeName = 'kanagawa'
+local themeName = 'nightfox'
 
 function SetTransapentBackground()
 -- transparent background
@@ -105,11 +105,11 @@ catppuccin.setup(
 -- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
 vim.g.rose_pine_variant = 'moon'
 -- Disable italics
-vim.g.rose_pine_disable_italics = false
+vim.g.disable_italics = false
 -- Use terminal background
-vim.g.rose_pine_disable_background = false
-vim.g.rose_pine_bold_vertical_split_line = true
-vim.g.rose_pine_inactive_background = false
+vim.g.disable_background = false
+vim.g.bold_vert_split = true
+vim.g.dim_nc_background = true
 
 
 ----------------------------------------------------------------------
@@ -142,7 +142,7 @@ require('kanagawa').setup({
     typeStyle = "NONE",
     variablebuiltinStyle = "italic,bold",
     specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords 
+    specialException = true,    -- special highlight for exception handling keywords
     transparent = false,        -- do not set background color
     dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
     colors = {},
@@ -152,7 +152,7 @@ require('kanagawa').setup({
   ----------------------------------------------------------------------
   --                              embark                              --
   ----------------------------------------------------------------------
-vim.g.embark_terminal_italics = true
+-- vim.g.embark_terminal_italics = true
 
 
   ----------------------------------------------------------------------
@@ -163,28 +163,28 @@ local nightfox = require('nightfox')
 -- This function set the configuration of nightfox. If a value is not passed in the setup function
 -- it will be taken from the default configuration above
 nightfox.setup({
-	fox = "nightfox", -- Which fox style should be applied
+	-- fox = "nightfox", -- Which fox style should be applied
   transparent = false, -- Disable setting the background color
   alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
-  terminal_colors = true, -- Configure the colors used when opening :terminal
-  styles = {
-    comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
-    functions = "italic,bold", -- Style that is applied to functions: see `highlight-args` for options
-    keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
-    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
-    variables = "bold", -- Style that is applied to variables: see `highlight-args` for options
-  },
-  inverse = {
-    match_paren = true, -- Enable/Disable inverse highlighting for match parens
-    visual = false, -- Enable/Disable inverse highlighting for visual selection
-    search = false, -- Enable/Disable inverse highlights for search highlights
-  },
-  colors = {}, -- Override default colors
-  hlgroups = {}, -- Override highlight groups
+	options = {
+		terminal_colors = true, -- Configure the colors used when opening :terminal
+		styles = {
+			comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
+			functions = "italic,bold", -- Style that is applied to functions: see `highlight-args` for options
+			keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
+			strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
+			variables = "bold", -- Style that is applied to variables: see `highlight-args` for options
+		},
+		inverse = {
+			match_paren = true, -- Enable/Disable inverse highlighting for match parens
+			visual = true, -- Enable/Disable inverse highlighting for visual selection
+			search = false, -- Enable/Disable inverse highlights for search highlights
+		},
+		colors = {}, -- Override default colors
+		hlgroups = {}, -- Override highlight groups
+	},
 })
 
--- Load the configuration set above and apply the colorscheme
-nightfox.load()
 
 ----------------------------------------------------------------------
 --                           Catppuccino                            --
@@ -289,7 +289,6 @@ nightfox.load()
 -- Set colorscheme after options
 -- use either the vim or lua command.
 vim.cmd('colorscheme ' .. themeName)
-vim.cmd("let &fcs='eob: '")
 -- require('github-theme').setup({
 --   theme_style = 'dark_default'
 -- })
@@ -310,6 +309,7 @@ vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua SetRosePineVariant('base')
 
 require('plenary.reload').reload_module('lualine')
 require('lualine-config')
+vim.cmd('colorscheme ' .. themeName)
 
 -- vim.cmd[[highlight IndentBlanklineChar guifg=#313131]]
 
@@ -321,4 +321,16 @@ require('lualine-config')
 --   autocmd FileType nerdtree,startify call glyph_palette#apply()
 -- augroup END
 -- ]]
-vim.cmd [[ highlight default link WhichKeySeperator NONE ]]
+-- vim.cmd [[ highlight default link WhichKeySeperator NONE ]]
+
+-- -- global statusline
+-- vim.opt.laststatus=3
+-- vim.opt.fillchars = {
+--   horiz     = '━',
+--   horizup   = '┻',
+--   horizdown = '┳',
+--   vert      = '┃',
+--   vertleft  = '┫',
+--   vertright = '┣',
+--   verthoriz = '╋',
+-- }

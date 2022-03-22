@@ -362,7 +362,7 @@ vnoremap gy y']
 " Console log from insert mode; Puts focus inside parentheses
 
 imap _cll console.log();<Esc>==F(a
-imap _gll console.log();<Esc>==F(a'<Esc>pa', <Esc>a
+imap _gll console.log();<Esc>==F(a'*****: <Esc>pa', <Esc>a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 " vmap <silent><c-c><c-l> yogll<Esc>pviw
 " Console log from normal mode, inserted on next line with word your on inside parentheses
