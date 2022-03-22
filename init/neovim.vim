@@ -34,6 +34,9 @@ Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'kwkarlwang/bufjump.nvim'
+Plug 'pacokwon/onedarkhc.vim'
+Plug 'Everblush/everblush.vim'
+
 " Plug 'kevinhwang91/nvim-hlslens'
 
 " Plug 'tversteeg/registers.nvim'

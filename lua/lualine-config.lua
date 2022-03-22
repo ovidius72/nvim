@@ -49,6 +49,7 @@ require'lualine'.setup {
     component_separators = '',
     disabled_filetypes = {},
     always_divide_miggle = true,
+    -- globalstatus = true,
   },
   sections = {
     lualine_a = {
@@ -105,7 +106,7 @@ require'lualine'.setup {
       },
       {
         'filename', file_status = true, path = 0, shoting_target = 30,
-        color =  { bg = 'none', gui='italic,bold' }, -- Changes diagnostic's info foreground color
+        color =  { gui='italic,bold' }, -- Changes diagnostic's info foreground color
       }
     },
     lualine_c = {
