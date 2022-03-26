@@ -133,6 +133,8 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'mrjones2014/legendary.nvim'
+
 " Plug 'https://github.com/p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'

@@ -22,7 +22,7 @@ nnoremap <leader><leader>B <cmd>lua require('telescope.builtin').file_browser()<
 nnoremap <leader><leader>b <cmd>lua require('telescope.builtin').builtin()<cr>
 nnoremap <leader><leader>c <cmd>lua require('telescope.builtin').commands()<cr>
 nnoremap <leader><leader>o <cmd>lua require('telescope.builtin').oldfiles({cwd_only = true })<cr>
-nnoremap <leader><leader>r <cmd>lua require('telescope.builtin').registers()<cr>
+nnoremap <leader><leader>r <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <leader><leader>P <cmd>lua require('telescope.builtin').spell_suggest()<cr>
 nnoremap <leader><leader>j <cmd>lua require('telescope.builtin').jumplist()<cr>
 nnoremap <leader><leader>m <cmd>lua require('telescope.builtin').marks()<cr>
@@ -30,5 +30,6 @@ nnoremap <leader><leader>E <cmd>lua require('telescope.builtin').symbols()<cr>
 nnoremap <leader><leader>t <cmd>TodoTelescope<cr>
 
 " Custom
+nnoremap <leader><leader>e <cmd>lua require('telescope-config').search_vim_files()<cr>
 nnoremap <leader><leader>e <cmd>lua require('telescope-config').search_vim_files()<cr>
 " nnoremap <leader><leader>n <cmd>:VGit actions<cr>

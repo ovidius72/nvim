@@ -1,4 +1,4 @@
-local themeName = 'nightfox'
+local themeName = 'kanagawa'
 
 function SetTransapentBackground()
 -- transparent background
@@ -158,7 +158,7 @@ require('kanagawa').setup({
   ----------------------------------------------------------------------
   --                              nightfox                              --
   ----------------------------------------------------------------------
--- local nightfox = require('nightfox')
+local nightfox = require('nightfox')
 
 -- This function set the configuration of nightfox. If a value is not passed in the setup function
 -- it will be taken from the default configuration above

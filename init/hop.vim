@@ -38,9 +38,12 @@ nmap <leader>ja :HopChar1<cr>
 nmap <leader>jl :HopChar1CurrentLine<cr>
 nmap <leader>jw :HopWord<cr>
 nmap <M-w> :HopWord<cr>
-nmap <C-p> :HopChar1<cr>
+nmap <C-m> :HopWord<cr>
+nmap <C-p> :HopChar2<cr>
 nmap <leader>ja :HopChar2<cr>
-nmap <leader>k :HopChar2MA<cr>
+nmap <leader>k :HopChar2MW<cr>
 nmap <leader>jj :HopWordAC<cr>
 nmap <leader>jk :HopWordBC<cr>
 nmap <leader>jp :HopPattern<cr>
+nmap <leader>jm :HopPatternMW<cr>
+nmap <leader>je :HopAnywhere<cr>

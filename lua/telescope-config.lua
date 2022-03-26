@@ -17,8 +17,8 @@ require('telescope').setup {
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
-        sorting_strategy = "ascending",
-        layout_strategy = "horizontal",
+        sorting_strategy = "descending",
+        layout_strategy = "vertical",
         layout_config = {
             horizontal = {
                 preview_height = 0.8,
