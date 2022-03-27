@@ -20,6 +20,7 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'rhysd/git-messenger.vim'
 Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
@@ -57,6 +58,8 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'folke/tokyonight.nvim'
 " Plug 'Yagua/nebulous.nvim'
 " Plug 'rmehri01/onenord.nvim'
+Plug 'AhmedAbdulrahman/vim-aylin'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 
 
 
@@ -133,7 +136,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'mrjones2014/legendary.nvim'
+" Plug 'mrjones2014/legendary.nvim'
 
 " Plug 'https://github.com/p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-commentary'
