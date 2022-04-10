@@ -1,4 +1,4 @@
-local themeName = 'embark'
+local themeName = 'mychallenger_deep'
 
 function SetTransapentBackground()
 -- transparent background
@@ -119,39 +119,39 @@ vim.g.dim_nc_background = true
 ----------------------------------------------------------------------
 --                             Zenbones                             --
 ----------------------------------------------------------------------
-vim.g.zenbones_solid_vert_split = false
-vim.g.zenbones_dim_noncurrent_window = true
-vim.g.zenbones_lightness = "" -- null(default) | 'bright' | 'dim'
+-- vim.g.zenbones_solid_vert_split = false
+-- vim.g.zenbones_dim_noncurrent_window = true
+-- vim.g.zenbones_lightness = "" -- null(default) | 'bright' | 'dim'
 
 ----------------------------------------------------------------------
 --                            Moonlight                             --
 ----------------------------------------------------------------------
-vim.g.moonlight_italic_comments = true
-vim.g.moonlight_italic_keywords = true
-vim.g.moonlight_italic_functions = true
-vim.g.moonlight_italic_variables = false
-vim.g.moonlight_contrast = true
-vim.g.moonlight_borders = true
-vim.g.moonlight_disable_background = false
+-- vim.g.moonlight_italic_comments = true
+-- vim.g.moonlight_italic_keywords = true
+-- vim.g.moonlight_italic_functions = true
+-- vim.g.moonlight_italic_variables = false
+-- vim.g.moonlight_contrast = true
+-- vim.g.moonlight_borders = true
+-- vim.g.moonlight_disable_background = false
 
 -- ╔════════════════════════════════════════════════════════════════════╗
 -- ║                              Kanagawa                              ║
 -- ╚════════════════════════════════════════════════════════════════════╝
-require('kanagawa').setup({
-    undercurl = true,           -- enable undercurls
-    commentStyle = "italic",
-    functionStyle = "bold",
-    keywordStyle = "italic",
-    statementStyle = "italic",
-    typeStyle = "NONE",
-    variablebuiltinStyle = "italic,bold",
-    specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords
-    transparent = false,        -- do not set background color
-    dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
-    colors = {},
-    overrides = {},
-})
+-- require('kanagawa').setup({
+--     undercurl = true,           -- enable undercurls
+--     commentStyle = "italic",
+--     functionStyle = "bold",
+--     keywordStyle = "italic",
+--     statementStyle = "italic",
+--     typeStyle = "NONE",
+--     variablebuiltinStyle = "italic,bold",
+--     specialReturn = true,       -- special highlight for the return keyword
+--     specialException = true,    -- special highlight for exception handling keywords
+--     transparent = false,        -- do not set background color
+--     dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+--     colors = {},
+--     overrides = {},
+-- })
 
   ----------------------------------------------------------------------
   --                              embark                              --
@@ -162,32 +162,32 @@ vim.g.embark_terminal_italics = true
   ----------------------------------------------------------------------
   --                              nightfox                              --
   ----------------------------------------------------------------------
-local nightfox = require('nightfox')
+-- local nightfox = require('nightfox')
 
--- This function set the configuration of nightfox. If a value is not passed in the setup function
--- it will be taken from the default configuration above
-nightfox.setup({
-	-- fox = "nightfox", -- Which fox style should be applied
-  transparent = false, -- Disable setting the background color
-  alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
-	options = {
-		terminal_colors = true, -- Configure the colors used when opening :terminal
-		styles = {
-			comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
-			functions = "italic,bold", -- Style that is applied to functions: see `highlight-args` for options
-			keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
-			strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
-			variables = "bold", -- Style that is applied to variables: see `highlight-args` for options
-		},
-		inverse = {
-			match_paren = true, -- Enable/Disable inverse highlighting for match parens
-			visual = true, -- Enable/Disable inverse highlighting for visual selection
-			search = false, -- Enable/Disable inverse highlights for search highlights
-		},
-		colors = {}, -- Override default colors
-		hlgroups = {}, -- Override highlight groups
-	},
-})
+-- -- This function set the configuration of nightfox. If a value is not passed in the setup function
+-- -- it will be taken from the default configuration above
+-- nightfox.setup({
+-- 	-- fox = "nightfox", -- Which fox style should be applied
+--   transparent = false, -- Disable setting the background color
+--   alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
+-- 	options = {
+-- 		terminal_colors = true, -- Configure the colors used when opening :terminal
+-- 		styles = {
+-- 			comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
+-- 			functions = "italic,bold", -- Style that is applied to functions: see `highlight-args` for options
+-- 			keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
+-- 			strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
+-- 			variables = "bold", -- Style that is applied to variables: see `highlight-args` for options
+-- 		},
+-- 		inverse = {
+-- 			match_paren = true, -- Enable/Disable inverse highlighting for match parens
+-- 			visual = true, -- Enable/Disable inverse highlighting for visual selection
+-- 			search = false, -- Enable/Disable inverse highlights for search highlights
+-- 		},
+-- 		colors = {}, -- Override default colors
+-- 		hlgroups = {}, -- Override highlight groups
+-- 	},
+-- })
 
 
 ----------------------------------------------------------------------

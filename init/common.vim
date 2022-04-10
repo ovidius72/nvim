@@ -95,11 +95,13 @@ nnoremap [j <C-o>zz
 nnoremap ]j <C-i>zz
 nnoremap [s [szz
 nnoremap ]s ]szz
-nnoremap cp yap<S-}>p
+nnoremap cP yap<S-}>p
+nnoremap cy "+y
+nnoremap cp "+p
 
 "redirect change operations to the black hole register.
-nnoremap c "_c
-nnoremap C "_C
+" nnoremap c "_c
+" nnoremap C "_C
 
 nnoremap Y yg_
 nnoremap n nzzzv
@@ -406,11 +408,11 @@ endfunction
 map <leader>op :call PrintLog()<CR>
 
 " comment and yank to the next line
-nmap gcy Ygccp
+" nmap gcy Ygccp
 " nmap cgc <Plug>ChangeCommentary
 " nmap <leader>xcc gc
 "nmap <leader>xcy gcy nmap <leader>xcy gcy
-
+xmap gcc <Plug>Commentary
 " *************** inc serach
 " augroup vimrc-incsearch-highlight
 "  autocmd!

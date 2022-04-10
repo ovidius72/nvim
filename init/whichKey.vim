@@ -239,6 +239,7 @@ let g:which_key_map.c = {
       \ 'o': 'CodeAction Line',
       \ 'O': 'Open Link',
       \ 'p': 'projects',
+      \ 'q' : [':QuickRun','QuickRun'],
       \ 'u': 'Coc Update',
       \ 'v': 'Code Action Selected',
       \ 'x': 'Open Explorer',
