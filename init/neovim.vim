@@ -21,7 +21,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+Plug 'thinca/vim-quickrun'
+Plug 'metakirby5/codi.vim'
 Plug 'rhysd/git-messenger.vim'
+
+Plug 'MunifTanjim/nui.nvim'        " it's a dependency
+Plug 'xeluxee/competitest.nvim'
+
 Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -35,8 +42,11 @@ Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'kwkarlwang/bufjump.nvim'
-Plug 'pacokwon/onedarkhc.vim'
-Plug 'Everblush/everblush.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+
+" Plug 'pacokwon/onedarkhc.vim'
+" Plug 'Everblush/everblush.vim'
 
 " Plug 'kevinhwang91/nvim-hlslens'
 
@@ -46,25 +56,32 @@ Plug 'Everblush/everblush.vim'
 
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
+" Plug 'wadackel/vim-dogrun'
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'mangeshrex/everblush.vim'
+
+" If you are using Vim Plug
+Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+
 " Plug 'shaunsingh/moonlight.nvim'
 " Plug 'savq/melange'
-Plug 'mcchrish/zenbones.nvim'
+" Plug 'mcchrish/zenbones.nvim'
 Plug 'rebelot/kanagawa.nvim'
 " Plug 'ntk148v/vim-horizon'
-Plug 'npxbr/gruvbox.nvim'
+" Plug 'npxbr/gruvbox.nvim'
 " Plug 'elianiva/gruvy.nvim'
 Plug 'projekt0n/github-nvim-theme'
 " Plug 'franbach/miramare'
-Plug 'folke/tokyonight.nvim'
+" Plug 'folke/tokyonight.nvim'
 " Plug 'Yagua/nebulous.nvim'
 " Plug 'rmehri01/onenord.nvim'
-Plug 'AhmedAbdulrahman/vim-aylin'
+" Plug 'AhmedAbdulrahman/vim-aylin'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 
 
 
 Plug 'ovidius72/Catppuccino.nvim'
-Plug 'EdenEast/nightfox.nvim'
+" Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
@@ -97,7 +114,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'AckslD/nvim-revJ.lua'
 Plug 'windwp/nvim-ts-autotag'
 
-Plug 'Pablo1107/codi.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'micmine/jumpwire.nvim'
 Plug 'phaazon/hop.nvim'
@@ -127,7 +143,7 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'TimUntersberger/neogit'
+" Plug 'TimUntersberger/neogit'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-unimpaired'
 Plug 'dstein64/vim-win'
@@ -151,7 +167,7 @@ Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
-" Plug 'nvim-treesitter/treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'SmiteshP/nvim-gps'
 Plug 'sindrets/winshift.nvim'
 
@@ -193,6 +209,47 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
     autotag = {
       enable = true,
+    },
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+        keymaps = {
+          ["af"] = "@function.outer",
+          ["if"] = "@function.inner",
+          ["ac"] = "@class.outer",
+          ["ic"] = "@class.inner",
+        }
+      },
+      move = {
+        enable = true,
+        set_jumps = true, -- whether to set jumps in the jumplist
+        goto_next_start = {
+          ["]m"] = "@function.outer",
+          ["]]"] = "@class.outer",
+        },
+        goto_next_end = {
+          ["]M"] = "@function.outer",
+          ["]["] = "@class.outer",
+        },
+        goto_previous_start = {
+          ["[m"] = "@function.outer",
+          ["[["] = "@class.outer",
+        },
+        goto_previous_end = {
+          ["[M"] = "@function.outer",
+          ["[]"] = "@class.outer",
+        },
+      },
+      swap = {
+        enable = true,
+        swap_next = {
+          ["<leader>oa"] = "@parameter.inner",
+        },
+        swap_previous = {
+          ["<leader>oA"] = "@parameter.inner",
+        },
+      },
     },
     ensure_installed = {
       'javascript',

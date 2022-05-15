@@ -23,7 +23,6 @@ let g:coc_global_extensions = [
       \ 'coc-docthis',
       \ 'coc-git',
       \ 'coc-project',
-      \ 'coc-explorer'
       \ ]
 
       " \ 'coc-rust-analyzer',
@@ -290,8 +289,8 @@ endif
 
 "coc-yank
 nnoremap <silent><leader>cy :<C-u>CocList -A --normal yank<cr>
-inoremap <c-w>p cj coc#util#float_jump() 
-nnoremap <c-w>p cj coc#util#float_jump() 
+" inoremap <c-w>p cj coc#util#float_jump() 
+" nnoremap <c-w>p cj coc#util#float_jump() 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
@@ -299,7 +298,7 @@ nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
 nmap <silent> [j :CocCommand document.jumpToNextSymbol<CR>
 nmap <silent> ]j :CocCommand document.jumpToPrevSymbol<CR>
 nnoremap <silent><nowait> <space>cls :<C-u>CocList -I symbols<cr>
-nmap <Leader>fi :<C-u>CocList -I symbols<cr>
+nmap <Leader>fi :<C-u>CocList --interactive --ignore-case --number-select --auto-preview symbols<cr>
 " nmap <silent><leader>cdi <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>el <Plug>(coc-diagnostic-info)
 " nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
@@ -312,7 +311,7 @@ nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
 nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent>gy <Plug>(coc-type-definition)
-nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gI <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 nnoremap <silent> <Leader>fc :CocSearch <C-R>=expand('<cword>')<CR><CR>
