@@ -2,6 +2,7 @@ local M = {}
 -- require('bubbly')
 -- local utils = require('utils')
 -- require('gxyline')
+require('autocommands')
 require('keys')
 require('diffview-config')
 -- require('vgit-config')

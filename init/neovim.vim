@@ -36,8 +36,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
-" Plug 'kyazdani42/nvim-web-devicons' " lua
-" Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons' " lua
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/gv.vim'

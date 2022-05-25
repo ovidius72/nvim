@@ -13,6 +13,7 @@ let g:coc_global_extensions = [
       \ 'coc-marketplace',
       \ 'coc-tsserver',
       \ 'coc-lists',
+      \ 'coc-json',
       \ 'coc-yaml',
       \ 'coc-python',
       \ 'coc-html',
@@ -25,6 +26,7 @@ let g:coc_global_extensions = [
       \ 'coc-project',
       \ ]
 
+" \ 'coc-explorer',
       " \ 'coc-rust-analyzer',
       " \ 'coc-import-cost',
       " \ 'coc-tslint',
@@ -210,7 +212,8 @@ let g:coc_explorer_global_presets = {
 
 noremap ge :CocCommand explorer
     \ --toggle
-    \ --sources=buffer+,file+<CR>
+    \ --focus
+    \ --sources=file+<CR>
 
 " noremap <leader>[ :CocCommand explorer
 "       \ --toggle
@@ -308,7 +311,11 @@ nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 
 " Remap keys for gotos
 nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gD :call CocAction('definitionHover')<cr>
 nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
+nmap <silent>go :call CocAction('showOutline')<cr>
+nmap <silent>gO :call CocAction('showOutgoingCalls')<cr>
+nmap <silent>gL :call CocAction('showIncomingCalls')<cr>
 nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gI <Plug>(coc-implementation)

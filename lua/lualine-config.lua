@@ -1,4 +1,4 @@
-local gps = require('nvim-gps')
+-- local gps = require('nvim-gps')
 
 local function is_test_file()
   return vim.fn['ultest#is_test_file']('%') > 0
@@ -25,15 +25,15 @@ local function short_mode(mode)
   return mode:sub(1,1)
 end
 
-local function getGPS()
-  local is_available = gps.is_available()
-  local res = gps.get_location()
-  if is_available and res ~= "Error" and res ~= nil then
-    return res
-  else
-    return ''
-  end
-end
+-- local function getGPS()
+--   local is_available = gps.is_available()
+--   local res = gps.get_location()
+--   if is_available and res ~= "Error" and res ~= nil then
+--     return res
+--   else
+--     return ''
+--   end
+-- end
 
 
 require'lualine'.setup {
@@ -109,12 +109,12 @@ require'lualine'.setup {
         color =  { gui='italic,bold' }, -- Changes diagnostic's info foreground color
       }
     },
-    lualine_c = {
-      {
-        getGPS,
-        condition = gps.is_available,
-      },
-    },
+    -- lualine_c = {
+    --   {
+    --     getGPS,
+    --     condition = gps.is_available,
+    --   },
+    -- },
     lualine_x = {
       { "g:coc_status" },
       {

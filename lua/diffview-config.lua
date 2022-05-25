@@ -3,9 +3,11 @@ local cb = require'diffview.config'.diffview_callback
 require'diffview'.setup {
   diff_binaries = false,    -- Show diffs for binaries
   file_panel = {
-    position = "left",      -- One of 'left', 'right', 'top', 'bottom'
-    width = 35,             -- Only applies when position is 'left' or 'right'
-    height = 10,            -- Only applies when position is 'top' or 'bottom'
+    win_config = {
+      position = "left",      -- One of 'left', 'right', 'top', 'bottom'
+      width = 35,             -- Only applies when position is 'left' or 'right'
+      height = 10,            -- Only applies when position is 'top' or 'bottom'
+    }
   },
   use_icons = true,        -- Requires nvim-web-devicons
   key_bindings = {

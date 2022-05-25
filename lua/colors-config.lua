@@ -316,6 +316,7 @@ require('lualine-config')
 vim.cmd('colorscheme ' .. themeName)
 
 -- vim.cmd[[highlight IndentBlanklineChar guifg=#313131]]
+vim.cmd[[highlight WinBar guibg=#282639]]
 
 -- setTransapentBackground()
 -- vim.cmd [[
