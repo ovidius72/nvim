@@ -1,4 +1,4 @@
-local themeName = 'mychallenger_deep'
+local themeName = 'catppuccin'
 
 function SetTransapentBackground()
 -- transparent background
@@ -90,16 +90,17 @@ catppuccin.setup(
 			dashboard = false,
 			neogit = false,
 			vim_sneak = false,
-			fern = false,
-			barbar = false,
+			fern = true,
+			barbar = true,
 			bufferline = true,
-			markdown = false,
+			markdown = true,
 			lightspeed = false,
 			ts_rainbow = false,
 			hop = true,
 		},
 	}
 )
+vim.g.catppuccin_flavour = 'macchiato'
 ----------------------------------------------------------------------
 --                            Rose Pine                             --
 ----------------------------------------------------------------------
@@ -316,7 +317,7 @@ require('lualine-config')
 vim.cmd('colorscheme ' .. themeName)
 
 -- vim.cmd[[highlight IndentBlanklineChar guifg=#313131]]
-vim.cmd[[highlight WinBar guibg=#282639]]
+-- vim.cmd[[highlight WinBar guibg=#282639]]
 
 -- setTransapentBackground()
 -- vim.cmd [[
