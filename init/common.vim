@@ -296,8 +296,11 @@ nnoremap <Leader>xr :%s/\<<C-r><C-w>\>//g<Left><Left>
 " nmap <Leader>' :pclose<CR>
 "
 nmap <leader>gl :Gclog<cr>
-nmap <leader>gd :Gdiffsplit<cr>
-nmap <leader>gD :Ghdiffsplit<cr>
+nmap <leader>gV :Gdiffsplit<cr>
+nmap <leader>gH :Ghdiffsplit<cr>
+nmap <leader>gd :DiffviewFileHistory %<cr>
+nmap <leader>gC :DiffviewClose<cr>
+nmap <leader>go :DiffviewOpen<cr>
 
 " let g:gitgutter_sign_added = ''
 " let g:gitgutter_sign_removed = ''

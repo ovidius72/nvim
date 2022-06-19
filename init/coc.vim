@@ -70,6 +70,27 @@ set signcolumn=yes:1
 " hi! CocHintLine guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
 
+  nnoremap <silent><nowait>go  :call ToggleOutline()<CR>
+  function! ToggleOutline() abort
+    let winid = coc#window#find('cocViewId', 'OUTLINE')
+    if winid == -1
+      call CocActionAsync('showOutline', 1)
+    else
+      call coc#window#close(winid)
+    endif
+  endfunction
+
+  autocmd BufEnter * call CheckOutline()
+  function! CheckOutline() abort
+    if &filetype ==# 'coctree' && winnr('$') == 1
+      if tabpagenr('$') != 1
+        close
+      else
+        bdelete
+      endif
+    endif
+  endfunction
+
 " autocmd QuitPre * if empty(&bt) | lclose | endif
 " autocmd QuitPre * if !empty(&bt) | CocDiagnostic | endif
 " to be used in coc config.
@@ -295,8 +316,8 @@ nnoremap <silent><leader>cy :<C-u>CocList -A --normal yank<cr>
 " inoremap <c-w>p cj coc#util#float_jump() 
 " nnoremap <c-w>p cj coc#util#float_jump() 
 " Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> [e <Plug>(coc-diagnostic-prev)
+nmap <silent> ]e <Plug>(coc-diagnostic-next)
 nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
 nmap <silent> [j :CocCommand document.jumpToNextSymbol<CR>
 nmap <silent> ]j :CocCommand document.jumpToPrevSymbol<CR>
@@ -313,13 +334,15 @@ nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gD :call CocAction('definitionHover')<cr>
 nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
-nmap <silent>go :call CocAction('showOutline')<cr>
+" nmap <silent>go :call CocAction('showOutline')<cr>
 nmap <silent>gO :call CocAction('showOutgoingCalls')<cr>
 nmap <silent>gL :call CocAction('showIncomingCalls')<cr>
 nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gI <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
+nmap <silent>gU <Plug>(coc-references-used)
+nmap <silent>gR :call CocAction('refactor')<cr>
 nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 nnoremap <silent> <Leader>fc :CocSearch <C-R>=expand('<cword>')<CR><CR>
 nnoremap <silent> <Leader>fx :CocSearch -w <C-R>=expand('<cword>')<CR><CR>
@@ -393,7 +416,7 @@ nmap <leader>pS :CocCommand session.save<CR>
 
 nmap <leader>pl :CocList project<CR>
 nmap <leader>css :CocCommand session.save<CR>
-nmap <leader>csl :CocCommand session.load<CR>:
+nmap <leader>csl :CocCommand session.load<CR>
 nmap <leader>pp :CocList project<CR>
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent><A-'> <Plug>(coc-range-select)
@@ -409,7 +432,8 @@ nmap <leader>ca <Plug>(coc-codeaction)
 xmap <leader>ca <Plug>(coc-codeaction-selected)
 nmap <Leader>ck :CocCommand docthis.documentThis<cr>
 " Fix autofix problem of current line
-nmap <leader>cf <Plug>(coc-fix-current)
+" nmap <leader>cf <Plug>(coc-fix-current)
+nmap <leader>cf :CocList files<CR>
 
 " Use `:Format` for format current buffer
 command! -nargs=0 FM :call CocActionAsync('format')

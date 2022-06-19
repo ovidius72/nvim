@@ -25,6 +25,10 @@ let g:which_key_exit = [27, 7]
 let g:which_key_disable_default_offset=1
 let g:which_key_use_floating_win=1
 let g:which_key_centered=0
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nmap <Leader>xj :SplitjoinJoin<cr>
+nmap <Leader>xs :SplitjoinSplit<cr>
 " nnoremap <leader>bk :Bclose<CR>
 
 " hi WhichKey           guibg=#1b192c guifg=#95ffa4
@@ -319,8 +323,11 @@ let g:which_key_map.g = {
       \ 't': [':GV!', 'Git Commit Browser(Current)' ],
       \ 'R': [':GV?', 'Git Commit Browser(LocationList)' ],
       \ 'c': 'fzf git commits',
-      \ 'D': 'git VDiff',
-      \ 'd': 'git HDiff',
+      \ 'd': 'Diff File History',
+      \ 'C': 'Diff File History',
+      \ 'o': 'Diff File Open',
+      \ 'V': 'git VDiff',
+      \ 'H': 'git HDiff',
       \ '3': [':Gvdiffsplit!', 'Split 3 W'],
       \ '2': [':diffget //2', 'Get Left'],
       \ 'u': [':diffget //3', 'Get Right'],
@@ -421,46 +428,7 @@ let g:which_key_map.j = {
 "" =============================== K ==========================
       " \'x': [],
       " \'z': [],
-" let g:which_key_map[" "] = {
-"       \'name': '+clap',
-"       \'a': [':Clap grep2', 'grep2 on the fly'],
-"       \'b': [':Clap buffers', 'buffers'],
-"       \'c': [':Clap commits', 'commits'],
-"       \'C': [':Clap bcommits', 'buffer commits'],
-"       \'d': [':Clap git_diff_files', 'Git diff files'],
-"       \'e': [':Clap grep', 'grep'],
-"       \'f': [':Clap filer', 'filer'],
-"       \'g': [':Clap gfiles', 'git files'],
-"       \'h': [':Clap hist:', 'command history'],
-"       \'i': [':Clap filer', 'ivy'],
-"       \'j': [':Clap jumps', 'jumps'],
-"       \'k': [':Clap files', 'files'],
-"       \'K': [':Clap colors', 'colors'],
-"       \'l': [':Clap history', 'latest files'],
-"       \'m': [':Clap marks', 'marks'],
-"       \'M': [':Clap maps', 'maps'],
-"       \"n": [':Clap providers', 'providers'],
-"       \'o': [':Clap loclist', 'loclist'],
-"       \'p': [':Clap proj_tags', 'project tags'],
-"       \'q': [':Clap quickfix', 'quickfix'],
-"       \'r': [':Clap registers', 'registers'],
-"       \'s': [':Clap blines', 'buffer lines'],
-"       \'S': [':Clap lines', 'lines'],
-"       \'t': [':Clap tags', 'tags'],
-"       \'T': [':Clap filetypes', 'file types'],
-"       \'u': [':Clap grep ++query=<cword>', 'query'],
-"       \'v': [':Clap help_tags', 'help tags'],
-"       \'w': [':Clap windows', 'windows'],
-"       \'y': [':Clap yanks', 'yanks'],
-"       \'/': [':Clap hist/', 'search history'],
-"       \';': [':Clap command', 'command list'],
-"       \}
-
 "" =============================== L ==========================
-" let g:which_key_map.l = { 
-"       \'l': [':Clap buffers', 'latest buffers'],
-"       \}
-
 
 "" ============================= M ============================
 let g:which_key_map.m = { 
@@ -518,16 +486,11 @@ let g:which_key_map.q = {
 let g:which_key_map.r = {
       \'name': '+jump',
       \'a': 'AerojumpFromCursorBolt',
-      \'c': 'Ranger Current Dir',
       \'d': 'AerojumpDefault',
       \'m': 'AerojumpMilk',
       \'g': 'Ranger',
+      \'r': 'AerojumpBolt',
       \'s': 'AerojumpSpace',
-      \'t': 'AerojumpBolt',
-      \'r': 'AnyJump',
-      \'v': 'AnyJumpVisual',
-      \'b': 'AnyJumpBack',
-      \'l': 'AnyJumpLastResults',
       \}
 
 
@@ -646,7 +609,6 @@ let g:which_key_map.x = {
       \'r': 'replace-word',
       \'d': 'doge generate (DOC)',
       \'k': 'RevJ',
-      \'K': 'RevJ-Region',
       \'o': 'Split at cursor',
       \'s': 'Split into multiline',
       \'j': 'join multilines',

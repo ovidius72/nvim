@@ -1,5 +1,5 @@
 nmap <Leader>rs <Plug>(AerojumpSpace)
-nmap <Leader>rt <Plug>(AerojumpBolt)
+nmap <Leader>rr <Plug>(AerojumpBolt)
 nmap <Leader>? <Plug>(AerojumpBolt)
 nmap <Leader>ra <Plug>(AerojumpFromCursorBolt)
 nmap <Leader>rd <Plug>(AerojumpDefault)

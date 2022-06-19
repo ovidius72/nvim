@@ -5,6 +5,9 @@ let g:loaded_netrwFileHandlers = 1
 
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden = 1
+let g:fern#default_hidden = 1
+let g:fern#use_winbar = 1
+
 map <leader>[ :Fern . -drawer -toggle -width=35<CR>
 map <leader>] :Fern . -drawer -reveal=% -width=35<CR>
 
@@ -12,6 +15,10 @@ function! s:init_fern() abort
   " Use 'select' instead of 'edit' for default 'open' action
   nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
   nmap <buffer> <C-l> <C-w>l
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
   nmap <buffer> R <Plug>(fern-action-reload)
   nmap <buffer> M <Plug>(fern-action-rename)
   nmap <buffer> I <Plug>(fern-action-hidden:toggle)
@@ -21,6 +28,8 @@ function! s:init_fern() abort
   nmap <buffer> r <Plug>(fern-action-move)
   nmap <buffer> gY <Plug>(fern-action-yank)
   nmap <buffer><nowait> <leader>] <C-w><C-p>
+  " nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  " nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
 endfunction
 
 augroup fern-custom

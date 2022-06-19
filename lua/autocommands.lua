@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd({"CursorMoved", "BufWinEnter", "BufFilePost" }, {
     callback = function ()
       local winbar_filetype_exclude = {
-        "help", "coc-explorer", "fern", "startify", "dashboard", "packer", "nogitstatus", "NvimTree", "Trouble", "alpha", "lir", "Outline", "spectre_panel"
+        "help", "coc-explorer", "fern", "javascript", "startify", "dashboard", "packer", "nogitstatus", "NvimTree", "Trouble", "alpha", "lir", "Outline", "spectre_panel"
       }
       if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
         vim.opt_local.winbar = nil

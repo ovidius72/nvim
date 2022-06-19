@@ -10,7 +10,6 @@ command! Win :call win#Win()
 map <silent><leader>; :Win<cr>
 map <silent><leader>. :call win#Win(1)<cr>
 map <leader>w; <plug>WinWin
-
 let g:win_resize_height = 3
 let g:win_resize_width = 4
 let g:win_disable_version_warning = 0

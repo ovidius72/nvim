@@ -67,55 +67,32 @@ Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 " Plug 'savq/melange'
 " Plug 'mcchrish/zenbones.nvim'
 Plug 'rebelot/kanagawa.nvim'
-" Plug 'ntk148v/vim-horizon'
-" Plug 'npxbr/gruvbox.nvim'
-" Plug 'elianiva/gruvy.nvim'
 Plug 'projekt0n/github-nvim-theme'
-" Plug 'franbach/miramare'
-" Plug 'folke/tokyonight.nvim'
-" Plug 'Yagua/nebulous.nvim'
-" Plug 'rmehri01/onenord.nvim'
-" Plug 'AhmedAbdulrahman/vim-aylin'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 
 
 
 Plug 'ovidius72/Catppuccino.nvim'
-" Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'rafamadriz/neon'
-" Plug 'mnishz/colorscheme-preview.vim'
-" <-- colorschemes
-
-
-" Plug 'folke/trouble.nvim'
 Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'preservim/vimux'
 Plug 's1n7ax/nvim-comment-frame'
 Plug 'folke/todo-comments.nvim'
 Plug 'github/copilot.vim'
-
-" Plug 'AckslD/nvim-neoclip.lua'
 Plug 'ironhouzi/starlite-nvim'
-
-" Autoclose/change html/jsx tags.
 Plug 'AndrewRadev/tagalong.vim'
-" Plug 'camspiers/snap'
 Plug 'mizlan/iswap.nvim'
-
-
-" Plug 'haringsrob/nvim_context_vt'
 Plug 'kana/vim-textobj-user'
-" Plug 'sgur/vim-textobj-parameter'
-Plug 'AckslD/nvim-revJ.lua'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'AckslD/nvim-trevJ.lua'
 Plug 'windwp/nvim-ts-autotag'
 
 Plug 'psliwka/vim-smoothie'
-Plug 'micmine/jumpwire.nvim'
+" Plug 'micmine/jumpwire.nvim'
 Plug 'phaazon/hop.nvim'
 Plug 'LudoPinelli/comment-box.nvim'
 " Plug 'rlane/pounce.nvim'
@@ -133,11 +110,11 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'pechorin/any-jump.vim'
+" Plug 'pechorin/any-jump.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 " Plug 'w0rp/ale'
-" Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
@@ -147,6 +124,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-unimpaired'
 Plug 'dstein64/vim-win'
+Plug 'mrjones2014/smart-splits.nvim'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
@@ -162,6 +140,7 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'yuki-yano/fern-preview.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'matze/vim-move'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -318,7 +297,7 @@ source ~/.config/nvim/init/bufsurf.vim
 source ~/.config/nvim/init/close-buffers.vim
 " source ~/.config/nvim/init/clap.vim
 source ~/.config/nvim/init/vim-sandwich.vim
-source ~/.config/nvim/init/anyjump.vim
+" source ~/.config/nvim/init/anyjump.vim
 source ~/.config/nvim/init/aerojump.vim
 source ~/.config/nvim/init/lazygit.vim
 source ~/.config/nvim/init/vim-win.vim
@@ -343,7 +322,7 @@ source ~/.config/nvim/init/undotree.vim
 " source ~/.config/nvim/init/scrollbar.vim
 source ~/.config/nvim/init/wilder.vim
 source ~/.config/nvim/init/smoothie.vim
-source ~/.config/nvim/init/jumpwire.vim
+" source ~/.config/nvim/init/jumpwire.vim
 source ~/.config/nvim/init/signify.vim
 source ~/.config/nvim/init/coc.vim
 " source ~/.config/nvim/init/barbar.vim

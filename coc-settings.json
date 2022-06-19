@@ -1,19 +1,45 @@
 {
-  "suggest.floatConfig":    { "highlight": "Normal", "borderhighlight": "CocHintSign", "border": true, "shadow": false, "focusable": true},
-  "diagnostic.floatConfig": { "highlight": "Normal", "borderhighlight": "WhichKey","border": true, "shadow": false, "focusable": true},
-  "signature.floatConfig":  { "highlight": "Normal", "borderhighlight": "CocInfoSign","border": true, "shadow": false, "focusable": true},
-  "hover.floatConfig":      { "highlight": "Normal", "borderhighlight": "WhichKey","border": true, "shadow": false, "focusable": true},
-  "typescript.inlayHints.parameterNames.enabled": "all",
+  "suggest.floatConfig":    { 
+    "highlight": "Normal",
+    "borderhighlight": "CocHintSign",
+    "border": true,
+    "shadow": false,
+    "focusable": true
+  },
+  "diagnostic.floatConfig": {
+    "highlight": "Normal",
+    "borderhighlight": "WhichKey",
+    "border": true,
+    "shadow": false,
+    "focusable": true
+  },
+  "signature.floatConfig":  {
+    "highlight": "Normal",
+    "borderhighlight": "CocInfoSign",
+    "border": true,
+    "shadow": false,
+    "focusable": true
+  },
+  "hover.floatConfig":      { 
+    "highlight": "Normal",
+    "borderhighlight": "Normal",
+    "border": true,
+    "shadow": false,
+    "focusable": true
+  },
+  "suggest.enablePreview": true,
+  "suggest.floatEnable": true,
+  // "typescript.inlayHints.parameterNames.enabled": "all",
   "notification.preferMenuPicker": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  // "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  // "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
   "tsserver.enable": true,
-  "tsserver.formatOnType": true,
+  "tsserver.formatOnType": false,
   "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "gitignore.enable": true,
-  "intelephense.licenceKey": "00B18KQH3XJPJ89",
+  /// "intelephense.licenceKey": "00B18KQH3XJPJ89",
   "Lua.diagnostics.globals": ["vim", "bit"],
   "git.showCommitInFloating": true,
   "intelephense.environment.includePaths": [
@@ -156,7 +182,7 @@
   "list.source.files.excludePatterns": ["node_modules", "dist", "build"],
   "prettier.onlyUseLocalVersion": false,
   "eslint.codeActionsOnSave.mode": "all",
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "git.addGBlameToBufferVar": true,
   "coc.source.around.priority": 1,
   "emmet.priority": 3,
