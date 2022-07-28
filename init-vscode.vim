@@ -31,6 +31,7 @@ nnoremap gr :<c-u>call VSCodeNotify('editor.action.goToReferences')<cr>
 nnoremap <leader><TAB> :buffer#<CR>
 nnoremap <SHIFT>k :<c-u>call VSCodeNotify('workbench.action.showOver')<cr>
 nnoremap <leader>sa :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
+" nnoremap <leader>ss :<c-u>call VSCodeNotify('extension.fuzzySearch.activeTextEditor')<cr>
 nnoremap <silent><leader>fw <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
 
 nnoremap <leader>tt :<c-u>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>

@@ -51,7 +51,7 @@ catppuccin.setup(
 		term_colors = true,
 		styles = {
 			comments = "italic",
-			functions = "bold,italic",
+			functions = "bold",
 			keywords = "bold",
 			strings = "NONE",
 			variables = "bold",

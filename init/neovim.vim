@@ -59,6 +59,7 @@ Plug 'tanvirtin/vgit.nvim'
 " Plug 'wadackel/vim-dogrun'
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'mangeshrex/everblush.vim'
+Plug 'Yazeed1s/minimal.nvim'
 
 " If you are using Vim Plug
 Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
@@ -77,8 +78,12 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'vim-test/vim-test'
-Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" Plug 'nvim-neotest/neotest'
+" Plug 'haydenmeade/neotest-jest'
+" Plug 'vim-test/vim-test'
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+Plug 'kevinhwang91/promise-async'
+Plug 'kevinhwang91/nvim-ufo'
 Plug 'preservim/vimux'
 Plug 's1n7ax/nvim-comment-frame'
 Plug 'folke/todo-comments.nvim'
@@ -174,7 +179,7 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'emilsoman/indent-highlight.vim'
-Plug 'gelguy/wilder.nvim'
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'kevinhwang91/rnvimr'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -328,7 +333,7 @@ source ~/.config/nvim/init/coc.vim
 " source ~/.config/nvim/init/barbar.vim
 source ~/.config/nvim/init/tagalong.vim
 source ~/.config/nvim/init/vimspector.vim
-source ~/.config/nvim/init/vim-test.vim
+" source ~/.config/nvim/init/vim-test.vim
 source ~/.config/nvim/init/nvim-comment-frame.vim
 source ~/.config/nvim/init/hop.vim
 source ~/.config/nvim/init/dadbod.vim
