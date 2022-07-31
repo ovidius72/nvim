@@ -54,6 +54,7 @@ Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 " Plug 'GustavoKatel/sidebar.nvim'
 " Plug 'lewis6991/gitsigns.nvim'
 
+Plug 'shaunsingh/oxocarbon.nvim', { 'do': './install.sh' }
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
 " Plug 'wadackel/vim-dogrun'
@@ -142,7 +143,7 @@ Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'unblevable/quick-scope'
 Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'yuki-yano/fern-preview.vim'
@@ -259,7 +260,7 @@ require'nvim-treesitter.configs'.setup {
       'dockerfile'
     },
     highlight = {
-        enable = false,
+        enable = true,
     },
     incremental_selection = {
         enable = false,

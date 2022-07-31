@@ -1,4 +1,4 @@
-local themeName = 'catppuccin'
+local themeName = 'oxocarbon'
 
 function SetTransapentBackground()
 -- transparent background
@@ -50,29 +50,37 @@ catppuccin.setup(
 		transparent_background = false,
 		term_colors = true,
 		styles = {
-			comments = "italic",
-			functions = "bold",
-			keywords = "bold",
-			strings = "NONE",
-			variables = "bold",
+			comments ={ "italic"},
+			functions ={ "bold"},
+			keywords ={ "bold"},
+			strings ={},
+			variables ={ "bold"},
+			conditionals = { "italic" },
+			loops = {},
+			numbers = {},
+			booleans = {},
+			properties = {},
+			types = {},
+			operators = {},
 		},
 		integrations = {
 			treesitter = true,
 			native_lsp = {
 				enabled = false,
 				virtual_text = {
-					errors = "italic",
-					hints = "italic",
-					warnings = "italic",
-					information = "italic",
+					errors ={ "italic"},
+					hints ={ "italic"},
+					warnings ={ "italic"},
+					information ={ "italic"},
 				},
 				underlines = {
-					errors = "underline",
-					hints = "underline",
-					warnings = "underline",
-					information = "underline",
+					errors ={ "underline"},
+					hints ={ "underline"},
+					warnings ={ "underline"},
+					information ={ "underline"},
 				},
 			},
+			coc_nvim = true,
 			lsp_trouble = false,
 			lsp_saga = false,
 			gitgutter = false,

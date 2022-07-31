@@ -206,7 +206,7 @@ require'lualine'.setup {
       }
     },
     lualine_z = {
-      { line_progress, color = 'DiffAdd', padding = 0 },
+      { line_progress, padding = 0 },
       { condition = is_test_file, testFileIcon, color = 'DiffChange' },
       { condition = is_test_file, colored = true, test_stats, color = 'DiffChange' },
     }
