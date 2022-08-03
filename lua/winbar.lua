@@ -11,26 +11,27 @@ end
 
 M.filename = function()
   local filename = vim.fn.expand "%:t"
-  local extension = ""
-  local file_icon = ""
-  local file_icon_color = ""
+  -- local extension = ""
+  -- local file_icon = ""
+  -- local file_icon_color = ""
 
   if not isempty(filename) then
-    extension = filename:match "^.+(%..+)$"
+    -- extension = filename:match "^.+(%..+)$"
 
-    local default = false
+    -- local default = false
 
-    if isempty(extension) then
-      extension = ""
-      default = true
-    else
-      extension = extension:gsub("%.", "")
-    end
+    -- if isempty(extension) then
+    --   -- extension = ""
+    --   -- default = true
+    -- else
+    --   -- extension = extension:gsub("%.", "")
+    -- end
 
-    file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = default })
-    local hl_group = "FileIconColor" .. extension
-    vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
-    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LuaCommentTodo#" .. filename .. "%*"
+    -- file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = default })
+    -- local hl_group = "FileIconColor" .. extension
+    -- vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
+    -- return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LuaCommentTodo#" .. filename .. "%*"
+    return " " .. filename .. "%*"
   end
 end
 

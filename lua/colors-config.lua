@@ -1,4 +1,4 @@
-local themeName = 'oxocarbon'
+local themeName = 'catppuccin'
 
 function SetTransapentBackground()
 -- transparent background
