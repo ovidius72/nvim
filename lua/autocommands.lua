@@ -5,7 +5,6 @@ vim.api.nvim_create_autocmd({"CursorMoved", "BufWinEnter", "BufFilePost" }, {
       }
       if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
         vim.opt_local.winbar = nil
-        return
       end
       local value = require('winbar').gps()
       if value == nil then

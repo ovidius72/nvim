@@ -346,5 +346,8 @@ runtime macros/sandwich/keymap/surrounnd.vim
 " hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg
 " hi CocWarningInfoText ctermfg=Black ctermbg=Yellow guifg=#95ffa4 guibg=bg
 lua init = require('init')
+imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 " lua init.setup()
 " source ~/.config/nvim/init/colors.vim
