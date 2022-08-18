@@ -55,7 +55,7 @@ xnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr
 nnoremap <leader>] :<c-u>call VSCodeNotify('revealInExplorer')<cr>
 nnoremap <leader>[ :<c-u>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>
 nnoremap <leader>i :<c-u>call VSCodeNotify('workbench.action.quickOpen')<cr>
-nnoremap <leader>co :<c-u>call VSCodeNotify('problems.action.showQuickFixes')<cr>
+nnoremap <leader>co :<c-u>call VSCodeNotify('editor.action.quickFix')<cr>
 " nnoremap <leader>ws :<c-u>call VSCodeNotify('workbench.action.splitEditorDown')<cr>
 nnoremap <leader>wv <Cmd>call <SID>split('v')<CR>
 xnoremap <leader>wv <Cmd>call <SID>split('v')<CR>

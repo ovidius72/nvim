@@ -187,6 +187,7 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'glepnir/dashboard-nvim'
 Plug 'folke/zen-mode.nvim'
+Plug 'rest-nvim/rest.nvim'
 call plug#end()
 
 
@@ -242,6 +243,7 @@ require'nvim-treesitter.configs'.setup {
       'html',
       'scss',
       'json',
+      'http',
       'graphql',
       'vue',
       'jsonc',
