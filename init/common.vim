@@ -24,7 +24,7 @@ set foldnestmax=3
 set foldminlines=1
 " set foldtext=substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))
 set laststatus=3
-set spell!
+set spell
 set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
@@ -48,11 +48,10 @@ filetype indent on
 set hidden
 imap jj <Esc>
 let mapleader=" "
-" enable italis in tmux
+" enable italics in tmux
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 let &t_ut=''
-" fads sdaf asdf sda f adsf dsa f sda fsda f sda fsd afsd f ds f sdaf sda f sdaf s adf sda f sdaf sd af sd f sdf sda fsdf sd fsa dfsd f sd fsdaf sda f sdfs dfds sdf a
 " nvim-hlslens
 "noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
 "            \<Cmd>lua require('hlslens').start()<CR>

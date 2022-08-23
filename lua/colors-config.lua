@@ -1,4 +1,4 @@
-local themeName = 'catppuccin'
+local themeName = 'vscode-github'
 
 function SetTransapentBackground()
 -- transparent background

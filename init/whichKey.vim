@@ -448,6 +448,8 @@ let g:which_key_map.m = {
 "" ============================== O ==========================
 let g:which_key_map.o = { 
       \'name': '+custom',
+      \'a': 'ISwap Next Inner',
+      \'A': 'ISwap Previous Inner',
       \'s': 'ISwap',
       \'w': 'ISwapWith',
       \'l': 'js-console.log',

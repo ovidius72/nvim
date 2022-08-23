@@ -25,10 +25,8 @@ Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 Plug 'thinca/vim-quickrun'
 Plug 'metakirby5/codi.vim'
 Plug 'rhysd/git-messenger.vim'
-
 Plug 'MunifTanjim/nui.nvim'        " it's a dependency
 Plug 'xeluxee/competitest.nvim'
-
 Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -44,6 +42,7 @@ Plug 'junegunn/gv.vim'
 Plug 'kwkarlwang/bufjump.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'andrewferrier/debugprint.nvim'
 
 " Plug 'pacokwon/onedarkhc.vim'
 " Plug 'Everblush/everblush.vim'
@@ -58,21 +57,20 @@ Plug 'shaunsingh/oxocarbon.nvim', { 'do': './install.sh' }
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
 " Plug 'wadackel/vim-dogrun'
-Plug 'olimorris/onedarkpro.nvim'
-Plug 'mangeshrex/everblush.vim'
-Plug 'Yazeed1s/minimal.nvim'
+Plug 'kaiuri/github-vscode-theme.nvim'
+" Plug 'olimorris/onedarkpro.nvim'
+" Plug 'mangeshrex/everblush.vim'
+" Plug 'Yazeed1s/minimal.nvim'
 
 " If you are using Vim Plug
-Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+" Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 
 " Plug 'shaunsingh/moonlight.nvim'
 " Plug 'savq/melange'
 " Plug 'mcchrish/zenbones.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-
-
+" Plug 'projekt0n/github-nvim-theme'
+" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 
 Plug 'ovidius72/Catppuccino.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
@@ -88,7 +86,7 @@ Plug 'kevinhwang91/nvim-ufo'
 Plug 'preservim/vimux'
 Plug 's1n7ax/nvim-comment-frame'
 Plug 'folke/todo-comments.nvim'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'ironhouzi/starlite-nvim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'mizlan/iswap.nvim'
@@ -324,7 +322,6 @@ source ~/.config/nvim/init/telescope.vim
 source ~/.config/nvim/init/spectre.vim
 " source ~/.config/nvim/init/context.vim
 " source ~/.config/nvim/lua/galaxyline.lua
-source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/undotree.vim
 " source ~/.config/nvim/init/scrollbar.vim
@@ -343,6 +340,7 @@ source ~/.config/nvim/init/dadbod.vim
 source ~/.config/nvim/init/git-messenger.vim
 " source ~/.config/nvim/init/dashboard.vim
 runtime macros/sandwich/keymap/surrounnd.vim
+source ~/.config/nvim/init/common.vim
 
 " hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
 " hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg
