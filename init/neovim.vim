@@ -53,25 +53,10 @@ Plug 'andrewferrier/debugprint.nvim'
 " Plug 'GustavoKatel/sidebar.nvim'
 " Plug 'lewis6991/gitsigns.nvim'
 
-Plug 'shaunsingh/oxocarbon.nvim', { 'do': './install.sh' }
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
-" Plug 'wadackel/vim-dogrun'
-Plug 'kaiuri/github-vscode-theme.nvim'
-" Plug 'olimorris/onedarkpro.nvim'
-" Plug 'mangeshrex/everblush.vim'
-" Plug 'Yazeed1s/minimal.nvim'
-
-" If you are using Vim Plug
-" Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
-
-" Plug 'shaunsingh/moonlight.nvim'
-" Plug 'savq/melange'
-" Plug 'mcchrish/zenbones.nvim'
 Plug 'rebelot/kanagawa.nvim'
 " Plug 'projekt0n/github-nvim-theme'
-" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-
 Plug 'ovidius72/Catppuccino.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'lambdalisue/glyph-palette.vim'
@@ -79,8 +64,9 @@ Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'nvim-neotest/neotest'
 " Plug 'haydenmeade/neotest-jest'
-" Plug 'vim-test/vim-test'
-" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" Plug 'fgheng/winbar.nvim'
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'preservim/vimux'
@@ -95,13 +81,13 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'AckslD/nvim-trevJ.lua'
 Plug 'windwp/nvim-ts-autotag'
 
-Plug 'psliwka/vim-smoothie'
+" Plug 'psliwka/vim-smoothie'
+Plug 'declancm/cinnamon.nvim'
 " Plug 'micmine/jumpwire.nvim'
 Plug 'phaazon/hop.nvim'
 Plug 'LudoPinelli/comment-box.nvim'
 " Plug 'rlane/pounce.nvim'
 " Plug 'ggandor/lightspeed.nvim'
-Plug 'andymass/vim-matchup'
 Plug 'sindrets/diffview.nvim'
 Plug 'voldikss/vim-floaterm'
 " Plug 'rbong/vim-flog'
@@ -151,6 +137,8 @@ Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+
 Plug 'SmiteshP/nvim-gps'
 Plug 'sindrets/winshift.nvim'
 
@@ -271,9 +259,9 @@ require'nvim-treesitter.configs'.setup {
           node_decremental = "gnu"
         }
     },
-    matchup = {
-        enable = false,
-    },
+    -- matchup = {
+    --     enable = false,
+    -- },
     -- nvimGPS = { 
     --   enable = true,
     -- },
@@ -348,6 +336,7 @@ source ~/.config/nvim/init/common.vim
 lua init = require('init')
 imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+let g:ultest_deprecation_notice = 0
 
 " lua init.setup()
 " source ~/.config/nvim/init/colors.vim

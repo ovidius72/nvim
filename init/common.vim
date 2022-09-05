@@ -24,11 +24,13 @@ set foldnestmax=3
 set foldminlines=1
 " set foldtext=substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))
 set laststatus=3
-set spell
+set spell!
 set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
 set fillchars+=diff:╱
+set scrolloff=4
+
 " set clipboard+=unnamedplus
 
 " set colorcolumn=999999

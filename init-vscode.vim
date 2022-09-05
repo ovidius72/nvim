@@ -24,7 +24,9 @@ function! s:split(...) abort
 endfunction
 
 let mapleader=" "
-nnoremap gd :<c-u>call VSCodeNotify('editor.action.goToTypeDefinition')<cr>
+nnoremap <C-w>gd <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
+nnoremap gd :<c-u>call VSCodeNotify('editor.action.revealDefinition')<cr>
+" nnoremap gD :<c-u>call VSCodeNotify('editor.action.goToTypeDefinition')<cr>
 nnoremap gi :<c-u>call VSCodeNotify('editor.action.goToImplementation')<cr>
 nnoremap gr :<c-u>call VSCodeNotify('editor.action.goToReferences')<cr>
 
@@ -32,6 +34,7 @@ nnoremap <leader><TAB> :buffer#<CR>
 nnoremap <SHIFT>k :<c-u>call VSCodeNotify('workbench.action.showOver')<cr>
 nnoremap <leader>sa :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
 nnoremap <leader>ff :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
+nnoremap <leader>fr :<c-u>call VSCodeNotify('workbench.action.openRecent')<cr>
 " nnoremap <leader>ss :<c-u>call VSCodeNotify('extension.fuzzySearch.activeTextEditor')<cr>
 nnoremap <silent><leader>fw <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
 
@@ -50,7 +53,8 @@ nnoremap <leader>oo :<c-u>call VSCodeNotify('editor.action.organizeImports')<cr>
 " nnoremap <leader>ol :<c-u>call VSCodeNotify('turboConsoleLog.displayLogMessage')<cr>
 nnoremap <leader>od :<c-u>call VSCodeNotify('console.log.wrap.string.down')<cr>
 nnoremap <leader>op :<c-u>call VSCodeNotify('console.log.wrap.down.input')<cr>
-nnoremap <leader>ol :<c-u>call VSCodeNotify('quickConsoleLog.wrap.down')<cr>
+nnoremap <leader>ol :<c-u>call VSCodeNotify('console.log.wrap.down.prefix')<cr>
+" nnoremap <leader>ol :<c-u>call VSCodeNotify('quickConsoleLog.wrap.down')<cr>
 xnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
 nnoremap <leader>] :<c-u>call VSCodeNotify('revealInExplorer')<cr>
 nnoremap <leader>[ :<c-u>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>

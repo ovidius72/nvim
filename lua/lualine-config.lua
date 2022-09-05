@@ -1,4 +1,4 @@
--- local gps = require('nvim-gps')
+local gps = require('nvim-gps')
 
 local function is_test_file()
   return vim.fn['ultest#is_test_file']('%') > 0
@@ -17,6 +17,17 @@ local function test_stats()
   return is_test_file() and ('🚦' .. stats.tests .. ' - 🎉' .. stats.passed .. ' - 🚫' .. stats.failed .. ' - 🏃' .. stats.running) or ''
 end
 
+-- local function diff_source()
+--   local gitsigns = vim.b.gitsigns_status_dict
+--   if gitsigns then
+--     return {
+--       added = gitsigns.added,
+--       modified = gitsigns.changed,
+--       removed = gitsigns.removed
+--     }
+--   end
+-- end
+
 -- local function vim_icon()
 --   return ''
 -- end
@@ -25,15 +36,20 @@ local function short_mode(mode)
   return mode:sub(1,1)
 end
 
--- local function getGPS()
---   local is_available = gps.is_available()
---   local res = gps.get_location()
---   if is_available and res ~= "Error" and res ~= nil then
---     return res
---   else
---     return ''
---   end
--- end
+local function getGPS()
+  local is_available = gps.is_available()
+  -- local filename = vim.fn.expand "%:t"
+  -- local extension = filename:match "^.+(%..+)$"
+  -- local default = false
+  -- local file_icon = require('nvim-web-devicons').get_icon_color(filename, extension, { default = default })
+  local res = gps.get_location()
+  -- local gps_output = ''
+  if is_available and res ~= "Error" and res ~= nil then
+    return res
+  else
+    return ''
+  end
+end
 
 
 require'lualine'.setup {
@@ -195,14 +211,15 @@ require'lualine'.setup {
     lualine_y = {
       {
         'diff',
-        colored = true, -- displays diff status in color if set to true
-        padding = 1,
-        diff_color = {
-          added = 'DiffAdd', -- changes diff's added foreground color
-          modified = 'DiffChange', -- changes diff's modified foreground color
-          removed = 'DiffDelete', -- changes diff's removed foreground color
-        },
-        symbols = {added = '+', modified = '~', removed = '-'} -- changes diff symbols
+        -- colored = true, -- displays diff status in color if set to true
+        -- source = diff_source,
+        -- padding = 1,
+        -- diff_color = {
+        --   added = 'DiffAdd', -- changes diff's added foreground color
+        --   modified = 'DiffChange', -- changes diff's modified foreground color
+        --   removed = 'DiffDelete', -- changes diff's removed foreground color
+        -- },
+        -- symbols = {added = '+', modified = '~', removed = '-'} -- changes diff symbols
       }
     },
     lualine_z = {
@@ -210,6 +227,38 @@ require'lualine'.setup {
       { condition = is_test_file, testFileIcon, color = 'DiffChange' },
       { condition = is_test_file, colored = true, test_stats, color = 'DiffChange' },
     }
+  },
+  winbar = {
+    lualine_a = {
+      {
+        'filetype',
+         icon_only = true,
+     }
+   },
+    lualine_b = { {
+        'filename',
+        colored = true,
+        color = { fg = '#ff8080', bg = 'None', gui='bold' },
+    }
+  },
+    lualine_c = {
+      {
+        getGPS,
+        condition = gps.is_available,
+      }
+    }
+  },
+  inactive_winbar = {
+    lualine_a = {{'filetype', colored = true, icon_only = true}},
+    lualine_b = {
+      {
+        'filename',
+      }
+    },
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
   },
   inactive_sections = {
     lualine_a = {

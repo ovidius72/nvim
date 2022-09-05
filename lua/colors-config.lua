@@ -1,4 +1,4 @@
-local themeName = 'vscode-github'
+local themeName = 'spaceduck'
 
 function SetTransapentBackground()
 -- transparent background
@@ -146,21 +146,22 @@ vim.g.dim_nc_background = true
 -- ╔════════════════════════════════════════════════════════════════════╗
 -- ║                              Kanagawa                              ║
 -- ╚════════════════════════════════════════════════════════════════════╝
--- require('kanagawa').setup({
---     undercurl = true,           -- enable undercurls
---     commentStyle = "italic",
---     functionStyle = "bold",
---     keywordStyle = "italic",
---     statementStyle = "italic",
---     typeStyle = "NONE",
---     variablebuiltinStyle = "italic,bold",
---     specialReturn = true,       -- special highlight for the return keyword
---     specialException = true,    -- special highlight for exception handling keywords
---     transparent = false,        -- do not set background color
---     dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
---     colors = {},
---     overrides = {},
--- })
+require('kanagawa').setup({
+    undercurl = true,           -- enable undercurls
+		globalstatus = true,
+    commentStyle = {italic = true},
+    functionStyle = {bold = true},
+    keywordStyle = {italic = true},
+    statementStyle = {italic = true},
+    typeStyle = { },
+    variablebuiltinStyle = {italic = true, bold = true},
+    specialReturn = true,       -- special highlight for the return keyword
+    specialException = true,    -- special highlight for exception handling keywords
+    transparent = false,        -- do not set background color
+    dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+    colors = {},
+    overrides = {},
+})
 
   ----------------------------------------------------------------------
   --                              embark                              --
@@ -338,13 +339,13 @@ vim.cmd('colorscheme ' .. themeName)
 -- vim.cmd [[ highlight default link WhichKeySeperator NONE ]]
 
 -- -- global statusline
--- vim.opt.laststatus=3
--- vim.opt.fillchars = {
---   horiz     = '━',
---   horizup   = '┻',
---   horizdown = '┳',
---   vert      = '┃',
---   vertleft  = '┫',
---   vertright = '┣',
---   verthoriz = '╋',
--- }
+vim.opt.laststatus=3
+vim.opt.fillchars = {
+  horiz     = '━',
+  horizup   = '┻',
+  horizdown = '┳',
+  vert      = '┃',
+  vertleft  = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
+}

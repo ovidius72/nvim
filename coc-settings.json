@@ -28,7 +28,11 @@
     "shadow": false,
     "focusable": true
   },
-
+  "cSpellExt.enableDictionaries": [
+    "italian",
+    "medical-terms"
+  ],
+  "cSpell.language": "en,it",
   "suggest.noselect": true,
   // "suggest.enablepreselect": true,
   // "suggest.enablePreview": true,
@@ -330,7 +334,15 @@
     /*     "storagePath": "/tmp/intelephense" */
     /*   } */
     /* } */
-  }
+  },
+  "cSpell.userWords": [
+    "Formik",
+    "catppuccin",
+    "floaterm",
+    "kevinhwang",
+    "microservices",
+    "nestjs"
+  ]
   //  "python.autoComplete.extraPaths": [
   //    "${env:SPARK_HOME}/python",
   //    "${env:SPARK_HOME}/python/pyspark"

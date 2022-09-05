@@ -1,6 +1,7 @@
-let test#strategy = 'vimux'
+let test#strategy = 'floaterm'
 let g:ultest_use_pty = 1
 let g:ultest_output_on_line = 0
+let g:ultest_deprecation_notice = 0
 
 
 let g:test#php#phpunit#executable = 'docker exec -it $(docker ps -n=-1 -q --filter name=php_maiare --format="{{.ID}}") /var/www/app/vendor/bin/phpunit --configuration /var/www/app/phpunit.xml.dist'
