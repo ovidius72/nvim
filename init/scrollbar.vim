@@ -1,3 +1,8 @@
+lua <<EOF
+require("scrollbar").setup()
+require("scrollbar.handlers.search").setup()
+EOF
+
 augroup ScrollbarInit
   autocmd!
   autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()

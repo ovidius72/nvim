@@ -336,9 +336,12 @@
     /* } */
   },
   "cSpell.userWords": [
+    "DEBUGPRINT",
     "Formik",
     "catppuccin",
     "floaterm",
+    "hookform",
+    "iban",
     "kevinhwang",
     "microservices",
     "nestjs"

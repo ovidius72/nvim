@@ -38,16 +38,18 @@ Plug 'kyazdani42/nvim-web-devicons' " lua
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons' " vimscript
 Plug 'nvim-lualine/lualine.nvim'
+" Plug 'feline-nvim/feline.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'kwkarlwang/bufjump.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'andrewferrier/debugprint.nvim'
+Plug 'petertriho/nvim-scrollbar'
 
 " Plug 'pacokwon/onedarkhc.vim'
 " Plug 'Everblush/everblush.vim'
 
-" Plug 'kevinhwang91/nvim-hlslens'
+Plug 'kevinhwang91/nvim-hlslens'
 
 " Plug 'tversteeg/registers.nvim'
 " Plug 'GustavoKatel/sidebar.nvim'
@@ -55,6 +57,8 @@ Plug 'andrewferrier/debugprint.nvim'
 
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
+Plug 'sam4llis/nvim-tundra'
+Plug 'marko-cerovac/material.nvim'
 Plug 'rebelot/kanagawa.nvim'
 " Plug 'projekt0n/github-nvim-theme'
 Plug 'ovidius72/Catppuccino.nvim'
@@ -312,7 +316,7 @@ source ~/.config/nvim/init/spectre.vim
 " source ~/.config/nvim/lua/galaxyline.lua
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/undotree.vim
-" source ~/.config/nvim/init/scrollbar.vim
+source ~/.config/nvim/init/scrollbar.vim
 source ~/.config/nvim/init/wilder.vim
 source ~/.config/nvim/init/smoothie.vim
 " source ~/.config/nvim/init/jumpwire.vim
