@@ -6,7 +6,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'unblevable/quick-scope'
-Plug 'machakann/vim-sandwich'
+" Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
 call plug#end()
 
@@ -18,20 +18,20 @@ highlight OperatorSandwichChange guifg='#edc41f' gui=underline ctermfg='yellow' 
 highlight OperatorSandwichAdd guibg='#b1fa87' gui=none ctermbg='green' cterm=none
 highlight OperatorSandwichDelete guibg='#cf5963' gui=none ctermbg='red' cterm=none
 
-let g:sandwich_no_default_key_mappings = 1
-nmap <leader>vsd <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
-nmap <leader>vsr <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
-nmap <leader>vsdb <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
-nmap <leader>vsrb <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
+" let g:sandwich_no_default_key_mappings = 1
+" nmap <leader>vsd <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
+" nmap <leader>vsr <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
+" nmap <leader>vsdb <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
+" nmap <leader>vsrb <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
 
-let g:operator_sandwich_no_default_key_mappings = 1
-" add
-map <leader>vsa <Plug>(operator-sandwich-add)
-" delete
-xmap <leader>vsd <Plug>(operator-sandwich-delete)
-" replace
-xmap <leader>vsr <Plug>(operator-sandwich-replace)
-runtime macros/sandwich/keymap/surrounnd.vim
+" let g:operator_sandwich_no_default_key_mappings = 1
+" " add
+" map <leader>vsa <Plug>(operator-sandwich-add)
+" " delete
+" xmap <leader>vsd <Plug>(operator-sandwich-delete)
+" " replace
+" xmap <leader>vsr <Plug>(operator-sandwich-replace)
+" runtime macros/sandwich/keymap/surrounnd.vim
 
 " source ~/.config/nvim/init/common.vim
 source ~/.config/nvim/init/quick-scope.vim
@@ -102,5 +102,5 @@ nnoremap <leader>8 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex8')
 nnoremap <leader>9 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex9')<CR>
 nnoremap <leader>0 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex10')<CR>
 
-xnoremap <C-S-P> <Cmd>call VSCodeNotifyVisual('workbench.action.showCommands', 1)<CR>
-nnoremap <C-w>gd <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
+" xnoremap <C-S-P> <Cmd>call VSCodeNotifyVisual('workbench.action.showCommands', 1)<CR>
+" nnoremap <C-w>gd <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>

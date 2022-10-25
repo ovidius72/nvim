@@ -33,19 +33,19 @@ EOF
 
 " nmap ( :HopChar1<cr>
 " nmap ) :HopPattern<cr>
-nmap <leader>j1 :HopChar1MW<cr>
-nmap <leader>j2 :HopChar2MW<cr>
+" nmap <leader>j1 :HopChar1MW<cr>
+" nmap <leader>j2 :HopChar2MW<cr>
 " nmap <M-i> :HopChar1<cr>
-nmap <leader>ja :HopChar1<cr>
-nmap <leader>jl :HopChar1CurrentLine<cr>
-nmap <leader>jw :HopWord<cr>
-nmap <M-w> :HopWord<cr>
+" nmap <leader>ja :HopChar1<cr>
+" nmap <leader>jl :HopChar1CurrentLine<cr>
+" nmap <leader>jw :HopWord<cr>
+" nmap <M-w> :HopWord<cr>
 " nmap <C-s> :HopWord<cr>
-nmap <C-p> :HopChar2MW<cr>
-nmap <leader>ja :HopChar2<cr>
+" nmap <C-p> :HopChar2MW<cr>
+" nmap <leader>ja :HopChar2<cr>
 " nmap <leader>k :HopChar2MW<cr>
-nmap <leader>jj :HopWordAC<cr>
-nmap <leader>jk :HopWordBC<cr>
-nmap <leader>jp :HopPattern<cr>
-nmap <leader>jm :HopPatternMW<cr>
-nmap <leader>je :HopAnywhere<cr>
+" nmap <leader>jj :HopWordAC<cr>
+" nmap <leader>jk :HopWordBC<cr>
+" nmap <leader>jp :HopPattern<cr>
+" nmap <leader>jm :HopPatternMW<cr>
+" nmap <leader>je :HopAnywhere<cr>

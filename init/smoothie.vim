@@ -10,4 +10,4 @@ function! ToggleSmoothie() abort
 endfunction
 let g:smoothie_experimental_mappings = 1
 command! -nargs=? TOGGLESMOOTHIE : call ToggleSmoothie()
-nmap <leader>hS :TOGGLESMOOTHIE<cr>
+" nmap <leader>hS :TOGGLESMOOTHIE<cr>

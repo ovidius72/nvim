@@ -1,6 +1,9 @@
 call which_key#register('<space>', "g:which_key_map")
-nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
-" " let maplocalleader=","
+let g:mapleader = "\<Space>"
+let maplocalleader=","
+
+nnoremap <silent> <Leader> :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 " nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :WhichKey 'g'<CR>
@@ -92,9 +95,9 @@ let g:which_key_map["0"] = 'which_key_ignore'
 let g:which_key_map["<F9>"] = 'which_key_ignore'
 let g:which_key_map["0..9"] = 'Switch Buffers'
 nnoremap <silent><leader>qq :call ToggleQuickFix()<CR>
-" nnoremap <silent><leader>qx :ClearQuickFixList<CR>
-nnoremap <silent><leader>qp :cprev<CR>
-nnoremap <silent><leader>qn :cnext<CR>
+nnoremap <silent><leader>qx :ClearQuickFixList<CR>
+"nnoremap <silent><leader>qp :cprev<CR>
+"nnoremap <silent><leader>qn :cnext<CR>
 
 " let g:which_key_map["<leader>qp"] = 'Quickfix Next'
 " let g:which_key_map["<leader>qn"] = 'Quickfix Prev'
@@ -147,7 +150,7 @@ let g:which_key_map[' '] = {
       \'m': 'Marks',
       \'E': 'Symbols',
     \}
-"" =============================== A ==========================
+" =============================== A ==========================
 let g:which_key_map.a = { 
       \'name': '+apps',
       \'d': {
@@ -173,7 +176,7 @@ let g:which_key_map.a = {
       \'z': [":ZenMode", "ZenMode"]
       \}
 
-"" =============================== B ==========================
+" =============================== B ==========================
 let g:which_key_map.b = { 
       \'name': '+buffers',
       \'b': 'buffers',
@@ -195,7 +198,7 @@ let g:which_key_map.b = {
       \}
 
 
-"" =============================== C ==========================
+" =============================== C ==========================
 let g:which_key_map.c = { 
       \ 'name': '+coc',
       \ 'a': 'Code Action',
@@ -252,7 +255,7 @@ let g:which_key_map.c = {
       \ 'z': 'Coc Restart',
       \}
 
-"" =============================== D ==========================
+" =============================== D ==========================
 
 let g:which_key_map.d = { 
       \'name': '+debug',
@@ -264,7 +267,7 @@ let g:which_key_map.d = {
       \}
 
 
-"" =============================== E ==========================
+" =============================== E ==========================
 let g:which_key_map.e = { 
       \ 'name': '+diagnostic',
       \ 'l': 'coc diagnostic',
@@ -279,7 +282,7 @@ let g:which_key_map.e = {
       \ 'p': 'ale-pre',
       \}
 
-"" =============================== F ==========================
+" =============================== F ==========================
 let g:which_key_map.f = { 
       \ 'name': '+file',
       \ 'e'   : {
@@ -308,7 +311,7 @@ let g:which_key_map.f = {
       \ }
 
 
-"" =============================== G ==========================
+" =============================== G ==========================
       " \ 'g': {
       "   \ 'name': '+gitgutter',
       "   \ 'n': 'next hunk',
@@ -343,7 +346,7 @@ let g:which_key_map.g = {
       \}
 
 
-"" =============================== H ==========================
+" =============================== H ==========================
 let g:which_key_map.h = { 
       \'name': '+highlight',
       \'c': 'Contex Toggle',
@@ -372,7 +375,7 @@ let g:which_key_map.H = {
       \}
 
 
-"" =============================== I ==========================
+" =============================== I ==========================
 
 " let g:which_key_map.i = { 
 "       \'i': [':Clap buffers', 'latest buffers'],
@@ -396,7 +399,7 @@ let g:which_key_map.H = {
       " \'K': 'smartf repeat opposite',
       " \'k': 'smartf backward',
 
-"" =============================== J ==========================
+" =============================== J ==========================
 let g:which_key_map.j = { 
       \ 'name': '+jump',
       \ 'i': 'Implementation File',
@@ -405,7 +408,7 @@ let g:which_key_map.j = {
       \ 's': 'Style File'
       \}
 "
-"" <-- j/J
+" <-- j/J
 
 " let g:which_key_map.k = {
 "   \'name': '+lists',
@@ -425,12 +428,12 @@ let g:which_key_map.j = {
 "     \}
 "   \}
 
-"" =============================== K ==========================
+" =============================== K ==========================
       " \'x': [],
       " \'z': [],
-"" =============================== L ==========================
+" =============================== L ==========================
 
-"" ============================= M ============================
+" ============================= M ============================
 let g:which_key_map.m = { 
       \'name': '+other',
       \'m': 'marks',
@@ -438,14 +441,14 @@ let g:which_key_map.m = {
       \}
 
 
-"" ============================== N ===========================
+" ============================== N ===========================
 " let g:which_key_map.n = { 
 "       \'name': '+empty+',
 "       \}
 
 
 
-"" ============================== O ==========================
+" ============================== O ==========================
 let g:which_key_map.o = { 
       \'name': '+custom',
       \'a': 'ISwap Next Inner',
@@ -459,7 +462,7 @@ let g:which_key_map.o = {
       \'F': 'fold',
       \}
 
-"" ============================== P ===========================
+" ============================== P ===========================
 " \ 'f': 'NerdTree-focus',
 " \ 'n': 'NerdTree-find',
 " \ 't': 'NerdTree-toggle',
@@ -475,7 +478,7 @@ let g:which_key_map.p = {
       \ 'z': 'project tags',
       \}
 
-"" =============================== Q ==========================
+" =============================== Q ==========================
 let g:which_key_map.q = { 
       \ 'name': '+lists',
       \ 'q': [':ToggleQuickFix', 'toggle'],
@@ -484,7 +487,7 @@ let g:which_key_map.q = {
       \ 'n': [':cnext', 'next'],
       \}
 
-"" ============================== R ===========================
+" ============================== R ===========================
 let g:which_key_map.r = {
       \'name': '+jump',
       \'a': 'AerojumpFromCursorBolt',
@@ -496,7 +499,7 @@ let g:which_key_map.r = {
       \}
 
 
-"" =============================== S ==========================
+" =============================== S ==========================
 let g:which_key_map.s = { 
       \'name': '+grep',
       \'a': 'Ag',
@@ -524,7 +527,7 @@ let g:which_key_map.s = {
       \'w': 'windows', 
       \}
 
-"" =============================== T ==========================
+" =============================== T ==========================
 let g:which_key_map.t = { 
       \ 'name': '+tags',
       \'b': 'fzf buffer tags',
@@ -540,10 +543,10 @@ let g:which_key_map.T = {
       \'p': 'previous',
       \}
 
-"" =============================== U ==========================
+" =============================== U ==========================
 
 
-"" =============================== V ==========================
+" =============================== V ==========================
 let g:which_key_map.v = {
       \'name': '+visual',
       \'g': 'vista finder',
@@ -562,11 +565,11 @@ let g:which_key_map.v = {
 
 
 
-"" =============================== W ==========================
+" =============================== W ==========================
 " \ '.' : 'ace window',
 " \ ' ' : 'ace window',
 
-let g:which_key_map.w = {
+let g:which_key_map['w'] = {
     \ 'name' : '+windows',
     \ '1..7' : 'Switch Windows',
     \ '1' : 'which_key_ignore',
@@ -605,7 +608,7 @@ let g:which_key_map.w = {
     \ }
 
   
-"" =============================== X ==========================
+" =============================== X ==========================
 let g:which_key_map.x = { 
       \'name': '+code',
       \'r': 'replace-word',
@@ -617,9 +620,9 @@ let g:which_key_map.x = {
       \}
 
 
-"" =============================== Y ==========================
+" =============================== Y ==========================
 
-"" =============================== Z ==========================
+" =============================== Z ==========================
 
 
 let g:which_key_map.z = { 

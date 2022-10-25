@@ -96,9 +96,9 @@ nnoremap [j <C-o>zz
 nnoremap ]j <C-i>zz
 nnoremap [s [szz
 nnoremap ]s ]szz
-nnoremap cP yap<S-}>p
-nnoremap cy "+y
-nnoremap cp "+p
+" nnoremap cP yap<S-}>p
+" nnoremap cy "+y
+" nnoremap cp "+p
 
 "redirect change operations to the black hole register.
 " nnoremap c "_c
@@ -124,8 +124,9 @@ inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
 "copy to clipboard
-nnoremap <leader>y "+y
-nnoremap <leader>Y "+p
+"
+" nnoremap <leader>y "+y
+" nnoremap <leader>Y "+p
 " move among windows
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -148,32 +149,32 @@ EOF
 let g:minimap_auto_start = 0
 
 command! PU PlugClean | PlugUpdate | PlugUpgrade|   " :PU updates/cleans plugins and vim-plug.
-map <leader>feU :PU<cr>
-map <leader>feI :PlugInstall<cr>
+" map <leader>feU :PU<cr>
+" map <leader>feI :PlugInstall<cr>
 
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
-map <leader>hl :set list!<cr>
+" map <leader>hl :set list!<cr>
 " allow toggling between local and default mode
 " set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
-function TabToggle()
-  if &expandtab
-    set tabstop=4
-    set shiftwidth=4
-    set softtabstop=0
-    set noexpandtab
-    echo 'Tab set'
-  else
-    set tabstop=2
-    set shiftwidth=2
-    set softtabstop=2
-    set smarttab
-    set autoindent
-    set expandtab
-    echo 'Space set'
-  endif
-endfunction
-map <Leader>ht mz:execute TabToggle()<Cr>'z
-map <Leader>hr :%retab!<CR>
+" function TabToggle()
+"   if &expandtab
+"     set tabstop=4
+"     set shiftwidth=4
+"     set softtabstop=0
+"     set noexpandtab
+"     echo 'Tab set'
+"   else
+"     set tabstop=2
+"     set shiftwidth=2
+"     set softtabstop=2
+"     set smarttab
+"     set autoindent
+"     set expandtab
+"     echo 'Space set'
+"   endif
+" endfunction
+" map <Leader>ht mz:execute TabToggle()<Cr>'z
+" map <Leader>hr :%retab!<CR>
 " highlight jsxAttrib cterm=italic
 " highlight jsxTag cterm=italic
 " highlight tsxTag cterm=italic

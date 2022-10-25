@@ -16,14 +16,14 @@ let g:db_ui_show_database_icon = 1
 let g:db_ui_debug = 0
 let g:db_ui_force_echo_notifications = 1
 
-nnoremap <leader>doo :DBUIToggle<cr>
-nnoremap <leader>dor :DBUI_Redraw<cr>
+" nnoremap <leader>doo :DBUIToggle<cr>
+" nnoremap <leader>dor :DBUI_Redraw<cr>
 " nnoremap <leader>dol <Plug>(DBUI_ExecuteQuery)
-nnoremap <leader>doi :DBUILastQueryInfo<cr>
+" nnoremap <leader>doi :DBUILastQueryInfo<cr>
 " nnoremap <leader>dol <Plug>(DBUI_ExecuteQuery)
 " xnoremap <leader>dol <Plug>(DBUI_ExecuteQuery)
-nnoremap <leader>doE <Plug>(DBUI_EditBindParameters)
-nnoremap <leader>dot <Plug>(DBUI_ToggleResultLayout)
+" nnoremap <leader>doE <Plug>(DBUI_EditBindParameters)
+" nnoremap <leader>dot <Plug>(DBUI_ToggleResultLayout)
 " autocmd FileType sql,mysql nnoremap <Space>X <Plug>DBUI_ExecuteQuery
 " autocmd FileType sql,mysql xnoremap <Space>X <Plug>DBUI_ExecuteQuery
 " autocmd FileType sql,mysql nnoremap <leader>S vap <Plug>DBUI_ExecuteQuery

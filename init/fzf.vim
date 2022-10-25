@@ -101,79 +101,79 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " nmap <Leader>hw :Windows<CR>
 " nmap <Leader>hcb :Commits<CR>
 " nmap <Leader>hf :Files<CR>
-nmap <Leader>Hc :Colors<CR>
-nmap <Leader>Ht :Helptags<CR>
-nmap <Leader>Hf :Filetypes<CR>
-nmap <leader>Hm :Maps<CR>
-nmap <leader>Hk :Commands<CR>
-nmap <Leader>th :Helptags<CR>
+" nmap <Leader>Hc :Colors<CR>
+" nmap <Leader>Ht :Helptags<CR>
+" nmap <Leader>Hf :Filetypes<CR>
+" nmap <leader>Hm :Maps<CR>
+" nmap <leader>Hk :Commands<CR>
+" nmap <Leader>th :Helptags<CR>
 
 " Marks keybinding
-nmap <Leader>mm :Marks<CR>
+" nmap <Leader>mm :Marks<CR>
 
 " Files keybinding
-map <Leader>ff :Files<cr>
-map <Leader>fo :GFiles<cr>
-map <Leader>fg :GFiles?<cr>
-map <Leader>fr :History<cr>
-map <Leader>fl :Buffers<cr>
-map <Leader>f/ :History/<cr>
-map <Leader>f; :History:<cr>
-map <Leader>fm :Marks<cr>
+" map <Leader>ff :Files<cr>
+" map <Leader>fo :GFiles<cr>
+" map <Leader>fg :GFiles?<cr>
+" map <Leader>fr :History<cr>
+" map <Leader>fl :Buffers<cr>
+" map <Leader>f/ :History/<cr>
+" map <Leader>f; :History:<cr>
+" map <Leader>fm :Marks<cr>
 
 " Git keybinding
-nmap <Leader>gs :Git<CR>
-nmap <Leader>gS :GFiles?<CR>
-nmap <Leader>gc :Commits<CR>
+" nmap <Leader>gs :Git<CR>
+" nmap <Leader>gS :GFiles?<CR>
+" nmap <Leader>gc :Commits<CR>
 " nmap <Leader>gn :Neogit<CR>
-nmap <Leader>gf :GFiles<CR>
-nmap <Leader>gP :Gpush<CR>
-nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('up'))<CR>
+" nmap <Leader>gf :GFiles<CR>
+" nmap <Leader>gP :Gpush<CR>
+" nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('up'))<CR>
 
 " Project keybinding
-nmap <Leader>ph :Files<CR>
-nmap <Leader>tt :Tags<CR>
-nmap <Leader>pg :GFiles<CR>
-nmap <Leader>pz :Tags<CR>
-nmap <Leader>pa :Ag<CR>
+" nmap <Leader>ph :Files<CR>
+" nmap <Leader>tt :Tags<CR>
+" nmap <Leader>pg :GFiles<CR>
+" nmap <Leader>pz :Tags<CR>
+" nmap <Leader>pa :Ag<CR>
 "
 " Buffers keybinding
-nmap <Leader>bb :Buffers<CR>
-nmap <Leader>bc :BD<CR>
-nmap <Leader>bn :bn<CR>
-nmap <Leader>bp :bp<CR>
+" nmap <Leader>bb :Buffers<CR>
+" nmap <Leader>bc :BD<CR>
+" nmap <Leader>bn :bn<CR>
+" nmap <Leader>bp :bp<CR>
 " nmap <Leader>bd :bp<CR>:bd#<CR>
 " nmap <Leader>bd :Bclose<CR>
 " nmap <Leader>bk :Bclose!<CR>
-nmap <Leader>tb :BTags<CR>
-nmap <Leader>bt :BTags<CR>
+" nmap <Leader>tb :BTags<CR>
+" nmap <Leader>bt :BTags<CR>
 
 " Search keybinding
 " current buffer lines
-nmap <Leader>ss :BLines<CR>
+" nmap <Leader>ss :BLines<CR>
 " loaded buffers lines
-nmap <Leader>sl :Lines<CR>
+" nmap <Leader>sl :Lines<CR>
 " Windows
-nmap <Leader>sw :Windows<CR>
+" nmap <Leader>sw :Windows<CR>
 " Buffer Tags
-nmap <Leader>st :BTags<CR>
+" nmap <Leader>st :BTags<CR>
 " Rg Preview
-nmap <Leader>sr :Rg<CR>
+" nmap <Leader>sr :Rg<CR>
 " Rg select
-nmap <Leader>sR :Rg!<CR>
+" nmap <Leader>sR :Rg!<CR>
 
 " RG Fuzzy
-nmap <Leader>sf :RG<CR>
-nmap <Leader>sF :RG!<CR>
+" nmap <Leader>sf :RG<CR>
+" nmap <Leader>sF :RG!<CR>
 " git grep
-nmap <Leader>sg :GGrep<CR> 
+" nmap <Leader>sg :GGrep<CR> 
 " search history
 nmap <Leader>sh :History/<CR>
 " command history
-nmap <Leader>sc :History:<CR>
-nmap <Leader>sa :AGP<CR>
-nmap <Leader>sA :Ag!<CR>
-nmap <Leader>fw :Find<CR>
+" nmap <Leader>sc :History:<CR>
+" nmap <Leader>sa :AGP<CR>
+" nmap <Leader>sA :Ag!<CR>
+" nmap <Leader>fw :Find<CR>
 
 " nmap <Leader>gF :call fzf#vim#gitfiles('', fzf#vim#with_preview('up'))<CR>
 command! -bang -nargs=* Find

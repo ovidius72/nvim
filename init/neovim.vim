@@ -45,6 +45,9 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'andrewferrier/debugprint.nvim'
 Plug 'petertriho/nvim-scrollbar'
+Plug 'stevearc/dressing.nvim'
+Plug 'smjonas/live-command.nvim',
+Plug 'melkster/modicator.nvim'
 
 " Plug 'pacokwon/onedarkhc.vim'
 " Plug 'Everblush/everblush.vim'
@@ -57,6 +60,8 @@ Plug 'kevinhwang91/nvim-hlslens'
 
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
+Plug 'EdenEast/nightfox.nvim'
+Plug 'kartikp10/noctis.nvim'
 Plug 'sam4llis/nvim-tundra'
 Plug 'marko-cerovac/material.nvim'
 Plug 'rebelot/kanagawa.nvim'
@@ -70,7 +75,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Plug 'haydenmeade/neotest-jest'
 Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-" Plug 'fgheng/winbar.nvim'
+Plug 'fgheng/winbar.nvim'
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'preservim/vimux'
@@ -100,7 +105,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
-Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -124,7 +129,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/rainbow_parentheses.vim'
-" Plug 'mrjones2014/legendary.nvim'
+Plug 'mrjones2014/legendary.nvim'
 
 " Plug 'https://github.com/p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-commentary'
@@ -171,7 +176,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'emilsoman/indent-highlight.vim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'francoiscabrol/ranger.vim'
+" Plug 'francoiscabrol/ranger.vim'
 Plug 'kevinhwang91/rnvimr'
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'norcalli/nvim-colorizer.lua'
@@ -283,7 +288,7 @@ runtime macros/sandwich/keymap/surround.vim
 set nowrap
 let g:cursorhold_updatetime = 200
 source ~/.config/nvim/init/common.vim
-source ~/.config/nvim/init/whichKey.vim
+" source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/lightline.vim
 " source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
 " source ~/.config/nvim/colors/autoload/lightline/onehalfdark.vim
@@ -317,8 +322,8 @@ source ~/.config/nvim/init/spectre.vim
 source ~/.config/nvim/init/echodoc.vim
 source ~/.config/nvim/init/undotree.vim
 source ~/.config/nvim/init/scrollbar.vim
-source ~/.config/nvim/init/wilder.vim
-source ~/.config/nvim/init/smoothie.vim
+" source ~/.config/nvim/init/wilder.vim
+" source ~/.config/nvim/init/smoothie.vim
 " source ~/.config/nvim/init/jumpwire.vim
 source ~/.config/nvim/init/signify.vim
 source ~/.config/nvim/init/coc.vim

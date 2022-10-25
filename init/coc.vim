@@ -350,31 +350,31 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next)
 nmap <silent> ]i <Plug>(coc-diagnostic-diagnosicInfo)
 nmap <silent> [j :CocCommand document.jumpToNextSymbol<CR>
 nmap <silent> ]j :CocCommand document.jumpToPrevSymbol<CR>
-nnoremap <silent><nowait> <space>cls :<C-u>CocList -I symbols<cr>
-nmap <Leader>fi :<C-u>CocList --interactive --ignore-case --number-select --auto-preview symbols<cr>
+" nnoremap <silent><nowait> <space>cls :<C-u>CocList -I symbols<cr>
+" nmap <Leader>fi :<C-u>CocList --interactive --ignore-case --number-select --auto-preview symbols<cr>
 " nmap <silent><leader>cdi <Plug>(coc-diagnostic-diagnosicInfo)
 " nmap <silent><leader>el <Plug>(coc-diagnostic-info)
 " nmap <silent><leader>el  <Plug>(coc-diagnostic-info)
-nmap <silent><leader>ci <Plug>(coc-diagnostic-info)
-nmap <silent><leader>u <Plug>(coc-diagnostic-info)
-nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
+" nmap <silent><leader>ci <Plug>(coc-diagnostic-info)
+" nmap <silent><leader>u <Plug>(coc-diagnostic-info)
+" nnoremap <silent><space>el  :<C-u>CocList diagnostics<cr>
 
 " Remap keys for gotos
-nmap <silent>gd <Plug>(coc-definition)
-nmap <silent>gD :call CocAction('definitionHover')<cr>
-nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
+" nmap <silent>gd <Plug>(coc-definition)
+" nmap <silent>gD :call CocAction('definitionHover')<cr>
+" nmap <silent>gS :call CocAction('jumpDefinition', 'split')<cr>
 " nmap <silent>go :call CocAction('showOutline')<cr>
-nmap <silent>gO :call CocAction('showOutgoingCalls')<cr>
-nmap <silent>gL :call CocAction('showIncomingCalls')<cr>
-nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
-nmap <silent>gy <Plug>(coc-type-definition)
-nmap <silent>gI <Plug>(coc-implementation)
-nmap <silent>gr <Plug>(coc-references)
-nmap <silent>gU <Plug>(coc-references-used)
-nmap <silent>gR :call CocAction('refactor')<cr>
-nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
-nnoremap <silent> <Leader>fc :CocSearch <C-R>=expand('<cword>')<CR><CR>
-nnoremap <silent> <Leader>fx :CocSearch -w <C-R>=expand('<cword>')<CR><CR>
+" nmap <silent>gO :call CocAction('showOutgoingCalls')<cr>
+" nmap <silent>gL :call CocAction('showIncomingCalls')<cr>
+" nmap <silent>gV :call CocAction('jumpDefinition', 'vsplit')<cr>
+" nmap <silent>gy <Plug>(coc-type-definition)
+" nmap <silent>gI <Plug>(coc-implementation)
+" nmap <silent>gr <Plug>(coc-references)
+" nmap <silent>gU <Plug>(coc-references-used)
+" nmap <silent>gR :call CocAction('refactor')<cr>
+" nnoremap <silent> <Leader>cw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
+" nnoremap <silent> <Leader>fc :CocSearch <C-R>=expand('<cword>')<CR><CR>
+" nnoremap <silent> <Leader>fx :CocSearch -w <C-R>=expand('<cword>')<CR><CR>
 
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
@@ -415,11 +415,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 " Remap for rename current word
-nmap <leader>cr <Plug>(coc-rename)
+" nmap <leader>cr <Plug>(coc-rename)
 
 " Remap for format selected region
-vmap <leader>cF  <Plug>(coc-format-selected)
-nmap <leader>cF  <Plug>(coc-format-selected)
+" vmap <leader>cF  <Plug>(coc-format-selected)
+" nmap <leader>cF  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -432,71 +432,71 @@ augroup end
 
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-vmap <leader>cv  <Plug>(coc-codeaction-selected)
-nmap <leader>cv  <Plug>(coc-codeaction-selected)
-nmap <leader>co  <Plug>(coc-codeaction-line)
-vmap <leader>co  <Plug>(coc-codeaction-line)
+" vmap <leader>cv  <Plug>(coc-codeaction-selected)
+" nmap <leader>cv  <Plug>(coc-codeaction-selected)
+" nmap <leader>co  <Plug>(coc-codeaction-line)
+" vmap <leader>co  <Plug>(coc-codeaction-line)
 
-nmap <leader>cz :CocRestart<CR>
-nmap <leader>cu :CocUpdate<CR>
+" nmap <leader>cz :CocRestart<CR>
+" nmap <leader>cu :CocUpdate<CR>
 " sessions
-nmap <leader>ps :CocCommand session.load<CR>
-nmap <leader>pS :CocCommand session.save<CR>
+" nmap <leader>ps :CocCommand session.load<CR>
+" nmap <leader>pS :CocCommand session.save<CR>
 
-nmap <leader>pl :CocList project<CR>
-nmap <leader>css :CocCommand session.save<CR>
-nmap <leader>csl :CocCommand session.load<CR>
-nmap <leader>pp :CocList project<CR>
+" nmap <leader>pl :CocList project<CR>
+" nmap <leader>css :CocCommand session.save<CR>
+" nmap <leader>csl :CocCommand session.load<CR>
+" nmap <leader>pp :CocList project<CR>
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent><A-'> <Plug>(coc-range-select)
-xmap <silent><A-'> <Plug>(coc-range-select)
-xmap <silent><A-;> <Plug>(coc-range-select-backward)
+" nmap <silent><A-'> <Plug>(coc-range-select)
+" xmap <silent><A-'> <Plug>(coc-range-select)
+" xmap <silent><A-;> <Plug>(coc-range-select-backward)
 
 " Remap for do codeAction of current line
-nmap <leader>cL <Plug>(coc-codelens-action)
-nmap <leader>ce <Plug>(coc-float-hide)
-nmap <leader>cj <Plug>(coc-float-jump)
-nmap <leader>cO <Plug>(coc-openlink)
-nmap <leader>ca <Plug>(coc-codeaction)
-xmap <leader>ca <Plug>(coc-codeaction-selected)
-nmap <Leader>ck :CocCommand docthis.documentThis<cr>
+" nmap <leader>cL <Plug>(coc-codelens-action)
+" nmap <leader>ce <Plug>(coc-float-hide)
+" nmap <leader>cj <Plug>(coc-float-jump)
+" nmap <leader>cO <Plug>(coc-openlink)
+" nmap <leader>ca <Plug>(coc-codeaction)
+" xmap <leader>ca <Plug>(coc-codeaction-selected)
+" nmap <Leader>ck :CocCommand docthis.documentThis<cr>
 " Fix autofix problem of current line
 " nmap <leader>cf <Plug>(coc-fix-current)
-nmap <leader>cf :CocList files<CR>
+" nmap <leader>cf :CocList files<CR>
 
 " Use `:Format` for format current buffer
 command! -nargs=0 FM :call CocActionAsync('format')
-nmap <leader>of :FM<cr>
+" nmap <leader>of :FM<cr>
 
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
-nmap <leader>oF :Fold<cr>
+" nmap <leader>oF :Fold<cr>
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') | :call CocAction('format') | echo "Organize Imports and format executed"
-nmap <leader>oo :OR<cr>
+" nmap <leader>oo :OR<cr>
 
 " nnoremap <space>cf <Plug>(coc-codelens-action)
 " Using CocList
-nnoremap <silent><nowait> <space>cll :CocList<cr>
+" nnoremap <silent><nowait> <space>cll :CocList<cr>
 " Show all diagnostics
-nnoremap <silent><nowait>  <space>cld  :<C-u>CocList diagnostics<cr>
+" nnoremap <silent><nowait>  <space>cld  :<C-u>CocList diagnostics<cr>
 " show coc actions
 " nnoremap <silent><nowait>  <space>cla  :<C-u>CocList actions<cr>
 " Manage extensions
-nnoremap <silent><nowait>  <space>cle  :<C-u>CocList extensions<cr>
+" nnoremap <silent><nowait>  <space>cle  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent><nowait>  <space>clc  :<C-u>CocList commands<cr>
+" nnoremap <silent><nowait>  <space>clc  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent><nowait>  <space>clo  :<C-u>CocList outline<cr>
+" nnoremap <silent><nowait>  <space>clo  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent><nowait>  <space>cls  :<C-u>CocList -I symbols<cr>
+" nnoremap <silent><nowait>  <space>cls  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait>  <space>cln  :<C-u>CocNext<CR>
+" nnoremap <silent><nowait>  <space>cln  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait>  <space>clp  :<C-u>CocPrev<CR>
+" nnoremap <silent><nowait>  <space>clp  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent><nowait>  <space>clr  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait>  <space>clr  :<C-u>CocListResume<CR>
 
 " let g:easymotion#is_active = 0
 " function! EasyMotionCoc() abort
@@ -516,13 +516,13 @@ nnoremap <silent><nowait>  <space>clr  :<C-u>CocListResume<CR>
 " endfunction
 " autocmd TextChanged,CursorMoved * call EasyMotionCoc()
 "
-inoremap <silent> <C-x> <C-r>=ShowDoc()<CR><C-e>
-function! ShowDoc() abort
-  let winid = get(g:, 'coc_last_float_win', -1)
-  if winid != -1
-    let bufnr = winbufnr(winid)
-    exe 'below sb '.bufnr
-  endif
-  return ''
-endfunction
+" inoremap <silent> <C-x> <C-r>=ShowDoc()<CR><C-e>
+" function! ShowDoc() abort
+"   let winid = get(g:, 'coc_last_float_win', -1)
+"   if winid != -1
+"     let bufnr = winbufnr(winid)
+"     exe 'below sb '.bufnr
+"   endif
+"   return ''
+" endfunction
 
