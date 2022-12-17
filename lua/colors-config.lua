@@ -1,4 +1,4 @@
-local themeName = 'tokyonight-storm'
+local themeName = 'tokyonight-moon'
 vim.g.material_style = "deep ocean"
 
 
@@ -13,6 +13,40 @@ function SetTransapentBackground()
   vim.cmd [[ hi SignColumn guibg=none ctermbg=none ]]
   vim.cmd [[ hi EndOfBuffer guibg=none ctermbg=none ]]
 end
+
+-- MAKE TELESCOPE BORDERSLESS ON TOKYONIGHT
+-- require("tokyonight").setup({
+--   on_highlights = function(hl, c)
+--     local prompt = "#2d3149"
+--     hl.TelescopeNormal = {
+--       bg = c.bg_dark,
+--       fg = c.fg_dark,
+--     }
+--     hl.TelescopeBorder = {
+--       bg = c.bg_dark,
+--       fg = c.bg_dark,
+--     }
+--     hl.TelescopePromptNormal = {
+--       bg = prompt,
+--     }
+--     hl.TelescopePromptBorder = {
+--       bg = prompt,
+--       fg = prompt,
+--     }
+--     hl.TelescopePromptTitle = {
+--       bg = prompt,
+--       fg = prompt,
+--     }
+--     hl.TelescopePreviewTitle = {
+--       bg = c.bg_dark,
+--       fg = c.bg_dark,
+--     }
+--     hl.TelescopeResultsTitle = {
+--       bg = c.bg_dark,
+--       fg = c.bg_dark,
+--     }
+--   end,
+-- })
 
 -- function ReloadLualine()
 --   require('plenary.reload').reload_module('lualine')
@@ -35,6 +69,10 @@ function SetColorscheme(colorscheme)
   vim.cmd('colorscheme ' .. colorscheme)
   -- ReloadLualine()
 end
+require("onedarkpro").setup({
+  theme = "onedark_vivid", -- The default dark theme
+  caching = false, -- Use caching for the theme?
+})
 
 require('material').setup({
 		contrast = {
@@ -106,69 +144,45 @@ local catppuccin = require("catppuccin")
 -- CATPUCCINO
 -- ---------------------------------------------------
 -- configure it
-catppuccin.setup(
-    {
-		transparent_background = false,
-		term_colors = true,
-		styles = {
-			comments ={ "italic"},
-			functions ={ "bold"},
-			keywords ={ "bold"},
-			strings ={},
-			variables ={ "bold"},
-			conditionals = { "italic" },
-			loops = {},
-			numbers = {},
-			booleans = {},
-			properties = {},
-			types = {},
-			operators = {},
-		},
-		integrations = {
-			treesitter = true,
-			native_lsp = {
-				enabled = false,
-				virtual_text = {
-					errors ={ "italic"},
-					hints ={ "italic"},
-					warnings ={ "italic"},
-					information ={ "italic"},
-				},
-				underlines = {
-					errors ={ "underline"},
-					hints ={ "underline"},
-					warnings ={ "underline"},
-					information ={ "underline"},
-				},
-			},
-			coc_nvim = true,
-			lsp_trouble = false,
-			lsp_saga = false,
-			gitgutter = false,
-			gitsigns = false,
-			telescope = true,
-			nvimtree = {
-				enabled = true,
-				show_root = true,
-			},
-			which_key = true,
-			indent_blankline = {
-				enabled = true,
-				colored_indent_levels = true,
-			},
-			dashboard = false,
-			neogit = false,
-			vim_sneak = false,
-			fern = true,
-			barbar = true,
-			bufferline = true,
-			markdown = true,
-			lightspeed = false,
-			ts_rainbow = false,
-			hop = true,
-		},
-	}
-)
+catppuccin.setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+    transparent_background = true,
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        treesitter = true,
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
+})
 vim.g.catppuccin_flavour = 'macchiato'
 ----------------------------------------------------------------------
 --                            Rose Pine                             --
@@ -209,7 +223,7 @@ vim.g.dim_nc_background = true
 -- ╚════════════════════════════════════════════════════════════════════╝
 require('kanagawa').setup({
     undercurl = true,           -- enable undercurls
-		globalstatus = true,
+    globalstatus = true,
     commentStyle = {italic = true},
     functionStyle = {bold = true},
     keywordStyle = {italic = true},
@@ -220,8 +234,10 @@ require('kanagawa').setup({
     specialException = true,    -- special highlight for exception handling keywords
     transparent = false,        -- do not set background color
     dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true,
     colors = {},
     overrides = {},
+    theme = "default"
 })
 
   ----------------------------------------------------------------------
@@ -373,19 +389,22 @@ vim.cmd("let &fcs='eob: '")
 -- require(themeName).setup({})
 
 -- Toggle catppuccino variant
-vim.api.nvim_set_keymap('n', '<leader>tcl', [[<cmd>lua SetColorscheme('light_melya')<CR>]], { noremap = true, silent = true });
-vim.api.nvim_set_keymap('n', '<leader>tcd', [[<cmd>lua SetColorscheme('dark_catppuccino')<CR>]], { noremap = true, silent = true });
-vim.api.nvim_set_keymap('n', '<leader>tcn', [[<cmd>lua SetColorscheme('neon_latte')<CR>]], { noremap = true, silent = true });
+-- vim.api.nvim_set_keymap('n', '<leader>tcl', [[<cmd>lua SetColorscheme('light_melya')<CR>]], { noremap = true, silent = true });
+-- vim.api.nvim_set_keymap('n', '<leader>tcd', [[<cmd>lua SetColorscheme('dark_catppuccino')<CR>]], { noremap = true, silent = true });
+-- vim.api.nvim_set_keymap('n', '<leader>tcn', [[<cmd>lua SetColorscheme('neon_latte')<CR>]], { noremap = true, silent = true });
 
 -- Select each variant
-vim.api.nvim_set_keymap('n', '<leader>t1', [[<cmd>lua SetRosePineVariant('dawn')<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t2', [[<cmd>lua SetRosePineVariant('moon')<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua SetRosePineVariant('base')<cr>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>t1', [[<cmd>lua SetRosePineVariant('dawn')<cr>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>t2', [[<cmd>lua SetRosePineVariant('moon')<cr>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>t3', [[<cmd>lua SetRosePineVariant('base')<cr>]], { noremap = true, silent = true })
 
 -- require('plenary.reload').reload_module('lualine')
 -- require('lualine-config')
-vim.cmd('colorscheme ' .. themeName)
-
+-- vim.cmd('colorscheme ' .. themeName)
+require('onedark').setup {
+    style = 'cool'
+}
+-- require('onedark').load()
 -- vim.cmd[[highlight IndentBlanklineChar guifg=#313131]]
 -- vim.cmd[[highlight WinBar guibg=#282639]]
 
@@ -410,3 +429,4 @@ vim.opt.fillchars = {
   vertright = '┣',
   verthoriz = '╋',
 }
+-- SetTransapentBackground()

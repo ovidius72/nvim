@@ -1,5 +1,3 @@
-local helpers = require('legendary.helpers')
-
 vim.cmd [[
 " toggle quickfix list
 function! ToggleQuickFix()
@@ -11,6 +9,7 @@ function! ToggleQuickFix()
 endfunction
 " clear quickfix
 command! ClearQuickFixList cexpr []
+command! ToggleQuickFixWindow call ToggleQuickFix()
 function! TabToggle()
   if &expandtab
     set tabstop=4
@@ -111,8 +110,8 @@ local keymaps = {
   { '<leader>fi', ':<C-u>CocList --interactive --ignore-case --numbe-select --auto-preview symbols<CR>', description = 'Coc Find Symbols', opts = {} },
 
   -- - fzf
-  { '<leader>ff', ':Files<CR>', description = 'Files (fzf)', opts = {} },
-  { '<leader>fo', ':GFiles<CR>', description = 'Git Files (fzf)', opts = {} },
+  { '<leader>fF', ':Files<CR>', description = 'Files (fzf)', opts = {} },
+  { '<leader>fG', ':GFiles<CR>', description = 'Git Files (fzf)', opts = {} },
   { '<leader>fg', ':GFiles?<CR>', description = 'Git Changed Files (fzf)', opts = {} },
   { '<leader>fr', ':History?<CR>', description = 'Recent Files / Files History (fzf)', opts = {} },
   { '<leader>f/', ':History/<CR>', description = 'Search History (fzf)', opts = {} },
@@ -124,20 +123,20 @@ local keymaps = {
   -- g - git
   { '<leader>gs', ':Git<CR>', description = 'Git Status (fugitive)', opts = { silent = true} },
   { '<leader>gc', ':Commits<CR>', description = 'Git Commits (fzf)', opts = { silent = true} },
-  { '<leader>gP', ':Gpush<CR>', description = 'Git Push (fugitive)', opts = { silent = true} },
+  { '<leader>gP', ':Git push<CR>', description = 'Git Push (fugitive)', opts = { silent = true} },
   { '<leader>gg', ':LazyGit<CR>', description = 'LazyGit', opts = { silent = true} },
 
   -- g - Goto...
-  { 'gd', '<Plug>(coc-definition)', description = 'Save All', opts = { silent = true} },
-  { 'gD', ":call CocAction('definitionHover')<CR>", description = 'Definition Hover', opts = { silent = true} },
-  { 'gS', ":call CocAction('jumpDefinition, 'split')<CR>", description = 'Jump Definition Horizontal Split', opts = { silent = true} },
-  { 'gV', ":call CocAction('jumpDefinition, 'vsplit')<CR>", description = 'Jump Definition Vertical Split', opts = { silent = true} },
-  { 'gO', ":call CocAction('showOutgoingCalls, 'split')<CR>", description = 'Coc Show Outgoing Calls', opts = { silent = true} },
-  { 'gL', ":call CocAction('showIncomingCalls, 'split')<CR>", description = 'Coc Show Incoming Calls', opts = { silent = true} },
-  { 'gy', "<Plug>(coc-type-definition)", description = 'Coc Type Definition', opts = { silent = true} },
-  { 'gI', "<Plug>(coc-type-implementation)", description = 'Coc Type Implementation', opts = { silent = true} },
-  { 'gr', "<Plug>(coc-references)", description = 'Coc References', opts = { silent = true} },
-  { 'gU', "<Plug>(coc-references-used)", description = 'Coc References Used', opts = { silent = true} },
+  { 'gd', '<Plug>(coc-definition)', description = 'save all', opts = { silent = true} },
+  { 'gd', ":call cocaction('definitionhover')<cr>", description = 'definition hover', opts = { silent = true} },
+  { 'gs', ":call cocaction('jumpdefinition, 'split')<cr>", description = 'jump definition horizontal split', opts = { silent = true} },
+  { 'gv', ":call cocaction('jumpdefinition, 'vsplit')<cr>", description = 'jump definition vertical split', opts = { silent = true} },
+  { 'go', ":call cocaction('showoutgoingcalls, 'split')<cr>", description = 'coc show outgoing calls', opts = { silent = true} },
+  { 'gl', ":call cocaction('showincomingcalls, 'split')<cr>", description = 'coc show incoming calls', opts = { silent = true} },
+  { 'gy', "<plug>(coc-type-definition)", description = 'coc type definition', opts = { silent = true} },
+  { 'gi', "<plug>(coc-type-implementation)", description = 'coc type implementation', opts = { silent = true} },
+  { 'gr', "<plug>(coc-references)", description = 'coc references', opts = { silent = true} },
+  { 'gu', "<Plug>(coc-references-used)", description = 'Coc References Used', opts = { silent = true} },
   { 'gR', "<Plug>(coc-refactor)", description = 'Coc Refactor', opts = { silent = true} },
   -- h
   { '<leader>hl', ':set list!<CR>', description = 'Toggle Whitespace', opts = {} },
@@ -156,12 +155,13 @@ local keymaps = {
 
 
   -- o
-  { '<leader>of', ':FM<CR>', description = 'Format', opts = {} },
-  { '<leader>oF', ':Fold<CR>', description = 'Fold', opts = {} },
-  { '<leader>oo', ':OR<CR>', description = 'Organize Imports', opts = {} },
+  { '<leader>ff', ':FM<CR>', description = 'Format', opts = {} },
+  -- { '<leader>oF', ':Fold<CR>', description = 'Fold', opts = {} },
+  { '<leader>fo', ':OR<CR>', description = 'Organize Imports', opts = {} },
+  { '<leader>fO', ':ORGANIZEIMPORTS<CR>', description = 'Organize Imports', opts = {} },
   -- p
   { '<leader>pp', ':CocList project<CR>', description = 'Coc Projects', opts = {} },
-  { '<leader>oo', ':OR<CR>', description = 'Organize Imports', opts = {} },
+  -- { '<leader>oo', ':OR<CR>', description = 'Organize Imports', opts = {} },
   -- q
   { '<leader>qq', ':wa<CR>', description = 'Save All', opts = {} },
   -- s
@@ -248,8 +248,8 @@ local keymaps = {
   { '<leader>ce', '<Plug>(coc-float-hide)', description = 'Coc Float Hide', opts = { silent = true, nowait = true} },
   { '<leader>cj', '<Plug>(coc-float-jump)', description = 'Coc Float Jump', opts = { silent = true, nowait = true} },
   { '<leader>cO', '<Plug>(coc-openlink)', description = 'Coc Open Link', opts = { silent = true, nowait = true} },
-  { '<leader>ck', ':CocCommand docthis.documentThis', description = 'Document this', opts = { silent = true, nowait = true} },
-  { '<leader>cf', ':CocList files', description = 'Coc Files', opts = { silent = true, nowait = true} },
+  { '<leader>ck', ':CocCommand docthis.documentThis<cr>', description = 'Document this', opts = { silent = true, nowait = true} },
+  { '<leader>cf', ':CocList files<cr>', description = 'Coc Files', opts = { silent = true, nowait = true} },
   { "<A-'>",
      n = {'<Plug>(coc-range-select)', description = 'Coc Range Select', opts = { silent = true, nowait = true} },
      v = {'<Plug>(coc-range-select)', description = 'Coc Range Select', opts = { silent = true, nowait = true} },
@@ -305,4 +305,4 @@ local keymaps = {
 };
 
 
-require('legendary').bind_keymaps(keymaps)
+require('legendary').keymaps(keymaps)

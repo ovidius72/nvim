@@ -24,8 +24,8 @@ set foldnestmax=3
 set foldminlines=1
 " set foldtext=substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))
 set laststatus=3
-set spell!
-set spelllang=en_us,it
+" set spell!
+" set spelllang=en_us,it
 set matchpairs+=<:>
 set inccommand=nosplit
 set fillchars+=diff:╱
@@ -446,17 +446,18 @@ map z<space> <Plug>(incsearch-fuzzy-stay)
 map <leader>z/ <Plug>(incsearch-forward)
 map <leader>z? <Plug>(incsearch-backward)
 map <leader>zz <Plug>(incsearch-stay)
+
 map <leader>zf/ <Plug>(incsearch-fuzzy-/)
 map <leader>zf? <Plug>(incsearch-fuzzy-?)
 map <leader>zff <Plug>(incsearch-fuzzy-stay)
 
-map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
-map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
-map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
+" map <leader>zs/ <Plug>(incsearch-fuzzyspell-/)
+" map <leader>zs? <Plug>(incsearch-fuzzyspell-?)
+" map <leader>zss <Plug>(incsearch-fuzzyspell-stay)
 
-map <leader>zm/ <Plug>(incsearch-easymotion-/)
-map <leader>zm? <Plug>(incsearch-easymotion-?)
-map <leader>zmm <Plug>(incsearch-easymotion-stay)
+" map <leader>zm/ <Plug>(incsearch-easymotion-/)
+" map <leader>zm? <Plug>(incsearch-easymotion-?)
+" map <leader>zmm <Plug>(incsearch-easymotion-stay)
 
 " " incsearch.vim x fuzzy x vim-easymotion
 " function! s:config_easyfuzzymotion(...) abort

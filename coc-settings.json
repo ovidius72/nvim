@@ -202,7 +202,7 @@
   "python.jediEnabled": false,
   "scss.validate": true,
   "git.virtualTextPrefix": " ",
-  "git.addGBlameToVirtualText": false,
+  "git.addGBlameToVirtualText": true,
   "signature.enable": true,
   "signature.preferShownAbove": false,
   "signature.hideOnTextChange": false,

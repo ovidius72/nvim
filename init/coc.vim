@@ -440,8 +440,8 @@ augroup end
 " nmap <leader>cz :CocRestart<CR>
 " nmap <leader>cu :CocUpdate<CR>
 " sessions
-" nmap <leader>ps :CocCommand session.load<CR>
-" nmap <leader>pS :CocCommand session.save<CR>
+nmap <leader>ps :CocCommand session.load<CR>
+nmap <leader>pS :CocCommand session.save<CR>
 
 " nmap <leader>pl :CocList project<CR>
 " nmap <leader>css :CocCommand session.save<CR>
@@ -474,6 +474,7 @@ command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport') | :call CocAction('format') | echo "Organize Imports and format executed"
+command! -nargs=0 ORGANIZEIMPORTS :call CocAction('runCommand', 'editor.action.organizeImport')
 " nmap <leader>oo :OR<cr>
 
 " nnoremap <space>cf <Plug>(coc-codelens-action)

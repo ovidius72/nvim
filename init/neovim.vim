@@ -31,7 +31,7 @@ Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " lua
@@ -60,6 +60,9 @@ Plug 'kevinhwang91/nvim-hlslens'
 
 Plug 'tanvirtin/vgit.nvim'
 " Colorschemes
+Plug 'Yazeed1s/oh-lucy.nvim'
+Plug 'navarasu/onedark.nvim'
+Plug 'olimorris/onedarkpro.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'kartikp10/noctis.nvim'
 Plug 'sam4llis/nvim-tundra'
@@ -76,6 +79,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'fgheng/winbar.nvim'
+" Plug 'nvim-zh/colorful-winsep.nvim'
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'preservim/vimux'
@@ -87,7 +91,8 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'mizlan/iswap.nvim'
 Plug 'kana/vim-textobj-user'
 Plug 'sgur/vim-textobj-parameter'
-Plug 'AckslD/nvim-trevJ.lua'
+" Plug 'AckslD/nvim-trevJ.lua'
+Plug 'Wansmer/treesj'
 Plug 'windwp/nvim-ts-autotag'
 
 " Plug 'psliwka/vim-smoothie'
@@ -105,7 +110,8 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
-" Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']}
+Plug 'folke/which-key.nvim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -113,7 +119,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
 Plug 'ton/vim-bufsurf'
 " Plug 'w0rp/ale'
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
@@ -287,7 +293,7 @@ EOF
 runtime macros/sandwich/keymap/surround.vim
 set nowrap
 let g:cursorhold_updatetime = 200
-source ~/.config/nvim/init/common.vim
+" source ~/.config/nvim/init/common.vim
 " source ~/.config/nvim/init/whichKey.vim
 " source ~/.config/nvim/init/lightline.vim
 " source ~/.config/nvim/colors/autoload/lightline/mychallenger_deep.vim
@@ -295,11 +301,9 @@ source ~/.config/nvim/init/common.vim
 " source ~/.config/nvim/init/colors.vim
 source ~/.config/nvim/init/vista.vim
 " source ~/.config/nvim/init/ale.vim
-source ~/.config/nvim/init/fzf.vim
 source ~/.config/nvim/init/bufsurf.vim
 source ~/.config/nvim/init/close-buffers.vim
 " source ~/.config/nvim/init/clap.vim
-source ~/.config/nvim/init/vim-sandwich.vim
 " source ~/.config/nvim/init/anyjump.vim
 source ~/.config/nvim/init/aerojump.vim
 source ~/.config/nvim/init/lazygit.vim
@@ -326,7 +330,6 @@ source ~/.config/nvim/init/scrollbar.vim
 " source ~/.config/nvim/init/smoothie.vim
 " source ~/.config/nvim/init/jumpwire.vim
 source ~/.config/nvim/init/signify.vim
-source ~/.config/nvim/init/coc.vim
 " source ~/.config/nvim/init/barbar.vim
 source ~/.config/nvim/init/tagalong.vim
 source ~/.config/nvim/init/vimspector.vim
@@ -336,8 +339,11 @@ source ~/.config/nvim/init/hop.vim
 source ~/.config/nvim/init/dadbod.vim
 source ~/.config/nvim/init/git-messenger.vim
 " source ~/.config/nvim/init/dashboard.vim
-runtime macros/sandwich/keymap/surrounnd.vim
 source ~/.config/nvim/init/common.vim
+source ~/.config/nvim/init/coc.vim
+source ~/.config/nvim/init/fzf.vim
+source ~/.config/nvim/init/vim-sandwich.vim
+runtime macros/sandwich/keymap/surrounnd.vim
 
 " hi CocErrorVirtualText ctermfg=Black ctermbg=Red guifg=#ff8a7a guibg=bg
 " hi CocWarningVirtualText ctermfg=Black ctermbg=Yellow guifg=#ffe9aa guibg=bg

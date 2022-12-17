@@ -41,7 +41,7 @@ nno <silent> ,d :Veonim change-dir<cr>
 nno <silent> <space>fw :Veonim grep-word<cr>
 vno <silent> <space>fv :Veonim grep-selection<cr>
 nno <silent> <space>fa :Veonim grep<cr>
-nno <silent> <space>ff :Veonim grep-resume<cr>
+nn <silent> <space>ff :Veonim grep-resume<cr>
 nno <silent> <space>fb :Veonim buffer-search<cr>
 
 " color picker
