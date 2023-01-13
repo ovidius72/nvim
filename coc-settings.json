@@ -201,7 +201,6 @@
   "javascript.suggest.autoImports": true,
   "python.jediEnabled": false,
   "scss.validate": true,
-  "git.virtualTextPrefix": " ",
   "git.addGBlameToVirtualText": true,
   "signature.enable": true,
   "signature.preferShownAbove": false,

@@ -201,11 +201,11 @@ require'lualine'.setup {
     },
     lualine_x = {
       { "g:coc_status" },
-      -- {
-      --   'branch',
-      --   icon = "",
-      --   color = { fg = '#ff8080', bg = 'None', gui='italic,bold' },
-      -- },
+      {
+        'branch',
+        icon = "",
+        color = { fg = '#ff8080', bg = 'None', gui='italic,bold' },
+      },
     },
     -- lualine_y = {'progress'},
     lualine_y = {

@@ -93,6 +93,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'sgur/vim-textobj-parameter'
 " Plug 'AckslD/nvim-trevJ.lua'
 Plug 'Wansmer/treesj'
+Plug 'romainl/vim-cool'
+Plug 'tpope/vim-repeat'
 Plug 'windwp/nvim-ts-autotag'
 
 " Plug 'psliwka/vim-smoothie'

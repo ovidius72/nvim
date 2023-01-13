@@ -1,4 +1,4 @@
-local themeName = 'tokyonight-moon'
+local themeName = 'kanagawa'
 vim.g.material_style = "deep ocean"
 
 
