@@ -28,10 +28,7 @@
     "shadow": false,
     "focusable": true
   },
-  "cSpellExt.enableDictionaries": [
-    "italian",
-    "medical-terms"
-  ],
+  "cSpellExt.enableDictionaries": ["italian"],
   "cSpell.language": "en,it",
   "suggest.noselect": true,
   // "suggest.enablepreselect": true,
@@ -335,15 +332,24 @@
     /* } */
   },
   "cSpell.userWords": [
+    "Cariche",
+    "Cripto",
     "DEBUGPRINT",
     "Formik",
     "catppuccin",
+    "checkmark",
     "floaterm",
     "hookform",
     "iban",
     "kevinhwang",
+    "l’autorizzazione",
     "microservices",
-    "nestjs"
+    "miragejs",
+    "nestjs",
+    "onfido",
+    "semibold",
+    "snackbars",
+    "taxcode"
   ]
   //  "python.autoComplete.extraPaths": [
   //    "${env:SPARK_HOME}/python",

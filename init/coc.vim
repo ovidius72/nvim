@@ -24,10 +24,12 @@ let g:coc_global_extensions = [
       \ 'coc-docthis',
       \ 'coc-git',
       \ 'coc-project',
+      \ 'coc-rust-analyzer',
+      \ 'coc-spell-checker',
+      \ 'coc-cspell-dicts',
       \ ]
 
 " \ 'coc-explorer',
-      " \ 'coc-rust-analyzer',
       " \ 'coc-import-cost',
       " \ 'coc-tslint',
       " \ 'coc-smartf',
@@ -125,7 +127,7 @@ nmap ]g <Plug>(coc-git-nextchunk)
 nmap <Leader>cgc <Plug>(coc-git-commit)
 nmap <Leader>cgi <Plug>(coc-git-chunkinfo)
 nmap <Leader>cgu :CocCommand git.chunkUndo<cr>
-nmap <Leader>cp :CocList project<cr>
+"  nmap <Leader>cp :CocList project<cr>
 nmap gb :CocCommand git.chunkUndo<cr>
 nmap gh <Plug>(coc-git-chunkinfo)
 nmap <Leader>cgf :CocCommand git.foldUnchanged<cr>

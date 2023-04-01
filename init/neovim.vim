@@ -18,6 +18,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'rktjmp/lush.nvim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
+Plug 'roobert/search-replace.nvim'
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
@@ -31,6 +32,7 @@ Plug 'windwp/nvim-spectre'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-zh/colorful-winsep.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
@@ -44,6 +46,7 @@ Plug 'kwkarlwang/bufjump.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'andrewferrier/debugprint.nvim'
+Plug 'rareitems/printer.nvim'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'stevearc/dressing.nvim'
 Plug 'smjonas/live-command.nvim',
@@ -65,7 +68,6 @@ Plug 'navarasu/onedark.nvim'
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'kartikp10/noctis.nvim'
-Plug 'sam4llis/nvim-tundra'
 Plug 'marko-cerovac/material.nvim'
 Plug 'rebelot/kanagawa.nvim'
 " Plug 'projekt0n/github-nvim-theme'
@@ -102,6 +104,7 @@ Plug 'declancm/cinnamon.nvim'
 " Plug 'micmine/jumpwire.nvim'
 Plug 'phaazon/hop.nvim'
 Plug 'LudoPinelli/comment-box.nvim'
+
 " Plug 'rlane/pounce.nvim'
 " Plug 'ggandor/lightspeed.nvim'
 Plug 'sindrets/diffview.nvim'

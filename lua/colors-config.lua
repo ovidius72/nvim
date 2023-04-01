@@ -1,9 +1,9 @@
-local themeName = 'kanagawa'
+local themeName = 'kanagawa-wave'
 vim.g.material_style = "deep ocean"
 
 
 function SetTransapentBackground()
--- transparent background
+  -- transparent background
   vim.cmd [[ hi Normal guibg=none ctermbg=none ]]
   vim.cmd [[ hi LineNr guibg=none ctermbg=none ]]
   vim.cmd [[ hi Folded guibg=none ctermbg=none ]]
@@ -69,75 +69,68 @@ function SetColorscheme(colorscheme)
   vim.cmd('colorscheme ' .. colorscheme)
   -- ReloadLualine()
 end
+
 require("onedarkpro").setup({
   theme = "onedark_vivid", -- The default dark theme
   caching = false, -- Use caching for the theme?
 })
 
 require('material').setup({
-		contrast = {
-        sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-        floating_windows = true, -- Enable contrast for floating windows
-        line_numbers = false, -- Enable contrast background for line numbers
-        sign_column = false, -- Enable contrast background for the sign column
-        cursor_line = true, -- Enable darker background for the cursor line
-        non_current_windows = false, -- Enable darker background for non-current windows
-        popup_menu = true, -- Enable lighter background for the popup menu
-    },
-
-    italics = {
-        comments = true, -- Enable italic comments
-        keywords = false, -- Enable italic keywords
-        functions = true, -- Enable italic functions
-        strings = false, -- Enable italic strings
-        variables = false -- Enable italic variables
-    },
-
-    contrast_filetypes = { -- Specify which filetypes get the contrasted (darker) background
-        "terminal", -- Darker terminal background
-        "packer", -- Darker packer background
-        "qf" -- Darker qf list background
-    },
-
-    high_visibility = {
-        lighter = false, -- Enable higher contrast text for lighter style
-        darker = false -- Enable higher contrast text for darker style
-    },
-
-    disable = {
-        colored_cursor = false, -- Disable the colored cursor
-        borders = false, -- Disable borders between verticaly split windows
-        background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
-        term_colors = false, -- Prevent the theme from setting terminal colors
-        eob_lines = false -- Hide the end-of-buffer lines
-    },
-
-    lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
-
-    async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
-
-    custom_highlights = {}, -- Overwrite highlights with your own
-
-    plugins = { -- Here, you can disable(set to false) plugins that you don't use or don't want to apply the theme to
-        trouble = false,
-        nvim_cmp = false,
-        neogit = true,
-        gitsigns = true,
-        git_gutter = true,
-        telescope = true,
-        nvim_tree = true,
-        sidebar_nvim = true,
-        lsp_saga = true,
-        nvim_dap = true,
-        nvim_navic = true,
-        which_key = true,
-        sneak = true,
-        hop = true,
-        indent_blankline = true,
-        nvim_illuminate = true,
-        mini = true,
-    }
-	});
+  contrast = {
+    sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+    floating_windows = true, -- Enable contrast for floating windows
+    line_numbers = false, -- Enable contrast background for line numbers
+    sign_column = false, -- Enable contrast background for the sign column
+    cursor_line = true, -- Enable darker background for the cursor line
+    non_current_windows = false, -- Enable darker background for non-current windows
+    popup_menu = true, -- Enable lighter background for the popup menu
+  },
+  italics = {
+    comments = true, -- Enable italic comments
+    keywords = false, -- Enable italic keywords
+    functions = true, -- Enable italic functions
+    strings = false, -- Enable italic strings
+    variables = false -- Enable italic variables
+  },
+  contrast_filetypes = { -- Specify which filetypes get the contrasted (darker) background
+    "terminal", -- Darker terminal background
+    "packer", -- Darker packer background
+    "qf" -- Darker qf list background
+  },
+  high_visibility = {
+    lighter = false, -- Enable higher contrast text for lighter style
+    darker = false -- Enable higher contrast text for darker style
+  },
+  disable = {
+    colored_cursor = false, -- Disable the colored cursor
+    borders = false, -- Disable borders between verticaly split windows
+    background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
+    term_colors = false, -- Prevent the theme from setting terminal colors
+    eob_lines = false -- Hide the end-of-buffer lines
+  },
+  lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
+  async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
+  custom_highlights = {}, -- Overwrite highlights with your own
+  plugins = { -- Here, you can disable(set to false) plugins that you don't use or don't want to apply the theme to
+    trouble = false,
+    nvim_cmp = false,
+    neogit = true,
+    gitsigns = true,
+    git_gutter = true,
+    telescope = true,
+    nvim_tree = true,
+    sidebar_nvim = true,
+    lsp_saga = true,
+    nvim_dap = true,
+    nvim_navic = true,
+    which_key = true,
+    sneak = true,
+    hop = true,
+    indent_blankline = true,
+    nvim_illuminate = true,
+    mini = true,
+  }
+});
 
 local catppuccin = require("catppuccin")
 -----------------------------------------------------
@@ -145,45 +138,46 @@ local catppuccin = require("catppuccin")
 -- ---------------------------------------------------
 -- configure it
 catppuccin.setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = "latte",
-        dark = "mocha",
-    },
-    compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-    transparent_background = true,
-    term_colors = false,
-    dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
-    },
-    styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-    },
-    color_overrides = {},
-    custom_highlights = {},
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-        treesitter = true,
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-    },
+  flavour = "mocha", -- latte, frappe, macchiato, mocha
+  background = { -- :h background
+    light = "latte",
+    dark = "mocha",
+  },
+  transparent_background = true,
+  compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+  show_end_of_buffer = false,
+  term_colors = false,
+  dim_inactive = {
+    enabled = false,
+    shade = "dark",
+    percentage = 0.15,
+  },
+  styles = {
+    comments = { "italic" },
+    conditionals = { "italic" },
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
+  },
+  color_overrides = {},
+  custom_highlights = {},
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    nvimtree = true,
+    telescope = true,
+    treesitter = true,
+    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+  },
 })
-vim.g.catppuccin_flavour = 'macchiato'
+-- vim.g.catppuccin_flavour = 'macchiato'
 ----------------------------------------------------------------------
 --                            Rose Pine                             --
 ----------------------------------------------------------------------
@@ -222,33 +216,38 @@ vim.g.dim_nc_background = true
 -- ║                              Kanagawa                              ║
 -- ╚════════════════════════════════════════════════════════════════════╝
 require('kanagawa').setup({
-    undercurl = true,           -- enable undercurls
-    globalstatus = true,
-    commentStyle = {italic = true},
-    functionStyle = {bold = true},
-    keywordStyle = {italic = true},
-    statementStyle = {italic = true},
-    typeStyle = { },
-    variablebuiltinStyle = {italic = true, bold = true},
-    specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords
-    transparent = false,        -- do not set background color
-    dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,
-    colors = {},
-    overrides = {},
-    theme = "default"
+  undercurl = true, -- enable undercurls
+  globalstatus = true,
+  commentStyle = { italic = true },
+  functionStyle = { bold = true },
+  keywordStyle = { italic = true },
+  statementStyle = { italic = true },
+  typeStyle = {},
+  variablebuiltinStyle = { italic = true, bold = true },
+  specialReturn = true, -- special highlight for the return keyword
+  specialException = true, -- special highlight for exception handling keywords
+  transparent = false, -- do not set background color
+  dimInactive = true, -- dim inactive window `:h hl-NormalNC`
+  terminalColors = true,
+  -- theme = {},
+  -- colors = {},
+  -- overrides = {},
+  -- theme = "lotus"
+  background = {
+    dark = "wave",
+    light = "lotus",
+  }
 })
 
-  ----------------------------------------------------------------------
-  --                              embark                              --
-  ----------------------------------------------------------------------
+----------------------------------------------------------------------
+--                              embark                              --
+----------------------------------------------------------------------
 vim.g.embark_terminal_italics = true
 
 
-  ----------------------------------------------------------------------
-  --                              nightfox                              --
-  ----------------------------------------------------------------------
+----------------------------------------------------------------------
+--                              nightfox                              --
+----------------------------------------------------------------------
 -- local nightfox = require('nightfox')
 
 -- -- This function set the configuration of nightfox. If a value is not passed in the setup function
@@ -401,9 +400,9 @@ vim.cmd("let &fcs='eob: '")
 -- require('plenary.reload').reload_module('lualine')
 -- require('lualine-config')
 -- vim.cmd('colorscheme ' .. themeName)
-require('onedark').setup {
-    style = 'cool'
-}
+-- require('onedark').setup {
+--     style = 'cool'
+-- }
 -- require('onedark').load()
 -- vim.cmd[[highlight IndentBlanklineChar guifg=#313131]]
 -- vim.cmd[[highlight WinBar guibg=#282639]]
@@ -419,7 +418,7 @@ require('onedark').setup {
 -- vim.cmd [[ highlight default link WhichKeySeperator NONE ]]
 
 -- -- global statusline
-vim.opt.laststatus=3
+vim.opt.laststatus = 3
 vim.opt.fillchars = {
   horiz     = '━',
   horizup   = '┻',

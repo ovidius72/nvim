@@ -55,7 +55,7 @@ nnoremap <leader><TAB> :buffer#<CR>
 nnoremap <SHIFT>k :<c-u>call VSCodeNotify('workbench.action.showOver')<cr>
 nnoremap <leader>sa :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
 nnoremap <leader>ss :<c-u>call VSCodeNotify('workbench.action.gotoSymbol')<cr>
-nnoremap <leader>ff :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
+" nnoremap <leader>fF :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
 nnoremap <leader>fr :<c-u>call VSCodeNotify('workbench.action.openRecent')<cr>
 " nnoremap <leader>ss :<c-u>call VSCodeNotify('extension.fuzzySearch.activeTextEditor')<cr>
 nnoremap <silent><leader>fw <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
@@ -69,9 +69,9 @@ nnoremap <leader>tk :<c-u>call VSCodeNotify('workbench.action.openGlobalKeybindi
 nnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 xnoremap <leader>wd :<c-u>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 nnoremap <leader>fs :<c-u>call VSCodeNotify('workbench.action.files.saveAll')<cr>
-nnoremap <leader>of :<c-u>call VSCodeNotify('editor.action.formatDocument')<cr>
-xnoremap <leader>of :<c-u>call VSCodeNotify('editor.action.formatSelection')<cr>
-nnoremap <leader>oo :<c-u>call VSCodeNotify('editor.action.organizeImports')<cr>
+nnoremap <leader>ff :<c-u>call VSCodeNotify('editor.action.formatDocument')<cr>
+xnoremap <leader>ff :<c-u>call VSCodeNotify('editor.action.formatSelection')<cr>
+nnoremap <leader>fo :<c-u>call VSCodeNotify('editor.action.organizeImports')<cr>
 " nnoremap <leader>ol :<c-u>call VSCodeNotify('turboConsoleLog.displayLogMessage')<cr>
 nnoremap <leader>od :<c-u>call VSCodeNotify('console.log.wrap.string.down')<cr>
 nnoremap <leader>op :<c-u>call VSCodeNotify('console.log.wrap.down.input')<cr>
@@ -84,6 +84,7 @@ nnoremap <leader>i :<c-u>call VSCodeNotify('workbench.action.quickOpen')<cr>
 nnoremap <leader>co :<c-u>call VSCodeNotify('editor.action.quickFix')<cr>
 nnoremap <leader>cO :<c-u>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>
 " nnoremap <leader>ws :<c-u>call VSCodeNotify('workbench.action.splitEditorDown')<cr>
+nnoremap gh :<c-u>call VSCodeNotify('workbench.action.splitEditorDown')<cr>
 nnoremap <leader>wv <Cmd>call <SID>split('v')<CR>
 xnoremap <leader>wv <Cmd>call <SID>split('v')<CR>
 nnoremap <leader>ws <Cmd>call <SID>split('h')<CR>

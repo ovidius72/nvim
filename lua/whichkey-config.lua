@@ -78,9 +78,9 @@ local mappings = {
       p = {"<cmd>cnext", "Next QuickList Item" },
       n = {"<cmd>cprev", "Prev QuickList Item" },
     },
-    -- r = {}
+    r = { name = "+REPLACE"},
     j = {
-      name = 'JUMP',
+      name = '+JUMP',
     },
     u = { "Diagnostic Info"},
     y = { "Copy to clipboard" },

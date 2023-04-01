@@ -8,8 +8,9 @@ local js =  {
 }
 
 local opts = {
-  -- create_keymaps = true,
+  create_keymaps = true,
   create_commands = true,
+  print_tag = "**** 🎸: ",
   move_to_debugline = true,
   filetypes = {
     ['javascript'] = js,
@@ -20,15 +21,10 @@ local opts = {
 }
 
 require("debugprint").setup(opts)
-
 -- keymap("n", "<Leader>op", "<Cmd>lua require('debugprint').debugprint({ variable = true })<CR>")
-
 -- keymap("n", "<Leader>oP", "<Cmd>lua require('debugprint').debugprint({ above = true })<CR>")
-
 -- keymap("n", "<Leader>oq", "<Cmd>lua require('debugprint').debugprint({ variable = true })<CR>")
-
 keymap("n", "<Leader>od", "<Cmd>DeleteDebugPrints<CR>")
-
 -- vim.keymap.set("n", "<leader>op", function()
 --     return require('debugprint').debugprint({ variable = true })
 -- end, {

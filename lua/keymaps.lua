@@ -127,14 +127,16 @@ local keymaps = {
   { '<leader>gg', ':LazyGit<CR>', description = 'LazyGit', opts = { silent = true} },
 
   -- g - Goto...
-  { 'gd', '<Plug>(coc-definition)', description = 'Save All', opts = { silent = true} },
+  { 'gd', '<Plug>(coc-definition)', description = 'Coc go to definition', opts = { silent = true} },
+  { 'gd', '<Plug>(coc-definition)', description = 'Coc go to definition', opts = { silent = true} },
   { 'gD', ":call CocAction('definitionHover')<CR>", description = 'Definition Hover', opts = { silent = true} },
   { 'gS', ":call CocAction('jumpDefinition', 'split')<CR>", description = 'Jump Definition Horizontal Split', opts = { silent = true} },
   { 'gV', ":call CocAction('jumpDefinition', 'vsplit')<CR>", description = 'Jump Definition Vertical Split', opts = { silent = true} },
   { 'gO', ":call CocAction('showOutgoingCalls', 'split')<CR>", description = 'Coc Show Outgoing Calls', opts = { silent = true} },
   { 'gL', ":call CocAction('showIncomingCalls', 'split')<CR>", description = 'Coc Show Incoming Calls', opts = { silent = true} },
   { 'gy', "<Plug>(coc-type-definition)", description = 'Coc Type Definition', opts = { silent = true} },
-  { 'gI', "<Plug>(coc-type-implementation)", description = 'Coc Type Implementation', opts = { silent = true} },
+  { 'gT', "<Plug>(coc-type-implementation)", description = 'Coc Type Implementation', opts = { silent = true} },
+  { 'gI', "<Plug>(coc-implementation)", description = 'Coc Implementation', opts = { silent = true} },
   { 'gr', "<Plug>(coc-references)", description = 'Coc References', opts = { silent = true} },
   { 'gU', "<Plug>(coc-references-used)", description = 'Coc References Used', opts = { silent = true} },
   { 'gR', "<Plug>(coc-refactor)", description = 'Coc Refactor', opts = { silent = true} },
@@ -151,7 +153,11 @@ local keymaps = {
   { '<leader>jl', ':HopChar1CurrentLine<CR>', description = 'HopChar1 CurrentLine', opts = { silent = true } },
   { '<leader>jw', ':HopWord<CR>', description = 'HopWord', opts = { silent = true } },
   { '<leader>jp', ':HopPattern<CR>', description = 'HopPattern', opts = { silent = true } },
-  { '<M-w>', ':HopWord<CR>', description = 'HopWord', opts = { silent = true } },
+  { '<leader>jp', ':HopPattern<CR>', description = 'HopPattern', opts = { silent = true } },
+  { '<leader>jv', ':TSJJoin<CR>', description = 'Join', opts = { silent = true } },
+  { '<leader>js', ':TSJSplit<CR>', description = 'Split', opts = { silent = true } },
+  { '<leader>jj', ':TSJToggle<CR>', description = 'Toggle Join', opts = { silent = true } },
+  { '<M-p>', ':HopWord<CR>', description = 'HopWord', opts = { silent = true } },
 
 
   -- o

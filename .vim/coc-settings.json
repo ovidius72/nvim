@@ -4,6 +4,8 @@
   "python.linting.pep8Enabled": false,
   "angular.experimental-ivy": true,
   "cSpell.words": [
+    "borderhighlight",
+    "focusable",
     "vimux"
   ]
 }
