@@ -11,7 +11,7 @@ require('lualine-config')
 -- require('feline-config')
 -- require('nvim-rev-config')
 require('nvim-gps-config')
-require('colorizer').setup({ '*'; });
+require('colorizer').setup({ '*', });
 -- require('gitsigns-config')
 require('bufferline-config')
 require('winshift-config')
@@ -56,11 +56,33 @@ function M.setup()
 end
 
 require("bufjump").setup({
-    forward = "]a",
-    backward = "[a",
-    on_success = nil
+  forward = "]a",
+  backward = "[a",
+  on_success = nil
 })
 require('colors-config')
 require('keymaps')
+-- require('hlchunk').setup({})
+-- require('nvim-biscuits').setup({
+--   default_config = {
+--     max_length = 12,
+--     min_distance = 5,
+--     prefix_string = " 📎 "
+--   },
+--   language_config = {
+--     html = {
+--       prefix_string = " 🌐 "
+--     },
+--     typescript = {
+--       max_length = 80
+--     },
+--     javascript = {
+--       max_length = 80
+--     },
+--     python = {
+--       disabled = true
+--     }
+--   }
+-- });
 
 return M
