@@ -24,6 +24,7 @@ set foldnestmax=3
 set foldminlines=1
 " set foldtext=substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))
 set laststatus=3
+set statuscolumn=%s%l\ \ %r\ %C
 " set spell!
 " set spelllang=en_us,it
 set matchpairs+=<:>
