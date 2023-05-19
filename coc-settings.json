@@ -336,6 +336,7 @@
     "Cripto",
     "DEBUGPRINT",
     "Formik",
+    "Recaptcha",
     "catppuccin",
     "checkmark",
     "floaterm",
@@ -344,11 +345,14 @@
     "kevinhwang",
     "l’autorizzazione",
     "microservices",
+    "middlewares",
     "miragejs",
     "nestjs",
     "onfido",
+    "reduxjs",
     "semibold",
     "snackbars",
+    "strapi",
     "taxcode"
   ]
   //  "python.autoComplete.extraPaths": [

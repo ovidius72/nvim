@@ -27,6 +27,7 @@ let g:coc_global_extensions = [
       \ 'coc-rust-analyzer',
       \ 'coc-spell-checker',
       \ 'coc-cspell-dicts',
+      \ 'coc-nav',
       \ ]
 
 " \ 'coc-explorer',

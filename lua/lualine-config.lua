@@ -1,7 +1,25 @@
-local gps = require('nvim-gps')
-
 local function is_test_file()
   return vim.fn['ultest#is_test_file']('%') > 0
+end
+
+-- uses coc nav (navic)
+local function breadcrumbs()
+  local items = vim.b.coc_nav
+  local t = { '' }
+  for k, v in ipairs(items) do
+    setmetatable(v, {
+      __index = function(table, key)
+        return ' '
+      end
+    })
+    t[#t + 1] = '%#' ..
+        (v.highlight or "Normal") ..
+        '#' .. (type(v.label) == 'string' and v.label .. ' ' or '') .. '%#Normal#' .. (v.name or '')
+    if next(items, k) ~= nil then
+      t[#t + 1] = ' > '
+    end
+  end
+  return table.concat(t)
 end
 
 local function testFileIcon()
@@ -14,7 +32,9 @@ end
 
 local function test_stats()
   local stats = vim.fn['ultest#status']()
-  return is_test_file() and ('🚦' .. stats.tests .. ' - 🎉' .. stats.passed .. ' - 🚫' .. stats.failed .. ' - 🏃' .. stats.running) or ''
+  return is_test_file() and
+      ('🚦' .. stats.tests .. ' - 🎉' .. stats.passed .. ' - 🚫' .. stats.failed .. ' - 🏃' .. stats.running) or
+      ''
 end
 
 -- local function diff_source()
@@ -33,28 +53,29 @@ end
 -- end
 
 local function short_mode(mode)
-  return mode:sub(1,1)
+  return mode:sub(1, 1)
 end
 
-local function getGPS()
-  local is_available = gps.is_available()
-  -- local filename = vim.fn.expand "%:t"
-  -- local extension = filename:match "^.+(%..+)$"
-  -- local default = false
-  -- local file_icon = require('nvim-web-devicons').get_icon_color(filename, extension, { default = default })
-  local res = gps.get_location()
-  -- local gps_output = ''
-  if is_available and res ~= "Error" and res ~= nil then
-    return res
-  else
-    return ''
-  end
-end
+-- Module deprecated.
+-- local function getGPS()
+--   local is_available = gps.is_available()
+--   -- local filename = vim.fn.expand "%:t"
+--   -- local extension = filename:match "^.+(%..+)$"
+--   -- local default = false
+--   -- local file_icon = require('nvim-web-devicons').get_icon_color(filename, extension, { default = default })
+--   local res = gps.get_location()
+--   -- local gps_output = ''
+--   if is_available and res ~= "Error" and res ~= nil then
+--     return res
+--   else
+--     return ''
+--   end
+-- end
 
 
-require'lualine'.setup {
+require 'lualine'.setup {
   options = {
-    theme= 'auto',
+    theme = 'auto',
     -- theme= 'github',
     icons_enabled = true,
     -- component_separators = { left = '', right = ''},
@@ -69,7 +90,7 @@ require'lualine'.setup {
   },
   sections = {
     lualine_a = {
-      {'mode',  color = { gui='italic,bold' } },
+      { 'mode', color = { gui = 'italic,bold' } },
       {
         "tabs",
         mode = 0,
@@ -107,25 +128,25 @@ require'lualine'.setup {
         'diagnostics',
         sources = { 'coc' },
         -- displays diagnostics from defined severity
-        sections = {'error', 'warn', 'info', 'hint'},
+        sections = { 'error', 'warn', 'info', 'hint' },
         -- all colors are in format #rrggbb
         diagnostics_color = {
           -- all colors are in format #rrggbb
           error = { fg = '#ff8080', bg = 'NONE' }, -- changes diagnostic's error foreground color
-          warn =  { fg = '#c991e1', bg = 'NONE' }, -- changes diagnostic's warn foreground color
-          info =  { fg = '#ffe37e', bg = 'NONE' }, -- Changes diagnostic's hint foreground color
-          hint =  { fg = '#63f2f1', bg = 'NONE' }, -- Changes diagnostic's info foreground color
+          warn = { fg = '#c991e1', bg = 'NONE' }, -- changes diagnostic's warn foreground color
+          info = { fg = '#ffe37e', bg = 'NONE' }, -- Changes diagnostic's hint foreground color
+          hint = { fg = '#63f2f1', bg = 'NONE' }, -- Changes diagnostic's info foreground color
         },
-        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
         update_in_insert = false,
         colored = true,
       },
       {
         'filename', file_status = true, path = 1, shoting_target = 80,
-        color =  { gui='italic,bold' },
+        color = { gui = 'italic,bold' },
         symbols = {
-          modified = '[+]',      -- Text to show when the file is modified.
-          readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+          modified = '[+]', -- Text to show when the file is modified.
+          readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
           unnamed = '[No Name]', -- Text to show for unnamed buffers.
         }
       }
@@ -135,34 +156,34 @@ require'lualine'.setup {
       --   getGPS,
       --   condition = gps.is_available,
       -- },
-       -- {
+      -- {
       -- 'windows',
       -- show_filename_only = true,   -- Shows shortened relative path when set to false.
       -- show_modified_status = true, -- Shows indicator when the window is modified.
 
       -- mode = 0, -- 0: Shows window name
-       --          -- 1: Shows window index
-       --          -- 2: Shows window name + window index
+      --          -- 1: Shows window index
+      --          -- 2: Shows window name + window index
 
       -- max_length = vim.o.columns * 2 / 3, -- Maximum width of windows component,
-       --                                    -- it can also be a function that returns
-       --                                    -- the value of `max_length` dynamically.
+      --                                    -- it can also be a function that returns
+      --                                    -- the value of `max_length` dynamically.
       -- filetype_names = {
-       --  TelescopePrompt = 'Telescope',
-       --  dashboard = 'Dashboard',
-       --  packer = 'Packer',
-       --  fzf = 'FZF',
-       --  alpha = 'Alpha'
+      --  TelescopePrompt = 'Telescope',
+      --  dashboard = 'Dashboard',
+      --  packer = 'Packer',
+      --  fzf = 'FZF',
+      --  alpha = 'Alpha'
       -- }, -- Shows specific window name for that filetype ( { `filetype` = `window_name`, ... } )
 
       -- disabled_buftypes = { 'quickfix', 'prompt' }, -- Hide a window if its buffer's type is disabled
 
       -- windows_color = {
-       --  -- Same values as the general color option can be used here.
-       --  active = 'lualine_{section}_normal',     -- Color for active window.
-       --  inactive = 'lualine_{section}_inactive', -- Color for inactive window.
+      --  -- Same values as the general color option can be used here.
+      --  active = 'lualine_{section}_normal',     -- Color for active window.
+      --  inactive = 'lualine_{section}_inactive', -- Color for inactive window.
       -- },
-    -- },
+      -- },
       -- {
       --   'buffers',
       --   show_filename_only = true,   -- Shows shortened relative path when set to false.
@@ -204,7 +225,7 @@ require'lualine'.setup {
       {
         'branch',
         icon = "",
-        color = { fg = '#ff8080', bg = 'None', gui='italic,bold' },
+        color = { fg = '#ff8080', bg = 'None', gui = 'italic,bold' },
       },
     },
     -- lualine_y = {'progress'},
@@ -223,33 +244,32 @@ require'lualine'.setup {
       }
     },
     lualine_z = {
-      { line_progress, padding = 0 },
-      { condition = is_test_file, testFileIcon, color = 'DiffChange' },
-      { condition = is_test_file, colored = true, test_stats, color = 'DiffChange' },
+      { line_progress,            padding = 0 },
+      { condition = is_test_file, testFileIcon,   color = 'DiffChange' },
+      { condition = is_test_file, colored = true, test_stats,          color = 'DiffChange' },
     }
   },
   winbar = {
     lualine_a = {
       {
         'filetype',
-         icon_only = true,
-     }
-   },
+        icon_only = true,
+      }
+    },
     lualine_b = { {
-        'filename',
-        colored = true,
-        color = { fg = '#ff8080', bg = 'None', gui='bold' },
+      'filename',
+      colored = true,
+      color = { fg = '#ff8080', bg = 'None', gui = 'bold' },
     }
-  },
+    },
     lualine_c = {
       {
-        getGPS,
-        condition = gps.is_available,
+        breadcrumbs,
       }
     }
   },
   inactive_winbar = {
-    lualine_a = {{'filetype', colored = true, icon_only = true}},
+    lualine_a = { { 'filetype', colored = true, icon_only = true } },
     lualine_b = {
       {
         'filename',
@@ -272,26 +292,26 @@ require'lualine'.setup {
         },
       }
     },
-    lualine_b = {'filename'},
+    lualine_b = { 'filename' },
     lualine_c = {
       {
         'diagnostics',
         sources = { 'coc' },
         -- displays diagnostics from defined severity
-        sections = {'error', 'warn', 'info', 'hint'},
+        sections = { 'error', 'warn', 'info', 'hint' },
         diagnostics_color = {
           -- all colors are in format #rrggbb
           error = { fg = '#ff8080' }, -- changes diagnostic's error foreground color
-          warn =  { fg = '#c991e1' }, -- changes diagnostic's warn foreground color
-          info =  { fg = '#95ffa4' }, -- Changes diagnostic's hint foreground color
-          hint =  { fg = '#63f2f1' }, -- Changes diagnostic's info foreground color
+          warn = { fg = '#c991e1' }, -- changes diagnostic's warn foreground color
+          info = { fg = '#95ffa4' }, -- Changes diagnostic's hint foreground color
+          hint = { fg = '#63f2f1' }, -- Changes diagnostic's info foreground color
         },
-        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
         update_in_insert = false,
         colored = true,
       }
     },
-    lualine_x = {'location'},
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },

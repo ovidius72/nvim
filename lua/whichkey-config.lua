@@ -104,7 +104,7 @@ local mappings = {
     f = {
       name = "+FILE",
       -- f = { "Format" },
-      r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+      -- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       n = { "<cmd>enew<cr>", "New File" },
     },
     s = {

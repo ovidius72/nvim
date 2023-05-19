@@ -10,7 +10,6 @@ require('telescope-config')
 require('lualine-config')
 -- require('feline-config')
 -- require('nvim-rev-config')
-require('nvim-gps-config')
 require('colorizer').setup({ '*', });
 -- require('gitsigns-config')
 require('bufferline-config')

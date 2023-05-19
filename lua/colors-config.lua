@@ -1,4 +1,4 @@
-local themeName = 'kanagawa-wave'
+local themeName = 'kanagawa'
 vim.g.material_style = "deep ocean"
 
 
@@ -192,7 +192,8 @@ vim.g.disable_italics = false
 vim.g.disable_background = false
 vim.g.bold_vert_split = true
 vim.g.dim_nc_background = true
-
+require('rose-pine').setup({
+})
 
 ----------------------------------------------------------------------
 --                             Zenbones                             --

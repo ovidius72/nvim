@@ -25,6 +25,7 @@ Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 Plug 'thinca/vim-quickrun'
 Plug 'metakirby5/codi.vim'
+Plug 'Exafunction/codeium.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'MunifTanjim/nui.nvim'        " it's a dependency
 Plug 'xeluxee/competitest.nvim'
@@ -159,9 +160,9 @@ Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'https://github.com/chrisgrieser/nvim-various-textobjs'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
-Plug 'SmiteshP/nvim-gps'
 Plug 'sindrets/winshift.nvim'
 
 " Plug 'rmagatti/goto-preview' " requires lsp
