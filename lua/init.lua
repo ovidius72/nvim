@@ -38,6 +38,7 @@ require('whichkey-config')
 require('dressing-config')
 require('modicator').setup()
 require('search-replace-config');
+-- require('neotest-config');
 -- require('winsep-config.lua');
 -- require('winbar-config')
 -- require('pounce-config')
