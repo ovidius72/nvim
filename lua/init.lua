@@ -38,7 +38,6 @@ require('whichkey-config')
 require('dressing-config')
 require('modicator').setup()
 require('search-replace-config');
--- require('neotest-config');
 -- require('winsep-config.lua');
 -- require('winbar-config')
 -- require('pounce-config')
@@ -61,6 +60,7 @@ require("bufjump").setup({
   on_success = nil
 })
 require('colors-config')
+require('neotest-config');
 require('keymaps')
 -- require('hlchunk').setup({})
 -- require('nvim-biscuits').setup({

@@ -79,10 +79,12 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Plug 'nvim-neotest/neotest'
-" Plug 'nvim-neotest/neotest-jest'
-" Plug 'nvim-neotest/neotest-vim-test'
-" Plug 'nvim-neotest/neotest-plenary'
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-neotest/neotest-jest'
+Plug 'nvim-neotest/neotest-vim-test'
+Plug 'nvim-neotest/neotest-plenary'
+Plug 'andythigpen/nvim-coverage' 
+    "andythigpen/nvim-coverage",
 Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'fgheng/winbar.nvim'

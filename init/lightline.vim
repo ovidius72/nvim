@@ -35,6 +35,15 @@ endfunction
 " you can add the following line to your vimrc 
 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
+function! LightlineCocCoverageStatus() abort
+  let status = get(g:, 'coc_coverage_lines_pct', '')
+  if empty(status)
+    return ''
+  endif
+
+  return '☂ ' . status . '% Lines Covered'
+endfunction
+
 
 function! GetUnModified()
   if &mod 
@@ -136,6 +145,7 @@ let g:lightline = {
         \ 'buffers': 1 
       \},
       \ 'component_function': {
+      \   'coccoverage':'LightlineCocCoverageStatus',
       \   'cocstatus': 'LightLineCoc',
       \   'gitbranch': 'LightlineFugitive',
       \   'MyFiletype': 'MyFiletype',

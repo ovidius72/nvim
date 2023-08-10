@@ -113,6 +113,9 @@ local mappings = {
     },
     t = {
       name = "+TESTS",
+      c = {
+      name = "+Coverage",
+      }
     },
     T = {
       name = "+TABS",

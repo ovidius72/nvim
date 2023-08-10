@@ -41,6 +41,7 @@
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
   "tsserver.enable": true,
+  "coverage.enabled": true,
   "tsserver.formatOnType": false,
   "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "gitignore.enable": true,
@@ -337,6 +338,7 @@
     "DEBUGPRINT",
     "Formik",
     "Recaptcha",
+    "Swiper",
     "catppuccin",
     "checkmark",
     "floaterm",
@@ -349,11 +351,13 @@
     "miragejs",
     "nestjs",
     "onfido",
+    "overscan",
     "reduxjs",
     "semibold",
     "snackbars",
     "strapi",
-    "taxcode"
+    "taxcode",
+    "venv"
   ]
   //  "python.autoComplete.extraPaths": [
   //    "${env:SPARK_HOME}/python",

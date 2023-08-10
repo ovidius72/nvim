@@ -23,7 +23,7 @@ let g:coc_global_extensions = [
       \ 'coc-gitignore',
       \ 'coc-docthis',
       \ 'coc-git',
-      \ 'coc-project',
+      \ 'coc-pyright',
       \ 'coc-rust-analyzer',
       \ 'coc-spell-checker',
       \ 'coc-cspell-dicts',
@@ -72,6 +72,7 @@ set signcolumn=yes:1
 " hi! CocHintHighlight guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 " hi! CocHintLine guibg=bg guifg=fg gui=undercurl guisp=#95ffa4
 
+hi UncoveredLine guifg=#ff6458 guibg=#ff6458
 
   nnoremap <silent><nowait>go  :call ToggleOutline()<CR>
   function! ToggleOutline() abort
@@ -395,11 +396,25 @@ omap ac <Plug>(coc-classobj-a)
 " xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Multiple cursors.
-" hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
-" nmap <silent> <C-y> <Plug>(coc-cursors-position)
-" nmap <silent> <C-t> <Plug>(coc-cursors-word)
-" xmap <silent> <C-t> <Plug>(coc-cursors-range)
-" nmap <Leader>x  <Plug>(coc-cursors-operator)
+hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
+nmap <silent> <C-y> <Plug>(coc-cursors-position)
+nmap <silent> <C-t> <Plug>(coc-cursors-word)
+xmap <silent> <C-t> <Plug>(coc-cursors-range)
+nmap <Leader>x  <Plug>(coc-cursors-operator)
+
+
+" or use the following to add current to selection and go to next:
+" nmap <silent> <C-d> <Plug>(coc-cursors-word)*
+" xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
+
+" Or more VS Code like behavior:
+nmap <expr> <silent> <C-y> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(b:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>

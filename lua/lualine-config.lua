@@ -2,6 +2,7 @@ local function is_test_file()
   return vim.fn['ultest#is_test_file']('%') > 0
 end
 
+vim.g.enable_lualine_coverage = false
 -- uses coc nav (navic)
 local function breadcrumbs()
   local items = vim.b.coc_nav
@@ -28,6 +29,22 @@ end
 
 local function line_progress()
   return '%3p%%'
+end
+
+function CocCoverageStatus()
+  if (vim.g.enable_lualine_coverage == false) then
+    return ''
+  end
+  local lines    = vim.g.coc_coverage_lines_pct
+  local branches = vim.g.coc_coverage_branches_pct
+  local fun      = vim.g.coc_coverage_functions_pct
+  local stat     = vim.g.coc_coverage_statements_pct
+  if lines == nil then
+    return 'No coverage'
+  end
+
+  local res = 'Cov: L:' .. lines .. " B: " .. branches .. " F: " .. fun .. " S: " .. stat
+  return res
 end
 
 local function test_stats()
@@ -222,6 +239,9 @@ require 'lualine'.setup {
     },
     lualine_x = {
       { "g:coc_status" },
+      { CocCoverageStatus, padding = 2,
+        color = { fg = '#e1e1e1', bg = '464f7f', gui = 'italic,bold' },
+      },
       {
         'branch',
         icon = "",
@@ -320,3 +340,14 @@ require 'lualine'.setup {
     'quickfix', 'fzf', 'fugitive', 'fern'
   }
 }
+
+vim.keymap.set('n', '<leader>tct',
+  function()
+    if (vim.g.enable_lualine_coverage == true) then
+      vim.g.enable_lualine_coverage = false
+    else
+      vim.g.enable_lualine_coverage = true
+    end
+  end,
+  { silent = true, noremap = true, desc = 'Toggle Lualine Coverage' }
+)

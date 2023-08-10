@@ -419,7 +419,7 @@ vim.cmd("let &fcs='eob: '")
 -- vim.cmd [[ highlight default link WhichKeySeperator NONE ]]
 
 -- -- global statusline
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 vim.opt.fillchars = {
   horiz     = '━',
   horizup   = '┻',
