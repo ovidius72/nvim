@@ -138,7 +138,7 @@ local keymaps = {
   { 'gT',            "<Plug>(coc-type-implementation)",                                                     description = 'Coc Type Implementation',              opts = { silent = true } },
   { 'gI',            "<Plug>(coc-implementation)",                                                          description = 'Coc Implementation',                   opts = { silent = true } },
   { 'gr',            "<Plug>(coc-references)",                                                              description = 'Coc References',                       opts = { silent = true } },
-  { 'gU',            "<Plug>(coc-references-used)",                                                         description = 'Coc References Used',                  opts = { silent = true } },
+  { 'gf',            "<Plug>(coc-references-used)",                                                         description = 'Coc References Used',                  opts = { silent = true } },
   { 'gR',            "<Plug>(coc-refactor)",                                                                description = 'Coc Refactor',                         opts = { silent = true } },
   -- h
   { '<leader>hl',    ':set list!<CR>',                                                                      description = 'Toggle Whitespace',                    opts = {} },
@@ -208,7 +208,9 @@ local keymaps = {
   { '<leader>tf',  ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>',         description = 'Neotest File',                           opts = { silent = true } },
   { '<leader>tn',  ':lua require("neotest").run.run()<CR>',                           description = 'Neotest Nearest',                        opts = { silent = true } },
   { '<leader>tS',  ':lua require("neotest").run.stop()<cr>',                          description = 'Neotest Stop',                           opts = { silent = true } },
-  { '<leader>ta',  ':lua require("neotest").run.attach()',                            description = 'Neotest Attach',                         opts = { silent = true } },
+  { '<leader>ta',  ':lua require("neotest").run.attach()<cr>',                        description = 'Neotest Attach',                         opts = { silent = true } },
+  { '<leader>tw',  ':lua require("neotest").watch.watch(vim.fn.expand("%"))<cr>',     description = 'Neotest Watch',                         opts = { silent = true } },
+  { '<leader>tp',  ':lua require("neotest").output.open({enter = true })<cr>',        description = 'Neotest Jump To Output',                         opts = { silent = true } },
   { '<leader>ts',  ':Neotest summary<CR>',                                            description = 'Neotest summary',                        opts = { silent = true } },
   { '<leader>to',  ':Neotest output-panel<cr>',                                       description = 'Neotest Output Panel',                   opts = { silent = true } },
   { '<leader>tO',  ':Neotest output<cr>',                                             description = 'Neotest Output',                         opts = { silent = true } },
@@ -320,7 +322,7 @@ local keymaps = {
   { '<leader><leader>t',  ":TodoTelescope<CR>",                                                                                            description = 'Telescope Todos',                            opts = {} },
   { '<leader><leader>e',  ":lua require('telescope-config').search_vim_files()<CR>",                                                       description = 'Telescope Vim Files',                        opts = {} },
   { '<leader><leader>e',  ":lua require('telescope-config').search_vim_files()<CR>",                                                       description = 'Telescope Vim Files',                        opts = {} },
-  { '<leader><leader>gb', 'yap<S-}p',                                                                                                      description = 'Paste from clipboard',                       opts = {} },
+  { '<leader><leader>gB', 'yap<S-}p',                                                                                                      description = 'Paste from clipboard',                       opts = {} },
   { '[s',                 '[s',                                                                                                            description = 'Next Spell',                                 opts = {} },
   { ']s',                 ']s',                                                                                                            description = 'Prev Spell',                                 opts = {} },
 

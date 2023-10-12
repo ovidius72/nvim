@@ -1,4 +1,4 @@
-local themeName = 'kanagawa'
+local themeName = 'catppuccin'
 vim.g.material_style = "deep ocean"
 
 
@@ -227,8 +227,8 @@ require('kanagawa').setup({
   variablebuiltinStyle = { italic = true, bold = true },
   specialReturn = true, -- special highlight for the return keyword
   specialException = true, -- special highlight for exception handling keywords
-  transparent = false, -- do not set background color
-  dimInactive = true, -- dim inactive window `:h hl-NormalNC`
+  transparent = true, -- do not set background color
+  dimInactive = false, -- dim inactive window `:h hl-NormalNC`
   terminalColors = true,
   -- theme = {},
   -- colors = {},
@@ -385,7 +385,6 @@ vim.cmd('colorscheme ' .. themeName)
 -- })
 
 -- remove tilde characters at the end of the buffer.
-vim.cmd("let &fcs='eob: '")
 -- require(themeName).setup({})
 
 -- Toggle catppuccino variant
@@ -400,7 +399,7 @@ vim.cmd("let &fcs='eob: '")
 
 -- require('plenary.reload').reload_module('lualine')
 -- require('lualine-config')
--- vim.cmd('colorscheme ' .. themeName)
+vim.cmd('colorscheme ' .. themeName)
 -- require('onedark').setup {
 --     style = 'cool'
 -- }
@@ -419,6 +418,7 @@ vim.cmd("let &fcs='eob: '")
 -- vim.cmd [[ highlight default link WhichKeySeperator NONE ]]
 
 -- -- global statusline
+vim.cmd("let &fcs='eob: '")
 -- vim.opt.laststatus = 3
 vim.opt.fillchars = {
   horiz     = '━',
@@ -429,4 +429,21 @@ vim.opt.fillchars = {
   vertright = '┣',
   verthoriz = '╋',
 }
+vim.api.nvim_create_autocmd("ColorScheme", {
+  desc = "Add nvim-coverage highlight",
+  callback = function()
+    vim.cmd([[
+        hi CoverageCovered guifg=#339900
+        hi CoverageUncovered guifg=#ff5468
+        hi CoveragePartial guifg=#ffcc00
+        hi CoverageSummaryHeader gui=bold,underline guisp=fg
+        hi! link CoverageSummaryBorder FloatBorder
+        hi! link CoverageSummaryNormal NormalFloat
+        hi! link CoverageSummaryCursorLine CursorLine
+        hi! link CoverageSummaryPass CoverageCovered
+        hi! link CoverageSummaryFail CoverageUncovered
+      ]])
+    vim.cmd("let &fcs='eob: '")
+  end,
+})
 -- SetTransapentBackground()

@@ -10,7 +10,7 @@ require('telescope-config')
 require('lualine-config')
 -- require('feline-config')
 -- require('nvim-rev-config')
-require('colorizer').setup({ '*', });
+require('colorizer').setup({ '*', })
 -- require('gitsigns-config')
 require('bufferline-config')
 require('winshift-config')
@@ -37,8 +37,11 @@ require('live-command-config')
 require('whichkey-config')
 require('dressing-config')
 require('modicator').setup()
-require('search-replace-config');
--- require('winsep-config.lua');
+require('search-replace-config')
+require("git-conflict-config")
+require("ronny-config")
+require("package-info-config")
+-- require('winsep-config.lua')
 -- require('winbar-config')
 -- require('pounce-config')
 -- require('nvim-tree-lua-config')
@@ -60,8 +63,21 @@ require("bufjump").setup({
   on_success = nil
 })
 require('colors-config')
-require('neotest-config');
+require('neotest-config')
 require('keymaps')
+-- require('nvim-treesitter.configs').setup {
+--   context_commentstring = {
+--     enable = true,
+--     enable_autocmd = false,
+--   },
+-- }
+require('Comment').setup {
+  pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+}
+-- local ft = require('Comment.ft')
+-- ft.set('typescriptreact', { '{/*%s*/}', '{/*%s*/}' })
+-- ft.set('javascriptreact', { '{/*%s*/}', '{/*%s*/}' })
+
 -- require('hlchunk').setup({})
 -- require('nvim-biscuits').setup({
 --   default_config = {
@@ -83,6 +99,6 @@ require('keymaps')
 --       disabled = true
 --     }
 --   }
--- });
+-- })
 
 return M

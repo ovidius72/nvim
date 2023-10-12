@@ -1,18 +1,17 @@
 require('neotest').setup({
-  icons = {
+  icons       = {
     expanded = "",
     -- child_prefix = "",
     -- child_indent = "",
     -- final_child_prefix = "",
-    -- non_collapsible = "",
+    non_collapsible = "-",
     collapsed = "",
-
     passed = "",
     running = "",
     failed = "",
     unknown = "",
   },
-  consumers = {
+  consumers   = {
     -- overseer = require("neotest.consumers.overseer"),
     -- always_open_output = function(client)
     --   local async = require("neotest.async")
@@ -29,17 +28,34 @@ require('neotest').setup({
     --   end
     -- end,
   },
-  output = {
+  diagnostics = {
     enabled = true,
-    -- open_on_run = true,
+    severity = 1
   },
-  adapters = {
+  state       = {
+    enabled = true
+  },
+  output      = {
+    enabled = true,
+    open_on_run = true,
+  },
+  status      = {
+    virtual_text = true,
+  },
+  adapters    = {
+    require('neotest-vitest')({
+      vitestCommand = "npm run test:staged:no-watch --",
+      cwd = function()
+        return vim.fn.getcwd()
+      end
+
+    }),
     -- require('neotest-vim-test')({ ignore_file_types = { "python", "vim", "lua" } }),
     require('neotest-jest')({
-      jestCommand = "npm run test:staged --",
-      -- jestCommand = "npm run test:staged:no-watch --",
+      -- jestCommand = "npm run test:staged --",
+      jestCommand = "npm run test:staged:no-watch --",
       -- jestConfigFile = 'apps/ms-user/jest.config.ts',
-      cwd = function(path)
+      cwd = function()
         return vim.fn.getcwd()
       end
     })
@@ -47,16 +63,9 @@ require('neotest').setup({
 })
 
 require("coverage").setup({
+  commands = true, -- create commands
   auto_reload = true,
   auto_reload_timeout_ms = 1000,
-  -- lcov_file = 'coverage/lcov.info',
-  signs = {
-    covered = { priority = 100 }, -- use a higher value than diagnostics or gitsigns
-    uncovered = { priority = 100 },
-  },
-})
-require("coverage").setup({
-  commands = true, -- create commands
   highlights = {
     -- customize highlight groups created by the plugin
     covered = { fg = "#339900" }, -- supports style, fg, bg, sp (see :h highlight-gui)
@@ -65,9 +74,9 @@ require("coverage").setup({
   },
   signs = {
     -- use your own highlight groups or text markers
-    covered = { hl = "CoverageCovered", text = "▎" },
-    uncovered = { hl = "CoverageUncovered", text = "▎" },
-    partial = { hl = "CoverageUncovered", text = "▎" },
+    covered = { priority = 100, hl = "CoverageCovered", text = "▎" },
+    uncovered = { priority = 100, hl = "CoverageUncovered", text = "▎" },
+    partial = { priority = 100, hl = "CoveragePartial", text = "▎" },
   },
   summary = {
     -- customize the summary pop-up
@@ -78,19 +87,10 @@ require("coverage").setup({
   },
 })
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  desc = "Add nvim-coverage highlight",
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" }, -- any file extension you're interested in
   callback = function()
-    vim.cmd([[
-        hi CoverageCovered guifg=#339900
-        hi CoverageUncovered guifg=#ff5468
-        hi CoveragePartial guifg=#ffcc00
-        hi CoverageSummaryHeader gui=bold,underline guisp=fg
-        hi! link CoverageSummaryBorder FloatBorder
-        hi! link CoverageSummaryNormal NormalFloat
-        hi! link CoverageSummaryCursorLine CursorLine
-        hi! link CoverageSummaryPass CoverageCovered
-        hi! link CoverageSummaryFail CoverageUncovered
-      ]])
+    -- place (show) the signs immediately after loading
+    require("coverage").load(true)
   end,
 })

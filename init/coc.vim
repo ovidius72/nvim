@@ -25,6 +25,7 @@ let g:coc_global_extensions = [
       \ 'coc-git',
       \ 'coc-pyright',
       \ 'coc-rust-analyzer',
+      \ 'coc-coverage',
       \ 'coc-spell-checker',
       \ 'coc-cspell-dicts',
       \ 'coc-nav',
@@ -47,16 +48,16 @@ let g:coc_global_extensions = [
   "rust-analyzer.completion.addCallParenthesis": true,
   "rust-analyzer.completion.addCallArgumentSnippets": true,
 " let g:coc_node_path = '~/.nvm/versions/node/v12.16.1/bin/node'
-set cmdheight=2
+" set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=300
-set shortmess+=c
-set nowritebackup
+" set shortmess+=c
 set nobackup
+set nowritebackup
 
+set updatetime=300
 " always show signcolumns
-set signcolumn=yes:1
+set signcolumn=yes
 " set signcolumn=auto:2
 
 " let g:coc_status_error_sign = '•'
@@ -130,7 +131,7 @@ nmap <Leader>cgc <Plug>(coc-git-commit)
 nmap <Leader>cgi <Plug>(coc-git-chunkinfo)
 nmap <Leader>cgu :CocCommand git.chunkUndo<cr>
 "  nmap <Leader>cp :CocList project<cr>
-nmap gb :CocCommand git.chunkUndo<cr>
+nmap gm :CocCommand git.chunkUndo<cr>
 nmap gh <Plug>(coc-git-chunkinfo)
 nmap <Leader>cgf :CocCommand git.foldUnchanged<cr>
 nmap <Leader>cgd :CocCommand git.diffCached<cr>
@@ -203,8 +204,9 @@ let g:coc_snippet_prev = '<c-h>'
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
+      \ <SID>CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! CheckBackspace() abort
@@ -218,6 +220,10 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+"Use <C-n> and <C-p> for navigate completion list like built in completion.
+inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-n>"
 
 inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
 inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
@@ -396,11 +402,11 @@ omap ac <Plug>(coc-classobj-a)
 " xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Multiple cursors.
-hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
-nmap <silent> <C-y> <Plug>(coc-cursors-position)
-nmap <silent> <C-t> <Plug>(coc-cursors-word)
-xmap <silent> <C-t> <Plug>(coc-cursors-range)
-nmap <Leader>x  <Plug>(coc-cursors-operator)
+" hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
+" nmap <silent> <M-y> <Plug>(coc-cursors-position)
+" nmap <silent> <M-t> <Plug>(coc-cursors-word)
+" xmap <silent> <M-t> <Plug>(coc-cursors-range)
+" nmap <Leader>x  <Plug>(coc-cursors-operator)
 
 
 " or use the following to add current to selection and go to next:
@@ -408,7 +414,7 @@ nmap <Leader>x  <Plug>(coc-cursors-operator)
 " xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
 
 " Or more VS Code like behavior:
-nmap <expr> <silent> <C-y> <SID>select_current_word()
+" nmap <expr> <silent> <C-y> <SID>select_current_word()
 function! s:select_current_word()
   if !get(b:, 'coc_cursors_activated', 0)
     return "\<Plug>(coc-cursors-word)"

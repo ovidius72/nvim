@@ -9,13 +9,13 @@ let test#neovim#term_position = "topleft"
 let g:test#php#phpunit#executable = 'docker exec -it $(docker ps -n=-1 -q --filter name=php_maiare --format="{{.ID}}") /var/www/app/vendor/bin/phpunit --configuration /var/www/app/phpunit.xml.dist'
 " let g:test#php#phpunit#executable = 'docker exec b6eb55 /var/www/app/vendor/bin/phpunit --configuration /var/www/app/phpunit.xml.dist'
 " let test#javascript#runner= "jest"
-let test#javascript#jest#executable = 'npm run test:staged'
-let test#javascript#jest#options = "--color=always"
+let test#javascript#jest#executable = 'npm run test:staged:no-watch'
+let test#javascript#jest#options = "--color=always --coverage"
 " let test#javascript#reactscripts#options = "--watchAll=false"
-let test#typescript#reactscripts#options = "--color=always --watchAll=false"
+let test#typescript#reactscripts#options = "--color=always --watchAll=false --coverage"
 " let test#typescriptreact#reactscripts#options = "--watchAll=false"
-let test#javascript#reactscripts#executable = "npm run test:no-coverage"
-let test#typescript#reactscripts#executable = "npm run test:no-coverage"
+" let test#javascript#reactscripts#executable = "npm run test:no-coverage"
+" let test#typescript#reactscripts#executable = "npm run test:no-coverage"
 " let test#typescript#reactscripts#runner = "npm run test"
 
 

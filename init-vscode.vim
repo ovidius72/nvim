@@ -5,7 +5,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'unblevable/quick-scope'
+Plug 'unblevable/ck-scope'
 Plug 'machakann/vim-sandwich'
 Plug 'wellle/targets.vim'
 call plug#end()
@@ -34,7 +34,7 @@ xmap <leader>vsr <Plug>(operator-sandwich-replace)
 runtime macros/sandwich/keymap/surrounnd.vim
 
 " source ~/.config/nvim/init/common.vim
-source ~/.config/nvim/init/quick-scope.vim
+" source ~/.config/nvim/init/quick-scope.vim
 
 function! s:split(...) abort
     let direction = a:1

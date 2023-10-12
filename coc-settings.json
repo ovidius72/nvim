@@ -31,7 +31,8 @@
   "cSpellExt.enableDictionaries": ["italian"],
   "cSpell.language": "en,it",
   "suggest.noselect": true,
-  // "suggest.enablepreselect": true,
+  "suggest.enablePreselect": true,
+  "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"],
   // "suggest.enablePreview": true,
   // "suggest.floatEnable": true,
   // "typescript.inlayHints.parameterNames.enabled": "all",
@@ -42,6 +43,7 @@
   "typescript.suggest.enabled": true,
   "tsserver.enable": true,
   "coverage.enabled": true,
+  "coverage.uncoveredSign.hlGroup": "CoverageUncovered",
   "tsserver.formatOnType": false,
   "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "gitignore.enable": true,
@@ -217,7 +219,7 @@
   "diagnostic.hintSign": "",
   "diagnostic.messageTarget": "float",
   "diagnostic.messageDelay": 400,
-  "diagnostic.format": " : [%source%code] [%severity] %message",
+  // "diagnostic.format": " : [%source%code] [%severity] %message",
   "diagnostic.checkCurrentLine": false,
   "diagnostic.enableHighlightLineNumber": true,
   "diagnostic.enableMessage": "jump",
@@ -337,6 +339,7 @@
     "Cripto",
     "DEBUGPRINT",
     "Formik",
+    "Identita",
     "Recaptcha",
     "Swiper",
     "catppuccin",
@@ -357,7 +360,8 @@
     "snackbars",
     "strapi",
     "taxcode",
-    "venv"
+    "venv",
+    "vitest"
   ]
   //  "python.autoComplete.extraPaths": [
   //    "${env:SPARK_HOME}/python",

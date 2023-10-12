@@ -419,7 +419,7 @@ map <leader>op :call PrintLog()<CR>
 " nmap cgc <Plug>ChangeCommentary
 " nmap <leader>xcc gc
 "nmap <leader>xcy gcy nmap <leader>xcy gcy
-xmap gcc <Plug>Commentary
+" xmap gcc <Plug>Commentary
 " *************** inc serach
 " augroup vimrc-incsearch-highlight
 "  autocmd!

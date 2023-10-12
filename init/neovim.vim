@@ -65,7 +65,9 @@ Plug 'kevinhwang91/nvim-hlslens'
 " Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tanvirtin/vgit.nvim'
+Plug 'akinsho/git-conflict.nvim'
 " Colorschemes
+Plug 'judaew/ronny.nvim'
 Plug 'Yazeed1s/oh-lucy.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'olimorris/onedarkpro.nvim'
@@ -81,10 +83,10 @@ Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-jest'
+Plug 'marilari88/neotest-vitest'
 Plug 'nvim-neotest/neotest-vim-test'
 Plug 'nvim-neotest/neotest-plenary'
 Plug 'andythigpen/nvim-coverage' 
-    "andythigpen/nvim-coverage",
 Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'fgheng/winbar.nvim'
@@ -121,7 +123,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/echodoc'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-Plug 'meain/vim-package-info', { 'do': 'npm install' }
+Plug 'vuki656/package-info.nvim'
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']}
 Plug 'folke/which-key.nvim'
 Plug 'rbgrouleff/bclose.vim'
@@ -150,7 +152,8 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'mrjones2014/legendary.nvim'
 
 " Plug 'https://github.com/p00f/nvim-ts-rainbow'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'unblevable/quick-scope'
 Plug 'lambdalisue/nerdfont.vim'
@@ -176,7 +179,8 @@ Plug 'mbbill/undotree'
 Plug 'simnalamburt/vim-mundo'
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
-" Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'puremourning/vimspector', { 'do': './install_gadget.py --force-enable-node --force-enable-chrome --force-enable-php' }
 Plug 'szw/vim-maximizer'
 " Plug 'vim-vdebug/vdebug'
@@ -250,6 +254,10 @@ require'nvim-treesitter.configs'.setup {
         },
       },
     },
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+    },
     ensure_installed = {
       'javascript',
       'lua',
@@ -278,7 +286,7 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     },
     incremental_selection = {
-        enable = false,
+        enable = true,
         keymaps = {
           init_selection = "gnn",
           node_incremental = "gnd",

@@ -1,6 +1,71 @@
+local package_info = require("package-info")
+
 local function is_test_file()
   return vim.fn['ultest#is_test_file']('%') > 0
 end
+
+function get_neotest_status()
+  local status_ok, neotest = pcall(require, "neotest")
+  if not status_ok then
+    return ""
+  end
+  local adapters = neotest.state.adapter_ids()
+  print('adapters', adapters)
+  for k in pairs(adapters) do
+    print('k', k)
+  end
+  if #adapters > 0 then
+    local adapter = adapters[1]
+    print('adapter', adapter)
+    local status = neotest.state.status_counts(adapters[1], {
+      buffer = vim.api.nvim_buf_get_name(0),
+    })
+    print('status', status)
+    return "SS"
+  end
+  return "NO"
+end
+
+-- local sections = {
+--   {
+--     sign = "",
+--     count = status.failed,
+--     base = "NeotestFailed",
+--     tag = "test_fail",
+--   },
+--   {
+--     sign = "",
+--     count = status.running,
+--     base = "NeotestRunning",
+--     tag = "test_running",
+--   },
+--   {
+--     sign = "",
+--     count = status.passed,
+--     base = "NeotestPassed",
+--     tag = "test_pass",
+--   },
+-- }
+
+-- local result = {}
+-- for _, section in ipairs(sections) do
+--   if section.count > 0 then
+--     table.insert(
+--       result,
+--       "%#"
+--       .. section.base
+--       .. "#"
+--       .. section.sign
+--       .. " "
+--       .. section.count
+--     )
+--   end
+-- end
+
+-- return table.concat(result, " ")
+-- end
+-- return ""
+-- end
 
 vim.g.enable_lualine_coverage = false
 -- uses coc nav (navic)
@@ -238,6 +303,7 @@ require 'lualine'.setup {
       -- }
     },
     lualine_x = {
+      { package_info.get_status, icon = "" },
       { "g:coc_status" },
       { CocCoverageStatus, padding = 2,
         color = { fg = '#e1e1e1', bg = '464f7f', gui = 'italic,bold' },
@@ -267,6 +333,7 @@ require 'lualine'.setup {
       { line_progress,            padding = 0 },
       { condition = is_test_file, testFileIcon,   color = 'DiffChange' },
       { condition = is_test_file, colored = true, test_stats,          color = 'DiffChange' },
+      { condition = is_test_file, colored = true, neotest_status,      color = 'DiffChange' },
     }
   },
   winbar = {
