@@ -58,7 +58,8 @@ require('neotest').setup({
       cwd = function()
         return vim.fn.getcwd()
       end
-    })
+    }),
+    require('neotest-java')({})
   }
 })
 

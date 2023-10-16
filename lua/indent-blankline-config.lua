@@ -48,8 +48,8 @@ require("ibl").setup {
     -- char = '┊',
   },
   whitespace = {
-    highlight = highlight,
-    remove_blankline_trail = false,
+    -- highlight = highlight,
+    remove_blankline_trail = true,
   },
   scope = {
     -- show_exact_scope = true,

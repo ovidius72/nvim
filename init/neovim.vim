@@ -83,6 +83,7 @@ Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-jest'
+Plug 'andy-bell101/neotest-java'
 Plug 'marilari88/neotest-vitest'
 Plug 'nvim-neotest/neotest-vim-test'
 Plug 'nvim-neotest/neotest-plenary'
