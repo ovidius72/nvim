@@ -67,6 +67,10 @@ Plug 'kevinhwang91/nvim-hlslens'
 Plug 'tanvirtin/vgit.nvim'
 Plug 'akinsho/git-conflict.nvim'
 " Colorschemes
+Plug 'projekt0n/github-nvim-theme'
+Plug 'mcchrish/zenbones.nvim'
+Plug 'savq/melange-nvim'
+Plug 'nyoom-engineering/oxocarbon.nvim'
 Plug 'judaew/ronny.nvim'
 Plug 'Yazeed1s/oh-lucy.nvim'
 Plug 'navarasu/onedark.nvim'
@@ -255,10 +259,10 @@ require'nvim-treesitter.configs'.setup {
         },
       },
     },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false,
-    },
+    -- context_commentstring = {
+    --   enable = true,
+    --   enable_autocmd = false,
+    -- },
     ensure_installed = {
       'javascript',
       'lua',
