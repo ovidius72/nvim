@@ -1,4 +1,4 @@
-local themeName = 'catppuccin'
+local themeName = 'rose-pine'
 vim.g.material_style = "deep ocean"
 
 
@@ -185,12 +185,12 @@ catppuccin.setup({
 -- Set variant
 -- Defaults to 'dawn' if vim background is light
 -- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
-vim.g.rose_pine_variant = 'moon'
+-- vim.g.rose_pine_variant = 'dawn'
 -- Disable italics
-vim.g.disable_italics = false
+-- vim.g.disable_italics = false
 -- Use terminal background
-vim.g.disable_background = false
-vim.g.bold_vert_split = true
+-- vim.g.disable_background = false
+-- vim.g.bold_vert_split = true
 vim.g.dim_nc_background = true
 require('rose-pine').setup({
 })
