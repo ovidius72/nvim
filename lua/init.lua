@@ -74,6 +74,8 @@ require('keymaps')
 require('Comment').setup {
   pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 }
+
+require('mini.icons').setup();
 -- local ft = require('Comment.ft')
 -- ft.set('typescriptreact', { '{/*%s*/}', '{/*%s*/}' })
 -- ft.set('javascriptreact', { '{/*%s*/}', '{/*%s*/}' })

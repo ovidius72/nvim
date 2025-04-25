@@ -52,6 +52,7 @@ nnoremap gi :<c-u>call VSCodeNotify('editor.action.goToImplementation')<cr>
 nnoremap gr :<c-u>call VSCodeNotify('editor.action.goToReferences')<cr>
 
 nnoremap <leader><TAB> :buffer#<CR>
+" nnoremap <leader><TAB> <C-^>
 nnoremap <SHIFT>k :<c-u>call VSCodeNotify('workbench.action.showOver')<cr>
 nnoremap <leader>sa :<c-u>call VSCodeNotify('extension.fuzzySearch')<cr>
 nnoremap <leader>ss :<c-u>call VSCodeNotify('workbench.action.gotoSymbol')<cr>

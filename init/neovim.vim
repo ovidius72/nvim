@@ -81,6 +81,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine'}
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'nvim-neotest/nvim-nio'
 Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-jest'
 Plug 'andy-bell101/neotest-java'
@@ -127,6 +128,7 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'vuki656/package-info.nvim'
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!']}
 Plug 'folke/which-key.nvim'
+Plug 'echasnovski/mini.icons'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -205,7 +207,7 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'glepnir/dashboard-nvim'
 Plug 'folke/zen-mode.nvim'
-Plug 'rest-nvim/rest.nvim'
+" Plug 'rest-nvim/rest.nvim'
 call plug#end()
 
 
@@ -255,10 +257,10 @@ require'nvim-treesitter.configs'.setup {
         },
       },
     },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false,
-    },
+    -- context_commentstring = {
+    --   enable = true,
+    --   enable_autocmd = false,
+    -- },
     ensure_installed = {
       'javascript',
       'lua',
