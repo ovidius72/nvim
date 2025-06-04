@@ -369,5 +369,5 @@ wk.setup({
     },
     spelling = { enabled = true, suggestions = 20 }, -- use which-key for spelling hints
   },
-  window = { border = 'single' }
+  win = { border = 'single' }
 })
